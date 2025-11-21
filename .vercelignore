@@ -1,0 +1,28 @@
+# Next.js build output
+.next
+
+# Dependencies
+node_modules
+
+# Environment files
+.env
+.env*.local
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Misc
+*.pem
+
