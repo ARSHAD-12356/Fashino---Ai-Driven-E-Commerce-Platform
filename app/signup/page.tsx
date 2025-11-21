@@ -45,14 +45,25 @@ export default function SignupPage() {
   const passwordStrength = password.length >= 6 && password.length < 10 ? 'weak' : password.length >= 10 ? 'strong' : 'none'
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-background via-background to-muted/30 flex items-center justify-center px-4 py-12">
-      <div className="w-full max-w-md">
-        <div className="bg-card/95 backdrop-blur-sm border border-border rounded-2xl p-8 md:p-10 space-y-6 shadow-2xl">
+    <main className="min-h-screen bg-gradient-to-br from-background via-muted/10 to-background flex items-center justify-center px-4 py-12 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="w-full max-w-md relative z-10">
+        <div className="bg-card/95 backdrop-blur-xl border border-border/50 rounded-2xl p-8 md:p-10 space-y-6 shadow-2xl shadow-primary/5">
           {/* Header */}
           <div className="text-center space-y-3">
-            <Link href="/" className="inline-flex items-center gap-2 text-3xl font-black text-foreground hover:text-primary smooth-hover tracking-tight group">
-              <Sparkles className="w-6 h-6 text-primary group-hover:rotate-12 transition-transform" />
-              Fashino
+            <Link href="/" className="inline-flex flex-col items-center gap-1 text-3xl font-dancing font-bold text-foreground hover:text-primary smooth-hover tracking-tight group">
+              <div className="flex items-center gap-2">
+                <Sparkles className="w-6 h-6 text-primary group-hover:rotate-12 transition-transform" />
+                <span>Fashino</span>
+              </div>
+              <p className="text-sm font-normal font-sans text-primary/80 italic tracking-wide">
+                Feel The Fashion
+              </p>
             </Link>
             <h1 className="text-3xl font-bold text-foreground">Create Account</h1>
             <p className="text-muted-foreground">Join us to start shopping premium fashion</p>

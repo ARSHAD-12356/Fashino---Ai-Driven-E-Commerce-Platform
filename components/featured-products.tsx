@@ -7,14 +7,17 @@ export function FeaturedProducts() {
   const featuredProducts = products.slice(0, 8)
 
   return (
-    <section className="py-20 px-4 md:px-6 bg-secondary/3">
+    <section className="py-20 px-4 md:px-6 bg-gradient-to-b from-background via-muted/20 to-background">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+        <div className="text-center mb-12 space-y-3">
+          <div className="inline-block px-4 py-1.5 bg-primary/10 rounded-full">
+            <span className="text-sm font-semibold text-primary uppercase tracking-wider">Featured</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-2 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
             Featured Collection
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Handpicked items for the season
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Handpicked items for the season - curated just for you
           </p>
         </div>
 

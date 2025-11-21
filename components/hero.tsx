@@ -105,12 +105,18 @@ export function Hero() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <button className="px-8 py-4 bg-white text-black rounded-full font-semibold hover:shadow-lg smooth-transition hover:scale-105 active:scale-95">
+                <Link 
+                  href="/winter-collection"
+                  className="px-8 py-4 bg-white text-black rounded-full font-semibold hover:shadow-xl hover:shadow-white/30 smooth-transition hover:scale-105 active:scale-95 text-center"
+                >
                   {slide.cta}
-                </button>
-                <button className="px-8 py-4 border-2 border-white text-white rounded-full font-semibold hover:bg-white/10 smooth-transition hover:scale-105 active:scale-95">
+                </Link>
+                <Link 
+                  href="/shop"
+                  className="px-8 py-4 border-2 border-white text-white rounded-full font-semibold hover:bg-white/10 smooth-transition hover:scale-105 active:scale-95 text-center"
+                >
                   Browse More
-                </button>
+                </Link>
               </div>
             </div>
           </div>

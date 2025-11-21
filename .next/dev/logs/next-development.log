@@ -1,642 +1,929 @@
-[00:00:03.584] Server  LOG      ✓ Ready in 2.7s
-[00:00:07.215] Server  LOG      ○ Compiling / ...
-[00:00:17.203] Server  LOG     🔄 Attempting to connect to MongoDB Atlas...
-[00:00:18.582] Server  LOG     ✅ MongoDB Connected Successfully!
-[00:00:18.584] Server  LOG     📊 Database: fashino
-[00:00:19.567] Server  LOG     📦 Using existing MongoDB connection
-[00:00:19.777] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:19.777] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:19.777] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763750197998}
-[00:00:20.255] Server  LOG     📦 Using existing MongoDB connection
-[00:00:20.883] Server  ERROR    ⨯ ./app/men/page.tsx:3:1
-Export CategoryPageTemplate doesn't exist in target module
-  1 | "use client"
-  2 |
-> 3 | import { CategoryPageTemplate } from '@/components/category-page-template'
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 |
-  5 | export default function MenPage() {
-  6 |   return (
+[00:00:02.866] Server  LOG      ✓ Ready in 2.1s
+[00:00:26.249] Server  LOG      ○ Compiling / ...
+[00:00:31.814] Server  ERROR    ⨯ ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
 
-The export CategoryPageTemplate was not found in module [project]/components/category-page-template.tsx [app-client] (ecmascript).
+The export Logo was not found in module [project]/components/logo.tsx [app-client] (ecmascript).
 The module has no exports at all.
 All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
 
 Import traces:
   Client Component Browser:
-    ./app/men/page.tsx [Client Component Browser]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/men/page.tsx [Client Component SSR]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
 
 
-./app/men/page.tsx:3:1
-Export CategoryPageTemplate doesn't exist in target module
-  1 | "use client"
-  2 |
-> 3 | import { CategoryPageTemplate } from '@/components/category-page-template'
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 |
-  5 | export default function MenPage() {
-  6 |   return (
+./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
 
-The export CategoryPageTemplate was not found in module [project]/components/category-page-template.tsx [app-ssr] (ecmascript).
+The export Logo was not found in module [project]/components/logo.tsx [app-ssr] (ecmascript).
 The module has no exports at all.
 All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
 
 Import traces:
   Client Component Browser:
-    ./app/men/page.tsx [Client Component Browser]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/men/page.tsx [Client Component SSR]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
 
-[00:00:21.202] Browser ERROR   ./app/men/page.tsx:3:1
-Export CategoryPageTemplate doesn't exist in target module
-  1 | "use client"
-  2 |
-> 3 | import { CategoryPageTemplate } from '@/components/category-page-template'
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 |
-  5 | export default function MenPage() {
-  6 |   return (
+[00:00:35.917] Server  ERROR    ⨯ ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
 
-The export CategoryPageTemplate was not found in module [project]/components/category-page-template.tsx [app-client] (ecmascript).
+The export Logo was not found in module [project]/components/logo.tsx [app-client] (ecmascript).
 The module has no exports at all.
 All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
 
 Import traces:
   Client Component Browser:
-    ./app/men/page.tsx [Client Component Browser]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/men/page.tsx [Client Component SSR]
-    ./app/men/page.tsx [Server Component]
-[00:00:21.202] Browser ERROR   ./app/men/page.tsx:3:1
-Export CategoryPageTemplate doesn't exist in target module
-  1 | "use client"
-  2 |
-> 3 | import { CategoryPageTemplate } from '@/components/category-page-template'
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 |
-  5 | export default function MenPage() {
-  6 |   return (
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
-The export CategoryPageTemplate was not found in module [project]/components/category-page-template.tsx [app-ssr] (ecmascript).
+
+
+./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
+
+The export Logo was not found in module [project]/components/logo.tsx [app-ssr] (ecmascript).
 The module has no exports at all.
 All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
 
 Import traces:
   Client Component Browser:
-    ./app/men/page.tsx [Client Component Browser]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/men/page.tsx [Client Component SSR]
-    ./app/men/page.tsx [Server Component]
-[00:00:22.676] Browser ERROR   ./app/men/page.tsx:3:1
-Export CategoryPageTemplate doesn't exist in target module
-  1 | "use client"
-  2 |
-> 3 | import { CategoryPageTemplate } from '@/components/category-page-template'
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 |
-  5 | export default function MenPage() {
-  6 |   return (
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
-The export CategoryPageTemplate was not found in module [project]/components/category-page-template.tsx [app-client] (ecmascript).
+
+[00:00:35.998] Browser ERROR   uncaughtError: Error: ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
+
+The export Logo was not found in module [project]/components/logo.tsx [app-client] (ecmascript).
 The module has no exports at all.
 All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
 
 Import traces:
   Client Component Browser:
-    ./app/men/page.tsx [Client Component Browser]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/men/page.tsx [Client Component SSR]
-    ./app/men/page.tsx [Server Component]
-[00:00:22.676] Browser ERROR   ./app/men/page.tsx:3:1
-Export CategoryPageTemplate doesn't exist in target module
-  1 | "use client"
-  2 |
-> 3 | import { CategoryPageTemplate } from '@/components/category-page-template'
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 |
-  5 | export default function MenPage() {
-  6 |   return (
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
-The export CategoryPageTemplate was not found in module [project]/components/category-page-template.tsx [app-ssr] (ecmascript).
+
+[00:00:37.151] Browser ERROR   ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
+
+The export Logo was not found in module [project]/components/logo.tsx [app-client] (ecmascript).
 The module has no exports at all.
 All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
 
 Import traces:
   Client Component Browser:
-    ./app/men/page.tsx [Client Component Browser]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/men/page.tsx [Client Component SSR]
-    ./app/men/page.tsx [Server Component]
-[00:00:22.945] Browser ERROR   ./app/men/page.tsx:3:1
-Export CategoryPageTemplate doesn't exist in target module
-  1 | "use client"
-  2 |
-> 3 | import { CategoryPageTemplate } from '@/components/category-page-template'
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 |
-  5 | export default function MenPage() {
-  6 |   return (
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:00:37.151] Browser ERROR   ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
 
-The export CategoryPageTemplate was not found in module [project]/components/category-page-template.tsx [app-client] (ecmascript).
+The export Logo was not found in module [project]/components/logo.tsx [app-ssr] (ecmascript).
 The module has no exports at all.
 All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
 
 Import traces:
   Client Component Browser:
-    ./app/men/page.tsx [Client Component Browser]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/men/page.tsx [Client Component SSR]
-    ./app/men/page.tsx [Server Component]
-[00:00:22.945] Browser ERROR   ./app/men/page.tsx:3:1
-Export CategoryPageTemplate doesn't exist in target module
-  1 | "use client"
-  2 |
-> 3 | import { CategoryPageTemplate } from '@/components/category-page-template'
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 |
-  5 | export default function MenPage() {
-  6 |   return (
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:00:37.151] Browser ERROR   ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
 
-The export CategoryPageTemplate was not found in module [project]/components/category-page-template.tsx [app-ssr] (ecmascript).
+The export Logo was not found in module [project]/components/logo.tsx [app-client] (ecmascript).
 The module has no exports at all.
 All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
 
 Import traces:
   Client Component Browser:
-    ./app/men/page.tsx [Client Component Browser]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/men/page.tsx [Client Component SSR]
-    ./app/men/page.tsx [Server Component]
-[00:00:24.237] Server  ERROR    ⨯ ./app/men/page.tsx:3:1
-Export CategoryPageTemplate doesn't exist in target module
-  1 | "use client"
-  2 |
-> 3 | import { CategoryPageTemplate } from '@/components/category-page-template'
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 |
-  5 | export default function MenPage() {
-  6 |   return (
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:00:37.151] Browser ERROR   ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
 
-The export CategoryPageTemplate was not found in module [project]/components/category-page-template.tsx [app-client] (ecmascript).
+The export Logo was not found in module [project]/components/logo.tsx [app-ssr] (ecmascript).
 The module has no exports at all.
 All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
 
 Import traces:
   Client Component Browser:
-    ./app/men/page.tsx [Client Component Browser]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/men/page.tsx [Client Component SSR]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:00:37.152] Browser ERROR   ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
 
-
-
-./app/men/page.tsx:3:1
-Export CategoryPageTemplate doesn't exist in target module
-  1 | "use client"
-  2 |
-> 3 | import { CategoryPageTemplate } from '@/components/category-page-template'
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 |
-  5 | export default function MenPage() {
-  6 |   return (
-
-The export CategoryPageTemplate was not found in module [project]/components/category-page-template.tsx [app-ssr] (ecmascript).
+The export Logo was not found in module [project]/components/logo.tsx [app-client] (ecmascript).
 The module has no exports at all.
 All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
 
 Import traces:
   Client Component Browser:
-    ./app/men/page.tsx [Client Component Browser]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/men/page.tsx [Client Component SSR]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:00:37.152] Browser ERROR   ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
 
-
-[00:00:24.282] Browser ERROR   ./app/men/page.tsx:3:1
-Export CategoryPageTemplate doesn't exist in target module
-  1 | "use client"
-  2 |
-> 3 | import { CategoryPageTemplate } from '@/components/category-page-template'
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 |
-  5 | export default function MenPage() {
-  6 |   return (
-
-The export CategoryPageTemplate was not found in module [project]/components/category-page-template.tsx [app-client] (ecmascript).
+The export Logo was not found in module [project]/components/logo.tsx [app-ssr] (ecmascript).
 The module has no exports at all.
 All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
 
 Import traces:
   Client Component Browser:
-    ./app/men/page.tsx [Client Component Browser]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/men/page.tsx [Client Component SSR]
-    ./app/men/page.tsx [Server Component]
-[00:00:24.282] Browser ERROR   ./app/men/page.tsx:3:1
-Export CategoryPageTemplate doesn't exist in target module
-  1 | "use client"
-  2 |
-> 3 | import { CategoryPageTemplate } from '@/components/category-page-template'
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 |
-  5 | export default function MenPage() {
-  6 |   return (
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:00:37.152] Browser ERROR   ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
 
-The export CategoryPageTemplate was not found in module [project]/components/category-page-template.tsx [app-ssr] (ecmascript).
+The export Logo was not found in module [project]/components/logo.tsx [app-client] (ecmascript).
 The module has no exports at all.
 All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
 
 Import traces:
   Client Component Browser:
-    ./app/men/page.tsx [Client Component Browser]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/men/page.tsx [Client Component SSR]
-    ./app/men/page.tsx [Server Component]
-[00:00:25.033] Browser ERROR   uncaughtError: Error: ./app/men/page.tsx:3:1
-Export CategoryPageTemplate doesn't exist in target module
-  1 | "use client"
-  2 |
-> 3 | import { CategoryPageTemplate } from '@/components/category-page-template'
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 |
-  5 | export default function MenPage() {
-  6 |   return (
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:00:37.152] Browser ERROR   ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
 
-The export CategoryPageTemplate was not found in module [project]/components/category-page-template.tsx [app-client] (ecmascript).
+The export Logo was not found in module [project]/components/logo.tsx [app-ssr] (ecmascript).
 The module has no exports at all.
 All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
 
 Import traces:
   Client Component Browser:
-    ./app/men/page.tsx [Client Component Browser]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/men/page.tsx [Client Component SSR]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:00:43.828] Browser ERROR   ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
 
-
-[00:00:25.148] Browser ERROR   ./app/men/page.tsx:3:1
-Export CategoryPageTemplate doesn't exist in target module
-  1 | "use client"
-  2 |
-> 3 | import { CategoryPageTemplate } from '@/components/category-page-template'
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 |
-  5 | export default function MenPage() {
-  6 |   return (
-
-The export CategoryPageTemplate was not found in module [project]/components/category-page-template.tsx [app-client] (ecmascript).
+The export Logo was not found in module [project]/components/logo.tsx [app-client] (ecmascript).
 The module has no exports at all.
 All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
 
 Import traces:
   Client Component Browser:
-    ./app/men/page.tsx [Client Component Browser]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/men/page.tsx [Client Component SSR]
-    ./app/men/page.tsx [Server Component]
-[00:00:25.148] Browser ERROR   ./app/men/page.tsx:3:1
-Export CategoryPageTemplate doesn't exist in target module
-  1 | "use client"
-  2 |
-> 3 | import { CategoryPageTemplate } from '@/components/category-page-template'
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 |
-  5 | export default function MenPage() {
-  6 |   return (
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:00:43.828] Browser ERROR   ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
 
-The export CategoryPageTemplate was not found in module [project]/components/category-page-template.tsx [app-ssr] (ecmascript).
+The export Logo was not found in module [project]/components/logo.tsx [app-ssr] (ecmascript).
 The module has no exports at all.
 All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
 
 Import traces:
   Client Component Browser:
-    ./app/men/page.tsx [Client Component Browser]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/men/page.tsx [Client Component SSR]
-    ./app/men/page.tsx [Server Component]
-[00:00:25.565] Browser ERROR   ./app/men/page.tsx:3:1
-Export CategoryPageTemplate doesn't exist in target module
-  1 | "use client"
-  2 |
-> 3 | import { CategoryPageTemplate } from '@/components/category-page-template'
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 |
-  5 | export default function MenPage() {
-  6 |   return (
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:00:44.831] Browser ERROR   ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
 
-The export CategoryPageTemplate was not found in module [project]/components/category-page-template.tsx [app-client] (ecmascript).
+The export Logo was not found in module [project]/components/logo.tsx [app-client] (ecmascript).
 The module has no exports at all.
 All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
 
 Import traces:
   Client Component Browser:
-    ./app/men/page.tsx [Client Component Browser]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/men/page.tsx [Client Component SSR]
-    ./app/men/page.tsx [Server Component]
-[00:00:25.565] Browser ERROR   ./app/men/page.tsx:3:1
-Export CategoryPageTemplate doesn't exist in target module
-  1 | "use client"
-  2 |
-> 3 | import { CategoryPageTemplate } from '@/components/category-page-template'
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 |
-  5 | export default function MenPage() {
-  6 |   return (
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:00:44.831] Browser ERROR   ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
 
-The export CategoryPageTemplate was not found in module [project]/components/category-page-template.tsx [app-ssr] (ecmascript).
+The export Logo was not found in module [project]/components/logo.tsx [app-ssr] (ecmascript).
 The module has no exports at all.
 All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
 
 Import traces:
   Client Component Browser:
-    ./app/men/page.tsx [Client Component Browser]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/men/page.tsx [Client Component SSR]
-    ./app/men/page.tsx [Server Component]
-[00:01:59.540] Browser ERROR   uncaughtError: Error: ./app/men/page.tsx:3:1
-Export CategoryPageTemplate doesn't exist in target module
-  1 | "use client"
-  2 |
-> 3 | import { CategoryPageTemplate } from '@/components/category-page-template'
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 |
-  5 | export default function MenPage() {
-  6 |   return (
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:00:51.827] Browser ERROR   ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
 
-The export CategoryPageTemplate was not found in module [project]/components/category-page-template.tsx [app-client] (ecmascript).
+The export Logo was not found in module [project]/components/logo.tsx [app-client] (ecmascript).
 The module has no exports at all.
 All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
 
 Import traces:
   Client Component Browser:
-    ./app/men/page.tsx [Client Component Browser]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/men/page.tsx [Client Component SSR]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:00:51.827] Browser ERROR   ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
 
-
-[00:01:59.819] Browser ERROR   ./app/men/page.tsx:3:1
-Export CategoryPageTemplate doesn't exist in target module
-  1 | "use client"
-  2 |
-> 3 | import { CategoryPageTemplate } from '@/components/category-page-template'
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 |
-  5 | export default function MenPage() {
-  6 |   return (
-
-The export CategoryPageTemplate was not found in module [project]/components/category-page-template.tsx [app-client] (ecmascript).
+The export Logo was not found in module [project]/components/logo.tsx [app-ssr] (ecmascript).
 The module has no exports at all.
 All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
 
 Import traces:
   Client Component Browser:
-    ./app/men/page.tsx [Client Component Browser]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/men/page.tsx [Client Component SSR]
-    ./app/men/page.tsx [Server Component]
-[00:01:59.819] Browser ERROR   ./app/men/page.tsx:3:1
-Export CategoryPageTemplate doesn't exist in target module
-  1 | "use client"
-  2 |
-> 3 | import { CategoryPageTemplate } from '@/components/category-page-template'
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 |
-  5 | export default function MenPage() {
-  6 |   return (
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:00:55.110] Browser ERROR   ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
 
-The export CategoryPageTemplate was not found in module [project]/components/category-page-template.tsx [app-ssr] (ecmascript).
+The export Logo was not found in module [project]/components/logo.tsx [app-client] (ecmascript).
 The module has no exports at all.
 All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
 
 Import traces:
   Client Component Browser:
-    ./app/men/page.tsx [Client Component Browser]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/men/page.tsx [Client Component SSR]
-    ./app/men/page.tsx [Server Component]
-[00:01:59.819] Browser ERROR   ./app/men/page.tsx:3:1
-Export CategoryPageTemplate doesn't exist in target module
-  1 | "use client"
-  2 |
-> 3 | import { CategoryPageTemplate } from '@/components/category-page-template'
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 |
-  5 | export default function MenPage() {
-  6 |   return (
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:00:55.111] Browser ERROR   ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
 
-The export CategoryPageTemplate was not found in module [project]/components/category-page-template.tsx [app-client] (ecmascript).
+The export Logo was not found in module [project]/components/logo.tsx [app-ssr] (ecmascript).
 The module has no exports at all.
 All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
 
 Import traces:
   Client Component Browser:
-    ./app/men/page.tsx [Client Component Browser]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/men/page.tsx [Client Component SSR]
-    ./app/men/page.tsx [Server Component]
-[00:01:59.819] Browser ERROR   ./app/men/page.tsx:3:1
-Export CategoryPageTemplate doesn't exist in target module
-  1 | "use client"
-  2 |
-> 3 | import { CategoryPageTemplate } from '@/components/category-page-template'
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 |
-  5 | export default function MenPage() {
-  6 |   return (
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:01:09.821] Browser ERROR   ./components/ai-chatbot.tsx:28:11
+Ecmascript file had an error
+  26 |   const [isTyping, setIsTyping] = useState(false)
+  27 |   const messagesEndRef = useRef<HTMLDivElement>(null)
+> 28 |   const { user } = useAuth()
+     |           ^^^^
+  29 |
+  30 |   useEffect(() => {
+  31 |     if (isOpen && messages.length === 0) {
 
-The export CategoryPageTemplate was not found in module [project]/components/category-page-template.tsx [app-ssr] (ecmascript).
+the name `user` is defined multiple times
+
+Import trace:
+  Server Component:
+    ./components/ai-chatbot.tsx
+    ./app/page.tsx
+[00:01:09.821] Browser ERROR   ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
+
+The export Logo was not found in module [project]/components/logo.tsx [app-client] (ecmascript).
 The module has no exports at all.
 All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
 
 Import traces:
   Client Component Browser:
-    ./app/men/page.tsx [Client Component Browser]
-    ./app/men/page.tsx [Server Component]
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/men/page.tsx [Client Component SSR]
-    ./app/men/page.tsx [Server Component]
-[00:03:45.571] Server  LOG      ✓ Compiled in 1921ms
-[00:04:10.866] Server  LOG     📦 Using existing MongoDB connection
-[00:04:16.408] Server  LOG     📦 Using existing MongoDB connection
-[00:04:17.048] Server  LOG     📦 Using existing MongoDB connection
-[00:04:19.636] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:04:19.636] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:04:19.636] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763750437081}
-[00:07:43.377] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/new-arrivals color: rgb(120, 120, 120) color: inherit {"dp":"/new-arrivals","o":"http://localhost:3000/new-arrivals","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763750641602}
-[00:07:48.259] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/winter-collection color: rgb(120, 120, 120) color: inherit {"dp":"/winter-collection","o":"http://localhost:3000/winter-collection","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763750646467}
-[00:08:03.158] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/deals color: rgb(120, 120, 120) color: inherit {"dp":"/deals","o":"http://localhost:3000/deals","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763750661344}
-[00:08:06.567] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763750664795}
-[00:08:10.002] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/deals color: rgb(120, 120, 120) color: inherit {"dp":"/deals","o":"http://localhost:3000/deals","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763750668214}
-[00:08:18.036] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763750676248}
-[00:08:23.335] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/kids color: rgb(120, 120, 120) color: inherit {"dp":"/kids","o":"http://localhost:3000/kids","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763750681569}
-[00:08:43.139] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763750701366}
-[00:08:46.842] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/accessories color: rgb(120, 120, 120) color: inherit {"dp":"/accessories","o":"http://localhost:3000/accessories","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763750705068}
-[00:08:56.898] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763750715093}
-[00:09:00.711] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/home-living color: rgb(120, 120, 120) color: inherit {"dp":"/home-living","o":"http://localhost:3000/home-living","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763750718948}
-[00:09:10.605] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763750728805}
-[00:09:29.729] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/5 color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]","o":"http://localhost:3000/products/5","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763750747968}
-[00:09:31.893] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763750750060}
-[00:09:38.332] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763750756562}
-[00:10:45.517] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763750823708}
-[00:26:44.669] Server  LOG      ✓ Compiled in 941ms
-[00:26:54.608] Server  LOG      ✓ Compiled in 1779ms
-[00:27:01.208] Server  LOG     📦 Using existing MongoDB connection
-[00:27:03.291] Server  LOG     📦 Using existing MongoDB connection
-[00:27:03.854] Server  LOG     📦 Using existing MongoDB connection
-[00:27:05.150] Server  LOG      ✓ Compiled in 869ms
-[00:27:05.380] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:27:05.380] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:27:05.380] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763751802212}
-[00:28:52.780] Server  LOG     ✅ Generated product dataset: "E:\\E-Commerce\\data\\products.json"
-[00:44:45.425] Server  LOG      ✓ Compiled in 1594ms
-[00:44:53.866] Server  LOG     📦 Using existing MongoDB connection
-[00:44:57.689] Server  LOG     📦 Using existing MongoDB connection
-[00:44:58.337] Server  LOG     📦 Using existing MongoDB connection
-[00:44:59.636] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:44:59.636] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:44:59.636] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763752877013}
-[00:50:14.004] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/winter-collection color: rgb(120, 120, 120) color: inherit {"dp":"/winter-collection","o":"http://localhost:3000/winter-collection","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763753192183}
-[00:50:16.443] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763753194625}
-[00:51:48.335] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/21 color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]","o":"http://localhost:3000/products/21","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763753286539}
-[00:51:51.898] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763753289938}
-[00:57:24.930] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763753623166}
-[01:02:17.581] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763753915751}
-[01:07:06.147] Server  LOG      ✓ Compiled in 386ms
-[01:07:21.309] Server  LOG      ✓ Compiled in 250ms
-[01:07:29.779] Server  LOG      ✓ Compiled in 290ms
-[01:07:34.078] Server  LOG      ✓ Compiled in 181ms
-[01:07:36.901] Server  LOG      ✓ Compiled in 175ms
-[01:08:24.242] Server  LOG      ✓ Compiled in 178ms
-[01:11:34.447] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/women color: rgb(120, 120, 120) color: inherit {"dp":"/women","o":"http://localhost:3000/women","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763754472672}
-[01:13:01.299] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763754559526}
-[01:13:40.947] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/124 color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]","o":"http://localhost:3000/products/124","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763754599180}
-[01:13:47.022] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763754605197}
-[01:13:49.595] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763754607833}
-[01:17:15.474] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763754813632}
-[01:18:06.523] Server  LOG      ✓ Compiled in 293ms
-[01:18:08.515] Server  LOG      ✓ Compiled in 391ms
-[01:18:10.336] Server  LOG      ✓ Compiled in 245ms
-[01:18:14.794] Server  LOG      ✓ Compiled in 231ms
-[01:18:18.829] Server  LOG      ✓ Compiled in 398ms
-[01:18:21.705] Server  LOG      ✓ Compiled in 361ms
-[01:18:52.645] Server  LOG      ✓ Compiled in 860ms
-[01:18:55.222] Server  LOG      ✓ Compiled in 606ms
-[01:18:58.335] Server  LOG      ✓ Compiled in 317ms
-[01:19:06.299] Server  LOG      ✓ Compiled in 282ms
-[01:19:22.614] Server  LOG      ✓ Compiled in 177ms
-[01:19:27.294] Server  LOG      ✓ Compiled in 363ms
-[01:19:29.226] Server  LOG      ✓ Compiled in 161ms
-[01:19:51.322] Server  LOG      ✓ Compiled in 298ms
-[01:20:11.037] Server  LOG      ✓ Compiled in 287ms
-[01:20:45.304] Server  LOG     📦 Using existing MongoDB connection
-[01:20:46.039] Server  LOG     📦 Using existing MongoDB connection
-[01:20:46.403] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:20:46.403] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[01:20:46.403] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763755024643}
-[01:20:47.117] Server  LOG     📦 Using existing MongoDB connection
-[01:20:50.279] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763755028502}
-[01:21:38.707] Server  LOG     📦 Using existing MongoDB connection
-[01:22:14.940] Server  ERROR   E:\E-Commerce\node_modules\mongodb\lib\sdam\topology.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[01:22:14.943] Server  ERROR   E:\E-Commerce\node_modules\mongodb\lib\operations\execute_operation.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[01:22:14.946] Server  ERROR   E:\E-Commerce\node_modules\mongodb\lib\cursor\find_cursor.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[01:22:14.952] Server  ERROR   E:\E-Commerce\node_modules\mongodb\lib\cursor\abstract_cursor.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[01:22:14.966] Server  ERROR   E:\E-Commerce\.next\dev\server\chunks\[root-of-the-server]__c263c58c._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[01:22:15.030] Server  ERROR   E:\E-Commerce\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[01:22:15.063] Server  ERROR   E:\E-Commerce\.next\dev\server\chunks\node_modules_next_fb0a7bfa._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[01:22:15.069] Server  ERROR   E:\E-Commerce\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[01:22:15.082] Server  ERROR   E:\E-Commerce\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[01:22:15.117] Server  ERROR   E:\E-Commerce\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[01:22:15.119] Server  ERROR   E:\E-Commerce\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[01:22:15.128] Server  ERROR   E:\E-Commerce\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[01:22:15.131] Server  ERROR   E:\E-Commerce\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[01:22:15.140] Server  ERROR   E:\E-Commerce\node_modules\mongodb\lib\cmap\connection.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[01:22:15.143] Server  ERROR   E:\E-Commerce\node_modules\mongodb\lib\sdam\monitor.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[01:22:15.146] Server  ERROR   E:\E-Commerce\node_modules\mongodb\lib\sdam\server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[01:22:15.150] Server  ERROR   E:\E-Commerce\node_modules\mongodb\lib\cmap\connection_pool.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[01:22:15.160] Server  ERROR   Error fetching orders from DB: MongoServerSelectionError: connection <monitor> to 159.41.242.254:27017 closed
-[01:22:52.853] Server  LOG     📦 Using existing MongoDB connection
-[01:23:05.940] Server  LOG     📦 Using existing MongoDB connection
-[01:23:37.130] Server  LOG     📦 Using existing MongoDB connection
-[01:24:19.946] Server  LOG     📦 Using existing MongoDB connection
-[01:25:02.115] Server  LOG     📦 Using existing MongoDB connection
-[01:25:23.017] Server  LOG     📦 Using existing MongoDB connection
-[01:25:46.016] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763755324231}
-[01:25:51.463] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/2 color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]","o":"http://localhost:3000/products/2","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763755329699}
-[01:25:57.596] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/checkout?start=shipping color: rgb(120, 120, 120) color: inherit {"dp":"/checkout","o":"http://localhost:3000/checkout?start=shipping","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763755335829}
-[01:26:03.369] Server  LOG     📦 Using existing MongoDB connection
-[01:26:09.421] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763755347592}
-[01:26:45.303] Server  LOG     📦 Using existing MongoDB connection
-[01:27:28.303] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763755426525}
-[01:29:04.039] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763755522278}
-[01:33:58.400] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763755816591}
-[01:34:29.759] Server  LOG      ✓ Compiled in 363ms
-[01:34:47.632] Server  LOG      ✓ Compiled in 2.7s
-[01:34:58.208] Server  LOG      ✓ Compiled in 275ms
-[01:35:02.243] Server  LOG      ✓ Compiled in 213ms
-[01:35:08.523] Server  LOG      ✓ Compiled in 264ms
-[01:35:14.341] Server  LOG      ✓ Compiled in 171ms
-[01:35:15.735] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/products/66 color: rgb(120, 120, 120) color: inherit {"dp":"/products/[id]","o":"http://localhost:3000/products/66","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763755893965}
-[01:35:20.722] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763755898722}
-[01:35:23.980] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/new-arrivals color: rgb(120, 120, 120) color: inherit {"dp":"/new-arrivals","o":"http://localhost:3000/new-arrivals","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763755902218}
-[01:35:26.744] Server  LOG      ✓ Compiled in 624ms
-[01:35:35.892] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/deals color: rgb(120, 120, 120) color: inherit {"dp":"/deals","o":"http://localhost:3000/deals","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763755913816}
-[01:35:46.560] Server  LOG      ✓ Compiled in 368ms
-[01:36:24.320] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763755962553}
-[01:36:38.163] Server  LOG     📦 Using existing MongoDB connection
-[01:37:31.475] Server  LOG     📦 Using existing MongoDB connection
-[01:37:38.621] Server  LOG     📦 Using existing MongoDB connection
-[01:37:50.932] Server  LOG     📦 Using existing MongoDB connection
-[01:37:56.753] Server  LOG     📦 Using existing MongoDB connection
-[01:38:07.971] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763756066192}
-[01:38:24.399] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/footwear color: rgb(120, 120, 120) color: inherit {"dp":"/footwear","o":"http://localhost:3000/footwear","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763756082631}
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:01:09.821] Browser ERROR   ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
+
+The export Logo was not found in module [project]/components/logo.tsx [app-ssr] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:01:39.832] Browser ERROR   ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
+
+The export Logo was not found in module [project]/components/logo.tsx [app-client] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:01:39.832] Browser ERROR   ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
+
+The export Logo was not found in module [project]/components/logo.tsx [app-ssr] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:01:50.877] Browser ERROR   ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
+
+The export Logo was not found in module [project]/components/logo.tsx [app-client] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:01:50.877] Browser ERROR   ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
+
+The export Logo was not found in module [project]/components/logo.tsx [app-ssr] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:01:52.400] Server  ERROR    ⨯ ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
+
+The export Logo was not found in module [project]/components/logo.tsx [app-client] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+
+
+./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
+
+The export Logo was not found in module [project]/components/logo.tsx [app-ssr] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+
+[00:01:52.727] Browser ERROR   uncaughtError: Error: ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
+
+The export Logo was not found in module [project]/components/logo.tsx [app-client] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+
+[00:01:52.867] Browser ERROR   ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
+
+The export Logo was not found in module [project]/components/logo.tsx [app-client] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:01:52.867] Browser ERROR   ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
+
+The export Logo was not found in module [project]/components/logo.tsx [app-ssr] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:01:52.984] Browser ERROR   ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
+
+The export Logo was not found in module [project]/components/logo.tsx [app-client] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:01:52.984] Browser ERROR   ./components/dual-navbar.tsx:14:1
+Export Logo doesn't exist in target module
+  12 | import { CategoryDropdown } from '@/components/category-dropdown'
+  13 | import { getCategoryData } from '@/lib/category-data'
+> 14 | import { Logo } from '@/components/logo'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import { products } from '@/lib/products'
+  16 |
+  17 | export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: boolean }) {
+
+The export Logo was not found in module [project]/components/logo.tsx [app-ssr] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./components/dual-navbar.tsx [Client Component Browser]
+    ./components/header.tsx [Client Component Browser]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/dual-navbar.tsx [Client Component SSR]
+    ./components/header.tsx [Client Component SSR]
+    ./components/header.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:02:57.442] Server  LOG      ✓ Compiled in 434ms
+[00:02:59.391] Server  ERROR   E:\E-Commerce\.next\dev\server\chunks\ssr\[root-of-the-server]__da543dca._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:59.394] Server  ERROR    ⨯ Error: useAuth must be used within AuthProvider
+[00:03:02.828] Browser ERROR   uncaughtError: Error: useAuth must be used within AuthProvider
+[00:04:15.834] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:04:15.834] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:04:15.834] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763758850362}
+[00:04:51.386] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763758886435}

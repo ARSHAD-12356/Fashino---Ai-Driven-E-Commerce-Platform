@@ -14,12 +14,17 @@ interface Message {
 }
 
 export function AIChatbot() {
+  const { user } = useAuth()
   const [isOpen, setIsOpen] = useState(false)
+  
+  // Only show chatbot if user is authenticated
+  if (!user) {
+    return null
+  }
   const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState('')
   const [isTyping, setIsTyping] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
-  const { user } = useAuth()
 
   useEffect(() => {
     if (isOpen && messages.length === 0) {
@@ -228,6 +233,7 @@ export function AIChatbot() {
     </>
   )
 }
+
 
 
 

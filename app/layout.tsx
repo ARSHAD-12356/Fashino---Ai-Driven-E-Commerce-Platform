@@ -4,6 +4,7 @@ import { Poppins, Dancing_Script } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { Providers } from '@/app/providers'
 import { ProductChatbot } from '@/components/product-chatbot'
+import { DeveloperCredit } from '@/components/developer-credit'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -21,20 +22,11 @@ export const metadata: Metadata = {
   generator: 'v0.app',
   icons: {
     icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: '32x32' },
     ],
-    apple: '/apple-icon.png',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
   },
 }
 
@@ -48,8 +40,9 @@ export default function RootLayout({
       <body className={`font-sans antialiased ${dancingScript.variable}`}>
         <Providers>
           {children}
+          <ProductChatbot />
+          <DeveloperCredit />
         </Providers>
-        <ProductChatbot />
         <Analytics />
       </body>
     </html>

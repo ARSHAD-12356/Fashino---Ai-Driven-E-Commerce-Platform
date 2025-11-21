@@ -12,9 +12,6 @@ export default function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
-  const [showForgotPassword, setShowForgotPassword] = useState(false)
-  const [forgotEmail, setForgotEmail] = useState('')
-  const [forgotSent, setForgotSent] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -46,14 +43,25 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-background via-background to-muted/30 flex items-center justify-center px-4 py-12">
-      <div className="w-full max-w-md">
-        <div className="bg-card/95 backdrop-blur-sm border border-border rounded-2xl p-8 md:p-10 space-y-6 shadow-2xl">
+    <main className="min-h-screen bg-gradient-to-br from-background via-muted/10 to-background flex items-center justify-center px-4 py-12 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="w-full max-w-md relative z-10">
+        <div className="bg-card/95 backdrop-blur-xl border border-border/50 rounded-2xl p-8 md:p-10 space-y-6 shadow-2xl shadow-primary/5">
           {/* Header */}
           <div className="text-center space-y-3">
-            <Link href="/" className="inline-flex items-center gap-2 text-3xl font-black text-foreground hover:text-primary smooth-hover tracking-tight group">
-              <Sparkles className="w-6 h-6 text-primary group-hover:rotate-12 transition-transform" />
-              Fashino
+            <Link href="/" className="inline-flex flex-col items-center gap-1 text-3xl font-dancing font-bold text-foreground hover:text-primary smooth-hover tracking-tight group">
+              <div className="flex items-center gap-2">
+                <Sparkles className="w-6 h-6 text-primary group-hover:rotate-12 transition-transform" />
+                <span>Fashino</span>
+              </div>
+              <p className="text-sm font-normal font-sans text-primary/80 italic tracking-wide">
+                Feel The Fashion
+              </p>
             </Link>
             <h1 className="text-3xl font-bold text-foreground">Welcome Back</h1>
             <p className="text-muted-foreground">Sign in to your account to continue shopping</p>
@@ -101,16 +109,7 @@ export default function LoginPage() {
 
             {/* Password Field */}
             <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <label className="text-sm font-semibold text-foreground">Password</label>
-                <button
-                  type="button"
-                  onClick={() => setShowForgotPassword(true)}
-                  className="text-xs text-primary hover:underline smooth-hover"
-                >
-                  👉 Forgot Password?
-                </button>
-              </div>
+              <label className="text-sm font-semibold text-foreground">Password</label>
               <div className="relative group">
                 <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
                 <input
@@ -121,60 +120,15 @@ export default function LoginPage() {
                   className="w-full pl-12 pr-4 py-3 bg-input/50 border-2 border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary smooth-transition"
                 />
               </div>
+              <button
+                type="button"
+                onClick={() => router.push('/forgot-password')}
+                className="text-xs text-primary hover:underline smooth-hover text-left"
+              >
+                Forgot Password?
+              </button>
             </div>
 
-            {/* Forgot Password UI */}
-            {showForgotPassword && (
-              <div className="p-4 bg-muted/50 border border-border rounded-xl space-y-3 animate-in fade-in slide-in-from-top-2">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-sm font-semibold text-foreground">Reset Password</h3>
-                  <button
-                    onClick={() => {
-                      setShowForgotPassword(false)
-                      setForgotEmail('')
-                      setForgotSent(false)
-                    }}
-                    className="text-xs text-muted-foreground hover:text-foreground"
-                  >
-                    ✕
-                  </button>
-                </div>
-                {!forgotSent ? (
-                  <>
-                    <p className="text-xs text-muted-foreground">
-                      Enter your email and we'll send you a password reset link.
-                    </p>
-                    <div className="flex gap-2">
-                      <input
-                        type="email"
-                        value={forgotEmail}
-                        onChange={(e) => setForgotEmail(e.target.value)}
-                        placeholder="your@email.com"
-                        className="flex-1 px-3 py-2 bg-input border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
-                      />
-                      <button
-                        type="button"
-                        onClick={async () => {
-                          if (!forgotEmail) return
-                          // Simulate API call
-                          await new Promise(resolve => setTimeout(resolve, 1000))
-                          setForgotSent(true)
-                        }}
-                        className="px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-semibold hover:bg-primary/90 smooth-transition"
-                      >
-                        Send
-                      </button>
-                    </div>
-                  </>
-                ) : (
-                  <div className="p-3 bg-emerald-500/10 border border-emerald-500/20 rounded-lg">
-                    <p className="text-xs text-emerald-500">
-                      ✓ Password reset link sent to {forgotEmail}
-                    </p>
-                  </div>
-                )}
-              </div>
-            )}
 
             {/* Submit Button */}
             <button

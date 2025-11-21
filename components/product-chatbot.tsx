@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import { MessageCircle, X, Send, Bot, User, ThumbsUp, ThumbsDown, ExternalLink, ShoppingBag } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import { useAuth } from '@/context/auth-context'
 
 interface Message {
   id: string
@@ -18,7 +19,13 @@ interface Message {
 
 export function ProductChatbot() {
   const router = useRouter()
+  const { user } = useAuth()
   const [isOpen, setIsOpen] = useState(false)
+  
+  // Only show chatbot if user is authenticated
+  if (!user) {
+    return null
+  }
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
@@ -336,3 +343,5 @@ export function ProductChatbot() {
     </>
   )
 }
+
+
