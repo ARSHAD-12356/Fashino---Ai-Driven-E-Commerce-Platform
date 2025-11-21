@@ -1,3 +1,0 @@
-module.exports=[97044,a=>{"use strict";var b=a.i(87924),c=a.i(73976);function d(){return(0,b.jsx)(c.CategoryPageTemplate,{title:"Footwear",subtitle:"Premium sneakers, boots, heels, and everyday essentials",categoryName:"Footwear",subcategoryFilters:["Sneakers","Sports Shoes","Formal Shoes","Boots","Sandals","Flats","Kids Shoes"]})}a.s(["default",()=>d])}];
-
-//# sourceMappingURL=app_footwear_page_tsx_7db0d266._.js.map

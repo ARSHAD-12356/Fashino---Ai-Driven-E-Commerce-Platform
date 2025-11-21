@@ -1,3 +1,0 @@
-module.exports=[31173,a=>{"use strict";var b=a.i(87924),c=a.i(73976);function d(){return(0,b.jsx)(c.CategoryPageTemplate,{title:"Sportswear",subtitle:"Engineered for performance with breathable, flexible fabrics",categoryName:"Sportswear",subcategoryFilters:["Tops","Bottoms","Outerwear","Accessories"],showSeasonFilter:!0})}a.s(["default",()=>d])}];
-
-//# sourceMappingURL=app_sportswear_page_tsx_559794b2._.js.map

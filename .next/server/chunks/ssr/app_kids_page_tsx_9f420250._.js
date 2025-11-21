@@ -1,3 +1,0 @@
-module.exports=[18535,a=>{"use strict";var b=a.i(87924),c=a.i(73976);function d(){return(0,b.jsx)(c.CategoryPageTemplate,{title:"Kids' Collection",subtitle:"Comfortable and stylish clothing for your little ones",categoryName:"Kids",subcategoryFilters:["T-Shirts","Shorts & Pants","Hoodies & Jackets"],showSeasonFilter:!0,seasonFilters:["All-Season","Winter"]})}a.s(["default",()=>d])}];
-
-//# sourceMappingURL=app_kids_page_tsx_9f420250._.js.map

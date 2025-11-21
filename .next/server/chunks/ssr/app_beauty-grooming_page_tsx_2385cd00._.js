@@ -1,3 +1,0 @@
-module.exports=[47988,a=>{"use strict";var b=a.i(87924),c=a.i(73976);function d(){return(0,b.jsx)(c.CategoryPageTemplate,{title:"Beauty & Grooming",subtitle:"Curated skincare, haircare, grooming, and fragrance essentials",categoryName:"Beauty",subcategoryFilters:["Grooming","Skincare","Hair Care","Fragrance"]})}a.s(["default",()=>d])}];
-
-//# sourceMappingURL=app_beauty-grooming_page_tsx_2385cd00._.js.map

@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":""}},
-    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///E:/E-Commerce/app/men/page.tsx"],"sourcesContent":["\"use client\"\n\nimport { CategoryPageTemplate } from '@/components/category-page-template'\n\nexport default function MenPage() {\n  return (\n    <CategoryPageTemplate\n      title=\"Men's Collection\"\n      subtitle=\"Discover premium menswear for every style and occasion\"\n      categoryName=\"Men\"\n      subcategoryFilters={['T-Shirts', 'Shirts', 'Pants', 'Jackets']}\n      showSeasonFilter\n    />\n  )\n}\n"],"names":[],"mappings":";;;;;AAEA;AAFA;;;AAIe,SAAS;IACtB,qBACE,8OAAC,mKAAoB;QACnB,OAAM;QACN,UAAS;QACT,cAAa;QACb,oBAAoB;YAAC;YAAY;YAAU;YAAS;SAAU;QAC9D,gBAAgB;;;;;;AAGtB"}}]
-}
