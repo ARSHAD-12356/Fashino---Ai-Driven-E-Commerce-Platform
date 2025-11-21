@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":""}},
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///E:/E-Commerce/app/women/page.tsx"],"sourcesContent":["\"use client\"\n\nimport { CategoryPageTemplate } from '@/components/category-page-template'\n\nexport default function WomenPage() {\n  return (\n    <CategoryPageTemplate\n      title=\"Women's Collection\"\n      subtitle=\"Discover premium womenswear for every style and occasion\"\n      categoryName=\"Women\"\n      subcategoryFilters={['Tops', 'Dresses', 'Pants', 'Blazers']}\n      showSeasonFilter\n    />\n  )\n}\n"],"names":[],"mappings":";;;;;AAEA;AAFA;;;AAIe,SAAS;IACtB,qBACE,8OAAC,mKAAoB;QACnB,OAAM;QACN,UAAS;QACT,cAAa;QACb,oBAAoB;YAAC;YAAQ;YAAW;YAAS;SAAU;QAC3D,gBAAgB;;;;;;AAGtB"}}]
+}

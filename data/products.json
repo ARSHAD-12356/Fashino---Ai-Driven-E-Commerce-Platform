@@ -1,0 +1,6276 @@
+{
+  "totalProducts": 224,
+  "lastUpdated": "2025-11-21T19:05:11.102Z",
+  "products": [
+    {
+      "id": 1,
+      "name": "Premium Essentials Tee",
+      "category": "Men",
+      "subcategory": "T-Shirts",
+      "price": 2499,
+      "originalPrice": 3999,
+      "discount": 38,
+      "rating": 4.8,
+      "reviews": 124,
+      "stock": 40,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Premium quality cotton t-shirt perfect for everyday wear",
+      "image": "/mens-premium-t-shirt.jpg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 2,
+      "name": "Classic White Tee",
+      "category": "Men",
+      "subcategory": "T-Shirts",
+      "price": 1999,
+      "originalPrice": 3499,
+      "discount": 43,
+      "rating": 4.7,
+      "reviews": 98,
+      "stock": 45,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Timeless white t-shirt for any occasion",
+      "image": "/mens-white-tshirt.jpg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 3,
+      "name": "Graphic Print Tee",
+      "category": "Men",
+      "subcategory": "T-Shirts",
+      "price": 2799,
+      "originalPrice": 4499,
+      "discount": 38,
+      "rating": 4.6,
+      "reviews": 156,
+      "stock": 50,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Stylish graphic printed t-shirt with modern design",
+      "image": "/mens-graphic-tshirt.jpg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 4,
+      "name": "Winter Thermal Tee",
+      "category": "Men",
+      "subcategory": "T-Shirts",
+      "price": 3499,
+      "originalPrice": 5499,
+      "discount": 36,
+      "rating": 4.9,
+      "reviews": 203,
+      "stock": 55,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Warm thermal t-shirt perfect for winter season",
+      "image": "/mens-winter-thermal-shirt.jpg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 5,
+      "name": "Polo Neck Tee",
+      "category": "Men",
+      "subcategory": "T-Shirts",
+      "price": 3199,
+      "originalPrice": 5199,
+      "discount": 38,
+      "rating": 4.8,
+      "reviews": 167,
+      "stock": 60,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Classic polo neck t-shirt in multiple colors",
+      "image": "/mens-polo-tshirt.jpg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 6,
+      "name": "Striped Cotton Tee",
+      "category": "Men",
+      "subcategory": "T-Shirts",
+      "price": 2299,
+      "originalPrice": 3999,
+      "discount": 43,
+      "rating": 4.7,
+      "reviews": 134,
+      "stock": 65,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Premium striped cotton t-shirt for casual wear",
+      "image": "/mens-striped-tshirt.jpg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 7,
+      "name": "V-Neck Sports Tee",
+      "category": "Men",
+      "subcategory": "T-Shirts",
+      "price": 2599,
+      "originalPrice": 4299,
+      "discount": 40,
+      "rating": 4.6,
+      "reviews": 89,
+      "stock": 70,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Breathable v-neck sports t-shirt for fitness",
+      "image": "/mens-vneck-sports-shirt.jpg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 8,
+      "name": "Henley Thermal Tee",
+      "category": "Men",
+      "subcategory": "T-Shirts",
+      "price": 3799,
+      "originalPrice": 5999,
+      "discount": 37,
+      "rating": 4.8,
+      "reviews": 176,
+      "stock": 75,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Warm henley thermal shirt for winter",
+      "image": "/mens-henley-thermal-shirt.jpg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 9,
+      "name": "Crew Neck Basics Tee",
+      "category": "Men",
+      "subcategory": "T-Shirts",
+      "price": 1799,
+      "originalPrice": 3199,
+      "discount": 44,
+      "rating": 4.7,
+      "reviews": 145,
+      "stock": 80,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Simple and versatile crew neck t-shirt",
+      "image": "/mens-crew-neck-tshirt.jpg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 10,
+      "name": "Long Sleeve Thermal",
+      "category": "Men",
+      "subcategory": "T-Shirts",
+      "price": 3999,
+      "originalPrice": 6499,
+      "discount": 38,
+      "rating": 4.9,
+      "reviews": 198,
+      "stock": 85,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Premium long sleeve thermal shirt for winter",
+      "image": "/mens-long-sleeve-thermal.jpg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 11,
+      "name": "Casual Oxford Shirt",
+      "category": "Men",
+      "subcategory": "Shirts",
+      "price": 3499,
+      "originalPrice": 5999,
+      "discount": 42,
+      "rating": 4.6,
+      "reviews": 89,
+      "stock": 90,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Classic oxford shirt for professional and casual settings",
+      "image": "/mens-casual-oxford-shirt.jpg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 12,
+      "name": "Formal White Shirt",
+      "category": "Men",
+      "subcategory": "Shirts",
+      "price": 4499,
+      "originalPrice": 7499,
+      "discount": 40,
+      "rating": 4.8,
+      "reviews": 134,
+      "stock": 95,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Premium formal white shirt for business occasions",
+      "image": "/mens-formal-white-shirt.jpg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 13,
+      "name": "Linen Summer Shirt",
+      "category": "Men",
+      "subcategory": "Shirts",
+      "price": 3799,
+      "originalPrice": 6299,
+      "discount": 40,
+      "rating": 4.7,
+      "reviews": 156,
+      "stock": 40,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Lightweight linen shirt perfect for summer",
+      "image": "/mens-linen-summer-shirt.jpg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 14,
+      "name": "Denim Casual Shirt",
+      "category": "Men",
+      "subcategory": "Shirts",
+      "price": 3299,
+      "originalPrice": 5799,
+      "discount": 43,
+      "rating": 4.7,
+      "reviews": 123,
+      "stock": 45,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Stylish denim shirt for casual wear",
+      "image": "/mens-denim-shirt.jpg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 15,
+      "name": "Checkered Winter Shirt",
+      "category": "Men",
+      "subcategory": "Shirts",
+      "price": 4199,
+      "originalPrice": 6999,
+      "discount": 40,
+      "rating": 4.8,
+      "reviews": 167,
+      "stock": 50,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Warm checkered shirt for winter season",
+      "image": "/mens-checkered-winter-shirt.jpg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 16,
+      "name": "Solid Color Dress Shirt",
+      "category": "Men",
+      "subcategory": "Shirts",
+      "price": 3999,
+      "originalPrice": 6499,
+      "discount": 38,
+      "rating": 4.7,
+      "reviews": 145,
+      "stock": 55,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Premium dress shirt in various colors",
+      "image": "/mens-dress-shirt.jpg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 17,
+      "name": "Flannel Winter Shirt",
+      "category": "Men",
+      "subcategory": "Shirts",
+      "price": 4599,
+      "originalPrice": 7499,
+      "discount": 39,
+      "rating": 4.9,
+      "reviews": 189,
+      "stock": 60,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Cozy flannel shirt for cold weather",
+      "image": "/mens-flannel-winter-shirt.jpg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 18,
+      "name": "Striped Business Shirt",
+      "category": "Men",
+      "subcategory": "Shirts",
+      "price": 4299,
+      "originalPrice": 6999,
+      "discount": 39,
+      "rating": 4.6,
+      "reviews": 112,
+      "stock": 65,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Professional striped shirt for business",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 19,
+      "name": "Corduroy Winter Shirt",
+      "category": "Men",
+      "subcategory": "Shirts",
+      "price": 4899,
+      "originalPrice": 7999,
+      "discount": 39,
+      "rating": 4.8,
+      "reviews": 134,
+      "stock": 70,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Textured corduroy shirt for winter wear",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 20,
+      "name": "Slim Fit Casual Shirt",
+      "category": "Men",
+      "subcategory": "Shirts",
+      "price": 3599,
+      "originalPrice": 5999,
+      "discount": 40,
+      "rating": 4.7,
+      "reviews": 167,
+      "stock": 75,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Modern slim fit casual shirt",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 21,
+      "name": "Comfort Fit Jeans",
+      "category": "Men",
+      "subcategory": "Pants",
+      "price": 3999,
+      "originalPrice": 6499,
+      "discount": 38,
+      "rating": 4.7,
+      "reviews": 156,
+      "stock": 80,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Comfortable and stylish jeans for casual and formal occasions",
+      "image": "/mens-comfort-fit-jeans.jpg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 22,
+      "name": "Black Slim Fit Jeans",
+      "category": "Men",
+      "subcategory": "Pants",
+      "price": 3799,
+      "originalPrice": 6299,
+      "discount": 40,
+      "rating": 4.8,
+      "reviews": 189,
+      "stock": 85,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Sleek black slim fit jeans",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 23,
+      "name": "Cargo Winter Pants",
+      "category": "Men",
+      "subcategory": "Pants",
+      "price": 4799,
+      "originalPrice": 7999,
+      "discount": 40,
+      "rating": 4.7,
+      "reviews": 145,
+      "stock": 90,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Warm cargo pants for winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 24,
+      "name": "Navy Chino Pants",
+      "category": "Men",
+      "subcategory": "Pants",
+      "price": 3499,
+      "originalPrice": 5999,
+      "discount": 42,
+      "rating": 4.6,
+      "reviews": 123,
+      "stock": 95,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Classic navy chino pants for any occasion",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 25,
+      "name": "Formal Black Trousers",
+      "category": "Men",
+      "subcategory": "Pants",
+      "price": 4999,
+      "originalPrice": 7999,
+      "discount": 38,
+      "rating": 4.8,
+      "reviews": 178,
+      "stock": 40,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Premium formal black trousers",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 26,
+      "name": "Casual Grey Pants",
+      "category": "Men",
+      "subcategory": "Pants",
+      "price": 3299,
+      "originalPrice": 5799,
+      "discount": 43,
+      "rating": 4.7,
+      "reviews": 156,
+      "stock": 45,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Comfortable grey casual pants",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 27,
+      "name": "Thermal Winter Trousers",
+      "category": "Men",
+      "subcategory": "Pants",
+      "price": 5299,
+      "originalPrice": 8499,
+      "discount": 38,
+      "rating": 4.9,
+      "reviews": 167,
+      "stock": 50,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Insulated thermal trousers for winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 28,
+      "name": "Light Blue Denim Jeans",
+      "category": "Men",
+      "subcategory": "Pants",
+      "price": 3599,
+      "originalPrice": 5999,
+      "discount": 40,
+      "rating": 4.7,
+      "reviews": 134,
+      "stock": 55,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Classic light blue denim jeans",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 29,
+      "name": "Woolen Winter Pants",
+      "category": "Men",
+      "subcategory": "Pants",
+      "price": 4999,
+      "originalPrice": 7999,
+      "discount": 38,
+      "rating": 4.8,
+      "reviews": 145,
+      "stock": 60,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Premium woolen pants for cold weather",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 30,
+      "name": "Beige Chino Pants",
+      "category": "Men",
+      "subcategory": "Pants",
+      "price": 3699,
+      "originalPrice": 6199,
+      "discount": 40,
+      "rating": 4.6,
+      "reviews": 112,
+      "stock": 65,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Versatile beige chino pants",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 31,
+      "name": "Sports Performance Jacket",
+      "category": "Men",
+      "subcategory": "Jackets",
+      "price": 7999,
+      "originalPrice": 12999,
+      "discount": 38,
+      "rating": 4.9,
+      "reviews": 102,
+      "stock": 70,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Lightweight and breathable sports jacket",
+      "image": "/mens-sports-jacket.jpg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 32,
+      "name": "Winter Puffer Jacket",
+      "category": "Men",
+      "subcategory": "Jackets",
+      "price": 9999,
+      "originalPrice": 15999,
+      "discount": 38,
+      "rating": 4.9,
+      "reviews": 187,
+      "stock": 75,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Warm puffer jacket for extreme winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 33,
+      "name": "Denim Casual Jacket",
+      "category": "Men",
+      "subcategory": "Jackets",
+      "price": 5999,
+      "originalPrice": 9999,
+      "discount": 40,
+      "rating": 4.7,
+      "reviews": 134,
+      "stock": 80,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Classic denim jacket for everyday wear",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 34,
+      "name": "Leather Biker Jacket",
+      "category": "Men",
+      "subcategory": "Jackets",
+      "price": 12999,
+      "originalPrice": 19999,
+      "discount": 35,
+      "rating": 4.9,
+      "reviews": 156,
+      "stock": 85,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Premium leather biker jacket",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 35,
+      "name": "Wool Winter Blazer",
+      "category": "Men",
+      "subcategory": "Jackets",
+      "price": 8999,
+      "originalPrice": 13999,
+      "discount": 36,
+      "rating": 4.8,
+      "reviews": 145,
+      "stock": 90,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Elegant wool blazer for winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 36,
+      "name": "Bomber Jacket",
+      "category": "Men",
+      "subcategory": "Jackets",
+      "price": 6999,
+      "originalPrice": 11999,
+      "discount": 42,
+      "rating": 4.7,
+      "reviews": 123,
+      "stock": 95,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Trendy bomber jacket for casual style",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 37,
+      "name": "Quilted Winter Jacket",
+      "category": "Men",
+      "subcategory": "Jackets",
+      "price": 8499,
+      "originalPrice": 13499,
+      "discount": 37,
+      "rating": 4.8,
+      "reviews": 167,
+      "stock": 40,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Stylish quilted jacket for winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 38,
+      "name": "Windbreaker Jacket",
+      "category": "Men",
+      "subcategory": "Jackets",
+      "price": 5499,
+      "originalPrice": 8999,
+      "discount": 39,
+      "rating": 4.6,
+      "reviews": 98,
+      "stock": 45,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Lightweight windbreaker for outdoor activities",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 39,
+      "name": "Formal Black Blazer",
+      "category": "Men",
+      "subcategory": "Jackets",
+      "price": 7499,
+      "originalPrice": 12499,
+      "discount": 40,
+      "rating": 4.8,
+      "reviews": 145,
+      "stock": 50,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Professional formal black blazer",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 40,
+      "name": "Down Filled Winter Coat",
+      "category": "Men",
+      "subcategory": "Jackets",
+      "price": 11999,
+      "originalPrice": 18999,
+      "discount": 37,
+      "rating": 4.9,
+      "reviews": 178,
+      "stock": 55,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Premium down-filled winter coat",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 41,
+      "name": "Floral Summer Top",
+      "category": "Women",
+      "subcategory": "Tops",
+      "price": 2499,
+      "originalPrice": 4499,
+      "discount": 44,
+      "rating": 4.7,
+      "reviews": 95,
+      "stock": 60,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Beautiful floral printed top for summer",
+      "image": "/womens-floral-summer-top.jpg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 42,
+      "name": "Winter Thermal Top",
+      "category": "Women",
+      "subcategory": "Tops",
+      "price": 3699,
+      "originalPrice": 5999,
+      "discount": 38,
+      "rating": 4.8,
+      "reviews": 134,
+      "stock": 65,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Warm thermal top for winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 43,
+      "name": "Casual Tank Top",
+      "category": "Women",
+      "subcategory": "Tops",
+      "price": 1799,
+      "originalPrice": 3199,
+      "discount": 44,
+      "rating": 4.6,
+      "reviews": 89,
+      "stock": 70,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Simple and versatile tank top",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 44,
+      "name": "Silk Camisole",
+      "category": "Women",
+      "subcategory": "Tops",
+      "price": 3199,
+      "originalPrice": 5499,
+      "discount": 42,
+      "rating": 4.8,
+      "reviews": 123,
+      "stock": 75,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Luxurious silk camisole",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 45,
+      "name": "Striped Casual Top",
+      "category": "Women",
+      "subcategory": "Tops",
+      "price": 2199,
+      "originalPrice": 3999,
+      "discount": 45,
+      "rating": 4.7,
+      "reviews": 112,
+      "stock": 80,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Classic striped casual top",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 46,
+      "name": "Sweater Winter Top",
+      "category": "Women",
+      "subcategory": "Tops",
+      "price": 4299,
+      "originalPrice": 6999,
+      "discount": 39,
+      "rating": 4.8,
+      "reviews": 145,
+      "stock": 85,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Cozy sweater for winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 47,
+      "name": "Crop Top",
+      "category": "Women",
+      "subcategory": "Tops",
+      "price": 1999,
+      "originalPrice": 3499,
+      "discount": 43,
+      "rating": 4.6,
+      "reviews": 98,
+      "stock": 90,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Trendy crop top for casual wear",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 48,
+      "name": "Long Sleeve Thermal",
+      "category": "Women",
+      "subcategory": "Tops",
+      "price": 3999,
+      "originalPrice": 6499,
+      "discount": 38,
+      "rating": 4.8,
+      "reviews": 167,
+      "stock": 95,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Premium long sleeve thermal",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 49,
+      "name": "Lace Top",
+      "category": "Women",
+      "subcategory": "Tops",
+      "price": 2899,
+      "originalPrice": 4999,
+      "discount": 42,
+      "rating": 4.7,
+      "reviews": 134,
+      "stock": 40,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Elegant lace top",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 50,
+      "name": "Knit Winter Sweater",
+      "category": "Women",
+      "subcategory": "Tops",
+      "price": 4799,
+      "originalPrice": 7999,
+      "discount": 40,
+      "rating": 4.9,
+      "reviews": 178,
+      "stock": 45,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Warm knit sweater for winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 51,
+      "name": "Silk Evening Dress",
+      "category": "Women",
+      "subcategory": "Dresses",
+      "price": 14999,
+      "originalPrice": 22499,
+      "discount": 33,
+      "rating": 5,
+      "reviews": 64,
+      "stock": 50,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Luxurious silk dress for special occasions",
+      "image": "/womens-silk-evening-dress.jpg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 52,
+      "name": "Maxi Winter Dress",
+      "category": "Women",
+      "subcategory": "Dresses",
+      "price": 7999,
+      "originalPrice": 12999,
+      "discount": 38,
+      "rating": 4.8,
+      "reviews": 145,
+      "stock": 55,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Elegant maxi dress for winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 53,
+      "name": "Casual Summer Dress",
+      "category": "Women",
+      "subcategory": "Dresses",
+      "price": 4999,
+      "originalPrice": 7999,
+      "discount": 38,
+      "rating": 4.7,
+      "reviews": 123,
+      "stock": 60,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Light and breezy summer dress",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 54,
+      "name": "Party Sequin Dress",
+      "category": "Women",
+      "subcategory": "Dresses",
+      "price": 9999,
+      "originalPrice": 14999,
+      "discount": 33,
+      "rating": 4.9,
+      "reviews": 156,
+      "stock": 65,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Glamorous sequin dress for parties",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 55,
+      "name": "Formal Gown",
+      "category": "Women",
+      "subcategory": "Dresses",
+      "price": 16999,
+      "originalPrice": 24999,
+      "discount": 32,
+      "rating": 5,
+      "reviews": 89,
+      "stock": 70,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Premium formal gown for special events",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 56,
+      "name": "A-Line Winter Dress",
+      "category": "Women",
+      "subcategory": "Dresses",
+      "price": 6999,
+      "originalPrice": 11499,
+      "discount": 39,
+      "rating": 4.8,
+      "reviews": 134,
+      "stock": 75,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Stylish A-line dress for winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 57,
+      "name": "Shift Casual Dress",
+      "category": "Women",
+      "subcategory": "Dresses",
+      "price": 3999,
+      "originalPrice": 6999,
+      "discount": 43,
+      "rating": 4.6,
+      "reviews": 112,
+      "stock": 80,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Comfortable shift dress for casual occasions",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 58,
+      "name": "Bodycon Winter Dress",
+      "category": "Women",
+      "subcategory": "Dresses",
+      "price": 5999,
+      "originalPrice": 9999,
+      "discount": 40,
+      "rating": 4.7,
+      "reviews": 145,
+      "stock": 85,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Sexy bodycon dress for winter parties",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 59,
+      "name": "Wrap Dress",
+      "category": "Women",
+      "subcategory": "Dresses",
+      "price": 5499,
+      "originalPrice": 8999,
+      "discount": 39,
+      "rating": 4.7,
+      "reviews": 128,
+      "stock": 90,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Classic wrap dress for any occasion",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 60,
+      "name": "Pleated Winter Dress",
+      "category": "Women",
+      "subcategory": "Dresses",
+      "price": 7499,
+      "originalPrice": 11999,
+      "discount": 38,
+      "rating": 4.8,
+      "reviews": 167,
+      "stock": 95,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Elegant pleated dress for winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 61,
+      "name": "Fit Yoga Pants",
+      "category": "Women",
+      "subcategory": "Pants",
+      "price": 3999,
+      "originalPrice": 6499,
+      "discount": 38,
+      "rating": 4.8,
+      "reviews": 143,
+      "stock": 40,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Comfortable and flexible yoga pants for fitness",
+      "image": "/womens-yoga-pants.jpg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 62,
+      "name": "Black Leggings",
+      "category": "Women",
+      "subcategory": "Pants",
+      "price": 2999,
+      "originalPrice": 4999,
+      "discount": 40,
+      "rating": 4.7,
+      "reviews": 189,
+      "stock": 45,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Versatile black leggings",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 63,
+      "name": "Winter Thermal Leggings",
+      "category": "Women",
+      "subcategory": "Pants",
+      "price": 3699,
+      "originalPrice": 5999,
+      "discount": 38,
+      "rating": 4.8,
+      "reviews": 156,
+      "stock": 50,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Warm thermal leggings for winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 64,
+      "name": "Formal Black Trousers",
+      "category": "Women",
+      "subcategory": "Pants",
+      "price": 4999,
+      "originalPrice": 7999,
+      "discount": 38,
+      "rating": 4.7,
+      "reviews": 134,
+      "stock": 55,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Professional formal trousers",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 65,
+      "name": "Denim Jeans",
+      "category": "Women",
+      "subcategory": "Pants",
+      "price": 3899,
+      "originalPrice": 6499,
+      "discount": 40,
+      "rating": 4.7,
+      "reviews": 167,
+      "stock": 60,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Stylish denim jeans for casual wear",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 66,
+      "name": "Woolen Winter Pants",
+      "category": "Women",
+      "subcategory": "Pants",
+      "price": 4799,
+      "originalPrice": 7999,
+      "discount": 40,
+      "rating": 4.8,
+      "reviews": 145,
+      "stock": 65,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Premium woolen pants for winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 67,
+      "name": "High Waist Pants",
+      "category": "Women",
+      "subcategory": "Pants",
+      "price": 3499,
+      "originalPrice": 5999,
+      "discount": 42,
+      "rating": 4.6,
+      "reviews": 112,
+      "stock": 70,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Flattering high waist pants",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 68,
+      "name": "Slim Fit Winter Trousers",
+      "category": "Women",
+      "subcategory": "Pants",
+      "price": 4599,
+      "originalPrice": 7499,
+      "discount": 39,
+      "rating": 4.8,
+      "reviews": 134,
+      "stock": 75,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Elegant slim fit trousers for winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 69,
+      "name": "Khaki Chino Pants",
+      "category": "Women",
+      "subcategory": "Pants",
+      "price": 3299,
+      "originalPrice": 5799,
+      "discount": 43,
+      "rating": 4.7,
+      "reviews": 123,
+      "stock": 80,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Classic khaki chino pants",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 70,
+      "name": "Corduroy Winter Pants",
+      "category": "Women",
+      "subcategory": "Pants",
+      "price": 4399,
+      "originalPrice": 7199,
+      "discount": 39,
+      "rating": 4.8,
+      "reviews": 145,
+      "stock": 85,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Textured corduroy pants for winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 71,
+      "name": "Elegant Blazer",
+      "category": "Women",
+      "subcategory": "Blazers",
+      "price": 9499,
+      "originalPrice": 12499,
+      "discount": 24,
+      "rating": 4.9,
+      "reviews": 87,
+      "stock": 90,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Professional and elegant blazer for office and events",
+      "image": "/womens-elegant-blazer.jpg",
+      "season": "All-Season",
+      "tags": [
+        "regular"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 72,
+      "name": "Winter Wool Blazer",
+      "category": "Women",
+      "subcategory": "Blazers",
+      "price": 10999,
+      "originalPrice": 14999,
+      "discount": 27,
+      "rating": 4.9,
+      "reviews": 134,
+      "stock": 95,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Warm wool blazer for winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 73,
+      "name": "Casual Blazer",
+      "category": "Women",
+      "subcategory": "Blazers",
+      "price": 7999,
+      "originalPrice": 11999,
+      "discount": 33,
+      "rating": 4.7,
+      "reviews": 112,
+      "stock": 40,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Casual blazer for everyday wear",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 74,
+      "name": "Formal Black Blazer",
+      "category": "Women",
+      "subcategory": "Blazers",
+      "price": 11999,
+      "originalPrice": 16999,
+      "discount": 29,
+      "rating": 4.9,
+      "reviews": 145,
+      "stock": 45,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Premium formal black blazer",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 75,
+      "name": "Quilted Winter Jacket",
+      "category": "Women",
+      "subcategory": "Blazers",
+      "price": 8999,
+      "originalPrice": 13999,
+      "discount": 36,
+      "rating": 4.8,
+      "reviews": 167,
+      "stock": 50,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Stylish quilted jacket for winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 76,
+      "name": "Leather Jacket",
+      "category": "Women",
+      "subcategory": "Blazers",
+      "price": 14999,
+      "originalPrice": 21999,
+      "discount": 32,
+      "rating": 4.9,
+      "reviews": 189,
+      "stock": 55,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Premium leather jacket",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 77,
+      "name": "Denim Jacket",
+      "category": "Women",
+      "subcategory": "Blazers",
+      "price": 6999,
+      "originalPrice": 10999,
+      "discount": 36,
+      "rating": 4.8,
+      "reviews": 112,
+      "stock": 60,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Classic and timeless denim jacket",
+      "image": "/womens-denim-jacket.jpg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 78,
+      "name": "Puffer Winter Jacket",
+      "category": "Women",
+      "subcategory": "Blazers",
+      "price": 10999,
+      "originalPrice": 16999,
+      "discount": 35,
+      "rating": 4.9,
+      "reviews": 178,
+      "stock": 65,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Warm puffer jacket for extreme winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 79,
+      "name": "Bomber Jacket",
+      "category": "Women",
+      "subcategory": "Blazers",
+      "price": 7499,
+      "originalPrice": 12499,
+      "discount": 40,
+      "rating": 4.7,
+      "reviews": 134,
+      "stock": 70,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Trendy bomber jacket",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 80,
+      "name": "Cardigan Winter Coat",
+      "category": "Women",
+      "subcategory": "Blazers",
+      "price": 6499,
+      "originalPrice": 10499,
+      "discount": 38,
+      "rating": 4.8,
+      "reviews": 145,
+      "stock": 75,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Cozy cardigan for winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 81,
+      "name": "Kids Colorful T-Shirt",
+      "category": "Kids",
+      "subcategory": "T-Shirts",
+      "price": 1499,
+      "originalPrice": 2499,
+      "discount": 40,
+      "rating": 4.6,
+      "reviews": 78,
+      "stock": 80,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Bright and colorful t-shirt for kids",
+      "image": "/kids-colorful-t-shirt.jpg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 82,
+      "name": "Kids Winter Thermal Tee",
+      "category": "Kids",
+      "subcategory": "T-Shirts",
+      "price": 2299,
+      "originalPrice": 3999,
+      "discount": 43,
+      "rating": 4.8,
+      "reviews": 123,
+      "stock": 85,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Warm thermal t-shirt for kids in winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 83,
+      "name": "Cartoon Print Tee",
+      "category": "Kids",
+      "subcategory": "T-Shirts",
+      "price": 1799,
+      "originalPrice": 3199,
+      "discount": 44,
+      "rating": 4.7,
+      "reviews": 156,
+      "stock": 90,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Fun cartoon printed t-shirt for kids",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 84,
+      "name": "Solid Color Kids Tee",
+      "category": "Kids",
+      "subcategory": "T-Shirts",
+      "price": 1299,
+      "originalPrice": 2299,
+      "discount": 43,
+      "rating": 4.6,
+      "reviews": 89,
+      "stock": 95,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Simple solid color t-shirt for kids",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 85,
+      "name": "Striped Kids Tee",
+      "category": "Kids",
+      "subcategory": "T-Shirts",
+      "price": 1599,
+      "originalPrice": 2899,
+      "discount": 45,
+      "rating": 4.7,
+      "reviews": 112,
+      "stock": 40,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Striped t-shirt for kids",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 86,
+      "name": "Kids Long Sleeve Thermal",
+      "category": "Kids",
+      "subcategory": "T-Shirts",
+      "price": 2499,
+      "originalPrice": 4299,
+      "discount": 42,
+      "rating": 4.8,
+      "reviews": 134,
+      "stock": 45,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Warm long sleeve thermal for kids",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 87,
+      "name": "V-Neck Kids Tee",
+      "category": "Kids",
+      "subcategory": "T-Shirts",
+      "price": 1699,
+      "originalPrice": 2999,
+      "discount": 43,
+      "rating": 4.6,
+      "reviews": 98,
+      "stock": 50,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Stylish v-neck t-shirt for kids",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 88,
+      "name": "Henley Kids Thermal",
+      "category": "Kids",
+      "subcategory": "T-Shirts",
+      "price": 2599,
+      "originalPrice": 4499,
+      "discount": 42,
+      "rating": 4.7,
+      "reviews": 145,
+      "stock": 55,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Cozy henley thermal for kids in winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 89,
+      "name": "Graphic Kids Tee",
+      "category": "Kids",
+      "subcategory": "T-Shirts",
+      "price": 1899,
+      "originalPrice": 3299,
+      "discount": 42,
+      "rating": 4.7,
+      "reviews": 167,
+      "stock": 60,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Cool graphic printed t-shirt for kids",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 90,
+      "name": "Kids Crew Neck Tee",
+      "category": "Kids",
+      "subcategory": "T-Shirts",
+      "price": 1399,
+      "originalPrice": 2599,
+      "discount": 46,
+      "rating": 4.6,
+      "reviews": 112,
+      "stock": 65,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Classic crew neck t-shirt for kids",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 91,
+      "name": "Kids Comfort Shorts",
+      "category": "Kids",
+      "subcategory": "Shorts & Pants",
+      "price": 1299,
+      "originalPrice": 2299,
+      "discount": 43,
+      "rating": 4.5,
+      "reviews": 63,
+      "stock": 70,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Comfortable shorts with elastic waist",
+      "image": "/kids-comfort-shorts.jpg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 92,
+      "name": "Kids Winter Thermal Pants",
+      "category": "Kids",
+      "subcategory": "Shorts & Pants",
+      "price": 2199,
+      "originalPrice": 3999,
+      "discount": 45,
+      "rating": 4.7,
+      "reviews": 134,
+      "stock": 75,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Warm thermal pants for kids in winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 93,
+      "name": "Kids Denim Shorts",
+      "category": "Kids",
+      "subcategory": "Shorts & Pants",
+      "price": 1599,
+      "originalPrice": 2899,
+      "discount": 45,
+      "rating": 4.6,
+      "reviews": 98,
+      "stock": 80,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Stylish denim shorts for kids",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 94,
+      "name": "Kids Cotton Pants",
+      "category": "Kids",
+      "subcategory": "Shorts & Pants",
+      "price": 1799,
+      "originalPrice": 3199,
+      "discount": 44,
+      "rating": 4.7,
+      "reviews": 112,
+      "stock": 85,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Comfortable cotton pants for kids",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 95,
+      "name": "Kids Woolen Winter Pants",
+      "category": "Kids",
+      "subcategory": "Shorts & Pants",
+      "price": 2599,
+      "originalPrice": 4299,
+      "discount": 40,
+      "rating": 4.8,
+      "reviews": 145,
+      "stock": 90,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Premium woolen pants for kids in winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 96,
+      "name": "Kids Cargo Shorts",
+      "category": "Kids",
+      "subcategory": "Shorts & Pants",
+      "price": 1699,
+      "originalPrice": 2999,
+      "discount": 43,
+      "rating": 4.6,
+      "reviews": 89,
+      "stock": 95,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Durable cargo shorts for kids",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 97,
+      "name": "Kids Chino Pants",
+      "category": "Kids",
+      "subcategory": "Shorts & Pants",
+      "price": 1899,
+      "originalPrice": 3399,
+      "discount": 44,
+      "rating": 4.7,
+      "reviews": 123,
+      "stock": 40,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Smart chino pants for kids",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 98,
+      "name": "Kids Fleece Winter Pants",
+      "category": "Kids",
+      "subcategory": "Shorts & Pants",
+      "price": 2299,
+      "originalPrice": 3999,
+      "discount": 43,
+      "rating": 4.8,
+      "reviews": 156,
+      "stock": 45,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Soft fleece pants for kids in winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 99,
+      "name": "Kids Sporty Shorts",
+      "category": "Kids",
+      "subcategory": "Shorts & Pants",
+      "price": 1499,
+      "originalPrice": 2699,
+      "discount": 44,
+      "rating": 4.6,
+      "reviews": 101,
+      "stock": 50,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Comfortable sporty shorts for active kids",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 100,
+      "name": "Kids Jogger Pants",
+      "category": "Kids",
+      "subcategory": "Shorts & Pants",
+      "price": 1999,
+      "originalPrice": 3599,
+      "discount": 44,
+      "rating": 4.7,
+      "reviews": 134,
+      "stock": 55,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Trendy jogger pants for kids",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 101,
+      "name": "Kids Sports Jersey",
+      "category": "Kids",
+      "subcategory": "Hoodies & Jackets",
+      "price": 1999,
+      "originalPrice": 3499,
+      "discount": 43,
+      "rating": 4.7,
+      "reviews": 91,
+      "stock": 60,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Breathable sports jersey for active kids",
+      "image": "/kids-sports-jersey.jpg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 102,
+      "name": "Kids Casual Hoodie",
+      "category": "Kids",
+      "subcategory": "Hoodies & Jackets",
+      "price": 2499,
+      "originalPrice": 4499,
+      "discount": 44,
+      "rating": 4.8,
+      "reviews": 74,
+      "stock": 65,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Warm and cozy hoodie for kids",
+      "image": "/kids-casual-hoodie.jpg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 103,
+      "name": "Kids Winter Puffer Jacket",
+      "category": "Kids",
+      "subcategory": "Hoodies & Jackets",
+      "price": 4999,
+      "originalPrice": 7999,
+      "discount": 38,
+      "rating": 4.8,
+      "reviews": 145,
+      "stock": 70,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Warm puffer jacket for kids in winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 104,
+      "name": "Kids Denim Jacket",
+      "category": "Kids",
+      "subcategory": "Hoodies & Jackets",
+      "price": 3499,
+      "originalPrice": 5999,
+      "discount": 42,
+      "rating": 4.6,
+      "reviews": 112,
+      "stock": 75,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Classic denim jacket for kids",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 105,
+      "name": "Kids Fleece Hoodie",
+      "category": "Kids",
+      "subcategory": "Hoodies & Jackets",
+      "price": 2799,
+      "originalPrice": 4699,
+      "discount": 40,
+      "rating": 4.7,
+      "reviews": 134,
+      "stock": 80,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Soft fleece hoodie for kids",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 106,
+      "name": "Kids Winter Coat",
+      "category": "Kids",
+      "subcategory": "Hoodies & Jackets",
+      "price": 5499,
+      "originalPrice": 8999,
+      "discount": 39,
+      "rating": 4.8,
+      "reviews": 167,
+      "stock": 85,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Stylish winter coat for kids",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 107,
+      "name": "Kids Windbreaker Jacket",
+      "category": "Kids",
+      "subcategory": "Hoodies & Jackets",
+      "price": 2999,
+      "originalPrice": 4999,
+      "discount": 40,
+      "rating": 4.6,
+      "reviews": 98,
+      "stock": 90,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Lightweight windbreaker for kids",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 108,
+      "name": "Kids Wool Winter Sweater",
+      "category": "Kids",
+      "subcategory": "Hoodies & Jackets",
+      "price": 3699,
+      "originalPrice": 5999,
+      "discount": 38,
+      "rating": 4.7,
+      "reviews": 145,
+      "stock": 95,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Warm wool sweater for kids in winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 109,
+      "name": "Kids Bomber Jacket",
+      "category": "Kids",
+      "subcategory": "Hoodies & Jackets",
+      "price": 3199,
+      "originalPrice": 5499,
+      "discount": 42,
+      "rating": 4.7,
+      "reviews": 123,
+      "stock": 40,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Trendy bomber jacket for kids",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 110,
+      "name": "Kids Quilted Vest",
+      "category": "Kids",
+      "subcategory": "Hoodies & Jackets",
+      "price": 2699,
+      "originalPrice": 4399,
+      "discount": 39,
+      "rating": 4.6,
+      "reviews": 89,
+      "stock": 45,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Stylish quilted vest for kids",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 111,
+      "name": "Leather Crossbody Bag",
+      "category": "Accessories",
+      "subcategory": "Bags",
+      "price": 5999,
+      "originalPrice": 8999,
+      "discount": 33,
+      "rating": 4.8,
+      "reviews": 156,
+      "stock": 50,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Premium leather crossbody bag with adjustable strap",
+      "image": "/leather-crossbody-bag.jpg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 112,
+      "name": "Shoulder Tote Bag",
+      "category": "Accessories",
+      "subcategory": "Bags",
+      "price": 4999,
+      "originalPrice": 7999,
+      "discount": 38,
+      "rating": 4.7,
+      "reviews": 134,
+      "stock": 55,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Spacious shoulder tote bag",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 113,
+      "name": "Backpack Winter",
+      "category": "Accessories",
+      "subcategory": "Bags",
+      "price": 4499,
+      "originalPrice": 6999,
+      "discount": 36,
+      "rating": 4.6,
+      "reviews": 112,
+      "stock": 60,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Durable backpack for winter travels",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 114,
+      "name": "Clutch Purse",
+      "category": "Accessories",
+      "subcategory": "Bags",
+      "price": 2999,
+      "originalPrice": 4999,
+      "discount": 40,
+      "rating": 4.8,
+      "reviews": 145,
+      "stock": 65,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Elegant clutch purse",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 115,
+      "name": "Messenger Bag",
+      "category": "Accessories",
+      "subcategory": "Bags",
+      "price": 5499,
+      "originalPrice": 8499,
+      "discount": 35,
+      "rating": 4.7,
+      "reviews": 123,
+      "stock": 70,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Professional messenger bag",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 116,
+      "name": "Weekend Travel Bag",
+      "category": "Accessories",
+      "subcategory": "Bags",
+      "price": 6999,
+      "originalPrice": 10999,
+      "discount": 36,
+      "rating": 4.8,
+      "reviews": 167,
+      "stock": 75,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Spacious travel bag for weekends",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 117,
+      "name": "Laptop Backpack",
+      "category": "Accessories",
+      "subcategory": "Bags",
+      "price": 5999,
+      "originalPrice": 8999,
+      "discount": 33,
+      "rating": 4.7,
+      "reviews": 156,
+      "stock": 80,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Protective laptop backpack",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 118,
+      "name": "Hobo Shoulder Bag",
+      "category": "Accessories",
+      "subcategory": "Bags",
+      "price": 4699,
+      "originalPrice": 7299,
+      "discount": 36,
+      "rating": 4.6,
+      "reviews": 98,
+      "stock": 85,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Trendy hobo style shoulder bag",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 119,
+      "name": "Sling Bag",
+      "category": "Accessories",
+      "subcategory": "Bags",
+      "price": 3499,
+      "originalPrice": 5499,
+      "discount": 36,
+      "rating": 4.7,
+      "reviews": 134,
+      "stock": 90,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Compact sling bag for daily use",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 120,
+      "name": "Winter Leather Handbag",
+      "category": "Accessories",
+      "subcategory": "Bags",
+      "price": 8999,
+      "originalPrice": 12999,
+      "discount": 31,
+      "rating": 4.8,
+      "reviews": 145,
+      "stock": 95,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Luxurious leather handbag",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 121,
+      "name": "Classic Sunglasses",
+      "category": "Accessories",
+      "subcategory": "Eyewear",
+      "price": 2999,
+      "originalPrice": 4999,
+      "discount": 40,
+      "rating": 4.7,
+      "reviews": 203,
+      "stock": 40,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "UV protective classic sunglasses",
+      "image": "/classic-sunglasses.jpg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 122,
+      "name": "Aviator Sunglasses",
+      "category": "Accessories",
+      "subcategory": "Eyewear",
+      "price": 3499,
+      "originalPrice": 5999,
+      "discount": 42,
+      "rating": 4.8,
+      "reviews": 167,
+      "stock": 45,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Stylish aviator sunglasses",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 123,
+      "name": "Winter Reading Glasses",
+      "category": "Accessories",
+      "subcategory": "Eyewear",
+      "price": 2199,
+      "originalPrice": 3999,
+      "discount": 45,
+      "rating": 4.6,
+      "reviews": 89,
+      "stock": 50,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Comfortable reading glasses",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 124,
+      "name": "Cat Eye Sunglasses",
+      "category": "Accessories",
+      "subcategory": "Eyewear",
+      "price": 3299,
+      "originalPrice": 5599,
+      "discount": 41,
+      "rating": 4.7,
+      "reviews": 145,
+      "stock": 55,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Trendy cat eye sunglasses",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 125,
+      "name": "Wayfarer Style Glasses",
+      "category": "Accessories",
+      "subcategory": "Eyewear",
+      "price": 3199,
+      "originalPrice": 5399,
+      "discount": 41,
+      "rating": 4.8,
+      "reviews": 156,
+      "stock": 60,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Classic wayfarer style glasses",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 126,
+      "name": "Oversized Sunglasses",
+      "category": "Accessories",
+      "subcategory": "Eyewear",
+      "price": 3799,
+      "originalPrice": 5999,
+      "discount": 37,
+      "rating": 4.7,
+      "reviews": 134,
+      "stock": 65,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Chic oversized sunglasses",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 127,
+      "name": "Blue Light Glasses",
+      "category": "Accessories",
+      "subcategory": "Eyewear",
+      "price": 2799,
+      "originalPrice": 4499,
+      "discount": 38,
+      "rating": 4.6,
+      "reviews": 112,
+      "stock": 70,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Blue light protection glasses",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 128,
+      "name": "Polarized Sunglasses",
+      "category": "Accessories",
+      "subcategory": "Eyewear",
+      "price": 4299,
+      "originalPrice": 6999,
+      "discount": 39,
+      "rating": 4.8,
+      "reviews": 167,
+      "stock": 75,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Polarized sunglasses for outdoor",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 129,
+      "name": "Sporty Glasses",
+      "category": "Accessories",
+      "subcategory": "Eyewear",
+      "price": 3599,
+      "originalPrice": 5799,
+      "discount": 38,
+      "rating": 4.7,
+      "reviews": 123,
+      "stock": 80,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Sporty style glasses",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 130,
+      "name": "Retro Round Glasses",
+      "category": "Accessories",
+      "subcategory": "Eyewear",
+      "price": 2899,
+      "originalPrice": 4799,
+      "discount": 40,
+      "rating": 4.6,
+      "reviews": 98,
+      "stock": 85,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Vintage retro round glasses",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 131,
+      "name": "Silk Scarf",
+      "category": "Accessories",
+      "subcategory": "Scarves & Belts",
+      "price": 1999,
+      "originalPrice": 3499,
+      "discount": 43,
+      "rating": 4.6,
+      "reviews": 87,
+      "stock": 90,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Luxurious silk scarf in multiple colors",
+      "image": "/silk-scarf.jpg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 132,
+      "name": "Winter Wool Scarf",
+      "category": "Accessories",
+      "subcategory": "Scarves & Belts",
+      "price": 2499,
+      "originalPrice": 4499,
+      "discount": 44,
+      "rating": 4.8,
+      "reviews": 145,
+      "stock": 95,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Warm wool scarf for winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 133,
+      "name": "Premium Leather Belt",
+      "category": "Accessories",
+      "subcategory": "Scarves & Belts",
+      "price": 2499,
+      "originalPrice": 4499,
+      "discount": 44,
+      "rating": 4.8,
+      "reviews": 134,
+      "stock": 40,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Durable leather belt suitable for any occasion",
+      "image": "/premium-leather-belt.jpg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 134,
+      "name": "Cashmere Winter Scarf",
+      "category": "Accessories",
+      "subcategory": "Scarves & Belts",
+      "price": 4999,
+      "originalPrice": 7999,
+      "discount": 38,
+      "rating": 4.9,
+      "reviews": 167,
+      "stock": 45,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Premium cashmere scarf for winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 135,
+      "name": "Fabric Canvas Belt",
+      "category": "Accessories",
+      "subcategory": "Scarves & Belts",
+      "price": 1799,
+      "originalPrice": 2999,
+      "discount": 40,
+      "rating": 4.6,
+      "reviews": 112,
+      "stock": 50,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Casual fabric canvas belt",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 136,
+      "name": "Cotton Printed Scarf",
+      "category": "Accessories",
+      "subcategory": "Scarves & Belts",
+      "price": 1699,
+      "originalPrice": 2999,
+      "discount": 43,
+      "rating": 4.7,
+      "reviews": 123,
+      "stock": 55,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Colorful cotton printed scarf",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 137,
+      "name": "Metal Buckle Belt",
+      "category": "Accessories",
+      "subcategory": "Scarves & Belts",
+      "price": 1999,
+      "originalPrice": 3499,
+      "discount": 43,
+      "rating": 4.7,
+      "reviews": 134,
+      "stock": 60,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Stylish metal buckle belt",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 138,
+      "name": "Pashmina Winter Shawl",
+      "category": "Accessories",
+      "subcategory": "Scarves & Belts",
+      "price": 3999,
+      "originalPrice": 6499,
+      "discount": 38,
+      "rating": 4.8,
+      "reviews": 156,
+      "stock": 65,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Luxurious pashmina shawl for winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 139,
+      "name": "Linen Summer Scarf",
+      "category": "Accessories",
+      "subcategory": "Scarves & Belts",
+      "price": 1499,
+      "originalPrice": 2699,
+      "discount": 44,
+      "rating": 4.6,
+      "reviews": 98,
+      "stock": 70,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Light linen scarf for summer",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 140,
+      "name": "Designer Leather Belt",
+      "category": "Accessories",
+      "subcategory": "Scarves & Belts",
+      "price": 3499,
+      "originalPrice": 5999,
+      "discount": 42,
+      "rating": 4.8,
+      "reviews": 145,
+      "stock": 75,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Premium designer leather belt",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 141,
+      "name": "Alpine Wool Overcoat",
+      "category": "Women",
+      "subcategory": "Outerwear",
+      "price": 12999,
+      "originalPrice": 18999,
+      "discount": 32,
+      "rating": 4.9,
+      "reviews": 132,
+      "stock": 80,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Longline double-breasted coat with cashmere blend lining",
+      "image": "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=800&q=80",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 142,
+      "name": "City Trench Coat",
+      "category": "Women",
+      "subcategory": "Outerwear",
+      "price": 9999,
+      "originalPrice": 14999,
+      "discount": 33,
+      "rating": 4.8,
+      "reviews": 118,
+      "stock": 85,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Water-repellent trench with storm flap and belt detail",
+      "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 143,
+      "name": "Pleated Midi Skirt",
+      "category": "Women",
+      "subcategory": "Skirts",
+      "price": 4599,
+      "originalPrice": 7299,
+      "discount": 37,
+      "rating": 4.7,
+      "reviews": 164,
+      "stock": 90,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Sunray pleated satin midi with elastic waist",
+      "image": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 144,
+      "name": "Textured Knit Skirt",
+      "category": "Women",
+      "subcategory": "Skirts",
+      "price": 3899,
+      "originalPrice": 6299,
+      "discount": 38,
+      "rating": 4.6,
+      "reviews": 121,
+      "stock": 95,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Figure-hugging knit skirt with ribbed hem",
+      "image": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
+      "season": "Winter",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 145,
+      "name": "Embroidered Anarkali Set",
+      "category": "Women",
+      "subcategory": "Ethnic Wear",
+      "price": 16999,
+      "originalPrice": 24999,
+      "discount": 32,
+      "rating": 5,
+      "reviews": 77,
+      "stock": 40,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Hand-embroidered floor-length anarkali with dupatta",
+      "image": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&q=80",
+      "season": "Festive",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 146,
+      "name": "Silk Kurta Ensemble",
+      "category": "Women",
+      "subcategory": "Ethnic Wear",
+      "price": 11999,
+      "originalPrice": 17999,
+      "discount": 33,
+      "rating": 4.9,
+      "reviews": 93,
+      "stock": 45,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Pure silk kurta set with zari highlights",
+      "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80",
+      "season": "Festive",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 147,
+      "name": "Seamless Yoga Set",
+      "category": "Women",
+      "subcategory": "Activewear",
+      "price": 4999,
+      "originalPrice": 7999,
+      "discount": 38,
+      "rating": 4.8,
+      "reviews": 208,
+      "stock": 50,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Second-skin seamless top and leggings set",
+      "image": "https://images.unsplash.com/photo-1514986888952-8cd320577b68?auto=format&fit=crop&w=800&q=80",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 148,
+      "name": "Performance Running Jacket",
+      "category": "Women",
+      "subcategory": "Activewear",
+      "price": 6499,
+      "originalPrice": 9999,
+      "discount": 35,
+      "rating": 4.7,
+      "reviews": 131,
+      "stock": 55,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Lightweight reflective shell with breathable mesh panels",
+      "image": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 149,
+      "name": "Cashmere Lounge Set",
+      "category": "Women",
+      "subcategory": "Loungewear",
+      "price": 8999,
+      "originalPrice": 13999,
+      "discount": 36,
+      "rating": 4.9,
+      "reviews": 142,
+      "stock": 60,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Relaxed-fit cashmere hoodie and jogger pairing",
+      "image": "https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=800&q=80",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 150,
+      "name": "Ribbed Lounge Dress",
+      "category": "Women",
+      "subcategory": "Loungewear",
+      "price": 5299,
+      "originalPrice": 8499,
+      "discount": 38,
+      "rating": 4.7,
+      "reviews": 109,
+      "stock": 65,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Ankle-length ribbed lounge dress with side slits",
+      "image": "https://images.unsplash.com/photo-1500631195312-e3a9a5819f60?auto=format&fit=crop&w=800&q=80",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 151,
+      "name": "Monochrome Co-ord Suit",
+      "category": "Women",
+      "subcategory": "Co-ords",
+      "price": 10499,
+      "originalPrice": 15999,
+      "discount": 34,
+      "rating": 4.8,
+      "reviews": 126,
+      "stock": 70,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Structured blazer and tailored trouser co-ord",
+      "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 152,
+      "name": "Tailored Knit Co-ord",
+      "category": "Women",
+      "subcategory": "Co-ords",
+      "price": 7499,
+      "originalPrice": 11499,
+      "discount": 35,
+      "rating": 4.7,
+      "reviews": 138,
+      "stock": 75,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Soft knit polo and midi skirt pairing with contrast trims",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 153,
+      "name": "Women Winter Wool Coat",
+      "category": "Women",
+      "subcategory": "Outerwear",
+      "price": 12999,
+      "originalPrice": 18999,
+      "discount": 32,
+      "rating": 4.9,
+      "reviews": 145,
+      "stock": 80,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Luxurious wool coat for winter elegance",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 154,
+      "name": "Women Thermal Leggings",
+      "category": "Women",
+      "subcategory": "Pants",
+      "price": 3699,
+      "originalPrice": 5999,
+      "discount": 38,
+      "rating": 4.8,
+      "reviews": 167,
+      "stock": 85,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Warm thermal leggings for winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 155,
+      "name": "Women Winter Sweater",
+      "category": "Women",
+      "subcategory": "Tops",
+      "price": 4799,
+      "originalPrice": 7999,
+      "discount": 40,
+      "rating": 4.9,
+      "reviews": 178,
+      "stock": 90,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Cozy winter sweater for women",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 156,
+      "name": "Women Puffer Jacket",
+      "category": "Women",
+      "subcategory": "Blazers",
+      "price": 10999,
+      "originalPrice": 16999,
+      "discount": 35,
+      "rating": 4.9,
+      "reviews": 198,
+      "stock": 95,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Warm puffer jacket for extreme winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 157,
+      "name": "Kids Winter Puffer Jacket",
+      "category": "Kids",
+      "subcategory": "Hoodies & Jackets",
+      "price": 4999,
+      "originalPrice": 7999,
+      "discount": 38,
+      "rating": 4.8,
+      "reviews": 145,
+      "stock": 40,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Warm puffer jacket for kids in winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 158,
+      "name": "Kids Winter Thermal Pants",
+      "category": "Kids",
+      "subcategory": "Shorts & Pants",
+      "price": 2199,
+      "originalPrice": 3999,
+      "discount": 45,
+      "rating": 4.7,
+      "reviews": 134,
+      "stock": 45,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Warm thermal pants for kids in winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 159,
+      "name": "Kids Wool Winter Sweater",
+      "category": "Kids",
+      "subcategory": "Hoodies & Jackets",
+      "price": 3699,
+      "originalPrice": 5999,
+      "discount": 38,
+      "rating": 4.7,
+      "reviews": 145,
+      "stock": 50,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Warm wool sweater for kids in winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 160,
+      "name": "Kids Winter Coat",
+      "category": "Kids",
+      "subcategory": "Hoodies & Jackets",
+      "price": 5499,
+      "originalPrice": 8999,
+      "discount": 39,
+      "rating": 4.8,
+      "reviews": 167,
+      "stock": 55,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "description": "Stylish winter coat for kids",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 161,
+      "name": "Winter Wool Scarf",
+      "category": "Accessories",
+      "subcategory": "Scarves & Belts",
+      "price": 2499,
+      "originalPrice": 4499,
+      "discount": 44,
+      "rating": 4.8,
+      "reviews": 145,
+      "stock": 60,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Warm wool scarf for winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 162,
+      "name": "Cashmere Winter Scarf",
+      "category": "Accessories",
+      "subcategory": "Scarves & Belts",
+      "price": 4999,
+      "originalPrice": 7999,
+      "discount": 38,
+      "rating": 4.9,
+      "reviews": 167,
+      "stock": 65,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Premium cashmere scarf for winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 163,
+      "name": "Winter Leather Gloves",
+      "category": "Accessories",
+      "subcategory": "Scarves & Belts",
+      "price": 3499,
+      "originalPrice": 5999,
+      "discount": 42,
+      "rating": 4.7,
+      "reviews": 123,
+      "stock": 70,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Warm leather gloves for winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 164,
+      "name": "Winter Beanie Hat",
+      "category": "Accessories",
+      "subcategory": "Scarves & Belts",
+      "price": 1799,
+      "originalPrice": 2999,
+      "discount": 40,
+      "rating": 4.6,
+      "reviews": 98,
+      "stock": 75,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Warm beanie hat for winter",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 201,
+      "name": "Men Casual Sneakers",
+      "category": "Footwear",
+      "subcategory": "Sneakers",
+      "price": 2999,
+      "originalPrice": 4999,
+      "discount": 40,
+      "rating": 4.7,
+      "reviews": 234,
+      "stock": 80,
+      "sizes": [
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "description": "Comfortable casual sneakers for everyday wear",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 202,
+      "name": "Women Running Shoes",
+      "category": "Footwear",
+      "subcategory": "Sports Shoes",
+      "price": 4499,
+      "originalPrice": 6999,
+      "discount": 36,
+      "rating": 4.8,
+      "reviews": 189,
+      "stock": 85,
+      "sizes": [
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "description": "Premium running shoes with cushioning",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 203,
+      "name": "Men Formal Leather Shoes",
+      "category": "Footwear",
+      "subcategory": "Formal Shoes",
+      "price": 5999,
+      "originalPrice": 9999,
+      "discount": 40,
+      "rating": 4.9,
+      "reviews": 156,
+      "stock": 90,
+      "sizes": [
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "description": "Classic leather formal shoes",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 204,
+      "name": "Women High Heels",
+      "category": "Footwear",
+      "subcategory": "Heels",
+      "price": 3499,
+      "originalPrice": 5999,
+      "discount": 42,
+      "rating": 4.6,
+      "reviews": 198,
+      "stock": 95,
+      "sizes": [
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "description": "Elegant high heels for special occasions",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 205,
+      "name": "Kids Sports Shoes",
+      "category": "Footwear",
+      "subcategory": "Kids Shoes",
+      "price": 1999,
+      "originalPrice": 3499,
+      "discount": 43,
+      "rating": 4.7,
+      "reviews": 145,
+      "stock": 40,
+      "sizes": [
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "description": "Durable sports shoes for kids",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 206,
+      "name": "Men Winter Boots",
+      "category": "Footwear",
+      "subcategory": "Boots",
+      "price": 4999,
+      "originalPrice": 7999,
+      "discount": 38,
+      "rating": 4.8,
+      "reviews": 167,
+      "stock": 45,
+      "sizes": [
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "description": "Warm winter boots with insulation",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 207,
+      "name": "Women Sandals",
+      "category": "Footwear",
+      "subcategory": "Sandals",
+      "price": 2499,
+      "originalPrice": 4499,
+      "discount": 44,
+      "rating": 4.5,
+      "reviews": 123,
+      "stock": 50,
+      "sizes": [
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "description": "Comfortable summer sandals",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 208,
+      "name": "Men Canvas Shoes",
+      "category": "Footwear",
+      "subcategory": "Casual Shoes",
+      "price": 1799,
+      "originalPrice": 2999,
+      "discount": 40,
+      "rating": 4.6,
+      "reviews": 178,
+      "stock": 55,
+      "sizes": [
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "description": "Lightweight canvas shoes",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 209,
+      "name": "Women Ballet Flats",
+      "category": "Footwear",
+      "subcategory": "Flats",
+      "price": 2199,
+      "originalPrice": 3999,
+      "discount": 45,
+      "rating": 4.7,
+      "reviews": 134,
+      "stock": 60,
+      "sizes": [
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "description": "Classic ballet flats for comfort",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 210,
+      "name": "Kids School Shoes",
+      "category": "Footwear",
+      "subcategory": "Kids Shoes",
+      "price": 1499,
+      "originalPrice": 2499,
+      "discount": 40,
+      "rating": 4.6,
+      "reviews": 112,
+      "stock": 65,
+      "sizes": [
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "description": "Durable school shoes for kids",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 301,
+      "name": "Smart Watch Pro",
+      "category": "Electronics",
+      "subcategory": "Smart Watches",
+      "price": 12999,
+      "originalPrice": 19999,
+      "discount": 35,
+      "rating": 4.8,
+      "reviews": 456,
+      "stock": 70,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Advanced smartwatch with health tracking",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "trending",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 302,
+      "name": "Wireless Earbuds",
+      "category": "Electronics",
+      "subcategory": "Audio",
+      "price": 2999,
+      "originalPrice": 4999,
+      "discount": 40,
+      "rating": 4.7,
+      "reviews": 678,
+      "stock": 75,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Premium wireless earbuds with noise cancellation",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "trending",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 303,
+      "name": "Fitness Tracker",
+      "category": "Electronics",
+      "subcategory": "Wearables",
+      "price": 3999,
+      "originalPrice": 6999,
+      "discount": 43,
+      "rating": 4.6,
+      "reviews": 345,
+      "stock": 80,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Advanced fitness tracking device",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 304,
+      "name": "Smart Band",
+      "category": "Electronics",
+      "subcategory": "Wearables",
+      "price": 1999,
+      "originalPrice": 3499,
+      "discount": 43,
+      "rating": 4.5,
+      "reviews": 567,
+      "stock": 85,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Affordable smart band with essential features",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 305,
+      "name": "Bluetooth Headphones",
+      "category": "Electronics",
+      "subcategory": "Audio",
+      "price": 4499,
+      "originalPrice": 7999,
+      "discount": 44,
+      "rating": 4.8,
+      "reviews": 234,
+      "stock": 90,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Over-ear Bluetooth headphones",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "trending",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 306,
+      "name": "Smart Ring",
+      "category": "Electronics",
+      "subcategory": "Wearables",
+      "price": 8999,
+      "originalPrice": 14999,
+      "discount": 40,
+      "rating": 4.7,
+      "reviews": 189,
+      "stock": 95,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Fashionable smart ring with health tracking",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 307,
+      "name": "Wireless Speaker",
+      "category": "Electronics",
+      "subcategory": "Audio",
+      "price": 3499,
+      "originalPrice": 5999,
+      "discount": 42,
+      "rating": 4.6,
+      "reviews": 278,
+      "stock": 40,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Portable wireless speaker",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 308,
+      "name": "Smart Watch Classic",
+      "category": "Electronics",
+      "subcategory": "Smart Watches",
+      "price": 8999,
+      "originalPrice": 14999,
+      "discount": 40,
+      "rating": 4.7,
+      "reviews": 312,
+      "stock": 45,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Classic design smartwatch",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "trending",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 309,
+      "name": "Gaming Earbuds",
+      "category": "Electronics",
+      "subcategory": "Audio",
+      "price": 2499,
+      "originalPrice": 4499,
+      "discount": 44,
+      "rating": 4.5,
+      "reviews": 145,
+      "stock": 50,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Low latency gaming earbuds",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 310,
+      "name": "Smart Watch Sport",
+      "category": "Electronics",
+      "subcategory": "Smart Watches",
+      "price": 10999,
+      "originalPrice": 17999,
+      "discount": 39,
+      "rating": 4.9,
+      "reviews": 423,
+      "stock": 55,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Sports-focused smartwatch",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "trending",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 401,
+      "name": "Men Grooming Kit",
+      "category": "Beauty",
+      "subcategory": "Grooming",
+      "price": 1999,
+      "originalPrice": 3499,
+      "discount": 43,
+      "rating": 4.7,
+      "reviews": 234,
+      "stock": 60,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Complete grooming kit for men",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "trending",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 402,
+      "name": "Face Moisturizer",
+      "category": "Beauty",
+      "subcategory": "Skincare",
+      "price": 1499,
+      "originalPrice": 2499,
+      "discount": 40,
+      "rating": 4.6,
+      "reviews": 456,
+      "stock": 65,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Hydrating face moisturizer",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 403,
+      "name": "Hair Styling Gel",
+      "category": "Beauty",
+      "subcategory": "Hair Care",
+      "price": 599,
+      "originalPrice": 999,
+      "discount": 40,
+      "rating": 4.5,
+      "reviews": 567,
+      "stock": 70,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Strong hold hair styling gel",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 404,
+      "name": "Perfume Set",
+      "category": "Beauty",
+      "subcategory": "Fragrance",
+      "price": 2999,
+      "originalPrice": 4999,
+      "discount": 40,
+      "rating": 4.8,
+      "reviews": 345,
+      "stock": 75,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Premium perfume collection",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "trending",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 405,
+      "name": "Shaving Kit",
+      "category": "Beauty",
+      "subcategory": "Grooming",
+      "price": 2499,
+      "originalPrice": 3999,
+      "discount": 38,
+      "rating": 4.7,
+      "reviews": 278,
+      "stock": 80,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Complete shaving kit",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "trending",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 406,
+      "name": "Face Cleanser",
+      "category": "Beauty",
+      "subcategory": "Skincare",
+      "price": 899,
+      "originalPrice": 1499,
+      "discount": 40,
+      "rating": 4.6,
+      "reviews": 412,
+      "stock": 85,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Gentle face cleanser",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 407,
+      "name": "Hair Shampoo",
+      "category": "Beauty",
+      "subcategory": "Hair Care",
+      "price": 799,
+      "originalPrice": 1299,
+      "discount": 38,
+      "rating": 4.5,
+      "reviews": 389,
+      "stock": 90,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Nourishing hair shampoo",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 408,
+      "name": "Body Lotion",
+      "category": "Beauty",
+      "subcategory": "Skincare",
+      "price": 699,
+      "originalPrice": 1199,
+      "discount": 42,
+      "rating": 4.6,
+      "reviews": 523,
+      "stock": 95,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Moisturizing body lotion",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 409,
+      "name": "Cologne Spray",
+      "category": "Beauty",
+      "subcategory": "Fragrance",
+      "price": 1799,
+      "originalPrice": 2999,
+      "discount": 40,
+      "rating": 4.7,
+      "reviews": 267,
+      "stock": 40,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Long-lasting cologne spray",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "trending",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 410,
+      "name": "Beard Oil",
+      "category": "Beauty",
+      "subcategory": "Grooming",
+      "price": 999,
+      "originalPrice": 1799,
+      "discount": 44,
+      "rating": 4.8,
+      "reviews": 189,
+      "stock": 45,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Nourishing beard oil",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 501,
+      "name": "Cotton Bed Sheets",
+      "category": "Home",
+      "subcategory": "Bedding",
+      "price": 2499,
+      "originalPrice": 3999,
+      "discount": 38,
+      "rating": 4.7,
+      "reviews": 234,
+      "stock": 50,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Premium cotton bed sheets set",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "trending",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 502,
+      "name": "Decorative Cushions",
+      "category": "Home",
+      "subcategory": "Decor",
+      "price": 899,
+      "originalPrice": 1499,
+      "discount": 40,
+      "rating": 4.6,
+      "reviews": 456,
+      "stock": 55,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Set of decorative cushions",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 503,
+      "name": "Table Lamp",
+      "category": "Home",
+      "subcategory": "Lighting",
+      "price": 1999,
+      "originalPrice": 3499,
+      "discount": 43,
+      "rating": 4.5,
+      "reviews": 189,
+      "stock": 60,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Modern table lamp",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 504,
+      "name": "Wall Clock",
+      "category": "Home",
+      "subcategory": "Decor",
+      "price": 1499,
+      "originalPrice": 2499,
+      "discount": 40,
+      "rating": 4.6,
+      "reviews": 278,
+      "stock": 65,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Elegant wall clock",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 505,
+      "name": "Curtains Set",
+      "category": "Home",
+      "subcategory": "Furnishing",
+      "price": 3999,
+      "originalPrice": 6999,
+      "discount": 43,
+      "rating": 4.7,
+      "reviews": 145,
+      "stock": 70,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Premium curtains set",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 506,
+      "name": "Throw Blanket",
+      "category": "Home",
+      "subcategory": "Bedding",
+      "price": 1799,
+      "originalPrice": 2999,
+      "discount": 40,
+      "rating": 4.8,
+      "reviews": 312,
+      "stock": 75,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Cozy throw blanket",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "new arrival",
+        "trending",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 507,
+      "name": "Photo Frame Set",
+      "category": "Home",
+      "subcategory": "Decor",
+      "price": 1299,
+      "originalPrice": 2199,
+      "discount": 41,
+      "rating": 4.5,
+      "reviews": 167,
+      "stock": 80,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Set of decorative photo frames",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 508,
+      "name": "Rug Carpet",
+      "category": "Home",
+      "subcategory": "Furnishing",
+      "price": 4999,
+      "originalPrice": 7999,
+      "discount": 38,
+      "rating": 4.7,
+      "reviews": 234,
+      "stock": 85,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Premium area rug",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "trending",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 509,
+      "name": "Pillow Set",
+      "category": "Home",
+      "subcategory": "Bedding",
+      "price": 1499,
+      "originalPrice": 2499,
+      "discount": 40,
+      "rating": 4.6,
+      "reviews": 289,
+      "stock": 90,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Comfortable pillow set",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 510,
+      "name": "Vase Set",
+      "category": "Home",
+      "subcategory": "Decor",
+      "price": 999,
+      "originalPrice": 1799,
+      "discount": 44,
+      "rating": 4.5,
+      "reviews": 156,
+      "stock": 95,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Decorative vase set",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 601,
+      "name": "Men Sports T-Shirt",
+      "category": "Sportswear",
+      "subcategory": "Tops",
+      "price": 1499,
+      "originalPrice": 2499,
+      "discount": 40,
+      "rating": 4.7,
+      "reviews": 345,
+      "stock": 40,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Breathable sports t-shirt",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "trending",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 602,
+      "name": "Women Yoga Pants",
+      "category": "Sportswear",
+      "subcategory": "Bottoms",
+      "price": 1999,
+      "originalPrice": 3499,
+      "discount": 43,
+      "rating": 4.8,
+      "reviews": 456,
+      "stock": 45,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Flexible yoga pants",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "trending",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 603,
+      "name": "Men Track Pants",
+      "category": "Sportswear",
+      "subcategory": "Bottoms",
+      "price": 1799,
+      "originalPrice": 2999,
+      "discount": 40,
+      "rating": 4.6,
+      "reviews": 234,
+      "stock": 50,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Comfortable track pants",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 604,
+      "name": "Sports Jacket",
+      "category": "Sportswear",
+      "subcategory": "Outerwear",
+      "price": 2999,
+      "originalPrice": 4999,
+      "discount": 40,
+      "rating": 4.7,
+      "reviews": 189,
+      "stock": 55,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Lightweight sports jacket",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 605,
+      "name": "Women Sports Bra",
+      "category": "Sportswear",
+      "subcategory": "Tops",
+      "price": 1299,
+      "originalPrice": 2199,
+      "discount": 41,
+      "rating": 4.8,
+      "reviews": 567,
+      "stock": 60,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Supportive sports bra",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "trending",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 606,
+      "name": "Men Gym Shorts",
+      "category": "Sportswear",
+      "subcategory": "Bottoms",
+      "price": 999,
+      "originalPrice": 1799,
+      "discount": 44,
+      "rating": 4.6,
+      "reviews": 278,
+      "stock": 65,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Comfortable gym shorts",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 607,
+      "name": "Sports Hoodie",
+      "category": "Sportswear",
+      "subcategory": "Outerwear",
+      "price": 2499,
+      "originalPrice": 3999,
+      "discount": 38,
+      "rating": 4.7,
+      "reviews": 312,
+      "stock": 70,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Warm sports hoodie",
+      "image": "/placeholder.svg",
+      "season": "Winter",
+      "tags": [
+        "new arrival",
+        "trending",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 608,
+      "name": "Women Running Shorts",
+      "category": "Sportswear",
+      "subcategory": "Bottoms",
+      "price": 1199,
+      "originalPrice": 1999,
+      "discount": 40,
+      "rating": 4.5,
+      "reviews": 145,
+      "stock": 75,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Lightweight running shorts",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 609,
+      "name": "Men Compression Shirt",
+      "category": "Sportswear",
+      "subcategory": "Tops",
+      "price": 1799,
+      "originalPrice": 2999,
+      "discount": 40,
+      "rating": 4.8,
+      "reviews": 423,
+      "stock": 80,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Performance compression shirt",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "trending",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 610,
+      "name": "Sports Cap",
+      "category": "Sportswear",
+      "subcategory": "Accessories",
+      "price": 699,
+      "originalPrice": 1199,
+      "discount": 42,
+      "rating": 4.6,
+      "reviews": 267,
+      "stock": 85,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "UV protection sports cap",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 701,
+      "name": "Men Kurta",
+      "category": "Ethnic",
+      "subcategory": "Kurtas",
+      "price": 2999,
+      "originalPrice": 4999,
+      "discount": 40,
+      "rating": 4.7,
+      "reviews": 234,
+      "stock": 90,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Traditional men kurta",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "trending",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 702,
+      "name": "Women Saree",
+      "category": "Ethnic",
+      "subcategory": "Sarees",
+      "price": 4999,
+      "originalPrice": 7999,
+      "discount": 38,
+      "rating": 4.8,
+      "reviews": 456,
+      "stock": 95,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Elegant silk saree",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "trending",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 703,
+      "name": "Men Sherwani",
+      "category": "Ethnic",
+      "subcategory": "Sherwanis",
+      "price": 8999,
+      "originalPrice": 14999,
+      "discount": 40,
+      "rating": 4.9,
+      "reviews": 189,
+      "stock": 40,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Premium sherwani for special occasions",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 704,
+      "name": "Women Lehenga",
+      "category": "Ethnic",
+      "subcategory": "Lehengas",
+      "price": 7999,
+      "originalPrice": 12999,
+      "discount": 38,
+      "rating": 4.8,
+      "reviews": 345,
+      "stock": 45,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Beautiful lehenga choli",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "trending",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 705,
+      "name": "Men Dhoti",
+      "category": "Ethnic",
+      "subcategory": "Dhotis",
+      "price": 1499,
+      "originalPrice": 2499,
+      "discount": 40,
+      "rating": 4.6,
+      "reviews": 167,
+      "stock": 50,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Traditional dhoti",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 706,
+      "name": "Women Salwar Kameez",
+      "category": "Ethnic",
+      "subcategory": "Salwar Suits",
+      "price": 3499,
+      "originalPrice": 5999,
+      "discount": 42,
+      "rating": 4.7,
+      "reviews": 278,
+      "stock": 55,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Elegant salwar kameez",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "trending",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 707,
+      "name": "Men Pathani Suit",
+      "category": "Ethnic",
+      "subcategory": "Pathanis",
+      "price": 3999,
+      "originalPrice": 6999,
+      "discount": 43,
+      "rating": 4.7,
+      "reviews": 145,
+      "stock": 60,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Stylish pathani suit",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "trending",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 708,
+      "name": "Women Anarkali",
+      "category": "Ethnic",
+      "subcategory": "Anarkalis",
+      "price": 4499,
+      "originalPrice": 7499,
+      "discount": 40,
+      "rating": 4.8,
+      "reviews": 312,
+      "stock": 65,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Beautiful anarkali suit",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "trending",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 709,
+      "name": "Men Waistcoat",
+      "category": "Ethnic",
+      "subcategory": "Waistcoats",
+      "price": 2499,
+      "originalPrice": 4299,
+      "discount": 42,
+      "rating": 4.6,
+      "reviews": 189,
+      "stock": 70,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Traditional waistcoat",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    },
+    {
+      "id": 710,
+      "name": "Women Dupatta",
+      "category": "Ethnic",
+      "subcategory": "Dupattas",
+      "price": 999,
+      "originalPrice": 1799,
+      "discount": 44,
+      "rating": 4.5,
+      "reviews": 234,
+      "stock": 75,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "description": "Elegant dupatta",
+      "image": "/placeholder.svg",
+      "season": "All-Season",
+      "tags": [
+        "new arrival",
+        "best seller",
+        "deal"
+      ],
+      "inStock": true,
+      "colors": []
+    }
+  ]
+}
