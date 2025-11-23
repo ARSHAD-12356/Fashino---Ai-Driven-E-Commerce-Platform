@@ -33,12 +33,19 @@ export default function LoginPage() {
         errorMessage = 'Invalid email or password. Please check your credentials or sign up if you don\'t have an account.'
       }
       
+      // Handle MongoDB connection errors
+      if (errorMessage.includes('Database connection') || errorMessage.includes('whitelist') || errorMessage.includes('IP') || errorMessage.includes('ECONNREFUSED') || errorMessage.includes('querySrv')) {
+        // Error message already contains helpful instructions from auth-context
+        // Just ensure it's displayed properly
+      }
+      
       setError(errorMessage)
       
-      // Auto-clear error after 5 seconds
+      // Auto-clear error after 10 seconds for database errors (longer for user to read instructions)
+      const clearTimeout = errorMessage.includes('Database connection') || errorMessage.includes('whitelist') ? 10000 : 5000
       setTimeout(() => {
         setError('')
-      }, 5000)
+      }, clearTimeout)
     }
   }
 
@@ -54,10 +61,17 @@ export default function LoginPage() {
         <div className="bg-card/95 backdrop-blur-xl border border-border/50 rounded-2xl p-8 md:p-10 space-y-6 shadow-2xl shadow-primary/5">
           {/* Header */}
           <div className="text-center space-y-3">
-            <Link href="/" className="inline-flex flex-col items-center gap-1 text-3xl font-dancing font-bold text-foreground hover:text-primary smooth-hover tracking-tight group">
+            <Link href="/" className="inline-flex flex-col items-center gap-1 group">
               <div className="flex items-center gap-2">
-                <Sparkles className="w-6 h-6 text-primary group-hover:rotate-12 transition-transform" />
-                <span>Fashino</span>
+              <Sparkles className="w-6 h-6 text-primary group-hover:rotate-12 transition-transform" />
+                <span 
+                  className="tracking-tight fashino-logo-light text-[32px] md:text-[40px] lg:text-[50px] text-foreground"
+                  style={{ 
+                    fontFamily: "var(--font-great-vibes), cursive",
+                  }}
+                >
+              Fashino
+                </span>
               </div>
               <p className="text-sm font-normal font-sans text-primary/80 italic tracking-wide">
                 Feel The Fashion
@@ -72,14 +86,11 @@ export default function LoginPage() {
             {error && (
               <div className="p-4 bg-destructive/10 border border-destructive/30 rounded-lg animate-in fade-in slide-in-from-top-2">
                 <p className="text-sm text-destructive font-medium whitespace-pre-line">{error}</p>
-                {error.includes('whitelist') || error.includes('Database connection') ? (
+                {(error.includes('whitelist') || error.includes('Database connection') || error.includes('ECONNREFUSED') || error.includes('querySrv')) ? (
                   <div className="mt-3 pt-3 border-t border-destructive/20">
-                    <p className="text-xs text-destructive/80 mb-2">Quick Fix:</p>
-                    <ol className="text-xs text-destructive/80 list-decimal list-inside space-y-1">
-                      <li>Go to MongoDB Atlas → Security → Network Access</li>
-                      <li>Click "Add IP Address" → "Add Current IP Address"</li>
-                      <li>Wait 1-2 minutes, then refresh this page</li>
-                    </ol>
+                    <p className="text-xs text-destructive/80 mb-2 font-semibold">⚠️ Database Connection Issue</p>
+                    <p className="text-xs text-destructive/80 mb-2">The error message above contains step-by-step instructions to fix this issue.</p>
+                    <p className="text-xs text-destructive/60 mt-2">Common causes: IP not whitelisted, network issues, or MongoDB Atlas service interruption.</p>
                   </div>
                 ) : error.includes('Invalid email or password') ? (
                   <div className="mt-3 pt-3 border-t border-destructive/20">
@@ -109,7 +120,7 @@ export default function LoginPage() {
 
             {/* Password Field */}
             <div className="space-y-2">
-              <label className="text-sm font-semibold text-foreground">Password</label>
+                <label className="text-sm font-semibold text-foreground">Password</label>
               <div className="relative group">
                 <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
                 <input
@@ -120,14 +131,14 @@ export default function LoginPage() {
                   className="w-full pl-12 pr-4 py-3 bg-input/50 border-2 border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary smooth-transition"
                 />
               </div>
-              <button
-                type="button"
+                      <button
+                        type="button"
                 onClick={() => router.push('/forgot-password')}
                 className="text-xs text-primary hover:underline smooth-hover text-left"
-              >
+                      >
                 Forgot Password?
-              </button>
-            </div>
+                      </button>
+                    </div>
 
 
             {/* Submit Button */}

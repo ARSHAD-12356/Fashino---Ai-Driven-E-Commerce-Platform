@@ -11,7 +11,7 @@ export function Logo({ showIcon = false }: LogoProps) {
   return (
     <Link
       href="/"
-      className="flex items-center gap-2 group"
+      className="flex items-center gap-2 group px-[12px] md:px-[18px] lg:px-[28px]"
     >
       {showIcon && (
         <div className="relative">
@@ -21,7 +21,12 @@ export function Logo({ showIcon = false }: LogoProps) {
           </div>
         </div>
       )}
-      <span className="font-dancing text-3xl md:text-4xl font-bold text-white group-hover:text-primary dark:text-white dark:group-hover:text-primary smooth-transition tracking-tight">
+      <span 
+        className="tracking-tight fashino-logo text-[32px] md:text-[40px] lg:text-[50px] text-white"
+        style={{ 
+          fontFamily: "var(--font-great-vibes), cursive",
+        }}
+      >
         Fashino
       </span>
     </Link>

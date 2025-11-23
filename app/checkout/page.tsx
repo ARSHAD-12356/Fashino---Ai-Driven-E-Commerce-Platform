@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { useCart } from '@/context/cart-context'
@@ -46,7 +46,7 @@ interface StoredOrder {
   products: StoredOrderProduct[]
 }
 
-export default function CheckoutPage() {
+function CheckoutContent() {
   const { items, total, clearCart } = useCart()
   const { user } = useAuth()
   const searchParams = useSearchParams()
@@ -131,16 +131,18 @@ export default function CheckoutPage() {
       : { subtotal: total, shipping: shippingCost, tax, total: finalTotal }
 
   const saveOrderToStorage = (order: StoredOrder) => {
-    if (typeof window === 'undefined') return
+    if (typeof window === 'undefined' || !user) return
+    // Use user-specific storage key to prevent data leakage between users
+    const userOrdersKey = `recentOrders_${user.id}`
     const existing = (() => {
       try {
-        return JSON.parse(window.localStorage.getItem('recentOrders') || '[]')
+        return JSON.parse(window.localStorage.getItem(userOrdersKey) || '[]')
       } catch {
         return []
       }
     })()
     const updated = [order, ...existing].slice(0, 10)
-    window.localStorage.setItem('recentOrders', JSON.stringify(updated))
+    window.localStorage.setItem(userOrdersKey, JSON.stringify(updated))
     window.dispatchEvent(new Event('recentOrdersUpdated'))
   }
 
@@ -220,6 +222,8 @@ export default function CheckoutPage() {
         if (paymentCompleted) {
           const dbOrderData = {
             userId: user?.id || 'guest',
+            userName: user?.name || 'Guest User',
+            userEmail: user?.email || '',
             items: items.map((item) => ({
               productId: item.id.toString(),
               name: item.name,
@@ -254,6 +258,8 @@ export default function CheckoutPage() {
           // COD orders - save with pending payment status
           const dbOrderData = {
             userId: user?.id || 'guest',
+            userName: user?.name || 'Guest User',
+            userEmail: user?.email || '',
             items: items.map((item) => ({
               productId: item.id.toString(),
               name: item.name,
@@ -659,11 +665,11 @@ export default function CheckoutPage() {
 
                   {/* Net Banking Payment Form */}
                   {paymentMethod === 'netbanking' && (
-                      <div>
-                        <label className="block text-sm font-medium mb-2">Select Your Bank</label>
-                        <select
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Select Your Bank</label>
+                      <select
                           className="w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                        >
+                      >
                         <option>Select a bank</option>
                         <option>HDFC Bank</option>
                         <option>ICICI Bank</option>
@@ -800,5 +806,13 @@ export default function CheckoutPage() {
       </main>
       <Footer />
     </>
+  )
+}
+
+export default function CheckoutPage() {
+  return (
+    <Suspense fallback={null}>
+      <CheckoutContent />
+    </Suspense>
   )
 }

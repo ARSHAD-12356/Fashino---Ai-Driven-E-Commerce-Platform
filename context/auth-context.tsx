@@ -85,13 +85,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           errorMessage = response.statusText || errorMessage
         }
         
-        // If it's a database connection error, provide helpful message
-        if (errorMessage.includes('Database connection') || errorMessage.includes('whitelist') || errorMessage.includes('IP')) {
-          errorMessage = 'Database connection failed. Please check MongoDB Atlas IP whitelist settings. See QUICK_IP_WHITELIST.md for instructions.'
+        // If it's a database connection error (503 status), provide helpful message
+        if (response.status === 503 || errorMessage.includes('Database connection') || errorMessage.includes('whitelist') || errorMessage.includes('IP') || errorMessage.includes('ECONNREFUSED') || errorMessage.includes('querySrv')) {
+          errorMessage = 'Database connection failed. Your IP address may not be whitelisted in MongoDB Atlas.\n\nQuick Fix:\n1. Go to MongoDB Atlas → Security → Network Access\n2. Click "Add IP Address" → "Add Current IP Address"\n3. Wait 1-2 minutes, then try again'
+          if (errorDetails) {
+            errorMessage += `\n\n${errorDetails}`
+          }
         }
         
-        const fullError = errorDetails ? `${errorMessage}\n\n${errorDetails}` : errorMessage
-        throw new Error(fullError)
+        throw new Error(errorMessage)
       }
 
       const data = await response.json()
@@ -104,6 +106,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       localStorage.setItem('user', JSON.stringify(data.user))
     } catch (error: any) {
       console.error('Login error:', error)
+      // Re-throw with a more user-friendly message if it's a network error
+      if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
+        throw new Error('Network error. Please check your internet connection and try again.')
+      }
       throw error
     } finally {
       setIsLoading(false)
@@ -134,13 +140,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           errorMessage = response.statusText || errorMessage
         }
         
-        // If it's a database connection error, provide helpful message
-        if (errorMessage.includes('Database connection') || errorMessage.includes('whitelist') || errorMessage.includes('IP')) {
-          errorMessage = 'Database connection failed. Please check MongoDB Atlas IP whitelist settings. See QUICK_IP_WHITELIST.md for instructions.'
+        // If it's a database connection error (503 status), provide helpful message
+        if (response.status === 503 || errorMessage.includes('Database connection') || errorMessage.includes('whitelist') || errorMessage.includes('IP') || errorMessage.includes('ECONNREFUSED') || errorMessage.includes('querySrv')) {
+          errorMessage = 'Database connection failed. Your IP address may not be whitelisted in MongoDB Atlas.\n\nQuick Fix:\n1. Go to MongoDB Atlas → Security → Network Access\n2. Click "Add IP Address" → "Add Current IP Address"\n3. Wait 1-2 minutes, then try again'
+          if (errorDetails) {
+            errorMessage += `\n\n${errorDetails}`
+          }
         }
         
-        const fullError = errorDetails ? `${errorMessage}\n\n${errorDetails}` : errorMessage
-        throw new Error(fullError)
+        throw new Error(errorMessage)
       }
 
       const data = await response.json()
@@ -153,6 +161,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       localStorage.setItem('user', JSON.stringify(data.user))
     } catch (error: any) {
       console.error('Signup error:', error)
+      // Re-throw with a more user-friendly message if it's a network error
+      if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
+        throw new Error('Network error. Please check your internet connection and try again.')
+      }
       throw error
     } finally {
       setIsLoading(false)

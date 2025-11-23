@@ -7,6 +7,7 @@ import {
   LogOut, Menu, X, ArrowLeft 
 } from 'lucide-react'
 import { Logo } from '@/components/logo'
+import { Footer } from '@/components/footer'
 
 export default function AdminCategoriesPage() {
   const router = useRouter()
@@ -200,9 +201,11 @@ export default function AdminCategoriesPage() {
           </div>
         </main>
       </div>
+      <Footer />
     </div>
   )
 }
+
 
 
 

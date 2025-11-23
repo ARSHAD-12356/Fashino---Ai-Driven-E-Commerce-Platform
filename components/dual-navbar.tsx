@@ -223,33 +223,37 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
                 )}
               </button>
 
-              {/* Wishlist */}
-              <Link
-                href="/wishlist"
-                className="relative p-2 hover:bg-white/10 rounded-full transition-all duration-200 hover:scale-110"
-                title="Wishlist"
-              >
-                <Heart className="w-5 h-5" />
-                {wishlistItems.length > 0 && (
-                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-bold">
-                    {wishlistItems.length}
-                  </span>
-                )}
-              </Link>
+              {/* Wishlist - Only show when signed in */}
+              {user && (
+                <Link
+                  href="/wishlist"
+                  className="relative p-2 hover:bg-white/10 rounded-full transition-all duration-200 hover:scale-110"
+                  title="Wishlist"
+                >
+                  <Heart className="w-5 h-5" />
+                  {wishlistItems.length > 0 && (
+                    <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-bold">
+                      {wishlistItems.length}
+                    </span>
+                  )}
+                </Link>
+              )}
 
-              {/* Cart */}
-              <button
-                onClick={() => setIsCartOpen(true)}
-                className="relative p-2 hover:bg-white/10 rounded-full transition-all duration-200 hover:scale-110"
-                title="Shopping Cart"
-              >
-                <ShoppingCart className="w-5 h-5" />
-                {items.length > 0 && (
-                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-bold">
-                    {items.length}
-                  </span>
-                )}
-              </button>
+              {/* Cart - Only show when signed in */}
+              {user && (
+                <button
+                  onClick={() => setIsCartOpen(true)}
+                  className="relative p-2 hover:bg-white/10 rounded-full transition-all duration-200 hover:scale-110"
+                  title="Shopping Cart"
+                >
+                  <ShoppingCart className="w-5 h-5" />
+                  {items.length > 0 && (
+                    <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-bold">
+                      {items.length}
+                    </span>
+                  )}
+                </button>
+              )}
 
               {/* User Menu */}
               {user ? (
@@ -407,7 +411,7 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
                     <span className="flex items-center justify-between">
-                      {category.name}
+                    {category.name}
                       <span className="text-white/60">→</span>
                     </span>
                   </Link>

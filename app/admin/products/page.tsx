@@ -7,6 +7,7 @@ import {
   Download, LogOut, Menu, X, ArrowLeft, RefreshCw 
 } from 'lucide-react'
 import { Logo } from '@/components/logo'
+import { Footer } from '@/components/footer'
 import { getProductImage } from '@/lib/utils'
 
 interface Product {
@@ -649,6 +650,7 @@ export default function AdminProductsPage() {
           </div>
         </div>
       )}
+      <Footer />
     </div>
   )
 }

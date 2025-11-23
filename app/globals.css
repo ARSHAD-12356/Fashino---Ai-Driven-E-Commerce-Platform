@@ -1,6 +1,43 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
+/* Local Fonts - @font-face declarations */
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Black.ttf") format("truetype");
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "GreatVibes";
+  src: url("/fonts/GreatVibes-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
 /* Premium Navbar Animations */
 @keyframes slide-in-from-top {
   from {
@@ -134,8 +171,8 @@
 }
 
 @theme inline {
-  --font-sans: 'Geist', 'Geist Fallback';
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --font-sans: var(--font-poppins), 'Poppins', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Courier New', monospace;
   --font-dancing: 'Dancing Script', cursive;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -180,7 +217,11 @@
     @apply border-border outline-ring/50;
   }
   body {
+    font-family: "Poppins", sans-serif;
     @apply bg-background text-foreground;
+  }
+  .font-poppins {
+    font-family: var(--font-poppins);
   }
   select {
     @apply bg-background text-foreground;
@@ -214,6 +255,93 @@
 
   .font-dancing {
     font-family: var(--font-dancing), cursive;
+  }
+
+  /* Brand Logo Fashino - Navbar Only */
+  .brand-logo-fashino {
+    font-family: "GreatVibes", cursive !important;
+    font-weight: normal !important;
+    font-size: 32px;
+    transition: transform 0.25s ease, text-shadow 0.25s ease;
+  }
+
+  @media (min-width: 640px) {
+    .brand-logo-fashino {
+      font-size: 40px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .brand-logo-fashino {
+      font-size: 50px;
+    }
+  }
+
+  .brand-logo-fashino:hover {
+    transform: scale(1.04);
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+  }
+
+  /* Light Mode First Navbar Styling - Only when NOT in dark mode */
+  :not(.dark) header.premium-navbar {
+    background-color: #ffffff !important;
+  }
+
+  /* Brand name in light mode */
+  :not(.dark) header.premium-navbar .fashino-logo {
+    color: #000000 !important;
+  }
+
+  /* Navigation links in light mode (excluding gradient buttons) */
+  :not(.dark) header.premium-navbar nav a:not(.bg-gradient-to-r) {
+    color: #000000 !important;
+  }
+
+  /* ChevronDown icons in navigation */
+  :not(.dark) header.premium-navbar nav svg {
+    color: #000000 !important;
+  }
+
+  /* All icons in light mode (excluding gradient button icons) */
+  :not(.dark) header.premium-navbar button svg,
+  :not(.dark) header.premium-navbar a svg {
+    color: #000000 !important;
+  }
+
+  /* Search icon */
+  :not(.dark) header.premium-navbar .w-4.h-4 {
+    color: #000000 !important;
+  }
+
+  /* Search input text and placeholder in light mode */
+  :not(.dark) header.premium-navbar input {
+    color: #000000 !important;
+  }
+
+  :not(.dark) header.premium-navbar input::placeholder {
+    color: #000000 !important;
+    opacity: 1;
+  }
+
+  /* User name and profile text in light mode */
+  :not(.dark) header.premium-navbar span:not(.bg-gradient-to-r span):not(.absolute) {
+    color: #000000 !important;
+  }
+
+  /* Mobile menu text */
+  :not(.dark) header.premium-navbar .lg\:hidden a {
+    color: #000000 !important;
+  }
+
+  /* Keep gradient buttons white text */
+  :not(.dark) header.premium-navbar .bg-gradient-to-r {
+    color: #ffffff !important;
+  }
+
+  /* Keep primary button colors */
+  :not(.dark) header.premium-navbar .bg-primary {
+    background-color: var(--primary) !important;
+    color: var(--primary-foreground) !important;
   }
 }
 

@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 import { Heart, ShoppingCart, Eye } from 'lucide-react'
 import { useCart } from '@/context/cart-context'
 import { useWishlist } from '@/context/wishlist-context'
+import { useAuth } from '@/context/auth-context'
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { getProductImage, getFallbackImage } from '@/lib/utils'
 
@@ -33,11 +35,17 @@ export function ProductCard({
   stock,
 }: ProductCardProps) {
   const [isHovered, setIsHovered] = useState(false)
+  const router = useRouter()
+  const { user } = useAuth()
   const { addItem } = useCart()
   const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist()
   const isWishlisted = isInWishlist(id)
 
   const handleWishlistToggle = () => {
+    if (!user) {
+      router.push('/login')
+      return
+    }
     if (isWishlisted) {
       removeFromWishlist(id)
     } else {
@@ -48,12 +56,26 @@ export function ProductCard({
   const imageSrc = getProductImage(image, category, subcategory, name)
 
   const handleAddToCart = () => {
+    if (!user) {
+      router.push('/login')
+      return
+    }
     addItem({
       id,
       name,
       price,
       image: imageSrc,
     })
+  }
+
+  const handleBuyNow = (e: React.MouseEvent) => {
+    e.preventDefault()
+    if (!user) {
+      router.push('/login')
+      return
+    }
+    handleAddToCart()
+    router.push(`/products/${id}`)
   }
 
   const discount = Math.round(((originalPrice - price) / originalPrice) * 100)
@@ -81,41 +103,68 @@ export function ProductCard({
           -{discount}%
         </div>
 
-        {/* Wishlist Button */}
-        <button
-          onClick={handleWishlistToggle}
-          className="absolute top-4 right-4 p-2 bg-white dark:bg-slate-800 rounded-full shadow-md hover:shadow-lg smooth-transition opacity-0 group-hover:opacity-100 transform group-hover:scale-100 scale-75"
-        >
-          <Heart
-            className={`w-5 h-5 smooth-transition ${
-              isWishlisted
-                ? 'fill-primary text-primary'
-                : 'text-foreground'
-            }`}
-          />
-        </button>
+        {/* Wishlist Button - Only show when signed in */}
+        {user && (
+          <button
+            onClick={handleWishlistToggle}
+            className="absolute top-4 right-4 p-2 bg-white dark:bg-slate-800 rounded-full shadow-md hover:shadow-lg smooth-transition opacity-0 group-hover:opacity-100 transform group-hover:scale-100 scale-75"
+          >
+            <Heart
+              className={`w-5 h-5 smooth-transition ${
+                isWishlisted
+                  ? 'fill-primary text-primary'
+                  : 'text-foreground'
+              }`}
+            />
+          </button>
+        )}
 
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 transform translate-y-full group-hover:translate-y-0 smooth-transition flex flex-col gap-2">
-          <button
-            onClick={handleAddToCart}
-            className="w-full bg-primary text-primary-foreground py-2 font-semibold rounded-lg hover:bg-primary/90 smooth-transition flex items-center justify-center gap-2 text-sm"
-          >
-            <ShoppingCart className="w-4 h-4" />
-            Add to Cart
-          </button>
-          <div className="grid grid-cols-2 gap-2">
-            <Link href={`/products/${id}`}>
-              <button className="w-full bg-white/20 text-white py-2 font-semibold rounded-lg hover:bg-white/30 smooth-transition flex items-center justify-center gap-2 text-sm">
-                <Eye className="w-4 h-4" />
-                Details
+          {user ? (
+            <>
+              <button
+                onClick={handleAddToCart}
+                className="w-full bg-primary text-primary-foreground py-2 font-semibold rounded-lg hover:bg-primary/90 smooth-transition flex items-center justify-center gap-2 text-sm"
+              >
+                <ShoppingCart className="w-4 h-4" />
+                Add to Cart
               </button>
-            </Link>
-            <Link href={`/products/${id}`}>
-              <button className="w-full bg-primary/70 text-white py-2 font-semibold rounded-lg hover:bg-primary smooth-transition text-sm">
+              <div className="grid grid-cols-2 gap-2">
+                <Link href={`/products/${id}`}>
+                  <button className="w-full bg-white/20 text-white py-2 font-semibold rounded-lg hover:bg-white/30 smooth-transition flex items-center justify-center gap-2 text-sm">
+                    <Eye className="w-4 h-4" />
+                    Details
+                  </button>
+                </Link>
+                <Link href={`/products/${id}`}>
+                  <button 
+                    onClick={handleBuyNow}
+                    className="w-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black py-2 font-semibold rounded-lg hover:from-yellow-300 hover:via-yellow-400 hover:to-yellow-500 smooth-transition text-sm shadow-lg shadow-yellow-500/50 hover:shadow-yellow-500/70 hover:scale-105 active:scale-95 font-bold"
+                  >
+                    Buy Now
+                  </button>
+                </Link>
+              </div>
+            </>
+          ) : (
+            <div className="grid grid-cols-2 gap-2">
+              <Link href={`/products/${id}`}>
+                <button className="w-full bg-white/20 text-white py-2 font-semibold rounded-lg hover:bg-white/30 smooth-transition flex items-center justify-center gap-2 text-sm">
+                  <Eye className="w-4 h-4" />
+                  Details
+                </button>
+              </Link>
+              <button 
+                onClick={(e) => {
+                  e.preventDefault()
+                  router.push('/login')
+                }}
+                className="w-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black py-2 font-semibold rounded-lg hover:from-yellow-300 hover:via-yellow-400 hover:to-yellow-500 smooth-transition text-sm shadow-lg shadow-yellow-500/50 hover:shadow-yellow-500/70 hover:scale-105 active:scale-95 font-bold"
+              >
                 Buy Now
               </button>
-            </Link>
-          </div>
+            </div>
+          )}
         </div>
       </div>
 

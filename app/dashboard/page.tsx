@@ -80,6 +80,28 @@ const formatDisplayDate = (dateString: string) => {
   })
 }
 
+// Ensure order ID is in the correct format (FAS-XXXXX)
+const formatOrderId = (orderId: string | undefined, mongoId?: string): string => {
+  if (!orderId && !mongoId) return 'FAS-UNKNOWN'
+  
+  // If it's already in FAS- format, return as is
+  if (orderId && orderId.startsWith('FAS-')) {
+    return orderId
+  }
+  
+  // If we have a formatted ID, use it
+  if (orderId) {
+    return orderId
+  }
+  
+  // If only MongoDB ID exists, generate formatted ID from it
+  if (mongoId) {
+    return `FAS-${mongoId.toString().slice(-8).toUpperCase()}`
+  }
+  
+  return 'FAS-UNKNOWN'
+}
+
 const fallbackOrders: StoredOrder[] = [
   {
     id: 'FAS-1001',
@@ -129,7 +151,7 @@ const fallbackOrders: StoredOrder[] = [
 ]
 
 export default function DashboardPage() {
-  const { user, logout, updateProfile } = useAuth()
+  const { user, logout, updateProfile, isLoading } = useAuth()
   const router = useRouter()
   const [isEditModalOpen, setIsEditModalOpen] = useState(false)
   const [formData, setFormData] = useState({
@@ -150,9 +172,9 @@ export default function DashboardPage() {
   const { items: wishlistIds } = useWishlist()
 
   useEffect(() => {
-    if (!user) {
+    if (!isLoading && !user) {
       router.push('/login')
-    } else {
+    } else if (user) {
       setFormData({
         name: user.name || '',
         email: user.email || '',
@@ -160,8 +182,28 @@ export default function DashboardPage() {
         address: user.address || '',
         profilePic: user.profilePic || '',
       })
+      
+      // Clean up old generic orders storage to prevent data leakage
+      // New users should start with empty orders - don't migrate old data
+      if (typeof window !== 'undefined') {
+        const userOrdersKey = `recentOrders_${user.id}`
+        const existingUserOrders = window.localStorage.getItem(userOrdersKey)
+        
+        // Only remove old generic key if user already has their own orders
+        // This ensures new users start fresh without any default/demo data
+        if (existingUserOrders) {
+          // User has their own orders, safe to remove old generic key
+          window.localStorage.removeItem('recentOrders')
+        } else {
+          // New user - ensure they start with empty orders
+          // Remove any old generic orders to prevent data leakage
+          window.localStorage.removeItem('recentOrders')
+          // Initialize empty array for new user
+          window.localStorage.setItem(userOrdersKey, '[]')
+        }
+      }
     }
-  }, [user, router])
+  }, [user, router, isLoading])
 
   // Update form data when user changes from auth context
   useEffect(() => {
@@ -179,9 +221,12 @@ export default function DashboardPage() {
 
   useEffect(() => {
     const loadOrders = () => {
-      if (typeof window === 'undefined') return
+      if (typeof window === 'undefined' || !user) return
       try {
-        const stored = JSON.parse(window.localStorage.getItem('recentOrders') || '[]')
+        // Load orders from localStorage with user-specific key
+        const userOrdersKey = `recentOrders_${user.id}`
+        const stored = JSON.parse(window.localStorage.getItem(userOrdersKey) || '[]')
+        
         // Only show actual orders, no fallback demo data
         // Filter out orders that don't have payment completed
         const validOrders = stored.filter((order: StoredOrder) => {
@@ -203,7 +248,7 @@ export default function DashboardPage() {
     loadOrders()
 
     const handleStorage = (event: StorageEvent) => {
-      if (event.key === 'recentOrders') {
+      if (event.key && event.key.startsWith('recentOrders_')) {
         loadOrders()
       }
     }
@@ -217,7 +262,7 @@ export default function DashboardPage() {
       window.removeEventListener('storage', handleStorage)
       window.removeEventListener('recentOrdersUpdated', handleCustomUpdate)
     }
-  }, [])
+  }, [user])
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -229,6 +274,13 @@ export default function DashboardPage() {
     document.addEventListener('mousedown', handleClickOutside)
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [productMenuOpen])
+
+  // Redirect to login if not authenticated (must be before any conditional returns)
+  useEffect(() => {
+    if (!isLoading && !user) {
+      router.push('/login')
+    }
+  }, [user, isLoading, router])
 
   const wishlistItems = wishlistIds.length > 0
     ? wishlistIds
@@ -306,6 +358,27 @@ export default function DashboardPage() {
     }, 500)
   }
 
+  // Show loading or redirect if user is not available
+  if (isLoading) {
+    return (
+      <main className="min-h-screen bg-background">
+        <Header />
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-12">
+          <div className="flex items-center justify-center h-64">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+              <p className="text-muted-foreground">Loading...</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    )
+  }
+
+  if (!user) {
+    return null
+  }
+
   return (
     <main className="min-h-screen bg-background">
       <Header />
@@ -315,10 +388,10 @@ export default function DashboardPage() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-12 pb-8 border-b border-border">
           <div className="flex items-center gap-6">
             <div className="relative group">
-              {user.profilePic ? (
+              {user?.profilePic ? (
                 <img
                   src={user.profilePic || "/placeholder.svg"}
-                  alt={user.name}
+                  alt={user?.name || "User"}
                   className="w-24 h-24 rounded-full border-4 border-primary object-cover shadow-lg"
                 />
               ) : (
@@ -328,16 +401,16 @@ export default function DashboardPage() {
               )}
             </div>
             <div>
-              <h1 className="text-3xl font-bold text-foreground">{user.name}</h1>
+              <h1 className="text-3xl font-bold text-foreground">{user?.name || "User"}</h1>
               <p className="text-muted-foreground flex items-center gap-2 mt-1">
-                <Mail className="w-4 h-4" /> {user.email}
+                <Mail className="w-4 h-4" /> {user?.email || ""}
               </p>
-              {user.phone && (
+              {user?.phone && (
                 <p className="text-muted-foreground flex items-center gap-2 mt-1">
                   <Phone className="w-4 h-4" /> {user.phone}
                 </p>
               )}
-              {user.address && (
+              {user?.address && (
                 <p className="text-muted-foreground flex items-center gap-2 mt-1">
                   <MapPinIcon className="w-4 h-4" /> {user.address}
                 </p>
@@ -416,7 +489,7 @@ export default function DashboardPage() {
                           </p>
                           <p className="text-xl font-semibold text-foreground flex items-center gap-2 mt-1">
                             <Truck className="w-5 h-5 text-primary" />
-                            Order #{order.id}
+                            Order #{formatOrderId(order.id, (order as any).mongoId)}
                           </p>
                         </div>
                         <div className="flex items-center gap-4">
@@ -676,7 +749,7 @@ export default function DashboardPage() {
           <div className="bg-background border border-border rounded-2xl p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between mb-6">
               <div>
-                <p className="text-sm text-muted-foreground">Order #{selectedOrder.id}</p>
+                <p className="text-sm text-muted-foreground">Order #{formatOrderId(selectedOrder.id, (selectedOrder as any).mongoId)}</p>
                 <h3 className="text-2xl font-bold text-foreground">Order Details</h3>
               </div>
               <button
@@ -755,7 +828,7 @@ export default function DashboardPage() {
           <div className="bg-background border border-border rounded-2xl p-6 max-w-xl w-full max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between mb-6">
               <div>
-                <p className="text-sm text-muted-foreground">Tracking Order #{trackingOrder.id}</p>
+                <p className="text-sm text-muted-foreground">Tracking Order #{formatOrderId(trackingOrder.id, (trackingOrder as any).mongoId)}</p>
                 <h3 className="text-2xl font-bold text-foreground">Track Shipment</h3>
               </div>
               <button
@@ -860,20 +933,30 @@ export default function DashboardPage() {
                     // Delete from MongoDB if order has MongoDB ID
                     if (orderToCancel && (orderToCancel as any).mongoId) {
                       try {
-                        await fetch(`/api/orders/delete?id=${(orderToCancel as any).mongoId}`, {
+                        const response = await fetch(`/api/orders/delete?id=${(orderToCancel as any).mongoId}`, {
                           method: 'DELETE',
                         })
+                        if (!response.ok) {
+                          const errorText = await response.text()
+                          // If order not found in MongoDB, it's okay - might be localStorage only
+                          if (!errorText.includes('Order not found')) {
+                            console.error('Failed to delete order from MongoDB:', errorText)
+                          }
+                          // Continue with local deletion even if MongoDB deletion fails
+                        }
                       } catch (error) {
+                        // Continue with local deletion even if MongoDB deletion fails
                         console.error('Failed to delete order from MongoDB:', error)
                       }
                     }
                     
                     // Remove from local state
                     setRecentOrders(prev => prev.filter(order => order.id !== cancelOrderId))
-                    if (typeof window !== 'undefined') {
-                      const stored = JSON.parse(window.localStorage.getItem('recentOrders') || '[]')
+                    if (typeof window !== 'undefined' && user) {
+                      const userOrdersKey = `recentOrders_${user.id}`
+                      const stored = JSON.parse(window.localStorage.getItem(userOrdersKey) || '[]')
                       const updated = stored.filter((o: StoredOrder) => o.id !== cancelOrderId)
-                      window.localStorage.setItem('recentOrders', JSON.stringify(updated))
+                      window.localStorage.setItem(userOrdersKey, JSON.stringify(updated))
                     }
                     setCancelOrderId(null)
                     setCancelReason('')

@@ -7,6 +7,7 @@ import {
   ArrowLeft, Eye, Package, Truck, CheckCircle2, XCircle 
 } from 'lucide-react'
 import { Logo } from '@/components/logo'
+import { Footer } from '@/components/footer'
 import connectDB from '@/lib/db'
 import Order from '@/lib/models/Order'
 
@@ -325,9 +326,12 @@ export default function AdminOrdersPage() {
           </div>
         </main>
       </div>
+      <Footer />
     </div>
   )
 }
+
+
 
 
 

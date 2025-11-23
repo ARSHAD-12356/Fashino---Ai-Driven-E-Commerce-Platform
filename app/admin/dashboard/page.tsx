@@ -4,10 +4,12 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { 
   Package, ShoppingCart, Users, DollarSign, TrendingUp, 
-  TrendingDown, AlertTriangle, LogOut, Menu, X 
+  TrendingDown, AlertTriangle, LogOut, Menu, X, Filter
 } from 'lucide-react'
 import { Logo } from '@/components/logo'
+import { Footer } from '@/components/footer'
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
+import { products } from '@/lib/products'
 
 interface Stats {
   totalProducts: number
@@ -15,6 +17,21 @@ interface Stats {
   totalUsers: number
   totalRevenue: number
   lowStockProducts: number
+}
+
+interface RevenueData {
+  month: string
+  revenue: number
+}
+
+interface OrderStatusData {
+  status: string
+  count: number
+}
+
+interface CategorySalesData {
+  category: string
+  sales: number
 }
 
 export default function AdminDashboard() {
@@ -28,6 +45,10 @@ export default function AdminDashboard() {
   })
   const [isLoading, setIsLoading] = useState(true)
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [revenueData, setRevenueData] = useState<RevenueData[]>([])
+  const [orderStatusData, setOrderStatusData] = useState<OrderStatusData[]>([])
+  const [categorySalesData, setCategorySalesData] = useState<CategorySalesData[]>([])
+  const [categoryFilter, setCategoryFilter] = useState<'day' | 'week' | 'month' | 'year'>('month')
 
   useEffect(() => {
     // Check admin auth
@@ -53,11 +74,13 @@ export default function AdminDashboard() {
         let totalUsers = 0
         let totalRevenue = 0
         let lowStockProducts = 0
+        let orders: any[] = []
 
         if (ordersRes?.ok) {
           const ordersData = await ordersRes.json()
-          totalOrders = ordersData.orders?.length || 0
-          totalRevenue = ordersData.orders?.reduce((sum: number, o: any) => sum + (o.totalAmount || 0), 0) || 0
+          orders = ordersData.orders || []
+          totalOrders = orders.length
+          totalRevenue = orders.reduce((sum: number, o: any) => sum + (o.totalAmount || 0), 0)
         }
 
         if (usersRes?.ok) {
@@ -66,9 +89,9 @@ export default function AdminDashboard() {
         }
 
         // Count low stock products
-        const products = await import('@/lib/products').then(m => m.products)
-        lowStockProducts = products.filter((p: any) => (p.stock || 0) < 5).length
-        totalProducts = products.length
+        const productsList = await import('@/lib/products').then(m => m.products)
+        lowStockProducts = productsList.filter((p: any) => (p.stock || 0) < 5).length
+        totalProducts = productsList.length
 
         setStats({
           totalProducts,
@@ -77,9 +100,68 @@ export default function AdminDashboard() {
           totalRevenue,
           lowStockProducts,
         })
+
+        // Process revenue data by month
+        const revenueMap = new Map<string, number>()
+        orders.forEach((order: any) => {
+          if (order.createdAt) {
+            const date = new Date(order.createdAt)
+            const monthKey = date.toLocaleDateString('en-US', { month: 'short' })
+            const currentRevenue = revenueMap.get(monthKey) || 0
+            revenueMap.set(monthKey, currentRevenue + (order.totalAmount || 0))
+          }
+        })
+        
+        // Get last 6 months
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        const currentMonth = new Date().getMonth()
+        const revenueDataArray: RevenueData[] = []
+        for (let i = 5; i >= 0; i--) {
+          const monthIndex = (currentMonth - i + 12) % 12
+          const monthName = months[monthIndex]
+          revenueDataArray.push({
+            month: monthName,
+            revenue: revenueMap.get(monthName) || 0,
+          })
+        }
+        setRevenueData(revenueDataArray)
+
+        // Process order status data
+        const statusMap = new Map<string, number>()
+        orders.forEach((order: any) => {
+          const status = order.status || 'Pending'
+          statusMap.set(status, (statusMap.get(status) || 0) + 1)
+        })
+        const statusDataArray: OrderStatusData[] = [
+          { status: 'Pending', count: statusMap.get('Pending') || 0 },
+          { status: 'Processing', count: statusMap.get('Processing') || 0 },
+          { status: 'Shipped', count: statusMap.get('Shipped') || 0 },
+          { status: 'Delivered', count: statusMap.get('Delivered') || 0 },
+          { status: 'Cancelled', count: statusMap.get('Cancelled') || 0 },
+        ]
+        setOrderStatusData(statusDataArray)
+
+        // Process category sales data
+        const categoryMap = new Map<string, number>()
+        orders.forEach((order: any) => {
+          if (order.items && Array.isArray(order.items)) {
+            order.items.forEach((item: any) => {
+              const product = productsList.find((p: any) => p.id === item.productId || p.name === item.name)
+              if (product && product.category) {
+                const category = product.category
+                const itemTotal = (item.price || 0) * (item.quantity || 1)
+                categoryMap.set(category, (categoryMap.get(category) || 0) + itemTotal)
+              }
+            })
+          }
+        })
+        const categoryDataArray: CategorySalesData[] = Array.from(categoryMap.entries())
+          .map(([category, sales]) => ({ category, sales }))
+          .sort((a, b) => b.sales - a.sales)
+        setCategorySalesData(categoryDataArray)
       } catch (error) {
         console.error('Failed to fetch stats:', error)
-        // Fallback to demo data
+        // Fallback to empty data
         setStats({
           totalProducts: 152,
           totalOrders: 0,
@@ -87,6 +169,9 @@ export default function AdminDashboard() {
           totalRevenue: 0,
           lowStockProducts: 8,
         })
+        setRevenueData([])
+        setOrderStatusData([])
+        setCategorySalesData([])
       } finally {
         setIsLoading(false)
       }
@@ -138,21 +223,21 @@ export default function AdminDashboard() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Top Bar */}
-      <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-40">
+      <header className="bg-black border-b border-gray-700 sticky top-0 z-40">
         <div className="px-4 md:px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
-              className="lg:hidden p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"
+              className="lg:hidden p-2 hover:bg-gray-800 rounded-lg text-white"
             >
               {sidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
             <Logo showIcon={true} />
-            <span className="text-sm text-muted-foreground ml-2">Admin Panel</span>
+            <span className="text-sm text-gray-300 ml-2">Admin Panel</span>
           </div>
           <button
             onClick={handleLogout}
-            className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg smooth-transition"
+            className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-red-400 hover:bg-red-900/20 rounded-lg smooth-transition"
           >
             <LogOut className="w-4 h-4" />
             Logout
@@ -263,18 +348,11 @@ export default function AdminDashboard() {
                   Revenue Overview
                 </h3>
                 <ResponsiveContainer width="100%" height={300}>
-                  <LineChart data={[
-                    { month: 'Jan', revenue: 120000 },
-                    { month: 'Feb', revenue: 150000 },
-                    { month: 'Mar', revenue: 180000 },
-                    { month: 'Apr', revenue: 200000 },
-                    { month: 'May', revenue: 240000 },
-                    { month: 'Jun', revenue: 280000 },
-                  ]}>
+                  <LineChart data={revenueData.length > 0 ? revenueData : [{ month: 'No Data', revenue: 0 }]}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="month" />
                     <YAxis />
-                    <Tooltip />
+                    <Tooltip formatter={(value: number) => `₹${value.toLocaleString('en-IN')}`} />
                     <Legend />
                     <Line type="monotone" dataKey="revenue" stroke="#8884d8" strokeWidth={2} />
                   </LineChart>
@@ -285,13 +363,7 @@ export default function AdminDashboard() {
                   Order Status
                 </h3>
                 <ResponsiveContainer width="100%" height={300}>
-                  <BarChart data={[
-                    { status: 'Pending', count: 12 },
-                    { status: 'Processing', count: 8 },
-                    { status: 'Shipped', count: 25 },
-                    { status: 'Delivered', count: 44 },
-                    { status: 'Cancelled', count: 3 },
-                  ]}>
+                  <BarChart data={orderStatusData.length > 0 ? orderStatusData : [{ status: 'No Data', count: 0 }]}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="status" />
                     <YAxis />
@@ -302,12 +374,47 @@ export default function AdminDashboard() {
                 </ResponsiveContainer>
               </div>
             </div>
+
+            {/* Category Sales Chart */}
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-gray-700">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                  Category Sales
+                </h3>
+                <div className="flex items-center gap-2">
+                  <Filter className="w-4 h-4 text-gray-500" />
+                  <select
+                    value={categoryFilter}
+                    onChange={(e) => setCategoryFilter(e.target.value as 'day' | 'week' | 'month' | 'year')}
+                    className="px-3 py-1.5 text-sm border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary"
+                  >
+                    <option value="day">Day</option>
+                    <option value="week">Week</option>
+                    <option value="month">Month</option>
+                    <option value="year">Year</option>
+                  </select>
+                </div>
+              </div>
+              <ResponsiveContainer width="100%" height={400}>
+                <BarChart data={categorySalesData.length > 0 ? categorySalesData : [{ category: 'No Data', sales: 0 }]}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="category" angle={-45} textAnchor="end" height={100} />
+                  <YAxis />
+                  <Tooltip formatter={(value: number) => `₹${value.toLocaleString('en-IN')}`} />
+                  <Legend />
+                  <Bar dataKey="sales" fill="#8884d8" />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
           </div>
         </main>
       </div>
+      <Footer />
     </div>
   )
 }
+
+
 
 
 

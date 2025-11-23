@@ -22,18 +22,26 @@ if (!global.mongoose) {
 }
 
 async function connectDB() {
-  if (cached.conn) {
+  if (cached.conn && mongoose.connection.readyState === 1) {
     console.log('📦 Using existing MongoDB connection')
     return cached.conn
+  }
+
+  // Reset if connection is dead
+  if (cached.conn && mongoose.connection.readyState === 0) {
+    cached.conn = null
+    cached.promise = null
   }
 
   if (!cached.promise) {
     const opts = {
       bufferCommands: false,
-      serverSelectionTimeoutMS: 15000, // 15 seconds timeout
-      socketTimeoutMS: 45000, // 45 seconds socket timeout
+      serverSelectionTimeoutMS: 10000, // 10 seconds timeout
+      socketTimeoutMS: 30000, // 30 seconds socket timeout
       maxPoolSize: 10,
       minPoolSize: 1,
+      retryWrites: true,
+      retryReads: true,
     }
 
     console.log('🔄 Attempting to connect to MongoDB Atlas...')
@@ -46,12 +54,19 @@ async function connectDB() {
       console.error('❌ MongoDB Connection Error:', error.message)
       console.error('Full error:', error)
       
+      // Clear the promise so we can retry
+      cached.promise = null
+      
       // Provide helpful error messages
-      if (error.message.includes('IP') || error.message.includes('whitelist') || error.message.includes('ENOTFOUND')) {
+      if (error.message.includes('IP') || error.message.includes('whitelist') || error.message.includes('ENOTFOUND') || error.message.includes('ECONNREFUSED') || error.message.includes('querySrv') || error.message.includes('MongoNetworkError')) {
         throw new Error(
-          'Could not connect to MongoDB Atlas. Your IP address may not be whitelisted. ' +
-          'Please add your IP address (or 0.0.0.0/0 for development) to MongoDB Atlas Network Access list. ' +
-          'See MONGODB_SETUP_GUIDE.md for instructions.'
+          'Database connection failed. Your IP address may not be whitelisted in MongoDB Atlas.\n\n' +
+          'Quick Fix:\n' +
+          '1. Go to MongoDB Atlas → Security → Network Access\n' +
+          '2. Click "Add IP Address" → "Add Current IP Address" (or use 0.0.0.0/0 for all IPs in development)\n' +
+          '3. Wait 1-2 minutes for changes to propagate\n' +
+          '4. Try again\n\n' +
+          'Make sure your IP address is whitelisted in MongoDB Atlas Network Access settings.'
         )
       }
       
@@ -61,9 +76,10 @@ async function connectDB() {
         )
       }
       
-      if (error.message.includes('timeout')) {
+      if (error.message.includes('timeout') || error.message.includes('ETIMEDOUT')) {
         throw new Error(
-          'Connection timeout. Please check your internet connection and MongoDB Atlas status.'
+          'Connection timeout. Please check your internet connection and MongoDB Atlas status. ' +
+          'If the issue persists, verify your IP is whitelisted in MongoDB Atlas Network Access.'
         )
       }
       
@@ -84,4 +100,3 @@ async function connectDB() {
 }
 
 export default connectDB
-

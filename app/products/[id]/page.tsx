@@ -5,6 +5,7 @@ import { Heart, Truck, Shield, RotateCcw } from 'lucide-react'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { useCart } from '@/context/cart-context'
+import { useAuth } from '@/context/auth-context'
 import { products } from '@/lib/products'
 import Link from 'next/link'
 import { getProductImage, getFallbackImage } from '@/lib/utils'
@@ -35,6 +36,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
   const [isWishlisted, setIsWishlisted] = useState(false)
   const [activeTab, setActiveTab] = useState('description')
   const { addItem } = useCart()
+  const { user } = useAuth()
 
   useEffect(() => {
     setSelectedSize('')
@@ -64,6 +66,10 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
   }
 
   const handleAddToCart = () => {
+    if (!user) {
+      router.push('/login')
+      return
+    }
     if (!selectedSize) {
       alert('Please select a size')
       return
@@ -81,6 +87,10 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
   }
 
   const handleBuyNow = () => {
+    if (!user) {
+      router.push('/login')
+      return
+    }
     if (!selectedSize) {
       alert('Please select a size')
       return
@@ -218,7 +228,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
               </div>
 
               {/* Stock Status */}
-              {(product?.inStock ?? true) ? (
+              {product?.inStock ? (
                 <div className="flex items-center gap-2 text-green-600 font-medium">
                   <div className="w-2 h-2 bg-green-600 rounded-full"></div>
                   In Stock
@@ -243,21 +253,25 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                   <button
                     onClick={handleBuyNow}
                     disabled={product?.inStock === false}
-                    className="flex-1 border-2 border-primary text-primary py-4 rounded-full font-bold text-lg hover:bg-primary/10 smooth-transition active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="flex-1 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black py-4 rounded-full font-bold text-lg hover:from-yellow-300 hover:via-yellow-400 hover:to-yellow-500 smooth-transition active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-yellow-500/50 hover:shadow-yellow-500/70"
                   >
                     Buy Now
                   </button>
                 </div>
-                <button
-                  onClick={() => setIsWishlisted(!isWishlisted)}
-                  className={`px-6 py-4 rounded-full border-2 font-semibold smooth-transition hover:scale-105 ${
-                    isWishlisted
-                      ? 'border-primary bg-primary/10 text-primary'
-                      : 'border-border text-foreground hover:border-primary'
-                  }`}
-                >
-                  <Heart className={`w-5 h-5 ${isWishlisted ? 'fill-current' : ''}`} />
-                </button>
+                {user && (
+                  <button
+                    onClick={() => {
+                      setIsWishlisted(!isWishlisted)
+                    }}
+                    className={`px-6 py-4 rounded-full border-2 font-semibold smooth-transition hover:scale-105 ${
+                      isWishlisted
+                        ? 'border-primary bg-primary/10 text-primary'
+                        : 'border-border text-foreground hover:border-primary'
+                    }`}
+                  >
+                    <Heart className={`w-5 h-5 ${isWishlisted ? 'fill-current' : ''}`} />
+                  </button>
+                )}
               </div>
 
               {/* Shipping Info */}
@@ -404,7 +418,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                   </div>
                   <div className="flex gap-4">
                     <span className="font-semibold text-foreground min-w-24">Availability:</span>
-                    <span className="text-muted-foreground">{(product?.inStock ?? true) ? 'In Stock' : 'Out of Stock'}</span>
+                    <span className="text-muted-foreground">{product?.inStock ? 'In Stock' : 'Out of Stock'}</span>
                   </div>
                 </div>
               )}
@@ -416,3 +430,4 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
     </>
   )
 }
+

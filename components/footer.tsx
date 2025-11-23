@@ -16,7 +16,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* About Fashino */}
           <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold mb-4 text-white">About Fashino</h3>
+            <h3 
+              className="mb-4 text-white fashino-logo text-[32px] md:text-[40px] lg:text-[50px]"
+              style={{ 
+                fontFamily: "var(--font-great-vibes), cursive",
+              }}
+            >
+              About Fashino
+            </h3>
             <p className="text-sm text-gray-400 leading-relaxed mb-4">
               Premium fashion for the modern individual. Discover curated collections that define your style. 
               We bring you the latest trends and timeless classics, all in one place.
@@ -147,10 +154,27 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-800 pt-8 text-center">
+        <div className="border-t border-gray-800 pt-8 text-center space-y-4">
           <p className="text-sm text-gray-500">
-            Copyright © Fashino 2025. All rights reserved.
+            Copyright ©             <span 
+              className="inline-block fashino-logo text-white"
+              style={{ 
+                fontFamily: "var(--font-great-vibes), cursive",
+                fontSize: '16px',
+              }}
+            >
+              Fashino
+            </span> 2025. All rights reserved.
           </p>
+          {/* Developer Credit */}
+          <div className="flex items-center justify-center gap-2 pt-2">
+            <p className="text-xs md:text-sm text-gray-500 flex items-center gap-2">
+              <span className="text-gray-600">Developed by</span>
+              <span className="text-primary font-bold bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">
+                ArshXCoder
+              </span>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

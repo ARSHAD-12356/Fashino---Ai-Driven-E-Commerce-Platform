@@ -6,7 +6,6 @@ import { WinterCollection } from '@/components/winter-collection'
 import { CustomerReviews } from '@/components/customer-reviews'
 import { NewsletterSection } from '@/components/newsletter-section'
 import { Footer } from '@/components/footer'
-import { AIChatbot } from '@/components/ai-chatbot'
 
 export default function Home() {
   return (
@@ -21,7 +20,6 @@ export default function Home() {
       <CustomerReviews />
       <NewsletterSection />
       <Footer />
-      <AIChatbot />
     </main>
   )
 }

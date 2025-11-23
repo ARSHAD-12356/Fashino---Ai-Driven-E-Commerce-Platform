@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { MessageCircle, X, Send, Bot, User, ThumbsUp, ThumbsDown, ExternalLink, ShoppingBag } from 'lucide-react'
+import { MessageCircle, X, Send, Bot, User, ThumbsUp, ThumbsDown, ExternalLink, ShoppingBag, Mic, MicOff, Globe } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { useAuth } from '@/context/auth-context'
@@ -17,27 +17,264 @@ interface Message {
   feedback?: 'liked' | 'disliked' | null
 }
 
+type Language = 'en' | 'hi' | 'ta' | 'te' | 'mr' | 'gu' | 'bn' | 'kn' | 'ml' | 'pa' | 'or' | 'ur'
+
+const translations: Record<Language, Record<string, string>> = {
+  en: {
+    greeting: 'Hello! I\'m Fashino\'s product assistant. You can ask me about products, prices, categories, and deals. How can I help you?',
+    placeholder: 'Ask about products, prices, categories...',
+    error: 'Sorry, I couldn\'t understand your query. Please ask product-related questions.',
+    technicalError: 'Sorry, there\'s a technical issue. Please try again later.',
+    clearChat: 'Clear chat',
+    closeChat: 'Close chat',
+    viewProduct: 'View Product',
+    viewAll: 'View All',
+    helpful: 'Helpful',
+    notHelpful: 'Not helpful',
+    productQueriesOnly: 'Product queries only',
+    example: 'Example: "hoodies under ₹2000"',
+    listening: 'Listening...',
+    speakNow: 'Speak now',
+    selectLanguage: 'Select Language',
+  },
+  hi: {
+    greeting: 'नमस्ते! मैं Fashino का product assistant हूं। आप मुझसे products, prices, categories, और deals के बारे में पूछ सकते हैं। कैसे help कर सकता हूं?',
+    placeholder: 'Products, prices, categories पूछें...',
+    error: 'क्षमा करें, मैं आपकी query समझ नहीं पाया। कृपया product से related सवाल पूछें।',
+    technicalError: 'क्षमा करें, कुछ technical issue आ रहा है। कृपया थोड़ी देर बाद try करें।',
+    clearChat: 'Chat साफ करें',
+    closeChat: 'Chat बंद करें',
+    viewProduct: 'Product देखें',
+    viewAll: 'सभी देखें',
+    helpful: 'मददगार',
+    notHelpful: 'मददगार नहीं',
+    productQueriesOnly: 'केवल product queries',
+    example: 'उदाहरण: "₹2000 के अंदर hoodie"',
+    listening: 'सुन रहा हूं...',
+    speakNow: 'अब बोलें',
+    selectLanguage: 'भाषा चुनें',
+  },
+  ta: {
+    greeting: 'வணக்கம்! நான் Fashino இன் product assistant. நீங்கள் products, prices, categories, மற்றும் deals பற்றி கேட்கலாம். எவ்வாறு உதவ முடியும்?',
+    placeholder: 'Products, prices, categories கேள்வி...',
+    error: 'மன்னிக்கவும், உங்கள் query ஐ புரிந்து கொள்ள முடியவில்லை. தயவுசெய்து product தொடர்பான கேள்விகளை கேளுங்கள்.',
+    technicalError: 'மன்னிக்கவும், சில technical issue வருகிறது. தயவுசெய்து சிறிது நேரம் கழித்து முயற்சிக்கவும்.',
+    clearChat: 'Chat அழிக்க',
+    closeChat: 'Chat மூட',
+    viewProduct: 'Product பார்க்க',
+    viewAll: 'அனைத்தையும் பார்க்க',
+    helpful: 'உதவியாக',
+    notHelpful: 'உதவியாக இல்லை',
+    productQueriesOnly: 'Product queries மட்டும்',
+    example: 'எடுத்துக்காட்டு: "₹2000 க்கு கீழே hoodie"',
+    listening: 'கேட்கிறேன்...',
+    speakNow: 'இப்போது பேசுங்கள்',
+    selectLanguage: 'மொழியைத் தேர்ந்தெடுக்கவும்',
+  },
+  te: {
+    greeting: 'నమస్కారం! నేను Fashino యొక్క product assistant. మీరు products, prices, categories, మరియు deals గురించి అడగవచ్చు. ఎలా సహాయం చేయగలను?',
+    placeholder: 'Products, prices, categories అడగండి...',
+    error: 'క్షమించండి, మీ query ను అర్థం చేసుకోలేకపోయాను. దయచేసి product సంబంధిత ప్రశ్నలు అడగండి.',
+    technicalError: 'క్షమించండి, కొన్ని technical issue వస్తోంది. దయచేసి కొంచెం సమయం తర్వాత ప్రయత్నించండి.',
+    clearChat: 'Chat తొలగించు',
+    closeChat: 'Chat మూసివేయి',
+    viewProduct: 'Product చూడండి',
+    viewAll: 'అన్నీ చూడండి',
+    helpful: 'సహాయకరమైన',
+    notHelpful: 'సహాయకరమైనది కాదు',
+    productQueriesOnly: 'Product queries మాత్రమే',
+    example: 'ఉదాహరణ: "₹2000 కింద hoodie"',
+    listening: 'వింటున్నాను...',
+    speakNow: 'ఇప్పుడు మాట్లాడండి',
+    selectLanguage: 'భాషను ఎంచుకోండి',
+  },
+  mr: {
+    greeting: 'नमस्कार! मी Fashino चा product assistant आहे. तुम्ही products, prices, categories, आणि deals बद्दल विचारू शकता. कसे मदत करू शकतो?',
+    placeholder: 'Products, prices, categories विचारा...',
+    error: 'क्षमस्व, मी तुमची query समजू शकलो नाही. कृपया product संबंधित प्रश्न विचारा.',
+    technicalError: 'क्षमस्व, काही technical issue येत आहे. कृपया थोड्या वेळाने पुन्हा प्रयत्न करा.',
+    clearChat: 'Chat साफ करा',
+    closeChat: 'Chat बंद करा',
+    viewProduct: 'Product पहा',
+    viewAll: 'सर्व पहा',
+    helpful: 'उपयुक्त',
+    notHelpful: 'उपयुक्त नाही',
+    productQueriesOnly: 'फक्त product queries',
+    example: 'उदाहरण: "₹2000 अंतर्गत hoodie"',
+    listening: 'ऐकत आहे...',
+    speakNow: 'आता बोला',
+    selectLanguage: 'भाषा निवडा',
+  },
+  gu: {
+    greeting: 'નમસ્તે! હું Fashino નો product assistant છું. તમે products, prices, categories, અને deals વિશે પૂછી શકો છો. કેવી રીતે મદદ કરી શકું?',
+    placeholder: 'Products, prices, categories પૂછો...',
+    error: 'માફ કરશો, હું તમારી query સમજી શક્યો નથી. કૃપા કરીને product સંબંધિત પ્રશ્નો પૂછો.',
+    technicalError: 'માફ કરશો, કેટલાક technical issue આવી રહ્યું છે. કૃપા કરીને થોડી વાર પછી પ્રયાસ કરો.',
+    clearChat: 'Chat સાફ કરો',
+    closeChat: 'Chat બંધ કરો',
+    viewProduct: 'Product જુઓ',
+    viewAll: 'બધા જુઓ',
+    helpful: 'મદદગાર',
+    notHelpful: 'મદદગાર નથી',
+    productQueriesOnly: 'માત્ર product queries',
+    example: 'ઉદાહરણ: "₹2000 ની અંદર hoodie"',
+    listening: 'સાંભળી રહ્યો છું...',
+    speakNow: 'હવે બોલો',
+    selectLanguage: 'ભાષા પસંદ કરો',
+  },
+  bn: {
+    greeting: 'নমস্কার! আমি Fashino এর product assistant। আপনি products, prices, categories, এবং deals সম্পর্কে জিজ্ঞাসা করতে পারেন। কিভাবে সাহায্য করতে পারি?',
+    placeholder: 'Products, prices, categories জিজ্ঞাসা করুন...',
+    error: 'দুঃখিত, আমি আপনার query বুঝতে পারিনি। অনুগ্রহ করে product সম্পর্কিত প্রশ্ন জিজ্ঞাসা করুন।',
+    technicalError: 'দুঃখিত, কিছু technical issue হচ্ছে। অনুগ্রহ করে কিছুক্ষণ পরে আবার চেষ্টা করুন।',
+    clearChat: 'Chat সাফ করুন',
+    closeChat: 'Chat বন্ধ করুন',
+    viewProduct: 'Product দেখুন',
+    viewAll: 'সব দেখুন',
+    helpful: 'সহায়ক',
+    notHelpful: 'সহায়ক নয়',
+    productQueriesOnly: 'শুধুমাত্র product queries',
+    example: 'উদাহরণ: "₹2000 এর নিচে hoodie"',
+    listening: 'শুনছি...',
+    speakNow: 'এখন বলুন',
+    selectLanguage: 'ভাষা নির্বাচন করুন',
+  },
+  kn: {
+    greeting: 'ನಮಸ್ಕಾರ! ನಾನು Fashino ನ product assistant. ನೀವು products, prices, categories, ಮತ್ತು deals ಬಗ್ಗೆ ಕೇಳಬಹುದು. ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?',
+    placeholder: 'Products, prices, categories ಕೇಳಿ...',
+    error: 'ಕ್ಷಮಿಸಿ, ನಾನು ನಿಮ್ಮ query ಅನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು product ಸಂಬಂಧಿತ ಪ್ರಶ್ನೆಗಳನ್ನು ಕೇಳಿ.',
+    technicalError: 'ಕ್ಷಮಿಸಿ, ಕೆಲವು technical issue ಬರುತ್ತಿದೆ. ದಯವಿಟ್ಟು ಸ್ವಲ್ಪ ಸಮಯದ ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.',
+    clearChat: 'Chat ಅಳಿಸಿ',
+    closeChat: 'Chat ಮುಚ್ಚಿ',
+    viewProduct: 'Product ನೋಡಿ',
+    viewAll: 'ಎಲ್ಲಾ ನೋಡಿ',
+    helpful: 'ಸಹಾಯಕ',
+    notHelpful: 'ಸಹಾಯಕವಲ್ಲ',
+    productQueriesOnly: 'ಕೇವಲ product queries',
+    example: 'ಉದಾಹರಣೆ: "₹2000 ಕೆಳಗೆ hoodie"',
+    listening: 'ಕೇಳುತ್ತಿದ್ದೇನೆ...',
+    speakNow: 'ಈಗ ಮಾತನಾಡಿ',
+    selectLanguage: 'ಭಾಷೆಯನ್ನು ಆಯ್ಕೆ ಮಾಡಿ',
+  },
+  ml: {
+    greeting: 'നമസ്കാരം! ഞാൻ Fashino ന്റെ product assistant ആണ്. നിങ്ങൾക്ക് products, prices, categories, എന്നിവയെക്കുറിച്ച് ചോദിക്കാം. എങ്ങനെ സഹായിക്കാം?',
+    placeholder: 'Products, prices, categories ചോദിക്കുക...',
+    error: 'ക്ഷമിക്കണം, ഞാൻ നിങ്ങളുടെ query മനസ്സിലാക്കാൻ കഴിഞ്ഞില്ല. ദയവായി product സംബന്ധിച്ച ചോദ്യങ്ങൾ ചോദിക്കുക.',
+    technicalError: 'ക്ഷമിക്കണം, ചില technical issue വരുന്നു. ദയവായി കുറച്ച് സമയത്തിന് ശേഷം വീണ്ടും ശ്രമിക്കുക.',
+    clearChat: 'Chat മായ്ക്കുക',
+    closeChat: 'Chat അടയ്ക്കുക',
+    viewProduct: 'Product കാണുക',
+    viewAll: 'എല്ലാം കാണുക',
+    helpful: 'സഹായകരമാണ്',
+    notHelpful: 'സഹായകരമല്ല',
+    productQueriesOnly: 'Product queries മാത്രം',
+    example: 'ഉദാഹരണം: "₹2000 ൽ താഴെ hoodie"',
+    listening: 'കേൾക്കുന്നു...',
+    speakNow: 'ഇപ്പോൾ സംസാരിക്കുക',
+    selectLanguage: 'ഭാഷ തിരഞ്ഞെടുക്കുക',
+  },
+  pa: {
+    greeting: 'ਸਤ ਸ੍ਰੀ ਅਕਾਲ! ਮੈਂ Fashino ਦਾ product assistant ਹਾਂ। ਤੁਸੀਂ products, prices, categories, ਅਤੇ deals ਬਾਰੇ ਪੁੱਛ ਸਕਦੇ ਹੋ। ਕਿਵੇਂ ਮਦਦ ਕਰ ਸਕਦਾ ਹਾਂ?',
+    placeholder: 'Products, prices, categories ਪੁੱਛੋ...',
+    error: 'ਮਾਫ਼ ਕਰੋ, ਮੈਂ ਤੁਹਾਡੀ query ਸਮਝ ਨਹੀਂ ਸਕਿਆ। ਕਿਰਪਾ ਕਰਕੇ product ਸੰਬੰਧੀ ਸਵਾਲ ਪੁੱਛੋ।',
+    technicalError: 'ਮਾਫ਼ ਕਰੋ, ਕੁਝ technical issue ਆ ਰਿਹਾ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਥੋੜ੍ਹੀ ਦੇਰ ਬਾਅਦ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।',
+    clearChat: 'Chat ਸਾਫ਼ ਕਰੋ',
+    closeChat: 'Chat ਬੰਦ ਕਰੋ',
+    viewProduct: 'Product ਵੇਖੋ',
+    viewAll: 'ਸਭ ਵੇਖੋ',
+    helpful: 'ਮਦਦਗਾਰ',
+    notHelpful: 'ਮਦਦਗਾਰ ਨਹੀਂ',
+    productQueriesOnly: 'ਸਿਰਫ਼ product queries',
+    example: 'ਉਦਾਹਰਣ: "₹2000 ਹੇਠਾਂ hoodie"',
+    listening: 'ਸੁਣ ਰਿਹਾ ਹਾਂ...',
+    speakNow: 'ਹੁਣ ਬੋਲੋ',
+    selectLanguage: 'ਭਾਸ਼ਾ ਚੁਣੋ',
+  },
+  or: {
+    greeting: 'ନମସ୍କାର! ମୁଁ Fashino ର product assistant। ଆପଣ products, prices, categories, ଏବଂ deals ବିଷୟରେ ପଚାରିପାରିବେ। କିପରି ସାହାଯ୍ୟ କରିପାରିବି?',
+    placeholder: 'Products, prices, categories ପଚାରନ୍ତୁ...',
+    error: 'କ୍ଷମା କରନ୍ତୁ, ମୁଁ ଆପଣଙ୍କର query ବୁଝିପାରିଲି ନାହିଁ। ଦୟାକରି product ସମ୍ବନ୍ଧୀୟ ପ୍ରଶ୍ନ ପଚାରନ୍ତୁ।',
+    technicalError: 'କ୍ଷମା କରନ୍ତୁ, କିଛି technical issue ଆସୁଛି। ଦୟାକରି ଅଳ୍ପ ସମୟ ପରେ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ।',
+    clearChat: 'Chat ସଫା କରନ୍ତୁ',
+    closeChat: 'Chat ବନ୍ଦ କରନ୍ତୁ',
+    viewProduct: 'Product ଦେଖନ୍ତୁ',
+    viewAll: 'ସମସ୍ତ ଦେଖନ୍ତୁ',
+    helpful: 'ସାହାଯ୍ୟକାରୀ',
+    notHelpful: 'ସାହାଯ୍ୟକାରୀ ନୁହେଁ',
+    productQueriesOnly: 'କେବଳ product queries',
+    example: 'ଉଦାହରଣ: "₹2000 ତଳେ hoodie"',
+    listening: 'ଶୁଣୁଛି...',
+    speakNow: 'ଏବେ କହନ୍ତୁ',
+    selectLanguage: 'ଭାଷା ବାଛନ୍ତୁ',
+  },
+  ur: {
+    greeting: 'السلام علیکم! میں Fashino کا product assistant ہوں۔ آپ مجھ سے products, prices, categories, اور deals کے بارے میں پوچھ سکتے ہیں۔ کیسے مدد کر سکتا ہوں؟',
+    placeholder: 'Products, prices, categories پوچھیں...',
+    error: 'معذرت، میں آپ کی query سمجھ نہیں پایا۔ براہ کرم product سے متعلق سوالات پوچھیں۔',
+    technicalError: 'معذرت، کچھ technical issue آ رہا ہے۔ براہ کرم تھوڑی دیر بعد دوبارہ کوشش کریں۔',
+    clearChat: 'Chat صاف کریں',
+    closeChat: 'Chat بند کریں',
+    viewProduct: 'Product دیکھیں',
+    viewAll: 'سب دیکھیں',
+    helpful: 'مددگار',
+    notHelpful: 'مددگار نہیں',
+    productQueriesOnly: 'صرف product queries',
+    example: 'مثال: "₹2000 کے نیچے hoodie"',
+    listening: 'سن رہا ہوں...',
+    speakNow: 'اب بولیں',
+    selectLanguage: 'زبان منتخب کریں',
+  },
+}
+
+const languageNames: Record<Language, string> = {
+  en: 'English',
+  hi: 'हिंदी',
+  ta: 'தமிழ்',
+  te: 'తెలుగు',
+  mr: 'मराठी',
+  gu: 'ગુજરાતી',
+  bn: 'বাংলা',
+  kn: 'ಕನ್ನಡ',
+  ml: 'മലയാളം',
+  pa: 'ਪੰਜਾਬੀ',
+  or: 'ଓଡ଼ିଆ',
+  ur: 'اردو',
+}
+
 export function ProductChatbot() {
   const router = useRouter()
   const { user } = useAuth()
   const [isOpen, setIsOpen] = useState(false)
-  
-  // Only show chatbot if user is authenticated
-  if (!user) {
-    return null
-  }
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: '1',
-      text: 'Namaste! Main Fashino ka product assistant hoon. Aap mujhse products, prices, categories, aur deals ke baare me puchh sakte hain. Kaise help kar sakta hoon?',
-      sender: 'bot',
-      timestamp: new Date()
-    }
-  ])
+  const [language, setLanguage] = useState<Language>('en')
+  const [isListening, setIsListening] = useState(false)
+  const [isSpeaking, setIsSpeaking] = useState(false)
+  const recognitionRef = useRef<any>(null)
+  const synthesisRef = useRef<SpeechSynthesis | null>(null)
+  const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
+
+  // Initialize messages with greeting in selected language
+  useEffect(() => {
+    if (messages.length === 0) {
+      setMessages([{
+        id: '1',
+        text: translations[language].greeting,
+        sender: 'bot',
+        timestamp: new Date()
+      }])
+    } else if (messages.length === 1 && messages[0].id === '1') {
+      // Update greeting when language changes
+      setMessages([{
+        id: '1',
+        text: translations[language].greeting,
+        sender: 'bot',
+        timestamp: new Date()
+      }])
+    }
+  }, [language])
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -52,6 +289,76 @@ export function ProductChatbot() {
       inputRef.current.focus()
     }
   }, [isOpen])
+
+  // Initialize speech recognition
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition
+      if (SpeechRecognition) {
+        recognitionRef.current = new SpeechRecognition()
+        recognitionRef.current.continuous = false
+        recognitionRef.current.interimResults = false
+        recognitionRef.current.lang = language === 'en' ? 'en-IN' : `${language}-IN`
+
+        recognitionRef.current.onresult = (event: any) => {
+          const transcript = event.results[0][0].transcript
+          setInput(transcript)
+          setIsListening(false)
+        }
+
+        recognitionRef.current.onerror = () => {
+          setIsListening(false)
+        }
+
+        recognitionRef.current.onend = () => {
+          setIsListening(false)
+        }
+      }
+
+      synthesisRef.current = window.speechSynthesis
+    }
+  }, [language])
+
+  const startListening = () => {
+    if (recognitionRef.current && !isListening) {
+      setIsListening(true)
+      recognitionRef.current.start()
+    }
+  }
+
+  const stopListening = () => {
+    if (recognitionRef.current && isListening) {
+      recognitionRef.current.stop()
+      setIsListening(false)
+    }
+  }
+
+  const speakText = (text: string) => {
+    if (synthesisRef.current) {
+      const utterance = new SpeechSynthesisUtterance(text)
+      utterance.lang = language === 'en' ? 'en-IN' : `${language}-IN`
+      utterance.rate = 0.9
+      utterance.pitch = 1
+      setIsSpeaking(true)
+      
+      utterance.onend = () => {
+        setIsSpeaking(false)
+      }
+      
+      utterance.onerror = () => {
+        setIsSpeaking(false)
+      }
+      
+      synthesisRef.current.speak(utterance)
+    }
+  }
+
+  const stopSpeaking = () => {
+    if (synthesisRef.current) {
+      synthesisRef.current.cancel()
+      setIsSpeaking(false)
+    }
+  }
 
   const handleFeedback = (messageId: string, type: 'liked' | 'disliked') => {
     setMessages(prev => prev.map(msg => 
@@ -94,7 +401,7 @@ export function ProductChatbot() {
 
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: data.response || 'Sorry, main aapki query samajh nahi paya. Kripya product se related sawal puchhein.',
+        text: data.response || translations[language].error,
         sender: 'bot',
         timestamp: new Date(),
         products: data.products || [],
@@ -104,11 +411,16 @@ export function ProductChatbot() {
       }
 
       setMessages(prev => [...prev, botMessage])
+      
+      // Speak the bot response
+      if (data.response) {
+        speakText(data.response)
+      }
     } catch (error) {
       console.error('Chatbot error:', error)
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: 'Sorry, kuch technical issue aa raha hai. Kripya thodi der baad try karein.',
+        text: translations[language].technicalError,
         sender: 'bot',
         timestamp: new Date()
       }
@@ -126,10 +438,11 @@ export function ProductChatbot() {
   }
 
   const clearChat = () => {
+    stopSpeaking()
     setMessages([
       {
         id: '1',
-        text: 'Namaste! Main Fashino ka product assistant hoon. Aap mujhse products, prices, categories, aur deals ke baare me puchh sakte hain. Kaise help kar sakta hoon?',
+        text: translations[language].greeting,
         sender: 'bot',
         timestamp: new Date()
       }
@@ -159,21 +472,52 @@ export function ProductChatbot() {
               <Bot className="w-5 h-5" />
               <div>
                 <h3 className="font-semibold">Fashino Assistant</h3>
-                <p className="text-xs opacity-90">Product queries only</p>
+                <p className="text-xs opacity-90">{translations[language].productQueriesOnly}</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
+              {/* Language Selector */}
+              <div className="relative group">
+                <button
+                  className="p-1.5 hover:bg-primary/80 rounded-full smooth-transition"
+                  title={translations[language].selectLanguage}
+                >
+                  <Globe className="w-4 h-4" />
+                </button>
+                <div className="absolute bottom-full right-0 mb-2 w-48 bg-background border border-border rounded-lg shadow-lg p-2 hidden group-hover:block z-10">
+                  <div className="max-h-60 overflow-y-auto space-y-1">
+                    {Object.entries(languageNames).map(([code, name]) => (
+                      <button
+                        key={code}
+                        onClick={() => {
+                          setLanguage(code as Language)
+                          clearChat()
+                        }}
+                        className={`w-full text-left px-3 py-2 rounded text-sm hover:bg-muted smooth-transition ${
+                          language === code ? 'bg-primary/10 text-primary font-medium' : 'text-foreground'
+                        }`}
+                      >
+                        {name}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
               <button
                 onClick={clearChat}
                 className="p-1.5 hover:bg-primary/80 rounded-full smooth-transition"
-                title="Clear chat"
+                title={translations[language].clearChat}
               >
                 <X className="w-4 h-4" />
               </button>
               <button
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false)
+                  stopSpeaking()
+                  stopListening()
+                }}
                 className="p-1.5 hover:bg-primary/80 rounded-full smooth-transition"
-                title="Close chat"
+                title={translations[language].closeChat}
               >
                 <X className="w-4 h-4" />
               </button>
@@ -260,7 +604,7 @@ export function ProductChatbot() {
                         className="px-3 py-1.5 bg-primary text-primary-foreground rounded-lg text-xs font-medium hover:bg-primary/90 smooth-transition flex items-center gap-1"
                       >
                         <ExternalLink className="w-3 h-3" />
-                        View Product
+                        {translations[language].viewProduct}
                       </Link>
                     )}
                     {message.redirectUrl && !(message as any).isExactMatch && (
@@ -269,7 +613,7 @@ export function ProductChatbot() {
                         className="px-3 py-1.5 bg-primary text-primary-foreground rounded-lg text-xs font-medium hover:bg-primary/90 smooth-transition flex items-center gap-1"
                       >
                         <ExternalLink className="w-3 h-3" />
-                        View All
+                        {translations[language].viewAll}
                       </button>
                     )}
                     <div className="flex items-center gap-1">
@@ -278,7 +622,7 @@ export function ProductChatbot() {
                         className={`p-1.5 rounded hover:bg-muted smooth-transition ${
                           message.feedback === 'liked' ? 'text-primary' : 'text-muted-foreground'
                         }`}
-                        title="Helpful"
+                        title={translations[language].helpful}
                       >
                         <ThumbsUp className="w-3.5 h-3.5" />
                       </button>
@@ -287,7 +631,7 @@ export function ProductChatbot() {
                         className={`p-1.5 rounded hover:bg-muted smooth-transition ${
                           message.feedback === 'disliked' ? 'text-destructive' : 'text-muted-foreground'
                         }`}
-                        title="Not helpful"
+                        title={translations[language].notHelpful}
                       >
                         <ThumbsDown className="w-3.5 h-3.5" />
                       </button>
@@ -322,26 +666,60 @@ export function ProductChatbot() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder="Products, prices, categories puchhein..."
+                placeholder={translations[language].placeholder}
                 className="flex-1 px-4 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary text-sm"
-                disabled={isLoading}
+                disabled={isLoading || isListening}
               />
+              {/* Voice Input Button */}
+              <button
+                onClick={isListening ? stopListening : startListening}
+                disabled={isLoading}
+                className={`px-3 py-2 rounded-lg smooth-transition flex items-center justify-center ${
+                  isListening
+                    ? 'bg-red-500 text-white hover:bg-red-600'
+                    : 'bg-muted text-foreground hover:bg-muted/80'
+                }`}
+                title={isListening ? translations[language].listening : translations[language].speakNow}
+              >
+                {isListening ? (
+                  <MicOff className="w-4 h-4 animate-pulse" />
+                ) : (
+                  <Mic className="w-4 h-4" />
+                )}
+              </button>
               <button
                 onClick={handleSend}
-                disabled={!input.trim() || isLoading}
+                disabled={!input.trim() || isLoading || isListening}
                 className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 smooth-transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
               >
                 <Send className="w-4 h-4" />
               </button>
             </div>
-            <p className="text-xs text-muted-foreground mt-2 text-center">
-              Product queries only • Example: "₹2000 ke andar hoodie"
-            </p>
+            <div className="flex items-center justify-between mt-2">
+              <p className="text-xs text-muted-foreground text-center flex-1">
+                {translations[language].productQueriesOnly} • {translations[language].example}
+              </p>
+              {isSpeaking && (
+                <button
+                  onClick={stopSpeaking}
+                  className="ml-2 px-2 py-1 text-xs bg-red-500 text-white rounded hover:bg-red-600 smooth-transition flex items-center gap-1"
+                >
+                  <MicOff className="w-3 h-3" />
+                  Stop
+                </button>
+              )}
+            </div>
           </div>
         </div>
       )}
     </>
   )
 }
+
+
+
+
+
+
 
 

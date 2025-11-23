@@ -5,6 +5,14 @@ const orderSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  userName: {
+    type: String,
+    required: true,
+  },
+  userEmail: {
+    type: String,
+    required: true,
+  },
   items: [{
     productId: String,
     name: String,
@@ -42,6 +50,15 @@ const orderSchema = new mongoose.Schema({
 })
 
 export default mongoose.models.Order || mongoose.model('Order', orderSchema)
+
+
+
+
+
+
+
+
+
 
 
 

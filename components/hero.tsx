@@ -34,16 +34,21 @@ const carouselSlides = [
 export function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isAutoPlay, setIsAutoPlay] = useState(true)
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
-    if (!isAutoPlay) return
+    setIsMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!isAutoPlay || !isMounted) return
 
     const timer = setInterval(() => {
       setCurrentSlide(prev => (prev + 1) % carouselSlides.length)
     }, 5000)
 
     return () => clearInterval(timer)
-  }, [isAutoPlay])
+  }, [isAutoPlay, isMounted])
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index)
@@ -61,6 +66,23 @@ export function Hero() {
   }
 
   const slide = carouselSlides[currentSlide]
+
+  if (!isMounted) {
+    return (
+      <section className="relative w-full h-screen overflow-hidden bg-background">
+        <div className="relative w-full h-full">
+          <div className="absolute inset-0">
+            <img
+              src={carouselSlides[0].image || "/placeholder.svg"}
+              alt={carouselSlides[0].title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/40 dark:bg-black/50" />
+          </div>
+        </div>
+      </section>
+    )
+  }
 
   return (
     <section className="relative w-full h-screen overflow-hidden bg-background">

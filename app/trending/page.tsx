@@ -5,7 +5,7 @@ import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { products } from '@/lib/products'
 import { ProductCard } from '@/components/product-card'
-import { transformProduct } from '@/lib/chatbot-data'
+import { transformProduct } from '@/lib/product-utils'
 
 type SortOption = 'featured' | 'price-low' | 'price-high' | 'newest' | 'rating'
 

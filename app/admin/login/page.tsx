@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { Mail, Lock, Loader2, Shield, ArrowRight } from 'lucide-react'
-import { Logo } from '@/components/logo'
 
 export default function AdminLoginPage() {
   const router = useRouter()
@@ -53,7 +52,20 @@ export default function AdminLoginPage() {
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/20 mb-4">
               <Shield className="w-8 h-8 text-primary" />
             </div>
-            <Logo showIcon={false} className="justify-center" />
+            <div className="flex flex-col items-center justify-center">
+              <span 
+                className="tracking-tight brand-logo-fashino text-white"
+                style={{ 
+                  fontFamily: "var(--font-great-vibes), cursive",
+                  color: '#ffffff',
+                }}
+              >
+                Fashino
+              </span>
+              <p className="text-sm font-normal font-sans text-primary/80 italic tracking-wide mt-1">
+                Feel The Fashion
+              </p>
+            </div>
             <h1 className="text-2xl font-bold text-white">Admin Portal</h1>
             <p className="text-slate-400 text-sm">Secure access to admin dashboard</p>
           </div>
@@ -118,15 +130,6 @@ export default function AdminLoginPage() {
             </button>
           </form>
 
-          {/* Demo Credentials Info */}
-          <div className="p-4 bg-slate-700/30 border border-slate-600/50 rounded-lg">
-            <p className="text-xs text-slate-400 text-center">
-              <strong className="text-slate-300">Demo Credentials:</strong><br />
-              Email: admin@fashino.com<br />
-              Password: admin123
-            </p>
-          </div>
-
           {/* Back to User Login */}
           <div className="text-center">
             <Link
@@ -141,4 +144,8 @@ export default function AdminLoginPage() {
     </main>
   )
 }
+
+
+
+
 

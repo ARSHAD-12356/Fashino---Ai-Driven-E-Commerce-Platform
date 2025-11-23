@@ -50,10 +50,17 @@ export default function ForgotPasswordPage() {
         <div className="bg-card/95 backdrop-blur-xl border border-border/50 rounded-2xl p-8 md:p-10 space-y-6 shadow-2xl shadow-primary/5">
           {/* Header */}
           <div className="text-center space-y-3">
-            <Link href="/" className="inline-flex flex-col items-center gap-1 text-3xl font-dancing font-bold text-foreground hover:text-primary smooth-hover tracking-tight group">
+            <Link href="/" className="inline-flex flex-col items-center gap-1 group">
               <div className="flex items-center gap-2">
                 <Sparkles className="w-6 h-6 text-primary group-hover:rotate-12 transition-transform" />
-                <span>Fashino</span>
+                <span 
+                  className="tracking-tight fashino-logo-light text-[32px] md:text-[40px] lg:text-[50px] text-foreground"
+                  style={{ 
+                    fontFamily: "var(--font-great-vibes), cursive",
+                  }}
+                >
+                  Fashino
+                </span>
               </div>
               <p className="text-sm font-normal font-sans text-primary/80 italic tracking-wide">
                 Feel The Fashion
@@ -169,6 +176,9 @@ export default function ForgotPasswordPage() {
     </main>
   )
 }
+
+
+
 
 
 

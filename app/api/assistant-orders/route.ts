@@ -130,9 +130,29 @@ const generateResponse = (query: string, orders: any[], intent: OrderIntent, use
     
     let responseText = `Hello ${userName}! 👋\n\nHere are your recent orders:\n\n`
     orders.slice(0, 5).forEach((order: any, i: number) => {
-      responseText += `${i + 1}) Order #${order.id}\n`
+      // Use formatted order ID (id field) or fallback to orderId if id doesn't exist
+      const displayOrderId = order.id || order.orderId || `FAS-${(order.orderId || order._id || '').toString().slice(-8).toUpperCase()}`
+      responseText += `${i + 1}) Order #${displayOrderId}\n`
       responseText += `   Date: ${new Date(order.orderDate).toLocaleDateString('en-IN')}\n`
       responseText += `   Items: ${order.items.length}\n`
+      
+      // Add product names and categories
+      if (order.items && order.items.length > 0) {
+        responseText += `   Products:\n`
+        order.items.slice(0, 3).forEach((item: any, idx: number) => {
+          const productName = item.name || item.productName || 'Product'
+          const category = item.category || item.productCategory || 'General'
+          responseText += `      • ${productName} (${category})`
+          if (item.quantity) {
+            responseText += ` - Qty: ${item.quantity}`
+          }
+          responseText += `\n`
+        })
+        if (order.items.length > 3) {
+          responseText += `      ... and ${order.items.length - 3} more item(s)\n`
+        }
+      }
+      
       responseText += `   Status: ${order.orderStatus}\n`
       responseText += `   Total: ₹${order.totalAmount.toLocaleString('en-IN')}\n\n`
     })
@@ -184,8 +204,24 @@ const generateResponse = (query: string, orders: any[], intent: OrderIntent, use
   
   // Track order
   if (intent === 'track') {
+    const displayOrderId = order.id || order.orderId || `FAS-${(order.orderId || order._id || '').toString().slice(-8).toUpperCase()}`
+    let trackText = `📦 Order Tracking:\n\nOrder ID: #${displayOrderId}\nTracking ID: ${order.trackingId}\nStatus: ${order.orderStatus}\n\n`
+    
+    // Add product names and categories
+    if (order.items && order.items.length > 0) {
+      trackText += `Products:\n`
+      order.items.forEach((item: any) => {
+        const productName = item.name || item.productName || 'Product'
+        const category = item.category || item.productCategory || 'General'
+        trackText += `• ${productName} (${category})\n`
+      })
+      trackText += `\n`
+    }
+    
+    trackText += `Tracking Link: ${order.trackingUrl}\n\nExpected Delivery: ${deliveryETA}`
+    
     return {
-      text: `📦 Order Tracking:\n\nOrder ID: #${order.id}\nTracking ID: ${order.trackingId}\nStatus: ${order.orderStatus}\n\nTracking Link: ${order.trackingUrl}\n\nExpected Delivery: ${deliveryETA}`,
+      text: trackText,
       orders: [order],
       actions: ['track', 'view_order']
     }
@@ -193,8 +229,24 @@ const generateResponse = (query: string, orders: any[], intent: OrderIntent, use
   
   // Delivery ETA
   if (intent === 'delivery') {
+    const displayOrderId = order.id || order.orderId || `FAS-${(order.orderId || order._id || '').toString().slice(-8).toUpperCase()}`
+    let deliveryText = `📅 Delivery Information:\n\nOrder #${displayOrderId}\nExpected Delivery: ${deliveryETA}\nCurrent Status: ${order.orderStatus}\n\n`
+    
+    // Add product names and categories
+    if (order.items && order.items.length > 0) {
+      deliveryText += `Products:\n`
+      order.items.forEach((item: any) => {
+        const productName = item.name || item.productName || 'Product'
+        const category = item.category || item.productCategory || 'General'
+        deliveryText += `• ${productName} (${category})\n`
+      })
+      deliveryText += `\n`
+    }
+    
+    deliveryText += `Your order is ${order.orderStatus === 'processing' ? 'being prepared' : order.orderStatus === 'shipped' ? 'on the way' : 'delivered'}!`
+    
     return {
-      text: `📅 Delivery Information:\n\nOrder #${order.id}\nExpected Delivery: ${deliveryETA}\nCurrent Status: ${order.orderStatus}\n\nYour order is ${order.orderStatus === 'processing' ? 'being prepared' : order.orderStatus === 'shipped' ? 'on the way' : 'delivered'}!`,
+      text: deliveryText,
       orders: [order],
       actions: ['track', 'view_order']
     }
@@ -202,15 +254,16 @@ const generateResponse = (query: string, orders: any[], intent: OrderIntent, use
   
   // Refund status
   if (intent === 'refund') {
+    const displayOrderId = order.id || order.orderId || `FAS-${(order.orderId || order._id || '').toString().slice(-8).toUpperCase()}`
     if (order.refundStatus) {
       return {
-        text: `💰 Refund Status:\n\nOrder #${order.id}\nRefund Status: ${order.refundStatus}\n\nYour refund is ${order.refundStatus === 'processed' ? 'completed' : 'being processed'}. It will reflect in your account within 5-7 business days.`,
+        text: `💰 Refund Status:\n\nOrder #${displayOrderId}\nRefund Status: ${order.refundStatus}\n\nYour refund is ${order.refundStatus === 'processed' ? 'completed' : 'being processed'}. It will reflect in your account within 5-7 business days.`,
         orders: [order],
         actions: ['view_order', 'need_help']
       }
     }
     return {
-      text: `No refund has been requested for Order #${order.id}. If you'd like to request a refund, please contact customer support or use the return feature.`,
+      text: `No refund has been requested for Order #${displayOrderId}. If you'd like to request a refund, please contact customer support or use the return feature.`,
       orders: [order],
       actions: ['view_order', 'need_help']
     }
@@ -218,15 +271,16 @@ const generateResponse = (query: string, orders: any[], intent: OrderIntent, use
   
   // Return status
   if (intent === 'return') {
+    const displayOrderId = order.id || order.orderId || `FAS-${(order.orderId || order._id || '').toString().slice(-8).toUpperCase()}`
     if (order.returnStatus) {
       return {
-        text: `🔄 Return Status:\n\nOrder #${order.id}\nReturn Status: ${order.returnStatus}\n\nYour return is ${order.returnStatus === 'approved' ? 'approved' : order.returnStatus === 'processed' ? 'processed' : 'under review'}.`,
+        text: `🔄 Return Status:\n\nOrder #${displayOrderId}\nReturn Status: ${order.returnStatus}\n\nYour return is ${order.returnStatus === 'approved' ? 'approved' : order.returnStatus === 'processed' ? 'processed' : 'under review'}.`,
         orders: [order],
         actions: ['view_order', 'need_help']
       }
     }
     return {
-      text: `No return has been requested for Order #${order.id}. To initiate a return, please contact customer support.`,
+      text: `No return has been requested for Order #${displayOrderId}. To initiate a return, please contact customer support.`,
       orders: [order],
       actions: ['view_order', 'need_help']
     }
@@ -234,6 +288,7 @@ const generateResponse = (query: string, orders: any[], intent: OrderIntent, use
   
   // Cancel order
   if (intent === 'cancel') {
+    const displayOrderId = order.id || order.orderId || `FAS-${(order.orderId || order._id || '').toString().slice(-8).toUpperCase()}`
     if (order.orderStatus === 'delivered' || order.orderStatus === 'cancelled') {
       return {
         text: `This order cannot be cancelled as it is already ${order.orderStatus}.`,
@@ -242,17 +297,22 @@ const generateResponse = (query: string, orders: any[], intent: OrderIntent, use
       }
     }
     return {
-      text: `Order #${order.id} can be cancelled. Would you like me to help you cancel it?`,
+      text: `Order #${displayOrderId} can be cancelled. Would you like me to help you cancel it?`,
       orders: [order],
       actions: ['cancel', 'view_order']
     }
   }
   
   // Default status response
-  let responseText = `📋 Order Details:\n\nOrder ID: #${order.id}\nOrder Date: ${new Date(order.orderDate).toLocaleDateString('en-IN')}\nStatus: ${order.orderStatus}\nPayment: ${order.paymentStatus}\nExpected Delivery: ${deliveryETA}\n\nItems:\n`
+  const displayOrderId = order.id || order.orderId || `FAS-${(order.orderId || order._id || '').toString().slice(-8).toUpperCase()}`
+  let responseText = `📋 Order Details:\n\nOrder ID: #${displayOrderId}\nOrder Date: ${new Date(order.orderDate).toLocaleDateString('en-IN')}\nStatus: ${order.orderStatus}\nPayment: ${order.paymentStatus}\nExpected Delivery: ${deliveryETA}\n\nItems:\n`
   
   order.items.forEach((item: any, i: number) => {
-    responseText += `${i + 1}) ${item.name} - Qty: ${item.quantity} - ₹${(item.price * item.quantity).toLocaleString('en-IN')}\n`
+    const productName = item.name || item.productName || 'Product'
+    const category = item.category || item.productCategory || 'General'
+    const quantity = item.quantity || 1
+    const price = item.price || 0
+    responseText += `${i + 1}) ${productName} (${category}) - Qty: ${quantity} - ₹${(price * quantity).toLocaleString('en-IN')}\n`
   })
   
   responseText += `\nTotal: ₹${order.totalAmount.toLocaleString('en-IN')}`

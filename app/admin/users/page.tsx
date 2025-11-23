@@ -6,6 +6,7 @@ import {
   Users, Search, Download, LogOut, Menu, X, ArrowLeft, Eye 
 } from 'lucide-react'
 import { Logo } from '@/components/logo'
+import { Footer } from '@/components/footer'
 
 export default function AdminUsersPage() {
   const router = useRouter()
@@ -274,9 +275,12 @@ export default function AdminUsersPage() {
           </div>
         </main>
       </div>
+      <Footer />
     </div>
   )
 }
+
+
 
 
 

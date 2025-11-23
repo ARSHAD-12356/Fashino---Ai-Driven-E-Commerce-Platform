@@ -92,9 +92,11 @@ export function PremiumNavbar() {
     <>
       <header
         className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-          isScrolled
-            ? 'bg-background/95 backdrop-blur-xl border-b border-border/50 shadow-lg shadow-black/5'
-            : 'bg-background/80 backdrop-blur-sm'
+          theme === 'light'
+            ? 'bg-[#ffffff] border-b border-gray-200 shadow-lg shadow-black/5'
+            : isScrolled
+              ? 'bg-background/95 backdrop-blur-xl border-b border-border/50 shadow-lg shadow-black/5'
+              : 'bg-background/80 backdrop-blur-sm'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6">
@@ -103,9 +105,13 @@ export function PremiumNavbar() {
             {/* Logo */}
             <Link
               href="/"
-              className="flex items-center gap-2 group"
+              className="flex items-center gap-2 group px-[12px] md:px-[18px] lg:px-[28px]"
             >
-              <span className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary via-primary/90 to-primary bg-clip-text text-transparent tracking-tight">
+              <span 
+                className={`brand-logo-fashino tracking-tight ${
+                  theme === 'light' ? 'text-[#000000]' : 'text-white'
+                }`}
+              >
                 Fashino
               </span>
             </Link>
@@ -131,15 +137,17 @@ export function PremiumNavbar() {
                       className={`relative px-4 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 group ${
                         category.isHero
                           ? 'bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white hover:shadow-lg hover:shadow-purple-500/30'
-                          : 'text-foreground hover:text-primary'
+                          : theme === 'light' ? 'text-[#000000] hover:text-primary' : 'text-foreground hover:text-primary'
                       }`}
                     >
                       <span className="flex items-center gap-1.5">
                         {category.name}
                         {category.icon && <span>{category.icon}</span>}
-                        <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${
-                          activeCategory === category.slug ? 'rotate-180' : ''
-                        }`} />
+                        <ChevronDown 
+                          className={`w-3.5 h-3.5 transition-transform duration-300 ${
+                            activeCategory === category.slug ? 'rotate-180' : ''
+                          } ${category.isHero ? '' : theme === 'light' ? 'text-[#000000]' : 'text-white'}`}
+                        />
                       </span>
                       {/* Underline Animation */}
                       <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
@@ -167,33 +175,45 @@ export function PremiumNavbar() {
               {/* Search Bar */}
               <div ref={searchRef} className="hidden md:block relative">
                 <div
-                  className={`flex items-center gap-2 bg-muted/50 rounded-full px-4 py-2.5 transition-all duration-300 ${
-                    isSearchFocused
-                      ? 'ring-2 ring-primary shadow-lg shadow-primary/20 bg-background'
-                      : 'hover:bg-muted'
+                  className={`flex items-center gap-2 rounded-full px-4 py-2.5 transition-all duration-300 ${
+                    theme === 'light' 
+                      ? `bg-gray-100 ${isSearchFocused ? 'ring-2 ring-primary shadow-lg shadow-primary/20 bg-[#ffffff]' : 'hover:bg-gray-200'}`
+                      : `bg-muted/50 ${isSearchFocused ? 'ring-2 ring-primary shadow-lg shadow-primary/20 bg-background' : 'hover:bg-muted'}`
                   }`}
                 >
-                  <Search className="w-4 h-4 text-muted-foreground" />
+                  <Search 
+                    className={`w-4 h-4 ${theme === 'light' ? 'text-[#000000]' : 'text-white'}`}
+                  />
                   <input
                     type="text"
                     placeholder="Search for products, brands and more"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     onFocus={() => setIsSearchFocused(true)}
-                    className="bg-transparent outline-none text-sm w-64 placeholder:text-muted-foreground"
+                    className={`bg-transparent outline-none text-sm w-64 ${
+                      theme === 'light' ? 'text-[#000000] placeholder:text-[#000000]' : 'text-foreground placeholder:text-muted-foreground'
+                    }`}
                   />
                 </div>
                 
                 {/* Search Results Dropdown */}
                 {isSearchFocused && searchQuery.trim() && (
-                  <div className="absolute top-full left-0 right-0 mt-2 bg-background border border-border rounded-lg shadow-2xl max-h-96 overflow-y-auto z-50">
+                  <div className={`absolute top-full left-0 right-0 mt-2 border rounded-lg shadow-2xl max-h-96 overflow-y-auto z-50 ${
+                    theme === 'light' 
+                      ? 'bg-white border-gray-200' 
+                      : 'bg-background border-border'
+                  }`}>
                     {searchResults.length > 0 ? (
                       <div className="p-2">
                         {searchResults.map((product) => (
                           <button
                             key={product.id}
                             onClick={() => handleProductClick(product.id)}
-                            className="w-full flex items-center gap-3 p-3 hover:bg-muted rounded-lg transition-colors text-left"
+                            className={`w-full flex items-center gap-3 p-3 rounded-lg transition-colors text-left ${
+                              theme === 'light' 
+                                ? 'hover:bg-gray-100' 
+                                : 'hover:bg-muted'
+                            }`}
                           >
                             <img
                               src={product.image || '/placeholder.svg'}
@@ -201,16 +221,24 @@ export function PremiumNavbar() {
                               className="w-12 h-12 rounded object-cover"
                             />
                             <div className="flex-1 min-w-0">
-                              <p className="text-sm font-medium text-foreground truncate">{product.name}</p>
-                              <p className="text-xs text-muted-foreground">₹{product.price.toLocaleString('en-IN')}</p>
+                              <p className={`text-sm font-medium truncate ${
+                                theme === 'light' ? 'text-black' : 'text-foreground'
+                              }`}>{product.name}</p>
+                              <p className={`text-xs ${
+                                theme === 'light' ? 'text-black/60' : 'text-muted-foreground'
+                              }`}>₹{product.price.toLocaleString('en-IN')}</p>
                             </div>
                           </button>
                         ))}
                       </div>
                     ) : (
                       <div className="p-6 text-center">
-                        <p className="text-foreground/80 text-sm font-medium">Sorry not found</p>
-                        <p className="text-muted-foreground text-xs mt-1">Try searching with different keywords</p>
+                        <p className={`text-sm font-medium ${
+                          theme === 'light' ? 'text-black/80' : 'text-foreground/80'
+                        }`}>Sorry not found</p>
+                        <p className={`text-xs mt-1 ${
+                          theme === 'light' ? 'text-black/60' : 'text-muted-foreground'
+                        }`}>Try searching with different keywords</p>
                       </div>
                     )}
                   </div>
@@ -220,50 +248,70 @@ export function PremiumNavbar() {
               {/* Theme Toggle */}
               <button
                 onClick={toggleTheme}
-                className="p-2.5 rounded-full hover:bg-muted transition-all duration-300 hover:scale-110"
+                className={`p-2.5 rounded-full transition-all duration-300 hover:scale-110 ${
+                  theme === 'light' ? 'hover:bg-gray-100' : 'hover:bg-muted'
+                }`}
                 title="Toggle theme"
               >
                 {theme === 'dark' ? (
-                  <Sun className="w-5 h-5 text-foreground" />
+                  <Sun className={`w-5 h-5 ${theme === 'light' ? 'text-[#000000]' : 'text-white'}`} />
                 ) : (
-                  <Moon className="w-5 h-5 text-foreground" />
+                  <Moon className={`w-5 h-5 ${theme === 'light' ? 'text-[#000000]' : 'text-white'}`} />
                 )}
               </button>
 
-              {/* Wishlist */}
-              <Link
-                href="/wishlist"
-                className="relative p-2.5 rounded-full hover:bg-muted transition-all duration-300 hover:scale-110 group"
-                title="Wishlist"
-              >
-                <Heart className="w-5 h-5 text-foreground group-hover:text-primary transition-colors duration-300" />
-                {wishlistItems.length > 0 && (
-                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center font-bold animate-pulse">
-                    {wishlistItems.length}
-                  </span>
-                )}
-              </Link>
+              {/* Wishlist - Only show when signed in */}
+              {user && (
+                <Link
+                  href="/wishlist"
+                  className={`relative p-2.5 rounded-full transition-all duration-300 hover:scale-110 group ${
+                    theme === 'light' ? 'hover:bg-gray-100' : 'hover:bg-muted'
+                  }`}
+                  title="Wishlist"
+                >
+                  <Heart 
+                    className={`w-5 h-5 group-hover:text-primary transition-colors duration-300 ${
+                      theme === 'light' ? 'text-[#000000]' : 'text-white'
+                    }`}
+                  />
+                  {wishlistItems.length > 0 && (
+                    <span className="absolute -top-1 -right-1 w-5 h-5 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center font-bold animate-pulse">
+                      {wishlistItems.length}
+                    </span>
+                  )}
+                </Link>
+              )}
 
-              {/* Cart */}
-              <button
-                onClick={() => setIsCartOpen(true)}
-                className="relative p-2.5 rounded-full hover:bg-muted transition-all duration-300 hover:scale-110 group"
-                title="Shopping Cart"
-              >
-                <ShoppingCart className="w-5 h-5 text-foreground group-hover:text-primary transition-colors duration-300" />
-                {items.length > 0 && (
-                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center font-bold animate-pulse">
-                    {items.length}
-                  </span>
-                )}
-              </button>
+              {/* Cart - Only show when signed in */}
+              {user && (
+                <button
+                  onClick={() => setIsCartOpen(true)}
+                  className={`relative p-2.5 rounded-full transition-all duration-300 hover:scale-110 group ${
+                    theme === 'light' ? 'hover:bg-gray-100' : 'hover:bg-muted'
+                  }`}
+                  title="Shopping Cart"
+                >
+                  <ShoppingCart 
+                    className={`w-5 h-5 group-hover:text-primary transition-colors duration-300 ${
+                      theme === 'light' ? 'text-[#000000]' : 'text-white'
+                    }`}
+                  />
+                  {items.length > 0 && (
+                    <span className="absolute -top-1 -right-1 w-5 h-5 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center font-bold animate-pulse">
+                      {items.length}
+                    </span>
+                  )}
+                </button>
+              )}
 
               {/* User Menu */}
               {user ? (
                 <div className="relative" ref={userMenuRef}>
                   <button
                     onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-                    className="flex items-center gap-2 px-3 py-2 rounded-full hover:bg-muted transition-all duration-300 group"
+                    className={`flex items-center gap-2 px-3 py-2 rounded-full transition-all duration-300 group ${
+                      theme === 'light' ? 'hover:bg-gray-100' : 'hover:bg-muted'
+                    }`}
                   >
                     {user.profilePic ? (
                       <img
@@ -276,12 +324,18 @@ export function PremiumNavbar() {
                         <User className="w-4 h-4 text-primary" />
                       </div>
                     )}
-                    <span className="hidden md:block text-sm font-semibold text-foreground">
+                    <span 
+                      className={`hidden md:block text-sm font-semibold ${
+                        theme === 'light' ? 'text-[#000000]' : 'text-white'
+                      }`}
+                    >
                       {user.name || 'User'}
                     </span>
-                    <ChevronDown className={`w-4 h-4 text-muted-foreground transition-transform duration-300 ${
-                      isUserMenuOpen ? 'rotate-180' : ''
-                    }`} />
+                    <ChevronDown 
+                      className={`w-4 h-4 transition-transform duration-300 ${
+                        isUserMenuOpen ? 'rotate-180' : ''
+                      } ${theme === 'light' ? 'text-[#000000]' : 'text-white'}`}
+                    />
                   </button>
 
                   {/* User Dropdown */}
@@ -325,7 +379,11 @@ export function PremiumNavbar() {
               ) : (
                 <Link
                   href="/login"
-                  className="px-4 py-2 bg-primary text-primary-foreground rounded-full font-semibold text-sm hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:scale-105"
+                  className={`px-4 py-2 rounded-full font-semibold text-sm hover:shadow-lg transition-all duration-300 hover:scale-105 ${
+                    theme === 'light' 
+                      ? 'bg-primary text-primary-foreground hover:shadow-primary/30' 
+                      : 'bg-primary text-primary-foreground hover:shadow-primary/30'
+                  }`}
                 >
                   Sign In
                 </Link>
@@ -334,12 +392,14 @@ export function PremiumNavbar() {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 rounded-full hover:bg-muted transition-all duration-300"
+                className={`lg:hidden p-2 rounded-full transition-all duration-300 ${
+                  theme === 'light' ? 'hover:bg-gray-100' : 'hover:bg-muted'
+                }`}
               >
                 {isMobileMenuOpen ? (
-                  <X className="w-5 h-5" />
+                  <X className={`w-5 h-5 ${theme === 'light' ? 'text-[#000000]' : 'text-white'}`} />
                 ) : (
-                  <Menu className="w-5 h-5" />
+                  <Menu className={`w-5 h-5 ${theme === 'light' ? 'text-[#000000]' : 'text-white'}`} />
                 )}
               </button>
             </div>
@@ -347,13 +407,19 @@ export function PremiumNavbar() {
 
           {/* Mobile Menu */}
           {isMobileMenuOpen && (
-            <div className="lg:hidden py-4 border-t border-border animate-in slide-in-from-top duration-300">
+            <div className={`lg:hidden py-4 border-t animate-in slide-in-from-top duration-300 ${
+              theme === 'light' ? 'border-gray-200' : 'border-border'
+            }`}>
               <div className="space-y-2">
                 {categories.map((category) => (
                   <Link
                     key={category.slug}
                     href={`/${category.slug}`}
-                    className="block px-4 py-2 rounded-lg hover:bg-muted transition-colors duration-200 font-medium"
+                    className={`block px-4 py-2 rounded-lg transition-colors duration-200 font-medium ${
+                      theme === 'light' 
+                        ? 'hover:bg-gray-100 text-[#000000]' 
+                        : 'hover:bg-muted text-foreground'
+                    }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {category.name} {category.icon}
