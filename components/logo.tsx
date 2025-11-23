@@ -21,12 +21,7 @@ export function Logo({ showIcon = false }: LogoProps) {
           </div>
         </div>
       )}
-      <span 
-        className="tracking-tight fashino-logo text-[32px] md:text-[40px] lg:text-[50px] text-white"
-        style={{ 
-          fontFamily: "var(--font-great-vibes), cursive",
-        }}
-      >
+      <span className={`tracking-tight fashino-logo brand-logo-fashino text-white`}>
         Fashino
       </span>
     </Link>

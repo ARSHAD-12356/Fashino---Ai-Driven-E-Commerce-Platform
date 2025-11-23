@@ -259,7 +259,7 @@
 
   /* Brand Logo Fashino - Navbar Only */
   .brand-logo-fashino {
-    font-family: "GreatVibes", cursive !important;
+    font-family: var(--font-great-vibes), 'Great Vibes', cursive !important;
     font-weight: normal !important;
     font-size: 32px;
     transition: transform 0.25s ease, text-shadow 0.25s ease;
