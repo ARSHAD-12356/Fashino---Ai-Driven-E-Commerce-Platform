@@ -85,6 +85,10 @@ export async function POST(request: NextRequest) {
       paymentMethod: orderData.paymentMethod || 'card',
       status: orderData.status || 'pending',
       paymentStatus: orderData.paymentStatus || 'pending',
+      receipt: orderData.receipt,
+      razorpayOrderId: orderData.razorpayOrderId,
+      razorpayPaymentId: orderData.razorpayPaymentId,
+      razorpaySignature: orderData.razorpaySignature,
     })
 
     // Return created order

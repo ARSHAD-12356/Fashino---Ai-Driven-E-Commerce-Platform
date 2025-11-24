@@ -9,6 +9,12 @@ import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { useAuth } from '@/context/auth-context'
 
+declare global {
+  interface Window {
+    Razorpay: any
+  }
+}
+
 type CheckoutStep = 'cart' | 'shipping' | 'payment' | 'confirmation'
 type PaymentMethod = 'card' | 'upi' | 'cod' | 'netbanking'
 type RecipientType = 'self' | 'someoneElse'
@@ -62,6 +68,7 @@ function CheckoutContent() {
     total: number
   } | null>(null)
   const [isPlacingOrder, setIsPlacingOrder] = useState(false)
+  const [paymentAlert, setPaymentAlert] = useState<{ type: 'error' | 'success'; text: string } | null>(null)
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -85,6 +92,175 @@ function CheckoutContent() {
     }
   }, [searchParams, items.length])
 
+  useEffect(() => {
+    setPaymentAlert(null)
+  }, [paymentMethod])
+
+  const loadRazorpayScript = () => {
+    return new Promise<boolean>((resolve) => {
+      if (typeof window === 'undefined') {
+        resolve(false)
+        return
+      }
+
+      if (window.Razorpay) {
+        resolve(true)
+        return
+      }
+
+      const existingScript = document.getElementById('razorpay-checkout-js')
+      if (existingScript) {
+        existingScript.addEventListener('load', () => resolve(true))
+        existingScript.addEventListener('error', () => resolve(false))
+        return
+      }
+
+      const script = document.createElement('script')
+      script.id = 'razorpay-checkout-js'
+      script.src = 'https://checkout.razorpay.com/v1/checkout.js'
+      script.onload = () => resolve(true)
+      script.onerror = () => resolve(false)
+      document.body.appendChild(script)
+    })
+  }
+
+  const createOrderReference = () => `FAS-${Date.now().toString(36).toUpperCase()}`
+
+  const buildShippingAddress = () => {
+    if (recipientType === 'someoneElse') {
+      return {
+        street: formData.address,
+        city: formData.city,
+        state: formData.state,
+        zipCode: formData.zipCode,
+        country: formData.country,
+      }
+    }
+
+    if (user?.address) {
+      return {
+        street: user.address,
+        city: 'N/A',
+        state: 'N/A',
+        zipCode: 'N/A',
+        country: 'India',
+      }
+    }
+
+    return {
+      street: 'N/A',
+      city: 'N/A',
+      state: 'N/A',
+      zipCode: 'N/A',
+      country: 'India',
+    }
+  }
+
+  const buildRecipientDetails = () => {
+    if (recipientType === 'someoneElse') {
+      return {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phone: formData.phone,
+        address: formData.address,
+        city: formData.city,
+        state: formData.state,
+        zipCode: formData.zipCode,
+        country: formData.country,
+      }
+    }
+    return undefined
+  }
+
+  const getStoredProducts = (): StoredOrderProduct[] =>
+    items.map((item) => ({
+      id: item.id,
+      name: item.name,
+      price: item.price,
+      quantity: item.quantity,
+      image: item.image,
+      size: item.size,
+    }))
+
+  const getDbItems = () =>
+    items.map((item) => ({
+      productId: item.id.toString(),
+      name: item.name,
+      price: item.price,
+      quantity: item.quantity,
+      image: item.image,
+    }))
+
+  const buildStoredOrder = (orderId: string, paymentStatusValue: string, mongoId?: string): StoredOrder => ({
+    id: orderId,
+    date: new Date().toISOString(),
+    status: 'Processing',
+    total: finalTotal,
+    items: items.reduce((sum, item) => sum + item.quantity, 0),
+    recipientType,
+    paymentStatus: paymentStatusValue,
+    paymentMethod,
+    mongoId,
+    shippingDetails: buildRecipientDetails(),
+    products: getStoredProducts(),
+  })
+
+  const buildDbOrderPayload = () => ({
+    userId: user?.id || 'guest',
+    userName:
+      user?.name ||
+      [formData.firstName, formData.lastName].filter(Boolean).join(' ').trim() ||
+      'Guest User',
+    userEmail: user?.email || formData.email || 'guest@fashino.com',
+    items: getDbItems(),
+    totalAmount: finalTotal,
+    shippingAddress: buildShippingAddress(),
+    paymentMethod,
+  })
+
+  const getRazorpayDisplayConfig = (method: PaymentMethod) => {
+    if (!['card', 'upi', 'netbanking'].includes(method)) {
+      return undefined
+    }
+
+    const blockName =
+      method === 'netbanking'
+        ? 'netbankingBlock'
+        : method === 'upi'
+          ? 'upiBlock'
+          : 'cardBlock'
+
+    const displayName =
+      method === 'netbanking'
+        ? 'Net Banking'
+        : method === 'upi'
+          ? 'UPI'
+          : 'Card'
+
+    const instrumentMethod =
+      method === 'netbanking'
+        ? { method: 'netbanking' }
+        : method === 'upi'
+          ? { method: 'upi' }
+          : { method: 'card' }
+
+    return {
+      display: {
+        blocks: {
+          [blockName]: {
+            name: `Pay using ${displayName}`,
+            instruments: [instrumentMethod],
+          },
+        },
+        sequence: [blockName],
+        preferences: {
+          show_default_blocks: false,
+        },
+      },
+    }
+  }
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
@@ -96,8 +272,11 @@ function CheckoutContent() {
     } else if (currentStep === 'shipping') {
       setCurrentStep('payment')
     } else if (currentStep === 'payment') {
-      await finalizeOrder()
-      setCurrentStep('confirmation')
+      if (paymentMethod === 'cod') {
+        await finalizeOrder()
+      } else {
+        await initiateOnlinePayment()
+      }
     }
   }
 
@@ -147,152 +326,34 @@ function CheckoutContent() {
   }
 
   const finalizeOrder = async () => {
-    if (isPlacingOrder || items.length === 0) return
+    if (isPlacingOrder || items.length === 0 || paymentMethod !== 'cod') return
     setIsPlacingOrder(true)
+    setPaymentAlert(null)
     try {
-      const orderId = `FAS-${Date.now().toString(36).toUpperCase()}`
-      const orderProducts: StoredOrderProduct[] = items.map((item) => ({
-        id: item.id,
-        name: item.name,
-        price: item.price,
-        quantity: item.quantity,
-        image: item.image,
-        size: item.size,
-      }))
-
-      const shippingAddress = recipientType === 'someoneElse'
-        ? {
-            street: formData.address,
-            city: formData.city,
-            state: formData.state,
-            zipCode: formData.zipCode,
-            country: formData.country,
-          }
-        : user?.address
-          ? {
-              street: user.address,
-              city: 'N/A',
-              state: 'N/A',
-              zipCode: 'N/A',
-              country: 'India',
-            }
-          : {
-              street: 'N/A',
-              city: 'N/A',
-              state: 'N/A',
-              zipCode: 'N/A',
-              country: 'India',
-            }
-
-      const shippingDetails =
-        recipientType === 'someoneElse'
-          ? {
-              firstName: formData.firstName,
-              lastName: formData.lastName,
-              email: formData.email,
-              phone: formData.phone,
-              address: formData.address,
-              city: formData.city,
-              state: formData.state,
-              zipCode: formData.zipCode,
-              country: formData.country,
-            }
-          : undefined
-
-      const paymentStatus = paymentMethod === 'cod' ? 'Pending' : 'Paid'
-
-      const orderPayload: StoredOrder = {
-        id: orderId,
-        date: new Date().toISOString(),
-        status: 'Processing',
-        total: finalTotal,
-        items: items.reduce((sum, item) => sum + item.quantity, 0),
-        recipientType,
-        shippingDetails,
-        products: orderProducts,
-        paymentStatus,
-        paymentMethod,
+      const orderId = createOrderReference()
+      const storedOrder = buildStoredOrder(orderId, 'Pending')
+      const dbOrderData = {
+        ...buildDbOrderPayload(),
+        paymentMethod: 'cod',
+        status: 'processing',
+        paymentStatus: 'pending',
       }
 
-      // Only save to MongoDB if payment is completed (not COD pending)
-      // For COD, save with pending status, for others save as paid
       try {
-        const paymentCompleted = paymentMethod !== 'cod'
-        
-        if (paymentCompleted) {
-          const dbOrderData = {
-            userId: user?.id || 'guest',
-            userName: user?.name || 'Guest User',
-            userEmail: user?.email || '',
-            items: items.map((item) => ({
-              productId: item.id.toString(),
-              name: item.name,
-              price: item.price,
-              quantity: item.quantity,
-              image: item.image,
-            })),
-            totalAmount: finalTotal,
-            shippingAddress,
-            paymentMethod: paymentMethod,
-            status: 'processing',
-            paymentStatus: 'paid',
-          }
+        const response = await fetch('/api/orders/create', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(dbOrderData),
+        })
 
-          const response = await fetch('/api/orders/create', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(dbOrderData),
-          })
-
-          if (response.ok) {
-            const data = await response.json()
-            // Store MongoDB ID in order payload
-            orderPayload.mongoId = data.order.id
-            orderPayload.paymentStatus = 'Paid'
-          } else {
-            console.error('Failed to save order to database:', await response.text())
-            // If DB save fails, mark as pending
-            orderPayload.paymentStatus = 'Pending'
-          }
+        if (response.ok) {
+          const data = await response.json()
+          storedOrder.mongoId = data.order.id
         } else {
-          // COD orders - save with pending payment status
-          const dbOrderData = {
-            userId: user?.id || 'guest',
-            userName: user?.name || 'Guest User',
-            userEmail: user?.email || '',
-            items: items.map((item) => ({
-              productId: item.id.toString(),
-              name: item.name,
-              price: item.price,
-              quantity: item.quantity,
-              image: item.image,
-            })),
-            totalAmount: finalTotal,
-            shippingAddress,
-            paymentMethod: 'cod',
-            status: 'processing',
-            paymentStatus: 'pending',
-          }
-
-          const response = await fetch('/api/orders/create', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(dbOrderData),
-          })
-
-          if (response.ok) {
-            const data = await response.json()
-            orderPayload.mongoId = data.order.id
-            orderPayload.paymentStatus = 'Pending'
-          } else {
-            console.error('Failed to save order to database:', await response.text())
-            orderPayload.paymentStatus = 'Pending'
-          }
+          console.error('Failed to save order to database:', await response.text())
         }
       } catch (error) {
         console.error('Error saving order to database:', error)
-        // Mark as pending if save fails
-        orderPayload.paymentStatus = 'Pending'
       }
 
       setCompletedOrderSummary({
@@ -302,9 +363,154 @@ function CheckoutContent() {
         total: finalTotal,
       })
       setOrderReference(orderId)
-      saveOrderToStorage(orderPayload)
+      saveOrderToStorage(storedOrder)
       clearCart()
+      setCurrentStep('confirmation')
     } finally {
+      setIsPlacingOrder(false)
+    }
+  }
+
+  const initiateOnlinePayment = async () => {
+    if (isPlacingOrder || items.length === 0) return
+    setIsPlacingOrder(true)
+    setPaymentAlert(null)
+
+    try {
+      const response = await fetch('/api/razorpay', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amount: finalTotal }),
+      })
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}))
+        setPaymentAlert({
+          type: 'error',
+          text: errorData.error || 'Unable to initialize payment. Please try again.',
+        })
+        setIsPlacingOrder(false)
+        return
+      }
+
+      const { order } = await response.json()
+      if (!order?.id) {
+        setPaymentAlert({
+          type: 'error',
+          text: 'Invalid payment response. Please try again.',
+        })
+        setIsPlacingOrder(false)
+        return
+      }
+
+      const scriptLoaded = await loadRazorpayScript()
+      if (!scriptLoaded) {
+        setPaymentAlert({
+          type: 'error',
+          text: 'Unable to load the Razorpay checkout. Please check your connection.',
+        })
+        setIsPlacingOrder(false)
+        return
+      }
+
+      const storedOrder = buildStoredOrder(order.receipt, 'Paid')
+      const razorpayKey = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || ''
+      setOrderReference(order.receipt)
+
+      const razorpayOptions: any = {
+        key: razorpayKey,
+        amount: order.amount,
+        currency: order.currency,
+        name: 'Fashino',
+        description: `Payment for ${order.receipt}`,
+        order_id: order.id,
+        prefill: {
+          name:
+            user?.name ||
+            [formData.firstName, formData.lastName].filter(Boolean).join(' ').trim() ||
+            'Fashino Customer',
+          email: user?.email || formData.email || 'support@fashino.com',
+          contact: formData.phone || '',
+        },
+        theme: {
+          color: '#0f172a',
+        },
+        handler: async (paymentResponse: any) => {
+          try {
+            const dbPayload = {
+              ...buildDbOrderPayload(),
+              paymentStatus: 'paid',
+              status: 'processing',
+              receipt: order.receipt,
+              razorpayOrderId: paymentResponse.razorpay_order_id,
+              razorpayPaymentId: paymentResponse.razorpay_payment_id,
+              razorpaySignature: paymentResponse.razorpay_signature,
+            }
+
+            const dbResponse = await fetch('/api/orders/create', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(dbPayload),
+            })
+
+            if (dbResponse.ok) {
+              const data = await dbResponse.json()
+              storedOrder.mongoId = data.order.id
+            } else {
+              console.error('Failed to save order to database:', await dbResponse.text())
+            }
+
+            setCompletedOrderSummary({
+              subtotal: total,
+              shipping: shippingCost,
+              tax,
+              total: finalTotal,
+            })
+            saveOrderToStorage(storedOrder)
+            clearCart()
+            setPaymentAlert(null)
+            setCurrentStep('confirmation')
+          } catch (error: any) {
+            console.error('Order save error:', error)
+            setPaymentAlert({
+              type: 'error',
+              text: 'Payment captured but order could not be recorded. Please contact support.',
+            })
+          } finally {
+            setIsPlacingOrder(false)
+          }
+        },
+        modal: {
+          ondismiss: () => {
+            setIsPlacingOrder(false)
+            setPaymentAlert({
+              type: 'error',
+              text: 'Payment cancelled. You can try again whenever you are ready.',
+            })
+          },
+        },
+      }
+
+      const methodConfig = getRazorpayDisplayConfig(paymentMethod)
+      if (methodConfig) {
+        razorpayOptions.config = methodConfig
+      }
+
+      const razorpayInstance = new window.Razorpay(razorpayOptions)
+      razorpayInstance.on('payment.failed', () => {
+        setIsPlacingOrder(false)
+        setPaymentAlert({
+          type: 'error',
+          text: 'Payment failed. Please try again.',
+        })
+      })
+      razorpayInstance.open()
+    } catch (error: any) {
+      console.error('Payment initialization error:', error)
+      setPaymentAlert({
+        type: 'error',
+        text: error.message || 'Unable to initiate payment. Please try again.',
+      })
       setIsPlacingOrder(false)
     }
   }
@@ -762,6 +968,17 @@ function CheckoutContent() {
                     >
                       {isPlacingOrder ? 'Processing...' : 'Complete Order'} <ChevronRight className="w-4 h-4" />
                     </button>
+                  )}
+                  {currentStep === 'payment' && paymentAlert && (
+                    <p
+                      className={`ml-auto text-sm ${
+                        paymentAlert.type === 'error'
+                          ? 'text-red-600 dark:text-red-400'
+                          : 'text-green-600 dark:text-green-400'
+                      }`}
+                    >
+                      {paymentAlert.text}
+                    </p>
                   )}
                 </div>
               )}

@@ -45,6 +45,10 @@ const orderSchema = new mongoose.Schema({
     type: String,
     default: 'card',
   },
+  receipt: String,
+  razorpayOrderId: String,
+  razorpayPaymentId: String,
+  razorpaySignature: String,
 }, {
   timestamps: true,
 })
