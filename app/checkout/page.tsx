@@ -377,7 +377,7 @@ function CheckoutContent() {
     setPaymentAlert(null)
 
     try {
-      const response = await fetch('/api/razorpay', {
+      const response = await fetch('/api/razorpay-order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ amount: finalTotal }),
@@ -414,6 +414,11 @@ function CheckoutContent() {
       }
 
       const storedOrder = buildStoredOrder(order.receipt, 'Paid')
+      const orderData = {
+        ...buildDbOrderPayload(),
+        status: 'processing',
+        paymentStatus: 'paid',
+      }
       const razorpayKey = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || ''
       setOrderReference(order.receipt)
 
@@ -421,7 +426,7 @@ function CheckoutContent() {
         key: razorpayKey,
         amount: order.amount,
         currency: order.currency,
-        name: 'Fashino',
+        name: 'Fashino – Secure Payment',
         description: `Payment for ${order.receipt}`,
         order_id: order.id,
         prefill: {
@@ -433,31 +438,40 @@ function CheckoutContent() {
           contact: formData.phone || '',
         },
         theme: {
-          color: '#0f172a',
+          color: '#000000',
+        },
+        retry: {
+          enabled: true,
+          max_count: 2,
         },
         handler: async (paymentResponse: any) => {
           try {
-            const dbPayload = {
-              ...buildDbOrderPayload(),
-              paymentStatus: 'paid',
-              status: 'processing',
-              receipt: order.receipt,
-              razorpayOrderId: paymentResponse.razorpay_order_id,
-              razorpayPaymentId: paymentResponse.razorpay_payment_id,
-              razorpaySignature: paymentResponse.razorpay_signature,
-            }
-
-            const dbResponse = await fetch('/api/orders/create', {
+            const verifyResponse = await fetch('/api/razorpay-verify', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(dbPayload),
+              body: JSON.stringify({
+                razorpay_payment_id: paymentResponse.razorpay_payment_id,
+                razorpay_order_id: paymentResponse.razorpay_order_id,
+                razorpay_signature: paymentResponse.razorpay_signature,
+                orderData,
+                receipt: order.receipt,
+              }),
             })
 
-            if (dbResponse.ok) {
-              const data = await dbResponse.json()
-              storedOrder.mongoId = data.order.id
-            } else {
-              console.error('Failed to save order to database:', await dbResponse.text())
+            const verifyData = await verifyResponse.json()
+            if (!verifyResponse.ok || !verifyData.success) {
+              setPaymentAlert({
+                type: 'error',
+                text:
+                  verifyData.error ||
+                  'Payment verification failed — please contact support if amount was deducted.',
+              })
+              setIsPlacingOrder(false)
+              return
+            }
+
+            if (verifyData.order?.id) {
+              storedOrder.mongoId = verifyData.order.id
             }
 
             setCompletedOrderSummary({
@@ -485,7 +499,7 @@ function CheckoutContent() {
             setIsPlacingOrder(false)
             setPaymentAlert({
               type: 'error',
-              text: 'Payment cancelled. You can try again whenever you are ready.',
+              text: 'Payment cancelled — please try again.',
             })
           },
         },
@@ -501,7 +515,7 @@ function CheckoutContent() {
         setIsPlacingOrder(false)
         setPaymentAlert({
           type: 'error',
-          text: 'Payment failed. Please try again.',
+          text: 'Payment failed — please try again.',
         })
       })
       razorpayInstance.open()
