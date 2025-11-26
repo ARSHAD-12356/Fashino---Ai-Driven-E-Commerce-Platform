@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
-import { MessageCircle, X, Send, Bot, User, ThumbsUp, ThumbsDown, ExternalLink, ShoppingBag, Mic, MicOff, Globe } from 'lucide-react'
+import { useState, useRef, useEffect, useCallback } from 'react'
+import { MessageCircle, X, Send, Bot, User, ThumbsUp, ThumbsDown, ExternalLink, ShoppingBag, Mic, MicOff, Globe, RotateCcw } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { useAuth } from '@/context/auth-context'
@@ -21,7 +21,7 @@ type Language = 'en' | 'hi' | 'ta' | 'te' | 'mr' | 'gu' | 'bn' | 'kn' | 'ml' | '
 
 const translations: Record<Language, Record<string, string>> = {
   en: {
-    greeting: 'Hello! I\'m Fashino\'s product assistant. You can ask me about products, prices, categories, and deals. How can I help you?',
+    greeting: 'Hi, I\'m Angel, your Fashino product assistant. I can help you with products, prices, categories, and deals. How can I help you today?',
     placeholder: 'Ask about products, prices, categories...',
     error: 'Sorry, I couldn\'t understand your query. Please ask product-related questions.',
     technicalError: 'Sorry, there\'s a technical issue. Please try again later.',
@@ -248,6 +248,7 @@ export function ProductChatbot() {
   const [language, setLanguage] = useState<Language>('en')
   const [isListening, setIsListening] = useState(false)
   const [isSpeaking, setIsSpeaking] = useState(false)
+  const [showVoiceModal, setShowVoiceModal] = useState(false)
   const recognitionRef = useRef<any>(null)
   const synthesisRef = useRef<SpeechSynthesis | null>(null)
   const [messages, setMessages] = useState<Message[]>([])
@@ -256,20 +257,59 @@ export function ProductChatbot() {
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
-  // Initialize messages with greeting in selected language
+  const hasShownWelcomeRef = useRef(false)
+
+  // Show welcome message when chat opens or resets
+  const showWelcomeMessage = useCallback(() => {
+    const welcomeMessage = translations[language].greeting
+    setMessages([{
+      id: '1',
+      text: welcomeMessage,
+      sender: 'bot',
+      timestamp: new Date()
+    }])
+    hasShownWelcomeRef.current = true
+    // Speak the welcome message
+    if (synthesisRef.current) {
+      const utterance = new SpeechSynthesisUtterance(welcomeMessage)
+      utterance.lang = language === 'en' ? 'en-IN' : `${language}-IN`
+      utterance.rate = 0.9
+      utterance.pitch = 1
+      setIsSpeaking(true)
+      
+      utterance.onend = () => {
+        setIsSpeaking(false)
+      }
+      
+      utterance.onerror = () => {
+        setIsSpeaking(false)
+      }
+      
+      synthesisRef.current.speak(utterance)
+    }
+  }, [language])
+
+  // Initialize messages with greeting when chat opens
   useEffect(() => {
-    if (messages.length === 0) {
+    if (isOpen && !hasShownWelcomeRef.current) {
+      showWelcomeMessage()
+    }
+  }, [isOpen, showWelcomeMessage])
+
+  // Reset welcome flag when chat closes
+  useEffect(() => {
+    if (!isOpen) {
+      hasShownWelcomeRef.current = false
+    }
+  }, [isOpen])
+
+  // Update greeting when language changes (only if welcome message is showing)
+  useEffect(() => {
+    if (messages.length === 1 && messages[0].id === '1' && hasShownWelcomeRef.current) {
+      const welcomeMessage = translations[language].greeting
       setMessages([{
         id: '1',
-        text: translations[language].greeting,
-        sender: 'bot',
-        timestamp: new Date()
-      }])
-    } else if (messages.length === 1 && messages[0].id === '1') {
-      // Update greeting when language changes
-      setMessages([{
-        id: '1',
-        text: translations[language].greeting,
+        text: welcomeMessage,
         sender: 'bot',
         timestamp: new Date()
       }])
@@ -302,16 +342,22 @@ export function ProductChatbot() {
 
         recognitionRef.current.onresult = (event: any) => {
           const transcript = event.results[0][0].transcript
-          setInput(transcript)
           setIsListening(false)
+          setShowVoiceModal(false)
+          // Send the transcript directly as a message
+          if (transcript.trim()) {
+            sendVoiceMessage(transcript.trim())
+          }
         }
 
         recognitionRef.current.onerror = () => {
           setIsListening(false)
+          setShowVoiceModal(false)
         }
 
         recognitionRef.current.onend = () => {
           setIsListening(false)
+          setShowVoiceModal(false)
         }
       }
 
@@ -322,6 +368,7 @@ export function ProductChatbot() {
   const startListening = () => {
     if (recognitionRef.current && !isListening) {
       setIsListening(true)
+      setShowVoiceModal(true)
       recognitionRef.current.start()
     }
   }
@@ -330,6 +377,60 @@ export function ProductChatbot() {
     if (recognitionRef.current && isListening) {
       recognitionRef.current.stop()
       setIsListening(false)
+      setShowVoiceModal(false)
+    }
+  }
+
+  const sendVoiceMessage = async (text: string) => {
+    const userMessage: Message = {
+      id: Date.now().toString(),
+      text: text,
+      sender: 'user',
+      timestamp: new Date()
+    }
+
+    setMessages(prev => [...prev, userMessage])
+    setIsLoading(true)
+
+    try {
+      const response = await fetch('/api/chatbot', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ query: text }),
+      })
+
+      const data = await response.json()
+
+      const botMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        text: data.response || translations[language].error,
+        sender: 'bot',
+        timestamp: new Date(),
+        products: data.products || [],
+        redirectUrl: data.redirectUrl || null,
+        intent: data.intent,
+        isExactMatch: data.isExactMatch || false
+      }
+
+      setMessages(prev => [...prev, botMessage])
+      
+      // Speak the bot response
+      if (data.response) {
+        speakText(data.response)
+      }
+    } catch (error) {
+      console.error('Chatbot error:', error)
+      const errorMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        text: translations[language].technicalError,
+        sender: 'bot',
+        timestamp: new Date()
+      }
+      setMessages(prev => [...prev, errorMessage])
+    } finally {
+      setIsLoading(false)
     }
   }
 
@@ -437,16 +538,11 @@ export function ProductChatbot() {
     }
   }
 
-  const clearChat = () => {
+  const resetChat = () => {
     stopSpeaking()
-    setMessages([
-      {
-        id: '1',
-        text: translations[language].greeting,
-        sender: 'bot',
-        timestamp: new Date()
-      }
-    ])
+    stopListening()
+    hasShownWelcomeRef.current = false
+    showWelcomeMessage()
   }
 
   return (
@@ -472,7 +568,7 @@ export function ProductChatbot() {
               <Bot className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
               <div className="min-w-0 flex-1">
                 <h3 className="font-semibold text-sm sm:text-base truncate">
-                  <span className="brand-logo-fashino">Fashino</span> Assistant
+                  Angel – <span className="brand-logo-fashino">Fashino</span> Assistant
                 </h3>
                 <p className="text-xs opacity-90 truncate">{translations[language].productQueriesOnly}</p>
               </div>
@@ -493,7 +589,7 @@ export function ProductChatbot() {
                         key={code}
                         onClick={() => {
                           setLanguage(code as Language)
-                          clearChat()
+                          resetChat()
                         }}
                         className={`w-full text-left px-3 py-2 rounded text-sm hover:bg-muted smooth-transition ${
                           language === code ? 'bg-primary/10 text-primary font-medium' : 'text-foreground'
@@ -505,13 +601,15 @@ export function ProductChatbot() {
                   </div>
                 </div>
               </div>
+              {/* Reset Button */}
               <button
-                onClick={clearChat}
+                onClick={resetChat}
                 className="p-1 sm:p-1.5 hover:bg-primary/80 rounded-full smooth-transition"
-                title={translations[language].clearChat}
+                title="Reset conversation"
               >
-                <X className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <RotateCcw className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </button>
+              {/* Close Button */}
               <button
                 onClick={() => {
                   setIsOpen(false)
@@ -689,6 +787,31 @@ export function ProductChatbot() {
                   <Mic className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 )}
               </button>
+              
+              {/* Voice Input Modal */}
+              {showVoiceModal && (
+                <div className="absolute inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 rounded-lg">
+                  <div className="bg-background border border-border rounded-lg p-6 shadow-2xl max-w-sm w-[90%]">
+                    <div className="text-center">
+                      <div className="w-16 h-16 mx-auto mb-4 bg-red-500/20 rounded-full flex items-center justify-center">
+                        <Mic className="w-8 h-8 text-red-500 animate-pulse" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-foreground mb-2">
+                        {translations[language].listening}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-4">
+                        {translations[language].speakNow}
+                      </p>
+                      <button
+                        onClick={stopListening}
+                        className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 smooth-transition"
+                      >
+                        Stop
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
               <button
                 onClick={handleSend}
                 disabled={!input.trim() || isLoading || isListening}

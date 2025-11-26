@@ -46,10 +46,17 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
   }, [searchQuery])
 
   useEffect(() => {
+    let ticking = false
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 50)
+          ticking = false
+        })
+        ticking = true
+      }
     }
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -65,10 +72,21 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
         // Don't close search on blur, only on outside click
         setTimeout(() => setIsSearchFocused(false), 200)
       }
+      // Close mobile sidebar when clicking outside on mobile
+      if (window.innerWidth <= 768 && isMobileMenuOpen) {
+        const target = event.target as HTMLElement
+        if (!target.closest('[data-mobile-sidebar]') && !target.closest('button[aria-label="Toggle menu"]')) {
+          setIsMobileMenuOpen(false)
+        }
+      }
     }
     document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [])
+    document.addEventListener('touchstart', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('touchstart', handleClickOutside)
+    }
+  }, [isMobileMenuOpen])
 
   const handleProductClick = (productId: number) => {
     setSearchQuery('')
@@ -106,7 +124,7 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-20 max-[400px]:gap-2">
             {/* Logo */}
             <Logo showIcon={true} />
 
@@ -213,7 +231,7 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
               {/* Theme Toggle */}
               <button
                 onClick={toggleTheme}
-                className="p-2 hover:bg-white/10 rounded-full transition-all duration-200 hover:scale-110 max-[404px]:hidden"
+                className="p-2 hover:bg-white/10 rounded-full transition-all duration-200 hover:scale-110"
                 title="Toggle theme"
               >
                 {theme === 'dark' ? (
@@ -259,7 +277,13 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
               {user ? (
                 <div className="relative" ref={userMenuRef}>
                   <button
-                    onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+                    onClick={() => {
+                      setIsUserMenuOpen(!isUserMenuOpen)
+                      // Close mobile sidebar when opening user menu on mobile
+                      if (!isUserMenuOpen && window.innerWidth <= 768) {
+                        setIsMobileMenuOpen(false)
+                      }
+                    }}
                     className="flex items-center gap-2 px-3 py-2 hover:bg-white/10 rounded-full transition-all duration-200"
                   >
                     {user.profilePic ? (
@@ -283,7 +307,7 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
 
                   {/* User Dropdown */}
                   {isUserMenuOpen && (
-                    <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-slate-900 border border-border rounded-xl shadow-2xl overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+                    <div className="absolute right-0 mt-2 w-56 max-w-[calc(100vw-2rem)] bg-white dark:bg-slate-900 border border-border rounded-xl shadow-2xl overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 z-[60]">
                       <div className="p-4 border-b border-border">
                         <p className="font-semibold text-foreground">{user.name}</p>
                         <p className="text-sm text-muted-foreground">{user.email}</p>
@@ -328,16 +352,16 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
                 </Link>
               )}
 
-              {/* Mobile Hamburger Menu Button - Only for ≤404px */}
+              {/* Mobile Hamburger Menu Button - Always visible on ≤768px */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="hidden max-[404px]:block lg:hidden p-2 bg-transparent hover:bg-transparent transition-all duration-300"
+                className="md:hidden p-2 bg-transparent hover:bg-transparent transition-all duration-300"
                 aria-label="Toggle menu"
               >
                 {isMobileMenuOpen ? (
-                  <X className="w-5 h-5 text-white" />
+                  <X className={`w-5 h-5 ${theme === 'light' ? 'text-[#000000]' : 'text-white'}`} />
                 ) : (
-                  <Menu className="w-5 h-5 text-white" />
+                  <Menu className={`w-5 h-5 ${theme === 'light' ? 'text-[#000000]' : 'text-white'}`} />
                 )}
               </button>
             </div>
@@ -345,57 +369,64 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
         </div>
       </nav>
 
-      {/* Mobile Sidebar - Only for ≤404px */}
-      {isMobileMenuOpen && (
-        <>
-          {/* Backdrop Overlay */}
-          <div
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="hidden max-[404px]:block lg:hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-40 animate-in fade-in duration-300"
-          />
-          
-          {/* Sidebar */}
-          <div className="hidden max-[404px]:block lg:hidden fixed left-0 top-0 h-full w-80 max-w-[85vw] bg-background/70 backdrop-blur-xl border-r border-border/50 shadow-2xl z-50 transform transition-transform duration-300 ease-out rounded-r-2xl">
-            <div className="h-full overflow-y-auto">
-              {/* Sidebar Header */}
-              <div className="flex items-center justify-between p-4 border-b border-border/50">
-                <span className="brand-logo-fashino text-2xl">Fashino</span>
-                <button
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`p-2 rounded-full transition-colors ${
-                    theme === 'light' ? 'hover:bg-gray-100 text-[#000000]' : 'hover:bg-muted text-white'
-                  }`}
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-
-              {/* Sidebar Content */}
-              <nav className="p-4 space-y-1">
-                {bottomCategories.map((category) => (
-                  <Link
-                    key={category.slug}
-                    href={`/${category.slug}`}
-                    className={`block px-4 py-3 rounded-lg transition-all duration-200 font-medium text-base ${
-                      theme === 'light' 
-                        ? 'text-[#000000] hover:underline hover:scale-[1.03]' 
-                        : 'text-white hover:underline hover:scale-[1.03]'
-                    }`}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {category.name}
-                  </Link>
-                ))}
-              </nav>
+      {/* Mobile Sidebar - For ≤768px with smooth slide-in animation */}
+      <>
+        {/* Backdrop Overlay */}
+        <div
+          onClick={() => setIsMobileMenuOpen(false)}
+          className={`md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40 transition-all duration-300 ease-in-out ${
+            isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
+        />
+        
+        {/* Sidebar */}
+        <div 
+          data-mobile-sidebar
+          className={`md:hidden fixed left-0 top-0 h-full w-80 max-w-[85vw] bg-background/95 backdrop-blur-xl border-r border-border/50 shadow-2xl z-50 transform transition-all duration-300 ease-in-out rounded-r-2xl ${
+            isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+          }`}
+        >
+          <div className="h-full overflow-y-auto">
+            {/* Sidebar Header */}
+            <div className="flex items-center justify-between p-4 border-b border-border/50">
+              <span className={`brand-logo-fashino text-2xl ${theme === 'light' ? 'text-[#000000]' : 'text-white'}`}>
+                Fashino
+              </span>
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`p-2 rounded-full transition-colors ${
+                  theme === 'light' ? 'hover:bg-gray-100 text-[#000000]' : 'hover:bg-muted text-white'
+                }`}
+              >
+                <X className="w-5 h-5" />
+              </button>
             </div>
-          </div>
-        </>
-      )}
 
-      {/* Bottom Navbar (Home only) */}
+            {/* Sidebar Content */}
+            <nav className="p-4 space-y-1">
+              {bottomCategories.map((category) => (
+                <Link
+                  key={category.slug}
+                  href={`/${category.slug}`}
+                  className={`block px-4 py-3 rounded-lg transition-all duration-200 font-medium text-base ${
+                    theme === 'light' 
+                      ? 'text-[#000000] hover:underline hover:scale-[1.03]' 
+                      : 'text-white hover:underline hover:scale-[1.03]'
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {category.name}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        </div>
+      </>
+
+      {/* Bottom Navbar (Home only) - Hidden on mobile (≤768px) */}
       {showCategoryBar && (
         <nav
-          className="sticky top-20 z-40 shadow-[0_12px_35px_rgba(139,15,29,0.35)] max-[404px]:hidden"
+          className="sticky top-20 z-40 shadow-[0_12px_35px_rgba(139,15,29,0.35)] hidden md:block"
           aria-label="Category navigation"
         >
         <div className="bg-gradient-to-r from-[#7a0d1c] via-[#8f101f] to-[#b71c27]">

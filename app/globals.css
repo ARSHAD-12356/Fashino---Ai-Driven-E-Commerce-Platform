@@ -3,7 +3,13 @@
 @import 'tw-animate-css';
 
 /* Prevent horizontal scrolling globally */
-html, body {
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
   overflow-x: hidden;
   max-width: 100vw;
 }
@@ -280,6 +286,11 @@ html, body {
 
 :not(.dark) .auth-brand .brand-logo-fashino {
   color: #000000 !important;
+}
+
+/* Dark mode: Fashino brand text on Sign In/Sign Up pages */
+.dark .auth-brand .brand-logo-fashino {
+  color: #ffffff !important;
 }
 
 header .brand-logo-fashino:hover {

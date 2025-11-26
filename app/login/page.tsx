@@ -63,7 +63,7 @@ export default function LoginPage() {
           <div className="text-center space-y-3">
             <Link href="/" className="auth-brand inline-flex flex-col items-center gap-1 group">
               <div className="flex items-center gap-2">
-              <Sparkles className="w-6 h-6 text-primary group-hover:rotate-12 transition-transform" />
+              <Sparkles className="w-6 h-6 text-primary group-hover:rotate-12 transition-transform max-[400px]:opacity-0 max-[400px]:w-0 max-[400px]:overflow-hidden transition-all duration-300 ease-in-out" />
                 <span className="brand-logo-fashino tracking-tight text-[32px] md:text-[40px] lg:text-[50px]">
               Fashino
                 </span>

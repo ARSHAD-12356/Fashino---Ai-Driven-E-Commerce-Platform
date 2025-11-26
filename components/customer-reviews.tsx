@@ -88,15 +88,21 @@ export function CustomerReviews() {
   const [isTransitioning, setIsTransitioning] = useState(false)
 
   useEffect(() => {
+    let timeoutId: NodeJS.Timeout | null = null
     const interval = setInterval(() => {
       setIsTransitioning(true)
-      setTimeout(() => {
+      timeoutId = setTimeout(() => {
         setCurrentIndex((prev) => (prev + 1) % reviews.length)
         setIsTransitioning(false)
       }, 350)
     }, 5000) // Change every 5 seconds
 
-    return () => clearInterval(interval)
+    return () => {
+      clearInterval(interval)
+      if (timeoutId) {
+        clearTimeout(timeoutId)
+      }
+    }
   }, [])
 
   useEffect(() => {
