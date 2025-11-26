@@ -125,7 +125,7 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
             </div>
 
             {/* Right Section */}
-            <div className="flex items-center gap-3 md:gap-4">
+            <div className="flex items-center gap-2 max-[404px]:gap-1.5 md:gap-4">
               {/* Search Bar */}
               <div ref={searchRef} className="hidden md:block relative">
                 <div
@@ -213,7 +213,7 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
               {/* Theme Toggle */}
               <button
                 onClick={toggleTheme}
-                className="p-2 hover:bg-white/10 rounded-full transition-all duration-200 hover:scale-110"
+                className="p-2 hover:bg-white/10 rounded-full transition-all duration-200 hover:scale-110 max-[404px]:hidden"
                 title="Toggle theme"
               >
                 {theme === 'dark' ? (
@@ -227,7 +227,7 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
               {user && (
                 <Link
                   href="/wishlist"
-                  className="relative p-2 hover:bg-white/10 rounded-full transition-all duration-200 hover:scale-110"
+                  className="relative p-2 hover:bg-white/10 rounded-full transition-all duration-200 hover:scale-110 max-[404px]:hidden"
                   title="Wishlist"
                 >
                   <Heart className="w-5 h-5" />
@@ -327,15 +327,75 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
                   Sign In
                 </Link>
               )}
+
+              {/* Mobile Hamburger Menu Button - Only for ≤404px */}
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="hidden max-[404px]:block lg:hidden p-2 bg-transparent hover:bg-transparent transition-all duration-300"
+                aria-label="Toggle menu"
+              >
+                {isMobileMenuOpen ? (
+                  <X className="w-5 h-5 text-white" />
+                ) : (
+                  <Menu className="w-5 h-5 text-white" />
+                )}
+              </button>
             </div>
           </div>
         </div>
       </nav>
 
+      {/* Mobile Sidebar - Only for ≤404px */}
+      {isMobileMenuOpen && (
+        <>
+          {/* Backdrop Overlay */}
+          <div
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="hidden max-[404px]:block lg:hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-40 animate-in fade-in duration-300"
+          />
+          
+          {/* Sidebar */}
+          <div className="hidden max-[404px]:block lg:hidden fixed left-0 top-0 h-full w-80 max-w-[85vw] bg-background/70 backdrop-blur-xl border-r border-border/50 shadow-2xl z-50 transform transition-transform duration-300 ease-out rounded-r-2xl">
+            <div className="h-full overflow-y-auto">
+              {/* Sidebar Header */}
+              <div className="flex items-center justify-between p-4 border-b border-border/50">
+                <span className="brand-logo-fashino text-2xl">Fashino</span>
+                <button
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`p-2 rounded-full transition-colors ${
+                    theme === 'light' ? 'hover:bg-gray-100 text-[#000000]' : 'hover:bg-muted text-white'
+                  }`}
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Sidebar Content */}
+              <nav className="p-4 space-y-1">
+                {bottomCategories.map((category) => (
+                  <Link
+                    key={category.slug}
+                    href={`/${category.slug}`}
+                    className={`block px-4 py-3 rounded-lg transition-all duration-200 font-medium text-base ${
+                      theme === 'light' 
+                        ? 'text-[#000000] hover:underline hover:scale-[1.03]' 
+                        : 'text-white hover:underline hover:scale-[1.03]'
+                    }`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {category.name}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+          </div>
+        </>
+      )}
+
       {/* Bottom Navbar (Home only) */}
       {showCategoryBar && (
         <nav
-          className="sticky top-20 z-40 shadow-[0_12px_35px_rgba(139,15,29,0.35)]"
+          className="sticky top-20 z-40 shadow-[0_12px_35px_rgba(139,15,29,0.35)] max-[404px]:hidden"
           aria-label="Category navigation"
         >
         <div className="bg-gradient-to-r from-[#7a0d1c] via-[#8f101f] to-[#b71c27]">
@@ -384,41 +444,7 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
               })}
             </div>
 
-            {/* Mobile: Hamburger Menu */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2.5 hover:bg-white/20 rounded-lg transition-all duration-300 ease-out border border-white/30 hover:border-white/50 active:scale-95"
-              aria-label="Toggle menu"
-            >
-              {isMobileMenuOpen ? (
-                <X className="w-5 h-5 text-white" />
-              ) : (
-                <Menu className="w-5 h-5 text-white" />
-              )}
-            </button>
           </div>
-
-          {/* Mobile Menu */}
-          {isMobileMenuOpen && (
-            <div className="lg:hidden border-t border-white/20 bg-gradient-to-b from-[#6c0a18] to-[#8f101f] shadow-2xl">
-              <div className="py-4 px-4 space-y-1 animate-in slide-in-from-top-2 duration-300">
-                {bottomCategories.map((category, index) => (
-                  <Link
-                    key={category.slug}
-                    href={`/${category.slug}`}
-                    className="block px-4 py-3 rounded-lg hover:bg-white/15 active:bg-white/25 transition-all duration-200 font-semibold text-sm uppercase tracking-wide text-white border-b border-white/10 last:border-0"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    style={{ animationDelay: `${index * 50}ms` }}
-                  >
-                    <span className="flex items-center justify-between">
-                    {category.name}
-                      <span className="text-white/60">→</span>
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
       </nav>
       )}

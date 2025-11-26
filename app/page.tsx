@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       <Header showCategoryBar />
-      <div>
+      <div className="space-y-0">
         <Hero />
         <CategoryGrid />
         <FeaturedProducts />

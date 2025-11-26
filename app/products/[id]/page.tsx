@@ -115,10 +115,10 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
         </div>
 
         {/* Product Section */}
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-12">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 py-6 sm:py-8 md:py-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 mb-8 sm:mb-12">
             {/* Image */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3 sm:gap-4">
               <div className="relative bg-muted rounded-lg overflow-hidden aspect-square fade-in">
                 <img
                   src={productImage}
@@ -126,34 +126,34 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                   onError={(e) => { e.currentTarget.src = getFallbackImage(product.name, product.category, product.subcategory) }}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold">
+                <div className="absolute top-2 sm:top-4 left-2 sm:left-4 bg-primary text-primary-foreground px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs sm:text-sm font-semibold">
                   -{Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}% OFF
                 </div>
               </div>
             </div>
 
             {/* Details */}
-            <div className="space-y-6 slide-up">
+            <div className="space-y-4 sm:space-y-6 slide-up">
               <div>
-                <p className="text-sm text-muted-foreground mb-2">{product.category}</p>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4">{product.name}</h1>
+                <p className="text-xs sm:text-sm text-muted-foreground mb-1.5 sm:mb-2">{product.category}</p>
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">{product.name}</h1>
                 
                 {/* Rating */}
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
                   <div className="flex gap-0.5">
                     {[...Array(5)].map((_, i) => (
-                      <span key={i} className="text-lg">★</span>
+                      <span key={i} className="text-sm sm:text-base md:text-lg">★</span>
                     ))}
                   </div>
-                  <span className="text-sm text-muted-foreground">
+                  <span className="text-xs sm:text-sm text-muted-foreground">
                     {product.rating} ({product.reviews} reviews)
                   </span>
                 </div>
 
                 {/* Price */}
-                <div className="flex items-baseline gap-3 text-3xl font-bold mb-6">
+                <div className="flex items-baseline gap-2 sm:gap-3 text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">
                   <span className="text-foreground">₹{product.price.toLocaleString('en-IN')}</span>
-                  <span className="text-lg text-muted-foreground line-through">
+                  <span className="text-base sm:text-lg text-muted-foreground line-through">
                     ₹{product.originalPrice.toLocaleString('en-IN')}
                   </span>
                 </div>
@@ -161,13 +161,13 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
 
               {/* Color Selection */}
               <div>
-                <label className="block text-sm font-semibold mb-3">Color: {selectedColor}</label>
-                <div className="flex gap-3">
+                <label className="block text-xs sm:text-sm font-semibold mb-2 sm:mb-3">Color: {selectedColor}</label>
+                <div className="flex flex-wrap gap-2 sm:gap-3">
                   {availableColors.map((color) => (
                     <button
                       key={color}
                       onClick={() => setSelectedColor(color)}
-                      className={`px-4 py-2 rounded-full border-2 font-medium smooth-transition ${
+                      className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border-2 font-medium smooth-transition text-xs sm:text-sm ${
                         selectedColor === color
                           ? 'border-primary bg-primary text-primary-foreground'
                           : 'border-border text-foreground hover:border-primary'
@@ -181,15 +181,15 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
 
               {/* Size Selection */}
               <div>
-                <label className="block text-sm font-semibold mb-3">
+                <label className="block text-xs sm:text-sm font-semibold mb-2 sm:mb-3">
                   Size {availableSizes[0]?.length === 1 ? '(US)' : ''}: {selectedSize || 'Select'}
                 </label>
-                <div className="grid grid-cols-4 gap-2">
+                <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-4 gap-2">
                   {availableSizes.map((size) => (
                     <button
                       key={size}
                       onClick={() => setSelectedSize(size)}
-                      className={`py-2 border-2 rounded-lg font-medium smooth-transition ${
+                      className={`py-2 border-2 rounded-lg font-medium smooth-transition text-xs sm:text-sm ${
                         selectedSize === size
                           ? 'border-primary bg-primary text-primary-foreground'
                           : 'border-border text-foreground hover:border-primary'
@@ -203,11 +203,11 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
 
               {/* Quantity */}
               <div>
-                <label className="block text-sm font-semibold mb-3">Quantity</label>
-                <div className="flex items-center gap-3 w-fit">
+                <label className="block text-xs sm:text-sm font-semibold mb-2 sm:mb-3">Quantity</label>
+                <div className="flex items-center gap-2 sm:gap-3 w-fit">
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="p-2 border border-border rounded hover:bg-muted smooth-hover"
+                    className="p-1.5 sm:p-2 border border-border rounded hover:bg-muted smooth-hover text-sm sm:text-base"
                   >
                     −
                   </button>
@@ -215,12 +215,12 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                     type="number"
                     value={quantity}
                     onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
-                    className="w-16 text-center border border-border rounded px-2 py-2"
+                    className="w-12 sm:w-16 text-center border border-border rounded px-2 py-1.5 sm:py-2 text-sm sm:text-base"
                     min="1"
                   />
                   <button
                     onClick={() => setQuantity(quantity + 1)}
-                    className="p-2 border border-border rounded hover:bg-muted smooth-hover"
+                    className="p-1.5 sm:p-2 border border-border rounded hover:bg-muted smooth-hover text-sm sm:text-base"
                   >
                     +
                   </button>
@@ -242,18 +242,18 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
 
               {/* Buttons */}
               <div className="flex flex-col gap-3 pt-4">
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <button
                   onClick={handleAddToCart}
                   disabled={product?.inStock === false}
-                  className="flex-1 bg-primary text-primary-foreground py-4 rounded-full font-bold text-lg hover:shadow-lg smooth-transition active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex-1 bg-primary text-primary-foreground py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:shadow-lg smooth-transition active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Add to Cart
                 </button>
                   <button
                     onClick={handleBuyNow}
                     disabled={product?.inStock === false}
-                    className="flex-1 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black py-4 rounded-full font-bold text-lg hover:from-yellow-300 hover:via-yellow-400 hover:to-yellow-500 smooth-transition active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-yellow-500/50 hover:shadow-yellow-500/70"
+                    className="flex-1 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:from-yellow-300 hover:via-yellow-400 hover:to-yellow-500 smooth-transition active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-yellow-500/50 hover:shadow-yellow-500/70"
                   >
                     Buy Now
                   </button>
@@ -263,43 +263,43 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                     onClick={() => {
                       setIsWishlisted(!isWishlisted)
                     }}
-                    className={`px-6 py-4 rounded-full border-2 font-semibold smooth-transition hover:scale-105 ${
+                    className={`px-4 sm:px-6 py-3 sm:py-4 rounded-full border-2 font-semibold smooth-transition hover:scale-105 text-sm sm:text-base ${
                       isWishlisted
                         ? 'border-primary bg-primary/10 text-primary'
                         : 'border-border text-foreground hover:border-primary'
                     }`}
                   >
-                    <Heart className={`w-5 h-5 ${isWishlisted ? 'fill-current' : ''}`} />
+                    <Heart className={`w-4 h-4 sm:w-5 sm:h-5 ${isWishlisted ? 'fill-current' : ''}`} />
                   </button>
                 )}
               </div>
 
               {/* Shipping Info */}
-              <div className="grid grid-cols-3 gap-4 pt-4 border-t border-border">
-                <div className="flex flex-col items-center gap-2 text-center">
-                  <Truck className="w-6 h-6 text-primary" />
-                  <span className="text-xs font-medium">Free Shipping</span>
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-4 border-t border-border">
+                <div className="flex flex-col items-center gap-1.5 sm:gap-2 text-center">
+                  <Truck className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+                  <span className="text-[10px] sm:text-xs font-medium">Free Shipping</span>
                 </div>
-                <div className="flex flex-col items-center gap-2 text-center">
-                  <Shield className="w-6 h-6 text-primary" />
-                  <span className="text-xs font-medium">Secure Payment</span>
+                <div className="flex flex-col items-center gap-1.5 sm:gap-2 text-center">
+                  <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+                  <span className="text-[10px] sm:text-xs font-medium">Secure Payment</span>
                 </div>
-                <div className="flex flex-col items-center gap-2 text-center">
-                  <RotateCcw className="w-6 h-6 text-primary" />
-                  <span className="text-xs font-medium">Easy Returns</span>
+                <div className="flex flex-col items-center gap-1.5 sm:gap-2 text-center">
+                  <RotateCcw className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+                  <span className="text-[10px] sm:text-xs font-medium">Easy Returns</span>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Tabs */}
-          <div className="border-t border-border pt-12">
-            <div className="flex gap-8 mb-8">
+          <div className="border-t border-border pt-6 sm:pt-8 md:pt-12">
+            <div className="flex gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8 overflow-x-auto">
               {['description', 'details'].map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`font-semibold text-sm uppercase tracking-wider pb-4 border-b-2 smooth-transition ${
+                  className={`font-semibold text-xs sm:text-sm uppercase tracking-wider pb-3 sm:pb-4 border-b-2 smooth-transition whitespace-nowrap ${
                     activeTab === tab
                       ? 'border-primary text-primary'
                       : 'border-transparent text-muted-foreground hover:text-foreground'
@@ -313,10 +313,10 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
             {/* Tab Content */}
             <div className="max-w-3xl">
               {activeTab === 'description' && (
-                <div className="space-y-6 fade-in">
+                <div className="space-y-4 sm:space-y-6 fade-in">
                   <div>
-                    <h3 className="text-xl font-bold mb-3">Product Overview</h3>
-                    <p className="text-muted-foreground leading-relaxed text-lg">
+                    <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Product Overview</h3>
+                    <p className="text-muted-foreground leading-relaxed text-sm sm:text-base md:text-lg">
                       {product.description}
                     </p>
                   </div>

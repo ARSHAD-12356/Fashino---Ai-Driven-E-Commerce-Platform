@@ -99,7 +99,7 @@ export function ProductCard({
         />
 
         {/* Discount Badge */}
-        <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold">
+        <div className="absolute top-2 sm:top-4 left-2 sm:left-4 bg-primary text-primary-foreground px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs sm:text-sm font-semibold">
           -{discount}%
         </div>
 
@@ -107,10 +107,10 @@ export function ProductCard({
         {user && (
           <button
             onClick={handleWishlistToggle}
-            className="absolute top-4 right-4 p-2 bg-white dark:bg-slate-800 rounded-full shadow-md hover:shadow-lg smooth-transition opacity-0 group-hover:opacity-100 transform group-hover:scale-100 scale-75"
+            className="absolute top-2 sm:top-4 right-2 sm:right-4 p-1.5 sm:p-2 bg-white dark:bg-slate-800 rounded-full shadow-md hover:shadow-lg smooth-transition opacity-0 group-hover:opacity-100 transform group-hover:scale-100 scale-75"
           >
             <Heart
-              className={`w-5 h-5 smooth-transition ${
+              className={`w-4 h-4 sm:w-5 sm:h-5 smooth-transition ${
                 isWishlisted
                   ? 'fill-primary text-primary'
                   : 'text-foreground'
@@ -119,27 +119,27 @@ export function ProductCard({
           </button>
         )}
 
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 transform translate-y-full group-hover:translate-y-0 smooth-transition flex flex-col gap-2">
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-2 sm:p-4 transform translate-y-full group-hover:translate-y-0 smooth-transition flex flex-col gap-1.5 sm:gap-2">
           {user ? (
             <>
               <button
                 onClick={handleAddToCart}
-                className="w-full bg-primary text-primary-foreground py-2 font-semibold rounded-lg hover:bg-primary/90 smooth-transition flex items-center justify-center gap-2 text-sm"
+                className="w-full bg-primary text-primary-foreground py-1.5 sm:py-2 font-semibold rounded-lg hover:bg-primary/90 smooth-transition flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm"
               >
-                <ShoppingCart className="w-4 h-4" />
+                <ShoppingCart className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 Add to Cart
               </button>
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
                 <Link href={`/products/${id}`}>
-                  <button className="w-full bg-white/20 text-white py-2 font-semibold rounded-lg hover:bg-white/30 smooth-transition flex items-center justify-center gap-2 text-sm">
-                    <Eye className="w-4 h-4" />
+                  <button className="w-full bg-white/20 text-white py-1.5 sm:py-2 font-semibold rounded-lg hover:bg-white/30 smooth-transition flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm">
+                    <Eye className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     Details
                   </button>
                 </Link>
                 <Link href={`/products/${id}`}>
                   <button 
                     onClick={handleBuyNow}
-                    className="w-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black py-2 font-semibold rounded-lg hover:from-yellow-300 hover:via-yellow-400 hover:to-yellow-500 smooth-transition text-sm shadow-lg shadow-yellow-500/50 hover:shadow-yellow-500/70 hover:scale-105 active:scale-95 font-bold"
+                    className="w-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black py-1.5 sm:py-2 font-semibold rounded-lg hover:from-yellow-300 hover:via-yellow-400 hover:to-yellow-500 smooth-transition text-xs sm:text-sm shadow-lg shadow-yellow-500/50 hover:shadow-yellow-500/70 hover:scale-105 active:scale-95 font-bold"
                   >
                     Buy Now
                   </button>
@@ -147,10 +147,10 @@ export function ProductCard({
               </div>
             </>
           ) : (
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
               <Link href={`/products/${id}`}>
-                <button className="w-full bg-white/20 text-white py-2 font-semibold rounded-lg hover:bg-white/30 smooth-transition flex items-center justify-center gap-2 text-sm">
-                  <Eye className="w-4 h-4" />
+                <button className="w-full bg-white/20 text-white py-1.5 sm:py-2 font-semibold rounded-lg hover:bg-white/30 smooth-transition flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm">
+                  <Eye className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   Details
                 </button>
               </Link>
@@ -159,7 +159,7 @@ export function ProductCard({
                   e.preventDefault()
                   router.push('/login')
                 }}
-                className="w-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black py-2 font-semibold rounded-lg hover:from-yellow-300 hover:via-yellow-400 hover:to-yellow-500 smooth-transition text-sm shadow-lg shadow-yellow-500/50 hover:shadow-yellow-500/70 hover:scale-105 active:scale-95 font-bold"
+                className="w-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black py-1.5 sm:py-2 font-semibold rounded-lg hover:from-yellow-300 hover:via-yellow-400 hover:to-yellow-500 smooth-transition text-xs sm:text-sm shadow-lg shadow-yellow-500/50 hover:shadow-yellow-500/70 hover:scale-105 active:scale-95 font-bold"
               >
                 Buy Now
               </button>
@@ -170,35 +170,35 @@ export function ProductCard({
 
       {/* Product Info */}
       <div>
-        <h3 className="font-semibold text-foreground mb-2 line-clamp-2 hover:text-primary smooth-transition">
+        <h3 className="font-semibold text-sm sm:text-base text-foreground mb-1.5 sm:mb-2 line-clamp-2 hover:text-primary smooth-transition">
           {name}
         </h3>
 
         {/* Rating */}
-        <div className="flex items-center gap-2 mb-3">
+        <div className="flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-3">
           <div className="flex gap-0.5">
             {[...Array(5)].map((_, i) => (
-              <span key={i} className="text-sm">
+              <span key={i} className="text-xs sm:text-sm">
                 {'★'}
               </span>
             ))}
           </div>
-          <span className="text-xs text-muted-foreground">
+          <span className="text-[10px] sm:text-xs text-muted-foreground">
             {rating} ({reviews})
           </span>
         </div>
 
         {/* Price */}
-        <div className="flex items-center gap-2">
-          <span className="text-lg font-bold text-foreground">
+        <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
+          <span className="text-base sm:text-lg font-bold text-foreground">
             ₹{price.toLocaleString('en-IN')}
           </span>
-          <span className="text-sm text-muted-foreground line-through">
+          <span className="text-xs sm:text-sm text-muted-foreground line-through">
             ₹{originalPrice.toLocaleString('en-IN')}
           </span>
         </div>
         <p
-          className={`text-sm font-medium ${
+          className={`text-xs sm:text-sm font-medium ${
             isInStock ? 'text-emerald-500' : 'text-destructive'
           }`}
         >

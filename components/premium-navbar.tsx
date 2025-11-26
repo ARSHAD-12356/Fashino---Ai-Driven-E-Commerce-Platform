@@ -107,11 +107,7 @@ export function PremiumNavbar() {
               href="/"
               className="flex items-center gap-2 group px-[12px] md:px-[18px] lg:px-[28px]"
             >
-              <span 
-                className={`brand-logo-fashino tracking-tight ${
-                  theme === 'light' ? 'text-[#000000]' : 'text-white'
-                }`}
-              >
+              <span className="brand-logo-fashino tracking-tight text-[32px] md:text-[40px] lg:text-[50px]">
                 Fashino
               </span>
             </Link>
@@ -171,7 +167,7 @@ export function PremiumNavbar() {
             </nav>
 
             {/* Right Section */}
-            <div className="flex items-center gap-3 md:gap-4">
+            <div className="flex items-center gap-2 max-[404px]:gap-1.5 md:gap-4">
               {/* Search Bar */}
               <div ref={searchRef} className="hidden md:block relative">
                 <div
@@ -248,7 +244,7 @@ export function PremiumNavbar() {
               {/* Theme Toggle */}
               <button
                 onClick={toggleTheme}
-                className={`p-2.5 rounded-full transition-all duration-300 hover:scale-110 ${
+                className={`p-2.5 rounded-full transition-all duration-300 hover:scale-110 max-[404px]:hidden ${
                   theme === 'light' ? 'hover:bg-gray-100' : 'hover:bg-muted'
                 }`}
                 title="Toggle theme"
@@ -264,7 +260,7 @@ export function PremiumNavbar() {
               {user && (
                 <Link
                   href="/wishlist"
-                  className={`relative p-2.5 rounded-full transition-all duration-300 hover:scale-110 group ${
+                  className={`relative p-2.5 rounded-full transition-all duration-300 hover:scale-110 group max-[404px]:hidden ${
                     theme === 'light' ? 'hover:bg-gray-100' : 'hover:bg-muted'
                   }`}
                   title="Wishlist"
@@ -392,8 +388,10 @@ export function PremiumNavbar() {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className={`lg:hidden p-2 rounded-full transition-all duration-300 ${
-                  theme === 'light' ? 'hover:bg-gray-100' : 'hover:bg-muted'
+                className={`lg:hidden p-2 max-[404px]:bg-transparent max-[404px]:hover:bg-transparent transition-all duration-300 ${
+                  theme === 'light' 
+                    ? 'hover:bg-gray-100 max-[404px]:hover:bg-transparent' 
+                    : 'hover:bg-muted max-[404px]:hover:bg-transparent'
                 }`}
               >
                 {isMobileMenuOpen ? (
@@ -405,17 +403,17 @@ export function PremiumNavbar() {
             </div>
           </div>
 
-          {/* Mobile Menu */}
+          {/* Mobile Menu - Desktop/Tablet Dropdown */}
           {isMobileMenuOpen && (
-            <div className={`lg:hidden py-4 border-t animate-in slide-in-from-top duration-300 ${
+            <div className={`lg:hidden hidden min-[481px]:block py-3 sm:py-4 border-t animate-in slide-in-from-top duration-300 max-h-[calc(100vh-4rem)] overflow-y-auto ${
               theme === 'light' ? 'border-gray-200' : 'border-border'
             }`}>
-              <div className="space-y-2">
+              <div className="space-y-1 sm:space-y-2">
                 {categories.map((category) => (
                   <Link
                     key={category.slug}
                     href={`/${category.slug}`}
-                    className={`block px-4 py-2 rounded-lg transition-colors duration-200 font-medium ${
+                    className={`block px-4 py-2.5 sm:py-2 rounded-lg transition-colors duration-200 font-medium text-sm sm:text-base ${
                       theme === 'light' 
                         ? 'hover:bg-gray-100 text-[#000000]' 
                         : 'hover:bg-muted text-foreground'
@@ -427,6 +425,58 @@ export function PremiumNavbar() {
                 ))}
               </div>
             </div>
+          )}
+
+          {/* Mobile Sidebar - Only for ≤404px */}
+          {isMobileMenuOpen && (
+            <>
+              {/* Backdrop Overlay */}
+              <div
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="hidden max-[404px]:block lg:hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-40 animate-in fade-in duration-300"
+              />
+              
+              {/* Sidebar */}
+              <div className={`hidden max-[404px]:block lg:hidden fixed left-0 top-0 h-full w-80 max-w-[85vw] bg-background/70 backdrop-blur-xl border-r border-border/50 shadow-2xl z-50 transform transition-transform duration-300 ease-out rounded-r-2xl ${
+                isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+              }`}>
+                <div className="h-full overflow-y-auto">
+                  {/* Sidebar Header */}
+                  <div className="flex items-center justify-between p-4 border-b border-border/50">
+                    <span className="brand-logo-fashino text-2xl">Fashino</span>
+                    <button
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={`p-2 rounded-full transition-colors ${
+                        theme === 'light' ? 'hover:bg-gray-100 text-[#000000]' : 'hover:bg-muted text-white'
+                      }`}
+                    >
+                      <X className="w-5 h-5" />
+                    </button>
+                  </div>
+
+                  {/* Sidebar Content */}
+                  <nav className="p-4 space-y-1">
+                    {categories.map((category) => (
+                      <Link
+                        key={category.slug}
+                        href={`/${category.slug}`}
+                        className={`block px-4 py-3 rounded-lg transition-all duration-200 font-medium text-base ${
+                          theme === 'light' 
+                            ? 'text-[#000000] hover:underline hover:scale-[1.03]' 
+                            : 'text-white hover:underline hover:scale-[1.03]'
+                        }`}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <span className="flex items-center gap-2">
+                          {category.icon && <span>{category.icon}</span>}
+                          {category.name}
+                        </span>
+                      </Link>
+                    ))}
+                  </nav>
+                </div>
+              </div>
+            </>
           )}
         </div>
       </header>

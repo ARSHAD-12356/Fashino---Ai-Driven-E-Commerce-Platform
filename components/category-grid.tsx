@@ -14,18 +14,18 @@ export function CategoryGrid() {
   const [hoveredId, setHoveredId] = useState<number | null>(null)
 
   return (
-    <section className="py-20 px-4 md:px-6 bg-background">
+    <section className="py-12 sm:py-16 md:py-20 px-4 md:px-6 bg-background">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-3 sm:mb-4">
             Shop by Category
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
             Explore our curated collections
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
           {categories.map((category) => (
             <Link
               key={category.id}

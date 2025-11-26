@@ -69,7 +69,7 @@ export function Hero() {
 
   if (!isMounted) {
     return (
-      <section className="relative w-full h-screen overflow-hidden bg-background">
+      <section className="relative w-full h-[70vh] sm:h-[80vh] md:h-screen overflow-hidden bg-background">
         <div className="relative w-full h-full">
           <div className="absolute inset-0">
             <img
@@ -85,7 +85,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-background">
+    <section className="relative w-full h-[70vh] sm:h-[80vh] md:h-screen overflow-hidden bg-background">
       {/* Carousel Container */}
       <div className="relative w-full h-full">
         {carouselSlides.map((s, index) => (
@@ -111,31 +111,31 @@ export function Hero() {
         {/* Content Overlay */}
         <div className="absolute inset-0 flex items-center justify-center z-10">
           <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-6 text-center">
-            <div className="space-y-6 slide-up">
+            <div className="space-y-4 sm:space-y-5 md:space-y-6 slide-up">
               <div className="inline-block">
-                <span className="text-sm font-semibold uppercase tracking-wider text-white">
+                <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-white">
                   {slide.subtitle}
                 </span>
               </div>
 
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight text-balance">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white leading-tight text-balance">
                 {slide.title}
               </h1>
 
-              <p className="text-lg md:text-xl text-gray-100 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-100 max-w-2xl mx-auto leading-relaxed px-2">
                 {slide.description}
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 justify-center pt-2 sm:pt-4 px-4 sm:px-0">
                 <Link 
                   href="/winter-collection"
-                  className="px-8 py-4 bg-white text-black rounded-full font-semibold hover:shadow-xl hover:shadow-white/30 smooth-transition hover:scale-105 active:scale-95 text-center"
+                  className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white text-black rounded-full font-semibold hover:shadow-xl hover:shadow-white/30 smooth-transition hover:scale-105 active:scale-95 text-center text-sm sm:text-base"
                 >
                   {slide.cta}
                 </Link>
                 <Link 
                   href="/shop"
-                  className="px-8 py-4 border-2 border-white text-white rounded-full font-semibold hover:bg-white/10 smooth-transition hover:scale-105 active:scale-95 text-center"
+                  className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-white text-white rounded-full font-semibold hover:bg-white/10 smooth-transition hover:scale-105 active:scale-95 text-center text-sm sm:text-base"
                 >
                   Browse More
                 </Link>
@@ -149,23 +149,23 @@ export function Hero() {
       <button
         onClick={prevSlide}
         onMouseEnter={() => setIsAutoPlay(false)}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 hover:bg-white/40 text-white smooth-transition backdrop-blur-sm"
+        className="absolute left-2 sm:left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 p-2 sm:p-3 rounded-full bg-white/20 hover:bg-white/40 text-white smooth-transition backdrop-blur-sm"
         aria-label="Previous slide"
       >
-        <ChevronLeft className="w-6 h-6" />
+        <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
       </button>
 
       <button
         onClick={nextSlide}
         onMouseEnter={() => setIsAutoPlay(false)}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 hover:bg-white/40 text-white smooth-transition backdrop-blur-sm"
+        className="absolute right-2 sm:right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 p-2 sm:p-3 rounded-full bg-white/20 hover:bg-white/40 text-white smooth-transition backdrop-blur-sm"
         aria-label="Next slide"
       >
-        <ChevronRight className="w-6 h-6" />
+        <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
       </button>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2 sm:gap-3">
         {carouselSlides.map((_, index) => (
           <button
             key={index}
@@ -181,7 +181,7 @@ export function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-10 md:block hidden">
+      <div className="absolute bottom-12 sm:bottom-16 left-1/2 -translate-x-1/2 z-10 md:block hidden">
         <div className="flex flex-col items-center gap-2 animate-bounce">
           <span className="text-xs text-white/70">Scroll to explore</span>
           <svg

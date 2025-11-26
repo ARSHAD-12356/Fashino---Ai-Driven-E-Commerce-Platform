@@ -52,14 +52,8 @@ export default function AdminLoginPage() {
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/20 mb-4">
               <Shield className="w-8 h-8 text-primary" />
             </div>
-            <div className="flex flex-col items-center justify-center">
-              <span 
-                className="tracking-tight brand-logo-fashino text-white"
-                style={{ 
-                  fontFamily: "var(--font-great-vibes), cursive",
-                  color: '#ffffff',
-                }}
-              >
+            <div className="auth-brand flex flex-col items-center justify-center">
+              <span className="tracking-tight brand-logo-fashino text-[32px] md:text-[40px] lg:text-[50px]">
                 Fashino
               </span>
               <p className="text-sm font-normal font-sans text-primary/80 italic tracking-wide mt-1">

@@ -16,12 +16,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* About Fashino */}
           <div className="lg:col-span-2">
-            <h3 
-              className="mb-4 text-white fashino-logo text-[32px] md:text-[40px] lg:text-[50px]"
-              style={{ 
-                fontFamily: "var(--font-great-vibes), cursive",
-              }}
-            >
+            <h3 className="mb-4 text-white brand-logo-fashino text-[32px] md:text-[40px] lg:text-[50px]">
               About Fashino
             </h3>
             <p className="text-sm text-gray-400 leading-relaxed mb-4">
@@ -156,13 +151,7 @@ export function Footer() {
         {/* Copyright */}
         <div className="border-t border-gray-800 pt-8 text-center space-y-4">
           <p className="text-sm text-gray-500">
-            Copyright ©             <span 
-              className="inline-block fashino-logo text-white"
-              style={{ 
-                fontFamily: "var(--font-great-vibes), cursive",
-                fontSize: '16px',
-              }}
-            >
+            Copyright © <span className="inline-block brand-logo-fashino">
               Fashino
             </span> 2025. All rights reserved.
           </p>

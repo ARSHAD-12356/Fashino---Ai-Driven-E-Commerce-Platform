@@ -21,7 +21,7 @@ export function Logo({ showIcon = false }: LogoProps) {
           </div>
         </div>
       )}
-      <span className={`tracking-tight fashino-logo brand-logo-fashino text-white`}>
+      <span className="tracking-tight fashino-logo brand-logo-fashino text-[32px] md:text-[40px] lg:text-[50px]">
         Fashino
       </span>
     </Link>
