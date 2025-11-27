@@ -166,11 +166,10 @@ export function getProductImage(
   subcategory?: string,
   title?: string
 ): string {
-  const cleaned = image?.split('?')[0]?.trim()
-
-  if (cleaned && cleaned !== '/placeholder.svg') {
-    if (cleaned.startsWith('/') || cleaned.startsWith('data:image')) {
-      return cleaned
+  if (image && image !== '/placeholder.svg') {
+    const trimmed = image.trim()
+    if (trimmed.startsWith('/') || trimmed.startsWith('data:image') || trimmed.startsWith('http')) {
+      return trimmed
     }
   }
 

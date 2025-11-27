@@ -1,0 +1,202 @@
+[
+    {
+        "productName": "Smart Watch Pro",
+        "imageUrl": "https://images.unsplash.com/photo-1615655406736-b37c4fabf923?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z2FkZ2V0c3xlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+        "productName": "Wireless Earbuds",
+        "imageUrl": "https://images.unsplash.com/photo-1636115305669-9096bffe87fd?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Z2FkZ2V0c3xlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+        "productName": "Fitness Tracker",
+        "imageUrl": "https://images.unsplash.com/photo-1620783770629-122b7f187703?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGdhZGdldHN8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+        "productName": "Smart Band",
+        "imageUrl": "https://images.unsplash.com/photo-1491933382434-500287f9b54b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGdhZGdldHN8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+        "productName": "Bluetooth Headphones",
+        "imageUrl": "https://images.unsplash.com/photo-1643536768014-0756fa85ca4f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGdhZGdldHN8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+        "productName": "Smart Ring",
+        "imageUrl": "https://images.unsplash.com/photo-1615655406736-b37c4fabf923?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z2FkZ2V0c3xlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+        "productName": "Wireless Speaker",
+        "imageUrl": "https://images.unsplash.com/photo-1636115305669-9096bffe87fd?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Z2FkZ2V0c3xlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+        "productName": "Smart Watch Classic",
+        "imageUrl": "https://images.unsplash.com/photo-1620783770629-122b7f187703?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGdhZGdldHN8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+        "productName": "Gaming Earbuds",
+        "imageUrl": "https://images.unsplash.com/photo-1491933382434-500287f9b54b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGdhZGdldHN8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+        "productName": "Smart Watch Sport",
+        "imageUrl": "https://images.unsplash.com/photo-1643536768014-0756fa85ca4f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGdhZGdldHN8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+        "productName": "Men Grooming Kit",
+        "imageUrl": "https://images.unsplash.com/photo-1612817288484-6f916006741a?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmVhdXR5JTIwcHJvZHVjdHN8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+        "productName": "Face Moisturizer",
+        "imageUrl": "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGJlYXV0eSUyMHByb2R1Y3RzfGVufDB8fDB8fHww"
+    },
+    {
+        "productName": "Hair Styling Gel",
+        "imageUrl": "https://images.unsplash.com/photo-1526947425960-945c6e72858f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGJlYXV0eSUyMHByb2R1Y3RzfGVufDB8fDB8fHww"
+    },
+    {
+        "productName": "Perfume Set",
+        "imageUrl": "https://images.unsplash.com/photo-1564594326930-17381130fd2e?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGJlYXV0eSUyMHByb2R1Y3RzfGVufDB8fDB8fHww"
+    },
+    {
+        "productName": "Shaving Kit",
+        "imageUrl": "https://images.unsplash.com/photo-1598528738936-c50861cc75a9?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhdXR5JTIwcHJvZHVjdHN8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+        "productName": "Face Cleanser",
+        "imageUrl": "https://images.unsplash.com/photo-1580870069867-74c57ee1bb07?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmVhdXR5JTIwcHJvZHVjdHN8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+        "productName": "Hair Shampoo",
+        "imageUrl": "https://images.unsplash.com/photo-1608979048467-6194dabc6a3d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmVhdXR5JTIwcHJvZHVjdHN8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+        "productName": "Body Lotion",
+        "imageUrl": "https://images.unsplash.com/photo-1629198688000-71f23e745b6e?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJlYXV0eSUyMHByb2R1Y3RzfGVufDB8fDB8fHww"
+    },
+    {
+        "productName": "Cologne Spray",
+        "imageUrl": "https://images.unsplash.com/photo-1625753783470-ec2ab4efeeec?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJlYXV0eSUyMHByb2R1Y3RzfGVufDB8fDB8fHww"
+    },
+    {
+        "productName": "Beard Oil",
+        "imageUrl": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJlYXV0eSUyMHByb2R1Y3RzfGVufDB8fDB8fHww"
+    },
+    {
+        "productName": "Cotton Bed Sheets",
+        "imageUrl": "https://images.unsplash.com/photo-1572048572872-2394404cf1f3?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG9tZSUyMGRlY29yfGVufDB8fDB8fHww"
+    },
+    {
+        "productName": "Decorative Cushions",
+        "imageUrl": "https://images.unsplash.com/photo-1582131503261-fca1d1c0589f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aG9tZSUyMGRlY29yfGVufDB8fDB8fHww"
+    },
+    {
+        "productName": "Table Lamp",
+        "imageUrl": "https://images.unsplash.com/photo-1628152371231-936cf45eb8f3?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvbWUlMjBkZWNvcnxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+        "productName": "Wall Clock",
+        "imageUrl": "https://images.unsplash.com/photo-1534349762230-e0cadf78f5da?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGhvbWUlMjBkZWNvcnxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+        "productName": "Curtains Set",
+        "imageUrl": "https://images.unsplash.com/photo-1667312939978-64cf31718a6e?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGhvbWUlMjBkZWNvcnxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+        "productName": "Throw Blanket",
+        "imageUrl": "https://images.unsplash.com/photo-1616046229478-9901c5536a45?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG9tZSUyMGRlY29yfGVufDB8fDB8fHww"
+    },
+    {
+        "productName": "Photo Frame Set",
+        "imageUrl": "https://images.unsplash.com/photo-1618220179428-22790b461013?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aG9tZSUyMGRlY29yfGVufDB8fDB8fHww"
+    },
+    {
+        "productName": "Rug Carpet",
+        "imageUrl": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvbWUlMjBkZWNvcnxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+        "productName": "Pillow Set",
+        "imageUrl": "https://images.unsplash.com/photo-1617806265182-7b3f847f0b75?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGhvbWUlMjBkZWNvcnxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+        "productName": "Vase Set",
+        "imageUrl": "https://images.unsplash.com/photo-1615874694520-474822394e73?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aG9tZSUyMGRlY29yfGVufDB8fDB8fHww"
+    },
+    {
+        "productName": "Men Sports T-Shirt",
+        "imageUrl": "https://images.unsplash.com/photo-1637666544359-0e88de7b3206?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3BvcnRzd2VhcnxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+        "productName": "Women Yoga Pants",
+        "imageUrl": "https://images.unsplash.com/photo-1635929171657-ccb333d714f5?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3BvcnRzd2VhcnxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+        "productName": "Men Track Pants",
+        "imageUrl": "https://images.unsplash.com/photo-1645207803533-e2cfe1382f2c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNwb3J0c3dlYXJ8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+        "productName": "Sports Jacket",
+        "imageUrl": "https://images.unsplash.com/photo-1605235186531-bbd852b09e69?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNwb3J0c3dlYXJ8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+        "productName": "Women Sports Bra",
+        "imageUrl": "https://images.unsplash.com/photo-1536244955395-0b8a2a5ab5df?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHNwb3J0c3dlYXJ8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+        "productName": "Men Gym Shorts",
+        "imageUrl": "https://images.unsplash.com/photo-1593419528756-3cdfa1615b86?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3BvcnRzd2VhcnxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+        "productName": "Sports Hoodie",
+        "imageUrl": "https://images.unsplash.com/photo-1483721310020-03333e577078?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3BvcnRzd2VhcnxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+        "productName": "Women Running Shorts",
+        "imageUrl": "https://images.unsplash.com/photo-1605235186583-a8272b61f9fe?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c3BvcnRzd2VhcnxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+        "productName": "Men Compression Shirt",
+        "imageUrl": "https://images.unsplash.com/photo-1540254597053-3901b858d40f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c3BvcnRzd2VhcnxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+        "productName": "Sports Cap",
+        "imageUrl": "https://images.unsplash.com/photo-1600696491085-19dbbeb4f8c1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNwb3J0c3dlYXJ8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+        "productName": "Men Kurta",
+        "imageUrl": "https://images.unsplash.com/photo-1757702522569-bf5c275261cf?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aW5kaWFuJTIwZXRobmljJTIwd2VhcnxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+        "productName": "Women Saree",
+        "imageUrl": "https://images.unsplash.com/photo-1756483517695-d0aa21ee1ea1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGluZGlhbiUyMGV0aG5pYyUyMHdlYXJ8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+        "productName": "Men Sherwani",
+        "imageUrl": "https://images.unsplash.com/photo-1763971922545-c0ffa1c09cc0?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGluZGlhbiUyMGV0aG5pYyUyMHdlYXJ8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+        "productName": "Women Lehenga",
+        "imageUrl": "https.unsplash.com/photo-1763971922538-5802acdd48b8?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGluZGlhbiUyMGV0aG5pYyUyMHdlYXJ8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+        "productName": "Men Dhoti",
+        "imageUrl": "https://images.unsplash.com/photo-1668371679302-a8ec781e876e?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW5kaWFuJTIwZXRobmljJTIwd2VhcnxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+        "productName": "Women Salwar Kameez",
+        "imageUrl": "https.unsplash.com/photo-1571908599407-cdb918ed83bf?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW5kaWFuJTIwZXRobmljJTIwd2VhcnxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+        "productName": "Men Pathani Suit",
+        "imageUrl": "https://images.unsplash.com/photo-1569810020669-aa9d38003ea7?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW5kaWFuJTIwZXRobmljJTIwd2VhcnxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+        "productName": "Women Anarkali",
+        "imageUrl": "https://images.unsplash.com/photo-1756483488645-5973a1a92e33?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGluZGlhbiUyMGV0aG5pYyUyMHdlYXJ8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+        "productName": "Men Waistcoat",
+        "imageUrl": "https://images.unsplash.com/photo-1756483510900-ec43edbafb45?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGluZGlhbiUyMGV0aG5pYyUyMHdlYXJ8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+        "productName": "Women Dupatta",
+        "imageUrl": "https.unsplash.com/photo-1668371459824-094a960a227d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aW5kaWFuJTIwZXRobmljJTIwd2VhcnxlbnwwfHwwfHx8MA%3D%3D"
+    }
+]

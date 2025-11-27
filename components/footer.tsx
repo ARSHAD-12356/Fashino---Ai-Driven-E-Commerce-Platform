@@ -20,7 +20,7 @@ export function Footer() {
               About Fashino
             </h3>
             <p className="text-sm text-gray-400 leading-relaxed mb-4">
-              Premium fashion for the modern individual. Discover curated collections that define your style. 
+              Premium fashion for the modern individual. Discover curated collections that define your style.
               We bring you the latest trends and timeless classics, all in one place.
             </p>
             {/* Social Icons */}
@@ -93,9 +93,14 @@ export function Footer() {
             <h4 className="font-semibold mb-4 text-lg text-white">Support</h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <a href="#" className="text-gray-400 hover:text-primary smooth-hover inline-block hover:translate-x-1 transition-transform">
+                <Link href="/about-us" className="text-gray-400 hover:text-primary smooth-hover inline-block hover:translate-x-1 transition-transform">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact-us" className="text-gray-400 hover:text-primary smooth-hover inline-block hover:translate-x-1 transition-transform">
                   Contact Us
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-primary smooth-hover inline-block hover:translate-x-1 transition-transform">
@@ -103,14 +108,14 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-primary smooth-hover inline-block hover:translate-x-1 transition-transform">
+                <Link href="/shipping-policy" className="text-gray-400 hover:text-primary smooth-hover inline-block hover:translate-x-1 transition-transform">
                   Shipping Info
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-primary smooth-hover inline-block hover:translate-x-1 transition-transform">
+                <Link href="/refund-policy" className="text-gray-400 hover:text-primary smooth-hover inline-block hover:translate-x-1 transition-transform">
                   Returns
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-primary smooth-hover inline-block hover:translate-x-1 transition-transform">
@@ -125,19 +130,19 @@ export function Footer() {
             <h4 className="font-semibold mb-4 text-lg text-white">Legal</h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <a href="#" className="text-gray-400 hover:text-primary smooth-hover inline-block hover:translate-x-1 transition-transform">
+                <Link href="/privacy-policy" className="text-gray-400 hover:text-primary smooth-hover inline-block hover:translate-x-1 transition-transform">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-primary smooth-hover inline-block hover:translate-x-1 transition-transform">
+                <Link href="/terms-and-conditions" className="text-gray-400 hover:text-primary smooth-hover inline-block hover:translate-x-1 transition-transform">
                   Terms of Service
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-primary smooth-hover inline-block hover:translate-x-1 transition-transform">
+                <Link href="/refund-policy" className="text-gray-400 hover:text-primary smooth-hover inline-block hover:translate-x-1 transition-transform">
                   Returns Policy
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-primary smooth-hover inline-block hover:translate-x-1 transition-transform">
