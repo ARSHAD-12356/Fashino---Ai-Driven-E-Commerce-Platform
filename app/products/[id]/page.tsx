@@ -30,6 +30,9 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
     product?.name
   )
 
+  const stockCount = product ? (product.stock ?? (35 + ((product.id % 9) * 5))) : 0
+  const isInStock = stockCount > 0
+
   const [selectedSize, setSelectedSize] = useState('')
   const [selectedColor, setSelectedColor] = useState(initialColor)
   const [quantity, setQuantity] = useState(1)
@@ -74,7 +77,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
       alert('Please select a size')
       return
     }
-    
+
     for (let i = 0; i < quantity; i++) {
       addItem({
         id: product.id,
@@ -137,7 +140,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
               <div>
                 <p className="text-xs sm:text-sm text-muted-foreground mb-1.5 sm:mb-2">{product.category}</p>
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">{product.name}</h1>
-                
+
                 {/* Rating */}
                 <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
                   <div className="flex gap-0.5">
@@ -167,11 +170,10 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                     <button
                       key={color}
                       onClick={() => setSelectedColor(color)}
-                      className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border-2 font-medium smooth-transition text-xs sm:text-sm ${
-                        selectedColor === color
-                          ? 'border-primary bg-primary text-primary-foreground'
-                          : 'border-border text-foreground hover:border-primary'
-                      }`}
+                      className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border-2 font-medium smooth-transition text-xs sm:text-sm ${selectedColor === color
+                        ? 'border-primary bg-primary text-primary-foreground'
+                        : 'border-border text-foreground hover:border-primary'
+                        }`}
                     >
                       {color}
                     </button>
@@ -189,11 +191,10 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                     <button
                       key={size}
                       onClick={() => setSelectedSize(size)}
-                      className={`py-2 border-2 rounded-lg font-medium smooth-transition text-xs sm:text-sm ${
-                        selectedSize === size
-                          ? 'border-primary bg-primary text-primary-foreground'
-                          : 'border-border text-foreground hover:border-primary'
-                      }`}
+                      className={`py-2 border-2 rounded-lg font-medium smooth-transition text-xs sm:text-sm ${selectedSize === size
+                        ? 'border-primary bg-primary text-primary-foreground'
+                        : 'border-border text-foreground hover:border-primary'
+                        }`}
                     >
                       {size}
                     </button>
@@ -228,10 +229,10 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
               </div>
 
               {/* Stock Status */}
-              {product?.inStock ? (
+              {isInStock ? (
                 <div className="flex items-center gap-2 text-green-600 font-medium">
                   <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                  In Stock
+                  {stockCount} in Stock
                 </div>
               ) : (
                 <div className="flex items-center gap-2 text-destructive font-medium">
@@ -243,16 +244,16 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
               {/* Buttons */}
               <div className="flex flex-col gap-3 pt-4">
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <button
-                  onClick={handleAddToCart}
-                  disabled={product?.inStock === false}
-                  className="flex-1 bg-primary text-primary-foreground py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:shadow-lg smooth-transition active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  Add to Cart
-                </button>
+                  <button
+                    onClick={handleAddToCart}
+                    disabled={!isInStock}
+                    className="flex-1 bg-primary text-primary-foreground py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:shadow-lg smooth-transition active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    Add to Cart
+                  </button>
                   <button
                     onClick={handleBuyNow}
-                    disabled={product?.inStock === false}
+                    disabled={!isInStock}
                     className="flex-1 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:from-yellow-300 hover:via-yellow-400 hover:to-yellow-500 smooth-transition active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-yellow-500/50 hover:shadow-yellow-500/70"
                   >
                     Buy Now
@@ -263,11 +264,10 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                     onClick={() => {
                       setIsWishlisted(!isWishlisted)
                     }}
-                    className={`px-4 sm:px-6 py-3 sm:py-4 rounded-full border-2 font-semibold smooth-transition hover:scale-105 text-sm sm:text-base ${
-                      isWishlisted
-                        ? 'border-primary bg-primary/10 text-primary'
-                        : 'border-border text-foreground hover:border-primary'
-                    }`}
+                    className={`px-4 sm:px-6 py-3 sm:py-4 rounded-full border-2 font-semibold smooth-transition hover:scale-105 text-sm sm:text-base ${isWishlisted
+                      ? 'border-primary bg-primary/10 text-primary'
+                      : 'border-border text-foreground hover:border-primary'
+                      }`}
                   >
                     <Heart className={`w-4 h-4 sm:w-5 sm:h-5 ${isWishlisted ? 'fill-current' : ''}`} />
                   </button>
@@ -299,11 +299,10 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`font-semibold text-xs sm:text-sm uppercase tracking-wider pb-3 sm:pb-4 border-b-2 smooth-transition whitespace-nowrap ${
-                    activeTab === tab
-                      ? 'border-primary text-primary'
-                      : 'border-transparent text-muted-foreground hover:text-foreground'
-                  }`}
+                  className={`font-semibold text-xs sm:text-sm uppercase tracking-wider pb-3 sm:pb-4 border-b-2 smooth-transition whitespace-nowrap ${activeTab === tab
+                    ? 'border-primary text-primary'
+                    : 'border-transparent text-muted-foreground hover:text-foreground'
+                    }`}
                 >
                   {tab}
                 </button>
@@ -320,27 +319,27 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                       {product.description}
                     </p>
                   </div>
-                  
+
                   <div>
                     <h3 className="text-xl font-bold mb-3">Detailed Description</h3>
                     <p className="text-muted-foreground leading-relaxed mb-4">
-                      Experience the perfect blend of style and comfort with our {product.name}. 
-                      This premium {product.subcategory?.toLowerCase() || 'product'} is carefully crafted 
-                      using the finest materials to ensure durability and exceptional quality. 
-                      Designed for the modern {product.category?.toLowerCase() || 'individual'}, 
+                      Experience the perfect blend of style and comfort with our {product.name}.
+                      This premium {product.subcategory?.toLowerCase() || 'product'} is carefully crafted
+                      using the finest materials to ensure durability and exceptional quality.
+                      Designed for the modern {product.category?.toLowerCase() || 'individual'},
                       this piece seamlessly transitions from casual daywear to sophisticated evening attire.
                     </p>
                     <p className="text-muted-foreground leading-relaxed mb-4">
-                      The {product.name} features a contemporary design that combines timeless elegance 
-                      with modern aesthetics. Made from high-quality fabrics, it offers superior comfort 
-                      and breathability, making it ideal for {product.season === 'Winter' ? 'cold weather' : 'all-season wear'}. 
-                      The attention to detail in the stitching and finishing ensures this piece will 
+                      The {product.name} features a contemporary design that combines timeless elegance
+                      with modern aesthetics. Made from high-quality fabrics, it offers superior comfort
+                      and breathability, making it ideal for {product.season === 'Winter' ? 'cold weather' : 'all-season wear'}.
+                      The attention to detail in the stitching and finishing ensures this piece will
                       remain a staple in your wardrobe for years to come.
                     </p>
                     <p className="text-muted-foreground leading-relaxed mb-4">
-                      Whether you're dressing for a casual outing, a business meeting, or a special occasion, 
-                      the {product.name} provides the versatility you need. Its premium construction and 
-                      thoughtful design elements make it a standout choice for those who value both style 
+                      Whether you're dressing for a casual outing, a business meeting, or a special occasion,
+                      the {product.name} provides the versatility you need. Its premium construction and
+                      thoughtful design elements make it a standout choice for those who value both style
                       and substance in their clothing.
                     </p>
                   </div>
@@ -374,10 +373,10 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                   <div>
                     <h3 className="text-xl font-bold mb-3">Care Instructions</h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      To maintain the quality and appearance of your {product.name}, we recommend 
-                      following the care instructions on the label. Generally, machine wash in cold 
-                      water with similar colors, tumble dry on low heat, and iron on medium temperature 
-                      if needed. Avoid using bleach or harsh detergents to preserve the fabric's 
+                      To maintain the quality and appearance of your {product.name}, we recommend
+                      following the care instructions on the label. Generally, machine wash in cold
+                      water with similar colors, tumble dry on low heat, and iron on medium temperature
+                      if needed. Avoid using bleach or harsh detergents to preserve the fabric's
                       integrity and color vibrancy.
                     </p>
                   </div>
@@ -418,7 +417,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                   </div>
                   <div className="flex gap-4">
                     <span className="font-semibold text-foreground min-w-24">Availability:</span>
-                    <span className="text-muted-foreground">{product?.inStock ? 'In Stock' : 'Out of Stock'}</span>
+                    <span className="text-muted-foreground">{isInStock ? 'In Stock' : 'Out of Stock'}</span>
                   </div>
                 </div>
               )}

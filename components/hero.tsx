@@ -10,7 +10,7 @@ const carouselSlides = [
     title: 'Winter Collection',
     subtitle: 'Season 2024-2025',
     description: 'Discover our premium winter collection with exclusive designs and cozy fabrics.',
-    image: '/modern-fashion-clothing-hero-1.jpg',
+    image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     cta: 'Shop Now'
   },
   {
@@ -28,6 +28,14 @@ const carouselSlides = [
     description: 'Experience ultimate comfort with our luxury winter wear made from finest materials.',
     image: '/modern-womens-fashion-clothing.jpg',
     cta: 'View Now'
+  },
+  {
+    id: 4,
+    title: 'Men\'s Winter Jackets',
+    subtitle: 'Stay Warm',
+    description: 'Explore our latest collection of men\'s winter jackets.',
+    image: 'https://cdn.hemden.de/media/image/f0/e0/10/Winterjacken_Herren.jpg',
+    cta: 'Shop Men\'s'
   }
 ]
 
@@ -91,9 +99,8 @@ export function Hero() {
         {carouselSlides.map((s, index) => (
           <div
             key={s.id}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              index === currentSlide ? 'opacity-100' : 'opacity-0'
-            }`}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+              }`}
           >
             <img
               src={s.image || "/placeholder.svg"}
@@ -127,13 +134,13 @@ export function Hero() {
               </p>
 
               <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 justify-center pt-2 sm:pt-4 px-4 sm:px-0">
-                <Link 
+                <Link
                   href="/winter-collection"
                   className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white text-black rounded-full font-semibold hover:shadow-xl hover:shadow-white/30 smooth-transition hover:scale-105 active:scale-95 text-center text-sm sm:text-base"
                 >
                   {slide.cta}
                 </Link>
-                <Link 
+                <Link
                   href="/shop"
                   className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-white text-white rounded-full font-semibold hover:bg-white/10 smooth-transition hover:scale-105 active:scale-95 text-center text-sm sm:text-base"
                 >
@@ -170,11 +177,10 @@ export function Hero() {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`smooth-transition h-2 rounded-full ${
-              index === currentSlide
-                ? 'bg-white w-8'
-                : 'bg-white/50 w-2 hover:bg-white/80'
-            }`}
+            className={`smooth-transition h-2 rounded-full ${index === currentSlide
+              ? 'bg-white w-8'
+              : 'bg-white/50 w-2 hover:bg-white/80'
+              }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}

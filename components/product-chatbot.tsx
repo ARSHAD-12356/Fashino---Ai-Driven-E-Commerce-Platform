@@ -276,15 +276,15 @@ export function ProductChatbot() {
       utterance.rate = 0.9
       utterance.pitch = 1
       setIsSpeaking(true)
-      
+
       utterance.onend = () => {
         setIsSpeaking(false)
       }
-      
+
       utterance.onerror = () => {
         setIsSpeaking(false)
       }
-      
+
       synthesisRef.current.speak(utterance)
     }
   }, [language])
@@ -415,7 +415,7 @@ export function ProductChatbot() {
       }
 
       setMessages(prev => [...prev, botMessage])
-      
+
       // Speak the bot response
       if (data.response) {
         speakText(data.response)
@@ -441,15 +441,15 @@ export function ProductChatbot() {
       utterance.rate = 0.9
       utterance.pitch = 1
       setIsSpeaking(true)
-      
+
       utterance.onend = () => {
         setIsSpeaking(false)
       }
-      
+
       utterance.onerror = () => {
         setIsSpeaking(false)
       }
-      
+
       synthesisRef.current.speak(utterance)
     }
   }
@@ -462,7 +462,7 @@ export function ProductChatbot() {
   }
 
   const handleFeedback = (messageId: string, type: 'liked' | 'disliked') => {
-    setMessages(prev => prev.map(msg => 
+    setMessages(prev => prev.map(msg =>
       msg.id === messageId ? { ...msg, feedback: type } : msg
     ))
     // You can send feedback to API here if needed
@@ -512,7 +512,7 @@ export function ProductChatbot() {
       }
 
       setMessages(prev => [...prev, botMessage])
-      
+
       // Speak the bot response
       if (data.response) {
         speakText(data.response)
@@ -565,10 +565,14 @@ export function ProductChatbot() {
           {/* Header */}
           <div className="bg-primary text-primary-foreground p-3 sm:p-4 rounded-t-lg flex items-center justify-between flex-shrink-0">
             <div className="flex items-center gap-2 min-w-0 flex-1">
-              <Bot className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+              <img
+                src="https://static.vecteezy.com/system/resources/thumbnails/047/130/368/small/3d-cartoon-call-center-character-png.png"
+                alt="Angel"
+                className="w-8 h-8 sm:w-10 sm:h-10 object-contain flex-shrink-0"
+              />
               <div className="min-w-0 flex-1">
                 <h3 className="font-semibold text-sm sm:text-base truncate">
-                  Angel – <span className="brand-logo-fashino">Fashino</span> Assistant
+                  Angel – <span className="brand-logo-fashino text-black">Fashino</span> Assistant
                 </h3>
                 <p className="text-xs opacity-90 truncate">{translations[language].productQueriesOnly}</p>
               </div>
@@ -591,9 +595,8 @@ export function ProductChatbot() {
                           setLanguage(code as Language)
                           resetChat()
                         }}
-                        className={`w-full text-left px-3 py-2 rounded text-sm hover:bg-muted smooth-transition ${
-                          language === code ? 'bg-primary/10 text-primary font-medium' : 'text-foreground'
-                        }`}
+                        className={`w-full text-left px-3 py-2 rounded text-sm hover:bg-muted smooth-transition ${language === code ? 'bg-primary/10 text-primary font-medium' : 'text-foreground'
+                          }`}
                       >
                         {name}
                       </button>
@@ -632,22 +635,25 @@ export function ProductChatbot() {
                   className={`flex gap-2 ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
                   {message.sender === 'bot' && (
-                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Bot className="w-4 h-4 text-primary" />
+                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 overflow-hidden">
+                      <img
+                        src="https://static.vecteezy.com/system/resources/thumbnails/047/130/368/small/3d-cartoon-call-center-character-png.png"
+                        alt="Bot"
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                   )}
                   <div
-                    className={`max-w-[85%] sm:max-w-[80%] rounded-lg p-2.5 sm:p-3 ${
-                      message.sender === 'user'
+                    className={`max-w-[85%] sm:max-w-[80%] rounded-lg p-2.5 sm:p-3 ${message.sender === 'user'
                         ? 'bg-primary text-primary-foreground'
                         : 'bg-background border border-border text-foreground'
-                    }`}
+                      }`}
                   >
                     <p className="text-xs sm:text-sm whitespace-pre-wrap break-words">{message.text}</p>
                     <p className="text-xs opacity-70 mt-1">
-                      {message.timestamp.toLocaleTimeString('en-IN', { 
-                        hour: '2-digit', 
-                        minute: '2-digit' 
+                      {message.timestamp.toLocaleTimeString('en-IN', {
+                        hour: '2-digit',
+                        minute: '2-digit'
                       })}
                     </p>
                   </div>
@@ -719,18 +725,16 @@ export function ProductChatbot() {
                     <div className="flex items-center gap-1">
                       <button
                         onClick={() => handleFeedback(message.id, 'liked')}
-                        className={`p-1.5 rounded hover:bg-muted smooth-transition ${
-                          message.feedback === 'liked' ? 'text-primary' : 'text-muted-foreground'
-                        }`}
+                        className={`p-1.5 rounded hover:bg-muted smooth-transition ${message.feedback === 'liked' ? 'text-primary' : 'text-muted-foreground'
+                          }`}
                         title={translations[language].helpful}
                       >
                         <ThumbsUp className="w-3.5 h-3.5" />
                       </button>
                       <button
                         onClick={() => handleFeedback(message.id, 'disliked')}
-                        className={`p-1.5 rounded hover:bg-muted smooth-transition ${
-                          message.feedback === 'disliked' ? 'text-destructive' : 'text-muted-foreground'
-                        }`}
+                        className={`p-1.5 rounded hover:bg-muted smooth-transition ${message.feedback === 'disliked' ? 'text-destructive' : 'text-muted-foreground'
+                          }`}
                         title={translations[language].notHelpful}
                       >
                         <ThumbsDown className="w-3.5 h-3.5" />
@@ -742,8 +746,12 @@ export function ProductChatbot() {
             ))}
             {isLoading && (
               <div className="flex gap-2 justify-start">
-                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Bot className="w-4 h-4 text-primary" />
+                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
+                  <img
+                    src="https://static.vecteezy.com/system/resources/thumbnails/047/130/368/small/3d-cartoon-call-center-character-png.png"
+                    alt="Bot"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="bg-background border border-border rounded-lg p-3">
                   <div className="flex gap-1">
@@ -774,11 +782,10 @@ export function ProductChatbot() {
               <button
                 onClick={isListening ? stopListening : startListening}
                 disabled={isLoading}
-                className={`px-2 sm:px-3 py-2 rounded-lg smooth-transition flex items-center justify-center flex-shrink-0 ${
-                  isListening
+                className={`px-2 sm:px-3 py-2 rounded-lg smooth-transition flex items-center justify-center flex-shrink-0 ${isListening
                     ? 'bg-red-500 text-white hover:bg-red-600'
                     : 'bg-muted text-foreground hover:bg-muted/80'
-                }`}
+                  }`}
                 title={isListening ? translations[language].listening : translations[language].speakNow}
               >
                 {isListening ? (
@@ -787,7 +794,7 @@ export function ProductChatbot() {
                   <Mic className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 )}
               </button>
-              
+
               {/* Voice Input Modal */}
               {showVoiceModal && (
                 <div className="absolute inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 rounded-lg">
