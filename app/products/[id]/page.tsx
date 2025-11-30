@@ -39,7 +39,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
   const [quantity, setQuantity] = useState(1)
   const [isWishlisted, setIsWishlisted] = useState(false)
   const [activeTab, setActiveTab] = useState('description')
-  const { addItem } = useCart()
+  const { addItem, buyNow } = useCart()
   const { user } = useAuth()
 
   useEffect(() => {
@@ -89,15 +89,14 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
       return
     }
 
-    for (let i = 0; i < quantity; i++) {
-      addItem({
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        image: productImage,
-        size: selectedSize,
-      })
-    }
+    addItem({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: productImage,
+      size: selectedSize,
+      quantity: quantity,
+    })
   }
 
   const handleBuyNow = () => {
@@ -109,8 +108,17 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
       alert('Please select a size')
       return
     }
-    handleAddToCart()
-    router.push('/checkout?start=shipping')
+    // Store item for buy now checkout without adding to cart
+    buyNow({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: productImage,
+      size: selectedSize,
+      color: selectedColor,
+      quantity: quantity,
+    })
+    router.push('/checkout?mode=buy-now')
   }
 
   return (

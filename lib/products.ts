@@ -62,7 +62,7 @@ const allProducts = [
     name: 'Winter Thermal Tee',
     category: 'Men',
     subcategory: 'T-Shirts',
-    price: 3499,
+    price: 1,
     originalPrice: 5499,
     image: '/mens-winter-thermal-shirt.jpg',
     rating: 4.9,

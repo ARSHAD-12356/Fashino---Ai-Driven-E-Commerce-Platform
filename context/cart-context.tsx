@@ -11,12 +11,20 @@ export interface CartItem {
   size?: string
 }
 
+export interface BuyNowItem extends CartItem {
+  color?: string
+}
+
 interface CartContextType {
   items: CartItem[]
-  addItem: (item: Omit<CartItem, 'quantity'>) => void
+  addItem: (item: Omit<CartItem, 'quantity'> & { quantity?: number }) => void
   removeItem: (id: number) => void
   updateQuantity: (id: number, quantity: number) => void
   clearCart: () => void
+  checkoutSingleItem: (item: Omit<CartItem, 'quantity'> & { quantity?: number }) => void
+  buyNowItem: BuyNowItem | null
+  buyNow: (item: Omit<BuyNowItem, 'quantity'> & { quantity?: number }) => void
+  clearBuyNowItem: () => void
   total: number
 }
 
@@ -24,16 +32,19 @@ const CartContext = createContext<CartContextType | undefined>(undefined)
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([])
+  const [buyNowItem, setBuyNowItem] = useState<BuyNowItem | null>(null)
 
-  const addItem = (item: Omit<CartItem, 'quantity'>) => {
+  const addItem = (item: Omit<CartItem, 'quantity'> & { quantity?: number }) => {
+    const quantityToAdd = item.quantity || 1
     setItems((prevItems) => {
       const existingItem = prevItems.find((i) => i.id === item.id)
       if (existingItem) {
         return prevItems.map((i) =>
-          i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
+          i.id === item.id ? { ...i, quantity: i.quantity + quantityToAdd } : i
         )
       }
-      return [...prevItems, { ...item, quantity: 1 }]
+      const { quantity: _, ...itemWithoutQuantity } = item
+      return [...prevItems, { ...itemWithoutQuantity, quantity: quantityToAdd }]
     })
   }
 
@@ -57,11 +68,29 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setItems([])
   }
 
+  const checkoutSingleItem = (item: Omit<CartItem, 'quantity'> & { quantity?: number }) => {
+    const quantityToAdd = item.quantity || 1
+    const { quantity: _, ...itemWithoutQuantity } = item
+    // Clear cart and add only this item
+    setItems([{ ...itemWithoutQuantity, quantity: quantityToAdd }])
+  }
+
+  const buyNow = (item: Omit<BuyNowItem, 'quantity'> & { quantity?: number }) => {
+    const quantityToAdd = item.quantity || 1
+    const { quantity: _, ...itemWithoutQuantity } = item
+    // Store item for buy now checkout (not added to cart)
+    setBuyNowItem({ ...itemWithoutQuantity, quantity: quantityToAdd })
+  }
+
+  const clearBuyNowItem = () => {
+    setBuyNowItem(null)
+  }
+
   const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0)
 
   return (
     <CartContext.Provider
-      value={{ items, addItem, removeItem, updateQuantity, clearCart, total }}
+      value={{ items, addItem, removeItem, updateQuantity, clearCart, checkoutSingleItem, buyNowItem, buyNow, clearBuyNowItem, total }}
     >
       {children}
     </CartContext.Provider>

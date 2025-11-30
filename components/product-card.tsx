@@ -37,7 +37,7 @@ export function ProductCard({
   const [isHovered, setIsHovered] = useState(false)
   const router = useRouter()
   const { user } = useAuth()
-  const { addItem } = useCart()
+  const { addItem, buyNow } = useCart()
   const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist()
   const isWishlisted = isInWishlist(id)
 
@@ -74,8 +74,15 @@ export function ProductCard({
       router.push('/login')
       return
     }
-    handleAddToCart()
-    router.push(`/products/${id}`)
+    // Use buyNow for direct checkout (not added to cart)
+    buyNow({
+      id,
+      name,
+      price,
+      image: imageSrc,
+      quantity: 1,
+    })
+    router.push('/checkout?mode=buy-now')
   }
 
   const discount = Math.round(((originalPrice - price) / originalPrice) * 100)

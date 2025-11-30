@@ -16,20 +16,23 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setMounted(true)
+    // Apply theme immediately from localStorage without delay
     const saved = localStorage.getItem('theme') as Theme | null
     const initial = saved || 'light'
     setTheme(initial)
     document.documentElement.classList.toggle('dark', initial === 'dark')
+    setMounted(true)
   }, [])
 
   const toggleTheme = () => {
-    setTheme(prev => {
-      const next = prev === 'light' ? 'dark' : 'light'
-      localStorage.setItem('theme', next)
-      document.documentElement.classList.toggle('dark', next === 'dark')
-      return next
-    })
+    const next = theme === 'light' ? 'dark' : 'light'
+    
+    // Update DOM immediately (0ms delay) - synchronous
+    document.documentElement.classList.toggle('dark', next === 'dark')
+    localStorage.setItem('theme', next)
+    
+    // Update React state after DOM is updated
+    setTheme(next)
   }
 
   if (!mounted) return <>{children}</>

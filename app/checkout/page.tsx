@@ -53,10 +53,19 @@ interface StoredOrder {
 }
 
 function CheckoutContent() {
-  const { items, total, clearCart } = useCart()
+  const { items, total, clearCart, buyNowItem, clearBuyNowItem } = useCart()
   const { user } = useAuth()
   const searchParams = useSearchParams()
-  const startOnShipping = searchParams.get('start') === 'shipping' && items.length > 0
+  const mode = searchParams.get('mode')
+  const isBuyNow = mode === 'buy-now'
+  
+  // Use buyNowItem if in buy-now mode, otherwise use regular cart items
+  const checkoutItems = isBuyNow && buyNowItem ? [buyNowItem] : items
+  const checkoutTotal = isBuyNow && buyNowItem 
+    ? buyNowItem.price * buyNowItem.quantity 
+    : total
+  
+  const startOnShipping = searchParams.get('start') === 'shipping' && checkoutItems.length > 0
   const [currentStep, setCurrentStep] = useState<CheckoutStep>(startOnShipping ? 'shipping' : 'cart')
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('card')
   const [recipientType, setRecipientType] = useState<RecipientType>('self')
@@ -87,10 +96,10 @@ function CheckoutContent() {
   })
 
   useEffect(() => {
-    if (searchParams.get('start') === 'shipping' && items.length > 0) {
+    if (searchParams.get('start') === 'shipping' && checkoutItems.length > 0) {
       setCurrentStep('shipping')
     }
-  }, [searchParams, items.length])
+  }, [searchParams, checkoutItems.length])
 
   useEffect(() => {
     setPaymentAlert(null)
@@ -174,7 +183,7 @@ function CheckoutContent() {
   }
 
   const getStoredProducts = (): StoredOrderProduct[] =>
-    items.map((item) => ({
+    checkoutItems.map((item) => ({
       id: item.id,
       name: item.name,
       price: item.price,
@@ -184,7 +193,7 @@ function CheckoutContent() {
     }))
 
   const getDbItems = () =>
-    items.map((item) => ({
+    checkoutItems.map((item) => ({
       productId: item.id.toString(),
       name: item.name,
       price: item.price,
@@ -301,13 +310,13 @@ function CheckoutContent() {
     ? formData.upiId
     : true
 
-  const shippingCost = total > 5000 ? 0 : 500
-  const tax = Math.round(total * 0.18)
-  const finalTotal = total + shippingCost + tax
+  const shippingCost = 0
+  const tax = 0
+  const finalTotal = checkoutTotal + shippingCost + tax
   const summaryTotals =
     currentStep === 'confirmation' && completedOrderSummary
       ? completedOrderSummary
-      : { subtotal: total, shipping: shippingCost, tax, total: finalTotal }
+      : { subtotal: checkoutTotal, shipping: shippingCost, tax, total: finalTotal }
 
   const saveOrderToStorage = (order: StoredOrder) => {
     if (typeof window === 'undefined' || !user) return
@@ -326,7 +335,7 @@ function CheckoutContent() {
   }
 
   const finalizeOrder = async () => {
-    if (isPlacingOrder || items.length === 0 || paymentMethod !== 'cod') return
+    if (isPlacingOrder || checkoutItems.length === 0 || paymentMethod !== 'cod') return
     setIsPlacingOrder(true)
     setPaymentAlert(null)
     try {
@@ -357,7 +366,7 @@ function CheckoutContent() {
       }
 
       setCompletedOrderSummary({
-        subtotal: total,
+        subtotal: checkoutTotal,
         shipping: shippingCost,
         tax,
         total: finalTotal,
@@ -365,6 +374,9 @@ function CheckoutContent() {
       setOrderReference(orderId)
       saveOrderToStorage(storedOrder)
       clearCart()
+      if (isBuyNow) {
+        clearBuyNowItem()
+      }
       setCurrentStep('confirmation')
     } finally {
       setIsPlacingOrder(false)
@@ -372,7 +384,7 @@ function CheckoutContent() {
   }
 
   const initiateOnlinePayment = async () => {
-    if (isPlacingOrder || items.length === 0) return
+    if (isPlacingOrder || checkoutItems.length === 0) return
     setIsPlacingOrder(true)
     setPaymentAlert(null)
 
@@ -478,13 +490,16 @@ function CheckoutContent() {
             }
 
             setCompletedOrderSummary({
-              subtotal: total,
+              subtotal: checkoutTotal,
               shipping: shippingCost,
               tax,
               total: finalTotal,
             })
             saveOrderToStorage(storedOrder)
             clearCart()
+            if (isBuyNow) {
+              clearBuyNowItem()
+            }
             setPaymentAlert(null)
             setCurrentStep('confirmation')
           } catch (error: any) {
@@ -577,7 +592,7 @@ function CheckoutContent() {
                 <div className="space-y-4 sm:space-y-6 fade-in">
                   <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Review Your Cart</h2>
                   
-                  {items.length === 0 ? (
+                  {checkoutItems.length === 0 ? (
                     <div className="bg-muted/50 p-6 sm:p-8 rounded-lg text-center">
                       <p className="text-muted-foreground mb-4 text-sm sm:text-base">Your cart is empty</p>
                       <Link href="/">
@@ -588,7 +603,7 @@ function CheckoutContent() {
                     </div>
                   ) : (
                     <div className="space-y-3 sm:space-y-4">
-                      {items.map((item) => (
+                      {checkoutItems.map((item) => (
                         <div
                           key={item.id}
                           className="flex gap-3 sm:gap-4 p-3 sm:p-4 bg-muted/30 rounded-lg scale-in"
@@ -956,7 +971,7 @@ function CheckoutContent() {
                     </button>
                   )}
                   <div className="flex-1 sm:flex-initial sm:ml-auto">
-                    {currentStep === 'cart' && items.length > 0 && (
+                    {currentStep === 'cart' && checkoutItems.length > 0 && (
                       <button
                         onClick={handleContinue}
                         className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 bg-primary text-primary-foreground rounded-full font-semibold hover:shadow-lg smooth-transition active:scale-95 flex items-center justify-center gap-2 text-sm sm:text-base"
