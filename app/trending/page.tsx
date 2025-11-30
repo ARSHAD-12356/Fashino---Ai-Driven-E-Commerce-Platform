@@ -12,20 +12,17 @@ type SortOption = 'featured' | 'price-low' | 'price-high' | 'newest' | 'rating'
 export default function TrendingPage() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
   const [sortBy, setSortBy] = useState<SortOption>('featured')
-  const [enhancedProducts, setEnhancedProducts] = useState<any[]>([])
 
-  useEffect(() => {
-    // Transform products to include tags
-    const transformed = products.map((p, i) => transformProduct(p, i, products.length))
-    setEnhancedProducts(transformed)
+  const enhancedProducts = useMemo(() => {
+    return products.map((p, i) => transformProduct(p, i, products.length))
   }, [])
-  
+
   const visibleProducts = useMemo(() => {
     // Filter trending products (rating >= 4.7 and reviews >= 100)
-    let filtered = enhancedProducts.filter((product: any) => 
+    let filtered = enhancedProducts.filter((product: any) =>
       product.rating >= 4.7 && product.reviews >= 100
     )
-    
+
     // Filter by category if selected
     if (selectedCategory) {
       filtered = filtered.filter((product: any) => product.category === selectedCategory)
@@ -77,7 +74,7 @@ export default function TrendingPage() {
             <p className="text-sm uppercase tracking-[0.3em] text-primary font-semibold mb-2">Trending Now</p>
             <h1 className="text-3xl md:text-4xl font-bold mb-3">Trending Products</h1>
             <p className="text-muted-foreground max-w-3xl">
-              Discover the most popular and trending products that everyone is talking about. 
+              Discover the most popular and trending products that everyone is talking about.
               These are our best-rated items with the highest customer satisfaction.
             </p>
           </div>
@@ -90,11 +87,10 @@ export default function TrendingPage() {
                 <button
                   key={filter.label}
                   onClick={() => setSelectedCategory(filter.value)}
-                  className={`px-4 py-2 rounded-full border smooth-transition ${
-                    selectedCategory === filter.value
+                  className={`px-4 py-2 rounded-full border smooth-transition ${selectedCategory === filter.value
                       ? 'bg-primary text-primary-foreground border-primary'
                       : 'border-border text-foreground hover:border-primary/60'
-                  }`}
+                    }`}
                 >
                   {filter.label}
                 </button>

@@ -15,6 +15,7 @@ interface CategoryPageTemplateProps {
   subcategoryFilters?: string[]
   showSeasonFilter?: boolean
   seasonFilters?: string[]
+  isFeatured?: boolean
 }
 
 export function CategoryPageTemplate({
@@ -24,6 +25,7 @@ export function CategoryPageTemplate({
   subcategoryFilters = [],
   showSeasonFilter = false,
   seasonFilters = ['All-Season', 'Winter', 'Summer', 'Spring', 'Fall'],
+  isFeatured = false,
 }: CategoryPageTemplateProps) {
   const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(null)
   const [selectedSeason, setSelectedSeason] = useState<string | null>(null)
@@ -32,16 +34,20 @@ export function CategoryPageTemplate({
   const visibleProducts = useMemo(() => {
     let filtered = products.filter((product) => {
       // Filter by main category
-      const matchesCategory = product.category === categoryName
-      
+      const matchesCategory = isFeatured ? true : product.category === categoryName
+
       // Filter by subcategory if selected
       const matchesSubcategory = !selectedSubcategory || product.subcategory === selectedSubcategory
-      
+
       // Filter by season if selected
       const matchesSeason = !selectedSeason || product.season === selectedSeason
-      
+
       return matchesCategory && matchesSubcategory && matchesSeason
     })
+
+    if (isFeatured) {
+      filtered = filtered.slice(0, 8)
+    }
 
     // Apply sorting
     switch (sortBy) {
@@ -85,11 +91,10 @@ export function CategoryPageTemplate({
                 <>
                   <button
                     onClick={() => setSelectedSubcategory(null)}
-                    className={`px-4 py-2 rounded-full border smooth-transition ${
-                      selectedSubcategory === null
+                    className={`px-4 py-2 rounded-full border smooth-transition ${selectedSubcategory === null
                         ? 'bg-primary text-primary-foreground border-primary'
                         : 'border-border text-foreground hover:border-primary/60'
-                    }`}
+                      }`}
                   >
                     All
                   </button>
@@ -97,11 +102,10 @@ export function CategoryPageTemplate({
                     <button
                       key={subcategory}
                       onClick={() => setSelectedSubcategory(subcategory)}
-                      className={`px-4 py-2 rounded-full border smooth-transition ${
-                        selectedSubcategory === subcategory
+                      className={`px-4 py-2 rounded-full border smooth-transition ${selectedSubcategory === subcategory
                           ? 'bg-primary text-primary-foreground border-primary'
                           : 'border-border text-foreground hover:border-primary/60'
-                      }`}
+                        }`}
                     >
                       {subcategory}
                     </button>
@@ -117,11 +121,10 @@ export function CategoryPageTemplate({
                   )}
                   <button
                     onClick={() => setSelectedSeason(null)}
-                    className={`px-4 py-2 rounded-full border smooth-transition ${
-                      selectedSeason === null
+                    className={`px-4 py-2 rounded-full border smooth-transition ${selectedSeason === null
                         ? 'bg-primary text-primary-foreground border-primary'
                         : 'border-border text-foreground hover:border-primary/60'
-                    }`}
+                      }`}
                   >
                     All Seasons
                   </button>
@@ -129,11 +132,10 @@ export function CategoryPageTemplate({
                     <button
                       key={season}
                       onClick={() => setSelectedSeason(season)}
-                      className={`px-4 py-2 rounded-full border smooth-transition ${
-                        selectedSeason === season
+                      className={`px-4 py-2 rounded-full border smooth-transition ${selectedSeason === season
                           ? 'bg-primary text-primary-foreground border-primary'
                           : 'border-border text-foreground hover:border-primary/60'
-                      }`}
+                        }`}
                     >
                       {season}
                     </button>

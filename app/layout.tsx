@@ -8,14 +8,7 @@ export const metadata: Metadata = {
   title: 'Fashino - Premium Fashion Store',
   description: 'Discover modern, luxury garments with curated collections for every occasion',
   generator: 'v0.app',
-  icons: {
-    icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.ico', sizes: '32x32' },
-    ],
-    shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
-  },
+
 }
 
 import { Playfair_Display } from 'next/font/google'

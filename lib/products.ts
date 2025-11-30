@@ -12,11 +12,13 @@ const allProducts = [
     reviews: 124,
     description: 'Premium quality cotton t-shirt perfect for everyday wear',
     season: 'All-Season',
-    colors: ["Classic Black", "Soft Beige", "Slate Grey"],
+    colors: ["Slate Grey", "Charcoal", "Maroon", "Grey"],
+    sizes: ["S", "M", "L", "XL", "XXL"],
     variantImages: [
-      { color: "Classic Black", url: "https://images.unsplash.com/photo-1622221642468-f549301a4321?q=80&w=1080&auto=format&fit=crop" },
-      { color: "Soft Beige", url: "https://images.unsplash.com/photo-1593011951812-2996b9f8df17?q=80&w=1080&auto=format&fit=crop" },
-      { color: "Slate Grey", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1080&auto=format&fit=crop" }
+      { color: "Slate Grey", url: "/mens-premium-t-shirt.jpg" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" }
     ]
   },
   {
@@ -31,11 +33,13 @@ const allProducts = [
     reviews: 98,
     description: 'Timeless white t-shirt for any occasion',
     season: 'All-Season',
-    colors: ["White", "Classic Black", "Soft Beige"],
+    colors: ["White", "Olive", "Navy Blue", "Maroon"],
+    sizes: ["S", "M", "L", "XL"],
     variantImages: [
       { color: "White", url: "/mens-white-tshirt.jpg" },
-      { color: "Classic Black", url: "https://images.unsplash.com/photo-1622221642468-f549301a4321?q=80&w=1080&auto=format&fit=crop" },
-      { color: "Soft Beige", url: "https://images.unsplash.com/photo-1593011951812-2996b9f8df17?q=80&w=1080&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
     ]
   },
   {
@@ -50,11 +54,13 @@ const allProducts = [
     reviews: 156,
     description: 'Stylish graphic printed t-shirt with modern design',
     season: 'All-Season',
-    colors: ["Classic Black", "Soft Beige", "Slate Grey"],
+    colors: ["Classic Black", "Black", "Maroon", "Olive"],
+    sizes: ["M", "L", "XL"],
     variantImages: [
-      { color: "Classic Black", url: "https://images.unsplash.com/photo-1622221642468-f549301a4321?q=80&w=1080&auto=format&fit=crop" },
-      { color: "Soft Beige", url: "https://images.unsplash.com/photo-1593011951812-2996b9f8df17?q=80&w=1080&auto=format&fit=crop" },
-      { color: "Slate Grey", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1080&auto=format&fit=crop" }
+      { color: "Classic Black", url: "/mens-graphic-tshirt.jpg" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
     ]
   },
   {
@@ -68,7 +74,15 @@ const allProducts = [
     rating: 4.9,
     reviews: 203,
     description: 'Warm thermal t-shirt perfect for winter season',
-    season: 'Winter'
+    season: 'Winter',
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    colors: ["Charcoal", "White", "Forest Green", "Maroon"],
+    variantImages: [
+      { color: "Charcoal", url: "/mens-winter-thermal-shirt.jpg" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 5,
@@ -81,7 +95,15 @@ const allProducts = [
     rating: 4.8,
     reviews: 167,
     description: 'Classic polo neck t-shirt in multiple colors',
-    season: 'All-Season'
+    season: 'All-Season',
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["Navy", "Charcoal", "Olive", "Forest Green"],
+    variantImages: [
+      { color: "Navy", url: "/mens-polo-tshirt.jpg" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 6,
@@ -95,6 +117,15 @@ const allProducts = [
     reviews: 134,
     description: 'Premium striped cotton t-shirt for casual wear',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Forest Green", "Maroon", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/mens-striped-tshirt.jpg" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 7,
@@ -108,6 +139,15 @@ const allProducts = [
     reviews: 89,
     description: 'Breathable v-neck sports t-shirt for fitness',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Olive", "Forest Green", "Grey"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/mens-vneck-sports-shirt.jpg" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 8,
@@ -121,6 +161,15 @@ const allProducts = [
     reviews: 176,
     description: 'Warm henley thermal shirt for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Olive", "Forest Green", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/mens-henley-thermal-shirt.jpg" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 9,
@@ -134,6 +183,15 @@ const allProducts = [
     reviews: 145,
     description: 'Simple and versatile crew neck t-shirt',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Maroon", "Black", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/mens-crew-neck-tshirt.jpg" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 10,
@@ -142,11 +200,20 @@ const allProducts = [
     subcategory: 'T-Shirts',
     price: 3999,
     originalPrice: 6499,
-    image: 'https://images.unsplash.com/photo-1523190167743-545025bd59b7?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHdvbWVuJTIwdG9wfGVufDB8fDB8fHww',
+    image: 'https://images.unsplash.com/photo-1610652492500-ded49ceeb378?q=80&w=2000&auto=format&fit=crop',
     rating: 4.9,
     reviews: 198,
     description: 'Premium long sleeve thermal shirt for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Forest Green", "White", "Olive"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1610652492500-ded49ceeb378?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
 
   // Men's Shirts
@@ -162,6 +229,15 @@ const allProducts = [
     reviews: 89,
     description: 'Classic oxford shirt for professional and casual settings',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Blue Striped", "Classic White", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/mens-casual-oxford-shirt.jpg" },
+      { color: "Blue Striped", url: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Classic White", url: "https://images.unsplash.com/photo-1620799140408-ed5341cd2458?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 12,
@@ -175,6 +251,15 @@ const allProducts = [
     reviews: 134,
     description: 'Premium formal white shirt for business occasions',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Grey", "Blue Striped", "Pink"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/mens-formal-white-shirt.jpg" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Blue Striped", url: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Pink", url: "https://images.unsplash.com/photo-1620799140408-ed5341cd2458?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 13,
@@ -188,6 +273,15 @@ const allProducts = [
     reviews: 156,
     description: 'Lightweight linen shirt perfect for summer',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Grey", "Sky Blue", "Pink"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/mens-linen-summer-shirt.jpg" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Sky Blue", url: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Pink", url: "https://images.unsplash.com/photo-1620799140408-ed5341cd2458?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 14,
@@ -201,6 +295,15 @@ const allProducts = [
     reviews: 123,
     description: 'Stylish denim shirt for casual wear',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Blue Striped", "Black", "Classic White"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/mens-denim-shirt.jpg" },
+      { color: "Blue Striped", url: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Classic White", url: "https://images.unsplash.com/photo-1620799140408-ed5341cd2458?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 15,
@@ -214,6 +317,15 @@ const allProducts = [
     reviews: 167,
     description: 'Warm checkered shirt for winter season',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Navy", "Grey", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/mens-checkered-winter-shirt.jpg" },
+      { color: "Navy", url: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 16,
@@ -227,6 +339,15 @@ const allProducts = [
     reviews: 145,
     description: 'Premium dress shirt in various colors',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Sky Blue", "Classic White", "Pink"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/mens-dress-shirt.jpg" },
+      { color: "Sky Blue", url: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Classic White", url: "https://images.unsplash.com/photo-1620799140408-ed5341cd2458?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Pink", url: "https://images.unsplash.com/photo-1620799140408-ed5341cd2458?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 17,
@@ -240,6 +361,15 @@ const allProducts = [
     reviews: 189,
     description: 'Cozy flannel shirt for cold weather',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Classic White", "Blue Striped", "Sky Blue"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/mens-flannel-winter-shirt.jpg" },
+      { color: "Classic White", url: "https://images.unsplash.com/photo-1620799140408-ed5341cd2458?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Blue Striped", url: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Sky Blue", url: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 18,
@@ -253,6 +383,15 @@ const allProducts = [
     reviews: 112,
     description: 'Professional striped shirt for business',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Pink", "Black", "Navy"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1lbiUyMHNoaXJ0fGVufDB8fDB8fHww" },
+      { color: "Pink", url: "https://images.unsplash.com/photo-1620799140408-ed5341cd2458?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Navy", url: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 19,
@@ -266,6 +405,15 @@ const allProducts = [
     reviews: 134,
     description: 'Textured corduroy shirt for winter wear',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Navy", "Classic White", "Sky Blue"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1602810316498-ab67cf68c8e1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG1lbiUyMHNoaXJ0fGVufDB8fDB8fHww" },
+      { color: "Navy", url: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Classic White", url: "https://images.unsplash.com/photo-1620799140408-ed5341cd2458?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Sky Blue", url: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 20,
@@ -279,6 +427,15 @@ const allProducts = [
     reviews: 167,
     description: 'Modern slim fit casual shirt',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Pink", "Sky Blue", "Grey"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1611312449412-6cefac5dc3e4?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWVuJTIwc2hpcnR8ZW58MHx8MHx8fDA%3D" },
+      { color: "Pink", url: "https://images.unsplash.com/photo-1620799140408-ed5341cd2458?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Sky Blue", url: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
 
   // Men's Pants
@@ -294,6 +451,15 @@ const allProducts = [
     reviews: 156,
     description: 'Comfortable and stylish jeans for casual and formal occasions',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Khaki", "Black", "Navy"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/mens-comfort-fit-jeans.jpg" },
+      { color: "Khaki", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Navy", url: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 22,
@@ -307,6 +473,15 @@ const allProducts = [
     reviews: 189,
     description: 'Sleek black slim fit jeans',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Navy", "Khaki", "Beige"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1541840031508-326b77c9a17e?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG1lbiUyMHBhbnRzfGVufDB8fDB8fHww" },
+      { color: "Navy", url: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Khaki", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Beige", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 23,
@@ -320,6 +495,15 @@ const allProducts = [
     reviews: 145,
     description: 'Warm cargo pants for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Grey", "Navy", "Beige"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1584865288642-42078afe6942?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWVuJTIwcGFudHN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1584370848010-d7cc637703ef?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Navy", url: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Beige", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 24,
@@ -333,6 +517,15 @@ const allProducts = [
     reviews: 123,
     description: 'Classic navy chino pants for any occasion',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Navy", "Black", "Grey"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1548883354-7622d03aca27?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWVuJTIwcGFudHN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Navy", url: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1584370848010-d7cc637703ef?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 25,
@@ -346,6 +539,15 @@ const allProducts = [
     reviews: 178,
     description: 'Premium formal black trousers',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Olive", "Navy", "Khaki"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1552902875-9ac1f9fe0c07?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHdvbWVuJTIwcGFudHN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Navy", url: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Khaki", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 26,
@@ -359,6 +561,15 @@ const allProducts = [
     reviews: 156,
     description: 'Comfortable grey casual pants',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Beige", "Grey", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1552904219-f4b87efe8792?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG1lbiUyMHBhbnRzfGVufDB8fDB8fHww" },
+      { color: "Beige", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1584370848010-d7cc637703ef?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 27,
@@ -372,6 +583,15 @@ const allProducts = [
     reviews: 167,
     description: 'Insulated thermal trousers for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Khaki", "Navy", "Beige"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1678222532251-2f303290c1e5?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1lbiUyMHBhbnRzfGVufDB8fDB8fHww" },
+      { color: "Khaki", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Navy", url: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Beige", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 28,
@@ -385,6 +605,15 @@ const allProducts = [
     reviews: 134,
     description: 'Classic light blue denim jeans',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Beige", "Olive", "Khaki"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWVuJTIwcGFudHN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Beige", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Khaki", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 29,
@@ -398,6 +627,15 @@ const allProducts = [
     reviews: 145,
     description: 'Premium woolen pants for cold weather',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Grey", "Khaki", "Beige"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1604182440345-4a82e1c3876b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHdvbWVuJTIwcGFudHN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1584370848010-d7cc637703ef?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Khaki", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Beige", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 30,
@@ -411,6 +649,15 @@ const allProducts = [
     reviews: 112,
     description: 'Versatile beige chino pants',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Olive", "Beige", "Navy"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1553247407-23251ce81f59?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG1lbiUyMHBhbnRzfGVufDB8fDB8fHww" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Beige", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Navy", url: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
 
   // Men's Jackets
@@ -426,6 +673,15 @@ const allProducts = [
     reviews: 102,
     description: 'Lightweight and breathable sports jacket',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Charcoal", "Black", "Grey"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/mens-sports-jacket.jpg" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 32,
@@ -439,6 +695,15 @@ const allProducts = [
     reviews: 187,
     description: 'Warm puffer jacket for extreme winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Forest Green", "White", "Grey"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1675877879221-871aa9f7c314?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWVuJTIwamFja2V0fGVufDB8fDB8fHww" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 33,
@@ -452,6 +717,15 @@ const allProducts = [
     reviews: 134,
     description: 'Classic denim jacket for everyday wear',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Forest Green", "Black", "Maroon"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWVuJTIwamFja2V0fGVufDB8fDB8fHww" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 34,
@@ -465,6 +739,15 @@ const allProducts = [
     reviews: 156,
     description: 'Premium leather biker jacket',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "White", "Maroon", "Grey"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1548883354-94bcfe321cbb?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWVuJTIwamFja2V0fGVufDB8fDB8fHww" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 35,
@@ -478,6 +761,15 @@ const allProducts = [
     reviews: 145,
     description: 'Elegant wool blazer for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "White", "Forest Green", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1654719796836-62b889d4598d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWVuJTIwamFja2V0fGVufDB8fDB8fHww" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 36,
@@ -491,6 +783,15 @@ const allProducts = [
     reviews: 123,
     description: 'Trendy bomber jacket for casual style',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "White", "Black", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1760551600982-d8ecd70b709f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d29tZW4lMjBibGF6ZXJ8ZW58MHx8MHx8fDA%3D" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 37,
@@ -504,6 +805,15 @@ const allProducts = [
     reviews: 167,
     description: 'Stylish quilted jacket for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Grey", "Olive", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1597582927786-bae43be837a0?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHdvbWVuJTIwYmxhemVyfGVufDB8fDB8fHww" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 38,
@@ -517,6 +827,15 @@ const allProducts = [
     reviews: 98,
     description: 'Lightweight windbreaker for outdoor activities',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Black", "Maroon", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1649768722421-bb3e728fb83d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG1lbiUyMGphY2tldHxlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 39,
@@ -530,6 +849,15 @@ const allProducts = [
     reviews: 145,
     description: 'Professional formal black blazer',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Forest Green", "Olive", "Grey"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1759873911627-09f2f184708d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHdvbWVuJTIwYmxhemVyfGVufDB8fDB8fHww" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 40,
@@ -543,6 +871,15 @@ const allProducts = [
     reviews: 178,
     description: 'Premium down-filled winter coat',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Olive", "Black", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1601027847853-ea31bd3d5787?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG1lbiUyMGphY2tldHxlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
 
   // Women's T-Shirts & Tops
@@ -558,6 +895,15 @@ const allProducts = [
     reviews: 95,
     description: 'Beautiful floral printed top for summer',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Grey", "White", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/womens-floral-summer-top.jpg" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 42,
@@ -571,6 +917,15 @@ const allProducts = [
     reviews: 134,
     description: 'Warm thermal top for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Maroon", "Olive", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1633828788625-6af09e1911f0?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d29tZW4lMjB0b3B8ZW58MHx8MHx8fDA%3D" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 43,
@@ -584,6 +939,15 @@ const allProducts = [
     reviews: 89,
     description: 'Simple and versatile tank top',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "White", "Black", "Grey"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1591530347006-82116c5bf6d9?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d29tZW4lMjB0b3B8ZW58MHx8MHx8fDA%3D" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 44,
@@ -597,6 +961,15 @@ const allProducts = [
     reviews: 123,
     description: 'Luxurious silk camisole',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Charcoal", "Olive", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1660067262025-271603ac1283?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHdvbWVuJTIwdG9wfGVufDB8fDB8fHww" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 45,
@@ -610,6 +983,15 @@ const allProducts = [
     reviews: 112,
     description: 'Classic striped casual top',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "White", "Grey", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1633828907487-82fc7fac65e0?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d29tZW4lMjB0b3B8ZW58MHx8MHx8fDA%3D" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 46,
@@ -623,6 +1005,15 @@ const allProducts = [
     reviews: 145,
     description: 'Cozy sweater for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Grey", "Forest Green", "Maroon"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1510381291098-5f7abba6eadd?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d29tZW4lMjB0b3B8ZW58MHx8MHx8fDA%3D" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 47,
@@ -636,6 +1027,15 @@ const allProducts = [
     reviews: 98,
     description: 'Trendy crop top for casual wear',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Maroon", "Olive", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1626879210826-c953d2dfa15f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d29tZW4lMjB0b3B8ZW58MHx8MHx8fDA%3D" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 48,
@@ -649,6 +1049,15 @@ const allProducts = [
     reviews: 167,
     description: 'Premium long sleeve thermal',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Forest Green", "Maroon", "White"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1523190167743-545025bd59b7?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHdvbWVuJTIwdG9wfGVufDB8fDB8fHww" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 49,
@@ -662,6 +1071,15 @@ const allProducts = [
     reviews: 134,
     description: 'Elegant lace top',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Forest Green", "Charcoal", "Maroon"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1680731307230-85f5e478962a?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHdvbWVuJTIwdG9wfGVufDB8fDB8fHww" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 50,
@@ -675,6 +1093,15 @@ const allProducts = [
     reviews: 178,
     description: 'Warm knit sweater for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Charcoal", "Grey", "White"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1583936381437-df1bfab46b02?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHdvbWVuJTIwdG9wfGVufDB8fDB8fHww" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
 
   // Women's Dresses
@@ -690,6 +1117,15 @@ const allProducts = [
     reviews: 64,
     description: 'Luxurious silk dress for special occasions',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "White", "Forest Green", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/womens-silk-evening-dress.jpg" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 52,
@@ -703,6 +1139,15 @@ const allProducts = [
     reviews: 145,
     description: 'Elegant maxi dress for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "White", "Olive", "Maroon"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1495385794356-15371f348c31?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d29tZW4lMjBkcmVzc3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 53,
@@ -716,6 +1161,15 @@ const allProducts = [
     reviews: 123,
     description: 'Light and breezy summer dress',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Forest Green", "White", "Maroon"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1614786269829-d24616faf56d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHdvbWVuJTIwZHJlc3N8ZW58MHx8MHx8fDA%3D" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 54,
@@ -729,6 +1183,15 @@ const allProducts = [
     reviews: 156,
     description: 'Glamorous sequin dress for parties',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Olive", "Black", "White"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1563178406-4cdc2923acbc?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHdvbWVuJTIwZHJlc3N8ZW58MHx8MHx8fDA%3D" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 55,
@@ -742,6 +1205,15 @@ const allProducts = [
     reviews: 89,
     description: 'Premium formal gown for special events',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Olive", "White", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1598554889165-8139a49f2883?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHdvbWVuJTIwZHJlc3N8ZW58MHx8MHx8fDA%3D" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 56,
@@ -755,6 +1227,15 @@ const allProducts = [
     reviews: 134,
     description: 'Stylish A-line dress for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "White", "Olive", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1671848633245-79cc98b0dbe8?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d29tZW4lMjBkcmVzc3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 57,
@@ -768,6 +1249,15 @@ const allProducts = [
     reviews: 112,
     description: 'Comfortable shift dress for casual occasions',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Maroon", "White", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d29tZW4lMjBkcmVzc3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 58,
@@ -781,6 +1271,15 @@ const allProducts = [
     reviews: 145,
     description: 'Sexy bodycon dress for winter parties',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Grey", "Charcoal", "Maroon"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1534875756527-5e8e4392005f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d29tZW4lMjBkcmVzc3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 59,
@@ -794,6 +1293,15 @@ const allProducts = [
     reviews: 128,
     description: 'Classic wrap dress for any occasion',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "White", "Black", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHdvbWVuJTIwZHJlc3N8ZW58MHx8MHx8fDA%3D" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 60,
@@ -807,6 +1315,15 @@ const allProducts = [
     reviews: 167,
     description: 'Elegant pleated dress for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Grey", "Black", "Maroon"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1511130558090-00af810c21b1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHdvbWVuJTIwZHJlc3N8ZW58MHx8MHx8fDA%3D" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
 
   // Women's Pants
@@ -822,6 +1339,15 @@ const allProducts = [
     reviews: 143,
     description: 'Comfortable and flexible yoga pants for fitness',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Beige", "Grey", "Navy"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/womens-yoga-pants.jpg" },
+      { color: "Beige", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1584370848010-d7cc637703ef?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Navy", url: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 62,
@@ -835,6 +1361,15 @@ const allProducts = [
     reviews: 189,
     description: 'Versatile black leggings',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Olive", "Navy", "Khaki"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1551854838-212c50b4c184?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d29tZW4lMjBwYW50c3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Navy", url: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Khaki", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 63,
@@ -848,6 +1383,15 @@ const allProducts = [
     reviews: 156,
     description: 'Warm thermal leggings for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Khaki", "Black", "Olive"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1552902831-bb0e060ac5a2?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d29tZW4lMjBwYW50c3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Khaki", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 64,
@@ -861,6 +1405,15 @@ const allProducts = [
     reviews: 134,
     description: 'Professional formal trousers',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Khaki", "Navy", "Beige"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1552902875-9ac1f9fe0c07?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHdvbWVuJTIwcGFudHN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Khaki", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Navy", url: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Beige", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 65,
@@ -874,6 +1427,15 @@ const allProducts = [
     reviews: 167,
     description: 'Stylish denim jeans for casual wear',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Olive", "Grey", "Beige"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1643302213971-0f21b7ada420?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHdvbWVuJTIwcGFudHN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1584370848010-d7cc637703ef?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Beige", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 66,
@@ -887,6 +1449,15 @@ const allProducts = [
     reviews: 145,
     description: 'Premium woolen pants for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Beige", "Navy", "Olive"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1604182440345-4a82e1c3876b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHdvbWVuJTIwcGFudHN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Beige", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Navy", url: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 67,
@@ -900,6 +1471,15 @@ const allProducts = [
     reviews: 112,
     description: 'Flattering high waist pants',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Olive", "Grey", "Navy"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d29tZW4lMjBwYW50c3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1584370848010-d7cc637703ef?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Navy", url: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 68,
@@ -913,6 +1493,15 @@ const allProducts = [
     reviews: 134,
     description: 'Elegant slim fit trousers for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Khaki", "Grey", "Olive"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1590159983013-d4ff5fc71c1d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d29tZW4lMjBwYW50c3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Khaki", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1584370848010-d7cc637703ef?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 69,
@@ -926,6 +1515,15 @@ const allProducts = [
     reviews: 123,
     description: 'Classic khaki chino pants',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Grey", "Khaki", "Navy"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d29tZW4lMjBwYW50c3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1584370848010-d7cc637703ef?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Khaki", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Navy", url: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 70,
@@ -939,6 +1537,15 @@ const allProducts = [
     reviews: 145,
     description: 'Textured corduroy pants for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Navy", "Grey", "Olive"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1553247407-23251ce81f59?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHdvbWVuJTIwcGFudHN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Navy", url: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1584370848010-d7cc637703ef?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
 
   // Women's Blazers & Jackets
@@ -954,6 +1561,15 @@ const allProducts = [
     reviews: 87,
     description: 'Professional and elegant blazer for office and events',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Olive", "Black", "Grey"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/womens-elegant-blazer.jpg" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 72,
@@ -967,6 +1583,15 @@ const allProducts = [
     reviews: 134,
     description: 'Warm wool blazer for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Forest Green", "Maroon", "White"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1615348411055-3492a2c76ca2?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d29tZW4lMjBibGF6ZXJ8ZW58MHx8MHx8fDA%3D" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 73,
@@ -980,6 +1605,15 @@ const allProducts = [
     reviews: 112,
     description: 'Casual blazer for everyday wear',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Maroon", "Grey", "White"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1759873911575-0e4eec0c246c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHdvbWVuJTIwYmxhemVyfGVufDB8fDB8fHww" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 74,
@@ -993,6 +1627,15 @@ const allProducts = [
     reviews: 145,
     description: 'Premium formal black blazer',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Black", "White", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1759873911627-09f2f184708d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHdvbWVuJTIwYmxhemVyfGVufDB8fDB8fHww" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 75,
@@ -1006,6 +1649,15 @@ const allProducts = [
     reviews: 167,
     description: 'Stylish quilted jacket for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "White", "Olive", "Maroon"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1597582927786-bae43be837a0?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHdvbWVuJTIwYmxhemVyfGVufDB8fDB8fHww" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 76,
@@ -1019,6 +1671,15 @@ const allProducts = [
     reviews: 189,
     description: 'Premium leather jacket',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Forest Green", "Charcoal", "Olive"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1521510895919-46920266ddb3?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d29tZW4lMjBibGF6ZXJ8ZW58MHx8MHx8fDA%3D" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 77,
@@ -1032,6 +1693,15 @@ const allProducts = [
     reviews: 112,
     description: 'Classic and timeless denim jacket',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Forest Green", "Charcoal", "Maroon"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/womens-denim-jacket.jpg" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 78,
@@ -1045,6 +1715,15 @@ const allProducts = [
     reviews: 178,
     description: 'Warm puffer jacket for extreme winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Charcoal", "White", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1615349719958-8e6381dd2f3e?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d29tZW4lMjBibGF6ZXJ8ZW58MHx8MHx8fDA%3D" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 79,
@@ -1058,6 +1737,15 @@ const allProducts = [
     reviews: 134,
     description: 'Trendy bomber jacket',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Grey", "Maroon", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1760551600982-d8ecd70b709f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d29tZW4lMjBibGF6ZXJ8ZW58MHx8MHx8fDA%3D" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 80,
@@ -1071,6 +1759,15 @@ const allProducts = [
     reviews: 145,
     description: 'Cozy cardigan for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Grey", "White", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1615348294633-38751a1fdf8f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHdvbWVuJTIwYmxhemVyfGVufDB8fDB8fHww" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
 
   // Kids T-Shirts
@@ -1086,6 +1783,15 @@ const allProducts = [
     reviews: 78,
     description: 'Bright and colorful t-shirt for kids',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "White", "Charcoal", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/kids-colorful-t-shirt.jpg" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 82,
@@ -1099,6 +1805,15 @@ const allProducts = [
     reviews: 123,
     description: 'Warm thermal t-shirt for kids in winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Forest Green", "White", "Maroon"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/kids-winter-thermal-tee.jpg" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 83,
@@ -1112,6 +1827,15 @@ const allProducts = [
     reviews: 156,
     description: 'Fun cartoon printed t-shirt for kids',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Charcoal", "Olive", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1604467794349-0b74285de7e7?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8a2lkcyUyMGNsb3RoaW5nfGVufDB8fDB8fHww" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 84,
@@ -1125,6 +1849,15 @@ const allProducts = [
     reviews: 89,
     description: 'Simple solid color t-shirt for kids',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Grey", "Charcoal", "Maroon"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1632337950445-ba446cb0e26f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8a2lkcyUyMGNsb3RoaW5nfGVufDB8fDB8fHww" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 85,
@@ -1138,6 +1871,15 @@ const allProducts = [
     reviews: 112,
     description: 'Striped t-shirt for kids',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Grey", "Charcoal", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1632232963035-bc14755747c9?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGtpZHMlMjBjbG90aGluZ3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 86,
@@ -1151,6 +1893,15 @@ const allProducts = [
     reviews: 134,
     description: 'Warm long sleeve thermal for kids',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Black", "Olive", "Grey"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/Kids_long_sleeve.jpeg" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 87,
@@ -1164,6 +1915,15 @@ const allProducts = [
     reviews: 98,
     description: 'Stylish v-neck t-shirt for kids',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Grey", "Black", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1566454544259-f4b94c3d758c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGtpZHMlMjBjbG90aGluZ3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 88,
@@ -1177,6 +1937,15 @@ const allProducts = [
     reviews: 145,
     description: 'Cozy henley thermal for kids in winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Black", "Olive", "White"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/kids_thermal.jpg" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 89,
@@ -1190,6 +1959,15 @@ const allProducts = [
     reviews: 167,
     description: 'Cool graphic printed t-shirt for kids',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Charcoal", "Forest Green", "White"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1560506840-ec148e82a604?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGtpZHMlMjBjbG90aGluZ3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 90,
@@ -1203,6 +1981,15 @@ const allProducts = [
     reviews: 112,
     description: 'Classic crew neck t-shirt for kids',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "White", "Grey", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1622218286192-95f6a20083c7?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a2lkcyUyMGNsb3RoaW5nfGVufDB8fDB8fHww" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
 
   // Kids Shorts & Pants
@@ -1218,6 +2005,15 @@ const allProducts = [
     reviews: 63,
     description: 'Comfortable shorts with elastic waist',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Black", "Grey", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/kids-comfort-shorts.jpg" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 92,
@@ -1231,6 +2027,15 @@ const allProducts = [
     reviews: 134,
     description: 'Warm thermal pants for kids in winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Olive", "Black", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1601925240970-98447486fcdb?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8a2lkcyUyMGNsb3RoaW5nfGVufDB8fDB8fHww" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 93,
@@ -1244,6 +2049,15 @@ const allProducts = [
     reviews: 98,
     description: 'Stylish denim shorts for kids',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Maroon", "White", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1632337949070-1fdb69fe2159?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8a2lkcyUyMGNsb3RoaW5nfGVufDB8fDB8fHww" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 94,
@@ -1257,6 +2071,15 @@ const allProducts = [
     reviews: 112,
     description: 'Comfortable cotton pants for kids',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "White", "Maroon", "Grey"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1631044237696-6b38064fbbf4?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGtpZHMlMjBjbG90aGluZ3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 95,
@@ -1270,6 +2093,15 @@ const allProducts = [
     reviews: 145,
     description: 'Premium woolen pants for kids in winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Forest Green", "Grey", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGtpZHMlMjBjbG90aGluZ3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 96,
@@ -1283,6 +2115,15 @@ const allProducts = [
     reviews: 89,
     description: 'Durable cargo shorts for kids',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Olive", "Forest Green", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1530845645774-eed359045642?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGtpZHMlMjBjbG90aGluZ3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 97,
@@ -1296,6 +2137,15 @@ const allProducts = [
     reviews: 123,
     description: 'Smart chino pants for kids',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Grey", "Olive", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1632337948797-ba161d29532b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8a2lkcyUyMGNsb3RoaW5nfGVufDB8fDB8fHww" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 98,
@@ -1309,6 +2159,15 @@ const allProducts = [
     reviews: 156,
     description: 'Soft fleece pants for kids in winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Grey", "Forest Green", "Maroon"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1528145203756-0ed7f01ee120?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGtpZHMlMjBjbG90aGluZ3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 99,
@@ -1322,6 +2181,15 @@ const allProducts = [
     reviews: 101,
     description: 'Comfortable sporty shorts for active kids',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "White", "Forest Green", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1632337948784-35863f872dc8?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGtpZHMlMjBjbG90aGluZ3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 100,
@@ -1335,6 +2203,15 @@ const allProducts = [
     reviews: 134,
     description: 'Trendy jogger pants for kids',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Black", "Forest Green", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGtpZHMlMjBjbG90aGluZ3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
 
   // Kids Hoodies & Jackets
@@ -1350,6 +2227,15 @@ const allProducts = [
     reviews: 91,
     description: 'Breathable sports jersey for active kids',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Forest Green", "Olive", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/kids-sports-jersey.jpg" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 102,
@@ -1363,6 +2249,15 @@ const allProducts = [
     reviews: 74,
     description: 'Warm and cozy hoodie for kids',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Maroon", "Grey", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/kids-casual-hoodie.jpg" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 103,
@@ -1376,6 +2271,15 @@ const allProducts = [
     reviews: 145,
     description: 'Warm puffer jacket for kids in winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Charcoal", "Olive", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1604467794349-0b74285de7e7?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8a2lkcyUyMGNsb3RoaW5nfGVufDB8fDB8fHww" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 104,
@@ -1389,6 +2293,15 @@ const allProducts = [
     reviews: 112,
     description: 'Classic denim jacket for kids',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Forest Green", "Grey", "Maroon"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1632337950445-ba446cb0e26f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8a2lkcyUyMGNsb3RoaW5nfGVufDB8fDB8fHww" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 105,
@@ -1402,6 +2315,15 @@ const allProducts = [
     reviews: 134,
     description: 'Soft fleece hoodie for kids',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Maroon", "White", "Grey"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1632232963035-bc14755747c9?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGtpZHMlMjBjbG90aGluZ3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 106,
@@ -1415,6 +2337,15 @@ const allProducts = [
     reviews: 167,
     description: 'Stylish winter coat for kids',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Grey", "Maroon", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1566454544259-f4b94c3d758c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGtpZHMlMjBjbG90aGluZ3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 107,
@@ -1428,6 +2359,15 @@ const allProducts = [
     reviews: 98,
     description: 'Lightweight windbreaker for kids',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "White", "Black", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1560506840-ec148e82a604?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGtpZHMlMjBjbG90aGluZ3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 108,
@@ -1441,6 +2381,15 @@ const allProducts = [
     reviews: 145,
     description: 'Warm wool sweater for kids in winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Grey", "Maroon", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1622218286192-95f6a20083c7?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a2lkcyUyMGNsb3RoaW5nfGVufDB8fDB8fHww" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 109,
@@ -1454,6 +2403,15 @@ const allProducts = [
     reviews: 123,
     description: 'Trendy bomber jacket for kids',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Forest Green", "Charcoal", "Grey"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1601925240970-98447486fcdb?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8a2lkcyUyMGNsb3RoaW5nfGVufDB8fDB8fHww" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 110,
@@ -1467,6 +2425,15 @@ const allProducts = [
     reviews: 89,
     description: 'Stylish quilted vest for kids',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Charcoal", "Forest Green", "Grey"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1632337949070-1fdb69fe2159?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8a2lkcyUyMGNsb3RoaW5nfGVufDB8fDB8fHww" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
 
   // Accessories - Bags
@@ -1482,6 +2449,15 @@ const allProducts = [
     reviews: 156,
     description: 'Premium leather crossbody bag with adjustable strap',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Charcoal", "White", "Olive"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/leather-crossbody-bag.jpg" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 112,
@@ -1495,6 +2471,15 @@ const allProducts = [
     reviews: 134,
     description: 'Spacious shoulder tote bag',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Olive", "Forest Green", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1682745230951-8a5aa9a474a0?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aGFuZGJhZ3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 113,
@@ -1508,6 +2493,15 @@ const allProducts = [
     reviews: 112,
     description: 'Durable backpack for winter travels',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "White", "Black", "Olive"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1559563458-527698bf5295?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aGFuZGJhZ3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 114,
@@ -1521,6 +2515,15 @@ const allProducts = [
     reviews: 145,
     description: 'Elegant clutch purse',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Olive", "Black", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1594223274512-ad4803739b7c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhhbmRiYWd8ZW58MHx8MHx8fDA%3D" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 115,
@@ -1534,6 +2537,15 @@ const allProducts = [
     reviews: 123,
     description: 'Professional messenger bag',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Charcoal", "Grey", "Olive"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1713746834176-04c0069d6593?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGhhbmRiYWd8ZW58MHx8MHx8fDA%3D" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 116,
@@ -1547,6 +2559,15 @@ const allProducts = [
     reviews: 167,
     description: 'Spacious travel bag for weekends',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Forest Green", "White", "Grey"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1685800750376-f4497f5da428?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGhhbmRiYWd8ZW58MHx8MHx8fDA%3D" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 117,
@@ -1560,6 +2581,15 @@ const allProducts = [
     reviews: 156,
     description: 'Protective laptop backpack',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "White", "Maroon", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1705909237050-7a7625b47fac?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFuZGJhZ3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 118,
@@ -1573,6 +2603,15 @@ const allProducts = [
     reviews: 98,
     description: 'Trendy hobo style shoulder bag',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Charcoal", "White", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGFuZGJhZ3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 119,
@@ -1586,6 +2625,15 @@ const allProducts = [
     reviews: 134,
     description: 'Compact sling bag for daily use',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Charcoal", "White", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1600857062241-98e5dba7f214?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aGFuZGJhZ3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 120,
@@ -1599,6 +2647,15 @@ const allProducts = [
     reviews: 145,
     description: 'Luxurious leather handbag',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Grey", "Forest Green", "Olive"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1598532163257-ae3c6b2524b6?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhhbmRiYWd8ZW58MHx8MHx8fDA%3D" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
 
   // Accessories - Eyewear
@@ -1614,6 +2671,15 @@ const allProducts = [
     reviews: 203,
     description: 'UV protective classic sunglasses',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Forest Green", "Grey", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/classic-sunglasses.jpg" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 122,
@@ -1627,6 +2693,15 @@ const allProducts = [
     reviews: 167,
     description: 'Stylish aviator sunglasses',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Charcoal", "Black", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1577803645773-f96470509666?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3VuZ2xhc3Nlc3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 123,
@@ -1640,6 +2715,15 @@ const allProducts = [
     reviews: 89,
     description: 'Comfortable reading glasses',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Grey", "White", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1608539733292-190446b22b83?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3VuZ2xhc3Nlc3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 124,
@@ -1653,6 +2737,15 @@ const allProducts = [
     reviews: 145,
     description: 'Trendy cat eye sunglasses',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Olive", "Maroon", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1610136649349-0f646f318053?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHN1bmdsYXNzZXN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 125,
@@ -1666,6 +2759,15 @@ const allProducts = [
     reviews: 156,
     description: 'Classic wayfarer style glasses',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "White", "Maroon", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1508296695146-257a814070b4?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHN1bmdsYXNzZXN8ZW58MHx8MHx8fDA%3D" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 126,
@@ -1679,6 +2781,15 @@ const allProducts = [
     reviews: 134,
     description: 'Chic oversized sunglasses',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Olive", "Maroon", "White"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1605813808456-26c16c0dfb77?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHN1bmdsYXNzZXN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 127,
@@ -1692,6 +2803,15 @@ const allProducts = [
     reviews: 112,
     description: 'Blue light protection glasses',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Black", "Maroon", "Grey"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1509695507497-903c140c43b0?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHN1bmdsYXNzZXN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 128,
@@ -1705,6 +2825,15 @@ const allProducts = [
     reviews: 167,
     description: 'Polarized sunglasses for outdoor',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Forest Green", "Grey", "Olive"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3VuZ2xhc3Nlc3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 129,
@@ -1718,6 +2847,15 @@ const allProducts = [
     reviews: 123,
     description: 'Sporty style glasses',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Charcoal", "Maroon", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3VuZ2xhc3Nlc3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 130,
@@ -1731,6 +2869,15 @@ const allProducts = [
     reviews: 98,
     description: 'Vintage retro round glasses',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Charcoal", "Maroon", "Olive"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c3VuZ2xhc3Nlc3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
 
   // Accessories - Scarves & Belts
@@ -1746,6 +2893,15 @@ const allProducts = [
     reviews: 87,
     description: 'Luxurious silk scarf in multiple colors',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Maroon", "Forest Green", "White"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/silk-scarf.jpg" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 132,
@@ -1759,6 +2915,15 @@ const allProducts = [
     reviews: 145,
     description: 'Warm wool scarf for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Grey", "Forest Green", "Olive"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1609803384069-19f3e5a70e75?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2NhcmZ8ZW58MHx8MHx8fDA%3D" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 133,
@@ -1772,6 +2937,15 @@ const allProducts = [
     reviews: 134,
     description: 'Durable leather belt suitable for any occasion',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Forest Green", "Maroon", "White"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "/premium-leather-belt.jpg" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 134,
@@ -1785,6 +2959,15 @@ const allProducts = [
     reviews: 167,
     description: 'Premium cashmere scarf for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Forest Green", "Maroon", "White"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1583170492868-dd617c96fdee?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c2NhcmZ8ZW58MHx8MHx8fDA%3D" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 135,
@@ -1798,6 +2981,15 @@ const allProducts = [
     reviews: 112,
     description: 'Casual fabric canvas belt',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Black", "White", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1518912217224-3b1ae276c89e?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHNjYXJmfGVufDB8fDB8fHww" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 136,
@@ -1811,6 +3003,15 @@ const allProducts = [
     reviews: 123,
     description: 'Colorful cotton printed scarf',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Grey", "White", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1457545195570-67f207084966?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2NhcmZ8ZW58MHx8MHx8fDA%3D" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 137,
@@ -1824,6 +3025,15 @@ const allProducts = [
     reviews: 134,
     description: 'Stylish metal buckle belt',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Forest Green", "Charcoal", "White"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1623832101940-647285e32a58?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2NhcmZ8ZW58MHx8MHx8fDA%3D" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 138,
@@ -1837,6 +3047,15 @@ const allProducts = [
     reviews: 156,
     description: 'Luxurious pashmina shawl for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Maroon", "Grey", "Olive"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1485527691629-8e370684924c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c2NhcmZ8ZW58MHx8MHx8fDA%3D" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 139,
@@ -1850,6 +3069,15 @@ const allProducts = [
     reviews: 98,
     description: 'Light linen scarf for summer',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "White", "Black", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1631702786837-0bd68d6532aa?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c2NhcmZ8ZW58MHx8MHx8fDA%3D" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 140,
@@ -1863,6 +3091,15 @@ const allProducts = [
     reviews: 145,
     description: 'Premium designer leather belt',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Olive", "Forest Green", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1601244005535-a48d21d951ac?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNjYXJmfGVufDB8fDB8fHww" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
 
   // Women's Extended Collections
@@ -1878,6 +3115,15 @@ const allProducts = [
     reviews: 132,
     description: 'Longline double-breasted coat with cashmere blend lining',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Olive", "Black", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=800&q=80" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 142,
@@ -1891,6 +3137,15 @@ const allProducts = [
     reviews: 118,
     description: 'Water-repellent trench with storm flap and belt detail',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "White", "Black", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 143,
@@ -1904,6 +3159,15 @@ const allProducts = [
     reviews: 164,
     description: 'Sunray pleated satin midi with elastic waist',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Maroon", "Forest Green", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 144,
@@ -1917,6 +3181,15 @@ const allProducts = [
     reviews: 121,
     description: 'Figure-hugging knit skirt with ribbed hem',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Olive", "Maroon", "White"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 145,
@@ -1930,6 +3203,15 @@ const allProducts = [
     reviews: 77,
     description: 'Hand-embroidered floor-length anarkali with dupatta',
     season: 'Festive'
+  ,
+    colors: ["Navy Blue", "Pink", "Yellow", "Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&q=80" },
+      { color: "Pink", url: "https://images.unsplash.com/photo-1583391733956-6c78276477e2?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Yellow", url: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Green", url: "https://images.unsplash.com/photo-1605296867304-6f2b416a6b1f?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 146,
@@ -1943,6 +3225,15 @@ const allProducts = [
     reviews: 93,
     description: 'Pure silk kurta set with zari highlights',
     season: 'Festive'
+  ,
+    colors: ["Navy Blue", "Blue", "Yellow", "Gold"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80" },
+      { color: "Blue", url: "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Yellow", url: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Gold", url: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 147,
@@ -1956,6 +3247,15 @@ const allProducts = [
     reviews: 208,
     description: 'Second-skin seamless top and leggings set',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Forest Green", "White", "Grey"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1514986888952-8cd320577b68?auto=format&fit=crop&w=800&q=80" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 148,
@@ -1969,6 +3269,15 @@ const allProducts = [
     reviews: 131,
     description: 'Lightweight reflective shell with breathable mesh panels',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Black", "Charcoal", "Maroon"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 149,
@@ -1982,6 +3291,15 @@ const allProducts = [
     reviews: 142,
     description: 'Relaxed-fit cashmere hoodie and jogger pairing',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Grey", "Forest Green", "Maroon"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=800&q=80" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 150,
@@ -1995,6 +3313,15 @@ const allProducts = [
     reviews: 109,
     description: 'Ankle-length ribbed lounge dress with side slits',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Olive", "Charcoal", "White"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1500631195312-e3a9a5819f60?auto=format&fit=crop&w=800&q=80" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 151,
@@ -2008,6 +3335,15 @@ const allProducts = [
     reviews: 126,
     description: 'Structured blazer and tailored trouser co-ord',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Grey", "Black", "Olive"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 152,
@@ -2021,6 +3357,15 @@ const allProducts = [
     reviews: 138,
     description: 'Soft knit polo and midi skirt pairing with contrast trims',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Forest Green", "Maroon", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2ludGVyJTIwY2xvdGhlc3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
 
   // Additional Winter Products - Women
@@ -2036,6 +3381,15 @@ const allProducts = [
     reviews: 145,
     description: 'Luxurious wool coat for winter elegance',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Olive", "White", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1610973310510-82f514ea1986?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d2ludGVyJTIwY2xvdGhlc3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 154,
@@ -2049,6 +3403,15 @@ const allProducts = [
     reviews: 167,
     description: 'Warm thermal leggings for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Grey", "Beige", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1636096625948-c1235f1b2e9b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHdpbnRlciUyMGNsb3RoZXN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1584370848010-d7cc637703ef?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Beige", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 155,
@@ -2062,6 +3425,15 @@ const allProducts = [
     reviews: 178,
     description: 'Cozy winter sweater for women',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Olive", "Maroon", "Grey"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1452689842785-5f14840dca48?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHdpbnRlciUyMGNsb3RoZXN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 156,
@@ -2075,6 +3447,15 @@ const allProducts = [
     reviews: 198,
     description: 'Warm puffer jacket for extreme winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Forest Green", "White", "Maroon"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2ludGVyJTIwY2xvdGhlc3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
 
   // Additional Winter Products - Kids
@@ -2090,6 +3471,15 @@ const allProducts = [
     reviews: 145,
     description: 'Warm puffer jacket for kids in winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Olive", "Black", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1604467794349-0b74285de7e7?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8a2lkcyUyMGNsb3RoaW5nfGVufDB8fDB8fHww" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 158,
@@ -2103,6 +3493,15 @@ const allProducts = [
     reviews: 134,
     description: 'Warm thermal pants for kids in winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Grey", "Black", "White"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1601925240970-98447486fcdb?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8a2lkcyUyMGNsb3RoaW5nfGVufDB8fDB8fHww" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 159,
@@ -2116,6 +3515,15 @@ const allProducts = [
     reviews: 145,
     description: 'Warm wool sweater for kids in winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Olive", "Maroon", "White"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1622218286192-95f6a20083c7?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a2lkcyUyMGNsb3RoaW5nfGVufDB8fDB8fHww" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 160,
@@ -2129,6 +3537,15 @@ const allProducts = [
     reviews: 167,
     description: 'Stylish winter coat for kids',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Olive", "Maroon", "Grey"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1566454544259-f4b94c3d758c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGtpZHMlMjBjbG90aGluZ3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
 
   // Additional Winter Products - Accessories
@@ -2144,6 +3561,15 @@ const allProducts = [
     reviews: 145,
     description: 'Warm wool scarf for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Black", "Forest Green", "White"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1609803384069-19f3e5a70e75?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2NhcmZ8ZW58MHx8MHx8fDA%3D" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 162,
@@ -2157,6 +3583,15 @@ const allProducts = [
     reviews: 167,
     description: 'Premium cashmere scarf for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Forest Green", "Olive", "Maroon"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1583170492868-dd617c96fdee?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c2NhcmZ8ZW58MHx8MHx8fDA%3D" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 163,
@@ -2170,6 +3605,15 @@ const allProducts = [
     reviews: 123,
     description: 'Warm leather gloves for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Grey", "White", "Olive"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1599108859613-88a1fff8e2e4?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d2ludGVyJTIwYWNjZXNzb3JpZXN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 164,
@@ -2183,6 +3627,15 @@ const allProducts = [
     reviews: 98,
     description: 'Warm beanie hat for winter',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Olive", "Grey", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1599108859614-c293188135b7?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d2ludGVyJTIwYWNjZXNzb3JpZXN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
 
   // Footwear
@@ -2198,6 +3651,15 @@ const allProducts = [
     reviews: 234,
     description: 'Comfortable casual sneakers for everyday wear',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Red", "Grey", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2hvZXN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Red", url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 202,
@@ -2211,6 +3673,15 @@ const allProducts = [
     reviews: 189,
     description: 'Premium running shoes with cushioning',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Grey", "Black", "Red"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNob2VzfGVufDB8fDB8fHww" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Red", url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 203,
@@ -2224,6 +3695,15 @@ const allProducts = [
     reviews: 156,
     description: 'Classic leather formal shoes',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "White", "Multi", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1512374382149-233c42b6a83b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNob2VzfGVufDB8fDB8fHww" },
+      { color: "White", url: "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Multi", url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 204,
@@ -2237,6 +3717,15 @@ const allProducts = [
     reviews: 198,
     description: 'Elegant high heels for special occasions',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Multi", "Black", "Blue"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHNob2VzfGVufDB8fDB8fHww" },
+      { color: "Multi", url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Blue", url: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 205,
@@ -2250,6 +3739,15 @@ const allProducts = [
     reviews: 145,
     description: 'Durable sports shoes for kids',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Grey", "Blue", "Red"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1529810313688-44ea1c2d81d3?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHNob2VzfGVufDB8fDB8fHww" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Blue", url: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Red", url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 206,
@@ -2263,6 +3761,15 @@ const allProducts = [
     reviews: 167,
     description: 'Warm winter boots with insulation',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Grey", "White", "Multi"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Multi", url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 207,
@@ -2276,6 +3783,15 @@ const allProducts = [
     reviews: 123,
     description: 'Comfortable summer sandals',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Maroon", "Olive", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2hvZXN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 208,
@@ -2289,6 +3805,15 @@ const allProducts = [
     reviews: 178,
     description: 'Lightweight canvas shoes',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Black", "Red", "Blue"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c2hvZXN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Red", url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Blue", url: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 209,
@@ -2302,6 +3827,15 @@ const allProducts = [
     reviews: 134,
     description: 'Classic ballet flats for comfort',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Black", "White", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNob2VzfGVufDB8fDB8fHww" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 210,
@@ -2315,6 +3849,15 @@ const allProducts = [
     reviews: 112,
     description: 'Durable school shoes for kids',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "White", "Red", "Multi"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1549298916-b41d501d3772?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c2hvZXN8ZW58MHx8MHx8fDA%3D" },
+      { color: "White", url: "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Red", url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Multi", url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
 
   // Electronics
@@ -2330,6 +3873,15 @@ const allProducts = [
     reviews: 456,
     description: 'Advanced smartwatch with health tracking',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "White", "Maroon", "Grey"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1615655406736-b37c4fabf923?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z2FkZ2V0c3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 302,
@@ -2343,6 +3895,15 @@ const allProducts = [
     reviews: 678,
     description: 'Premium wireless earbuds with noise cancellation',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "White", "Grey", "Olive"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1636115305669-9096bffe87fd?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Z2FkZ2V0c3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 303,
@@ -2356,6 +3917,15 @@ const allProducts = [
     reviews: 345,
     description: 'Advanced fitness tracking device',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "White", "Grey", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1620783770629-122b7f187703?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGdhZGdldHN8ZW58MHx8MHx8fDA%3D" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 304,
@@ -2369,6 +3939,15 @@ const allProducts = [
     reviews: 567,
     description: 'Affordable smart band with essential features',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "White", "Olive", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1491933382434-500287f9b54b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGdhZGdldHN8ZW58MHx8MHx8fDA%3D" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 305,
@@ -2382,6 +3961,15 @@ const allProducts = [
     reviews: 234,
     description: 'Over-ear Bluetooth headphones',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Grey", "White", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1643536768014-0756fa85ca4f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGdhZGdldHN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 306,
@@ -2395,6 +3983,15 @@ const allProducts = [
     reviews: 189,
     description: 'Fashionable smart ring with health tracking',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Charcoal", "Maroon", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1615655406736-b37c4fabf923?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z2FkZ2V0c3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 307,
@@ -2408,6 +4005,15 @@ const allProducts = [
     reviews: 278,
     description: 'Portable wireless speaker',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Olive", "Black", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1636115305669-9096bffe87fd?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Z2FkZ2V0c3xlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 308,
@@ -2421,6 +4027,15 @@ const allProducts = [
     reviews: 312,
     description: 'Classic design smartwatch',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Charcoal", "White", "Olive"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1620783770629-122b7f187703?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGdhZGdldHN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 309,
@@ -2434,6 +4049,15 @@ const allProducts = [
     reviews: 145,
     description: 'Low latency gaming earbuds',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Black", "Maroon", "White"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1491933382434-500287f9b54b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGdhZGdldHN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 310,
@@ -2447,6 +4071,15 @@ const allProducts = [
     reviews: 423,
     description: 'Sports-focused smartwatch',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Charcoal", "Forest Green", "Maroon"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1643536768014-0756fa85ca4f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGdhZGdldHN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
 
   // Beauty & Grooming
@@ -2462,6 +4095,15 @@ const allProducts = [
     reviews: 234,
     description: 'Complete grooming kit for men',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Grey", "Maroon", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1612817288484-6f916006741a?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmVhdXR5JTIwcHJvZHVjdHN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 402,
@@ -2475,6 +4117,15 @@ const allProducts = [
     reviews: 456,
     description: 'Hydrating face moisturizer',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "White", "Olive", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGJlYXV0eSUyMHByb2R1Y3RzfGVufDB8fDB8fHww" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 403,
@@ -2488,6 +4139,15 @@ const allProducts = [
     reviews: 567,
     description: 'Strong hold hair styling gel',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Forest Green", "Black", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1526947425960-945c6e72858f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGJlYXV0eSUyMHByb2R1Y3RzfGVufDB8fDB8fHww" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 404,
@@ -2501,6 +4161,15 @@ const allProducts = [
     reviews: 345,
     description: 'Premium perfume collection',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Charcoal", "Grey", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1564594326930-17381130fd2e?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGJlYXV0eSUyMHByb2R1Y3RzfGVufDB8fDB8fHww" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 405,
@@ -2514,6 +4183,15 @@ const allProducts = [
     reviews: 278,
     description: 'Complete shaving kit',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Grey", "Forest Green", "Olive"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1598528738936-c50861cc75a9?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhdXR5JTIwcHJvZHVjdHN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 406,
@@ -2527,6 +4205,15 @@ const allProducts = [
     reviews: 412,
     description: 'Gentle face cleanser',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Black", "White", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1580870069867-74c57ee1bb07?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmVhdXR5JTIwcHJvZHVjdHN8ZW58MHx8MHx8fDA%3D" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 407,
@@ -2540,6 +4227,15 @@ const allProducts = [
     reviews: 389,
     description: 'Nourishing hair shampoo',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "White", "Olive", "Maroon"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1608979048467-6194dabc6a3d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmVhdXR5JTIwcHJvZHVjdHN8ZW58MHx8MHx8fDA%3D" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 408,
@@ -2553,6 +4249,15 @@ const allProducts = [
     reviews: 523,
     description: 'Moisturizing body lotion',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Black", "Grey", "Olive"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1629198688000-71f23e745b6e?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJlYXV0eSUyMHByb2R1Y3RzfGVufDB8fDB8fHww" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 409,
@@ -2566,6 +4271,15 @@ const allProducts = [
     reviews: 267,
     description: 'Long-lasting cologne spray',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Grey", "White", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1625753783470-ec2ab4efeeec?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJlYXV0eSUyMHByb2R1Y3RzfGVufDB8fDB8fHww" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 410,
@@ -2579,6 +4293,15 @@ const allProducts = [
     reviews: 189,
     description: 'Nourishing beard oil',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Maroon", "White", "Olive"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJlYXV0eSUyMHByb2R1Y3RzfGVufDB8fDB8fHww" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
 
   // Home & Living
@@ -2594,6 +4317,15 @@ const allProducts = [
     reviews: 234,
     description: 'Premium cotton bed sheets set',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Grey", "Maroon", "Olive"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1572048572872-2394404cf1f3?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG9tZSUyMGRlY29yfGVufDB8fDB8fHww" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 502,
@@ -2607,6 +4339,15 @@ const allProducts = [
     reviews: 456,
     description: 'Set of decorative cushions',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Charcoal", "Maroon", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1582131503261-fca1d1c0589f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aG9tZSUyMGRlY29yfGVufDB8fDB8fHww" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 503,
@@ -2620,6 +4361,15 @@ const allProducts = [
     reviews: 189,
     description: 'Modern table lamp',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Maroon", "Olive", "Grey"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1628152371231-936cf45eb8f3?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvbWUlMjBkZWNvcnxlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 504,
@@ -2633,6 +4383,15 @@ const allProducts = [
     reviews: 278,
     description: 'Elegant wall clock',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Grey", "Olive", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1534349762230-e0cadf78f5da?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGhvbWUlMjBkZWNvcnxlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 505,
@@ -2646,6 +4405,15 @@ const allProducts = [
     reviews: 145,
     description: 'Premium curtains set',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Maroon", "White", "Grey"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1667312939978-64cf31718a6e?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGhvbWUlMjBkZWNvcnxlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 506,
@@ -2659,6 +4427,15 @@ const allProducts = [
     reviews: 312,
     description: 'Cozy throw blanket',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Olive", "Forest Green", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG9tZSUyMGRlY29yfGVufDB8fDB8fHww" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 507,
@@ -2672,6 +4449,15 @@ const allProducts = [
     reviews: 167,
     description: 'Set of decorative photo frames',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "White", "Maroon", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1618220179428-22790b461013?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aG9tZSUyMGRlY29yfGVufDB8fDB8fHww" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 508,
@@ -2685,6 +4471,15 @@ const allProducts = [
     reviews: 234,
     description: 'Premium area rug',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Grey", "Maroon", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvbWUlMjBkZWNvcnxlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 509,
@@ -2698,6 +4493,15 @@ const allProducts = [
     reviews: 289,
     description: 'Comfortable pillow set',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Forest Green", "Maroon", "Olive"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1617806265182-7b3f847f0b75?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGhvbWUlMjBkZWNvcnxlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 510,
@@ -2711,6 +4515,15 @@ const allProducts = [
     reviews: 156,
     description: 'Decorative vase set',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Maroon", "Black", "White"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1615874694520-474822394e73?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aG9tZSUyMGRlY29yfGVufDB8fDB8fHww" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
 
   // Sportswear
@@ -2726,6 +4539,15 @@ const allProducts = [
     reviews: 345,
     description: 'Breathable sports t-shirt',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Black", "Forest Green", "Olive"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1637666544359-0e88de7b3206?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3BvcnRzd2VhcnxlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 602,
@@ -2739,6 +4561,15 @@ const allProducts = [
     reviews: 456,
     description: 'Flexible yoga pants',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Maroon", "Olive", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1635929171657-ccb333d714f5?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3BvcnRzd2VhcnxlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 603,
@@ -2752,6 +4583,15 @@ const allProducts = [
     reviews: 234,
     description: 'Comfortable track pants',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Maroon", "Charcoal", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1645207803533-e2cfe1382f2c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNwb3J0c3dlYXJ8ZW58MHx8MHx8fDA%3D" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 604,
@@ -2765,6 +4605,15 @@ const allProducts = [
     reviews: 189,
     description: 'Lightweight sports jacket',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Black", "Maroon", "White"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1605235186531-bbd852b09e69?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNwb3J0c3dlYXJ8ZW58MHx8MHx8fDA%3D" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "White", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 605,
@@ -2778,6 +4627,15 @@ const allProducts = [
     reviews: 567,
     description: 'Supportive sports bra',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Black", "Charcoal", "Forest Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1536244955395-0b8a2a5ab5df?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHNwb3J0c3dlYXJ8ZW58MHx8MHx8fDA%3D" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 606,
@@ -2791,6 +4649,15 @@ const allProducts = [
     reviews: 278,
     description: 'Comfortable gym shorts',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Maroon", "Black", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1593419528756-3cdfa1615b86?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3BvcnRzd2VhcnxlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 607,
@@ -2804,6 +4671,15 @@ const allProducts = [
     reviews: 312,
     description: 'Warm sports hoodie',
     season: 'Winter'
+  ,
+    colors: ["Navy Blue", "Grey", "Black", "Charcoal"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1483721310020-03333e577078?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3BvcnRzd2VhcnxlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 608,
@@ -2817,6 +4693,15 @@ const allProducts = [
     reviews: 145,
     description: 'Lightweight running shorts',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Olive", "Black", "Maroon"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1605235186583-a8272b61f9fe?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c3BvcnRzd2VhcnxlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Olive", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 609,
@@ -2830,6 +4715,15 @@ const allProducts = [
     reviews: 423,
     description: 'Performance compression shirt',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Charcoal", "Forest Green", "Grey"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1540254597053-3901b858d40f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c3BvcnRzd2VhcnxlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Charcoal", url: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 610,
@@ -2843,6 +4737,15 @@ const allProducts = [
     reviews: 267,
     description: 'UV protection sports cap',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Maroon", "Grey", "Black"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1600696491085-19dbbeb4f8c1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNwb3J0c3dlYXJ8ZW58MHx8MHx8fDA%3D" },
+      { color: "Maroon", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Grey", url: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Black", url: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
 
   // Ethnic Wear
@@ -2858,6 +4761,15 @@ const allProducts = [
     reviews: 234,
     description: 'Traditional men kurta',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Blue", "Red", "Yellow"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1757702522569-bf5c275261cf?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aW5kaWFuJTIwZXRobmljJTIwd2VhcnxlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Blue", url: "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Red", url: "https://images.unsplash.com/photo-1583391733956-6c78276477e2?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Yellow", url: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 702,
@@ -2871,6 +4783,15 @@ const allProducts = [
     reviews: 456,
     description: 'Elegant silk saree',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Blue", "Yellow", "Pink"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1756483517695-d0aa21ee1ea1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGluZGlhbiUyMGV0aG5pYyUyMHdlYXJ8ZW58MHx8MHx8fDA%3D" },
+      { color: "Blue", url: "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Yellow", url: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Pink", url: "https://images.unsplash.com/photo-1583391733956-6c78276477e2?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 703,
@@ -2884,6 +4805,15 @@ const allProducts = [
     reviews: 189,
     description: 'Premium sherwani for special occasions',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Blue", "Yellow", "Gold"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1763971922545-c0ffa1c09cc0?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGluZGlhbiUyMGV0aG5pYyUyMHdlYXJ8ZW58MHx8MHx8fDA%3D" },
+      { color: "Blue", url: "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Yellow", url: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Gold", url: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 704,
@@ -2897,6 +4827,15 @@ const allProducts = [
     reviews: 345,
     description: 'Beautiful lehenga choli',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Gold", "Pink", "Blue"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://manmohitfashion.com/cdn/shop/products/BeigeDesignerLehengaCholiWithHighQualityEmbroiderySequenceWorkWeddingLehengaCholiPartyWearLehengaCholiIndianWomen_Lengha_1_1024x1024_f6d46ef5-fbad-45a5-8dd0-530e329abfde.webp?v=1678178443" },
+      { color: "Gold", url: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Pink", url: "https://images.unsplash.com/photo-1583391733956-6c78276477e2?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Blue", url: "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 705,
@@ -2910,6 +4849,15 @@ const allProducts = [
     reviews: 167,
     description: 'Traditional dhoti',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Yellow", "Pink", "Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1668371679302-a8ec781e876e?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW5kaWFuJTIwZXRobmljJTIwd2VhcnxlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Yellow", url: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Pink", url: "https://images.unsplash.com/photo-1583391733956-6c78276477e2?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Green", url: "https://images.unsplash.com/photo-1605296867304-6f2b416a6b1f?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 706,
@@ -2923,6 +4871,15 @@ const allProducts = [
     reviews: 278,
     description: 'Elegant salwar kameez',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Gold", "Yellow", "Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.jdmagicbox.com/quickquotes/images_main/-f5kk3vhl.jpg" },
+      { color: "Gold", url: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Yellow", url: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Green", url: "https://images.unsplash.com/photo-1605296867304-6f2b416a6b1f?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 707,
@@ -2936,6 +4893,15 @@ const allProducts = [
     reviews: 145,
     description: 'Stylish pathani suit',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Gold", "Red", "Green"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1569810020669-aa9d38003ea7?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW5kaWFuJTIwZXRobmljJTIwd2VhcnxlbnwwfHwwfHx8MA%3D%3D" },
+      { color: "Gold", url: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Red", url: "https://images.unsplash.com/photo-1583391733956-6c78276477e2?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Green", url: "https://images.unsplash.com/photo-1605296867304-6f2b416a6b1f?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 708,
@@ -2949,6 +4915,15 @@ const allProducts = [
     reviews: 312,
     description: 'Beautiful anarkali suit',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Green", "Gold", "Pink"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1756483488645-5973a1a92e33?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGluZGlhbiUyMGV0aG5pYyUyMHdlYXJ8ZW58MHx8MHx8fDA%3D" },
+      { color: "Green", url: "https://images.unsplash.com/photo-1605296867304-6f2b416a6b1f?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Gold", url: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Pink", url: "https://images.unsplash.com/photo-1583391733956-6c78276477e2?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 709,
@@ -2962,6 +4937,15 @@ const allProducts = [
     reviews: 189,
     description: 'Traditional waistcoat',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Pink", "Blue", "Yellow"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://images.unsplash.com/photo-1756483510900-ec43edbafb45?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGluZGlhbiUyMGV0aG5pYyUyMHdlYXJ8ZW58MHx8MHx8fDA%3D" },
+      { color: "Pink", url: "https://images.unsplash.com/photo-1583391733956-6c78276477e2?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Blue", url: "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Yellow", url: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
   {
     id: 710,
@@ -2975,10 +4959,19 @@ const allProducts = [
     reviews: 234,
     description: 'Elegant dupatta',
     season: 'All-Season'
+  ,
+    colors: ["Navy Blue", "Pink", "Red", "Blue"]
+  ,
+    variantImages: [
+      { color: "Navy Blue", url: "https://imagescdn.jaypore.com/img/app/product/3/39576428-11327689.jpg?w=500&auto=format" },
+      { color: "Pink", url: "https://images.unsplash.com/photo-1583391733956-6c78276477e2?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Red", url: "https://images.unsplash.com/photo-1583391733956-6c78276477e2?q=80&w=2000&auto=format&fit=crop" },
+      { color: "Blue", url: "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?q=80&w=2000&auto=format&fit=crop" }
+    ]
   },
 ]
 
 export const products = allProducts.map((product, index) => ({
   ...product,
-  stock: product.stock ?? (40 + (index % 12) * 5),
+  stock: (product as any).stock ?? (40 + (index % 12) * 5),
 }))
