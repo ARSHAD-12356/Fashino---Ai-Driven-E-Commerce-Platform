@@ -11,7 +11,13 @@ const allProducts = [
     rating: 4.8,
     reviews: 124,
     description: 'Premium quality cotton t-shirt perfect for everyday wear',
-    season: 'All-Season'
+    season: 'All-Season',
+    colors: ["Classic Black", "Soft Beige", "Slate Grey"],
+    variantImages: [
+      { color: "Classic Black", url: "https://images.unsplash.com/photo-1622221642468-f549301a4321?q=80&w=1080&auto=format&fit=crop" },
+      { color: "Soft Beige", url: "https://images.unsplash.com/photo-1593011951812-2996b9f8df17?q=80&w=1080&auto=format&fit=crop" },
+      { color: "Slate Grey", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1080&auto=format&fit=crop" }
+    ]
   },
   {
     id: 2,
@@ -24,7 +30,13 @@ const allProducts = [
     rating: 4.7,
     reviews: 98,
     description: 'Timeless white t-shirt for any occasion',
-    season: 'All-Season'
+    season: 'All-Season',
+    colors: ["White", "Classic Black", "Soft Beige"],
+    variantImages: [
+      { color: "White", url: "/mens-white-tshirt.jpg" },
+      { color: "Classic Black", url: "https://images.unsplash.com/photo-1622221642468-f549301a4321?q=80&w=1080&auto=format&fit=crop" },
+      { color: "Soft Beige", url: "https://images.unsplash.com/photo-1593011951812-2996b9f8df17?q=80&w=1080&auto=format&fit=crop" },
+    ]
   },
   {
     id: 3,
@@ -37,7 +49,13 @@ const allProducts = [
     rating: 4.6,
     reviews: 156,
     description: 'Stylish graphic printed t-shirt with modern design',
-    season: 'All-Season'
+    season: 'All-Season',
+    colors: ["Classic Black", "Soft Beige", "Slate Grey"],
+    variantImages: [
+      { color: "Classic Black", url: "https://images.unsplash.com/photo-1622221642468-f549301a4321?q=80&w=1080&auto=format&fit=crop" },
+      { color: "Soft Beige", url: "https://images.unsplash.com/photo-1593011951812-2996b9f8df17?q=80&w=1080&auto=format&fit=crop" },
+      { color: "Slate Grey", url: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1080&auto=format&fit=crop" }
+    ]
   },
   {
     id: 4,

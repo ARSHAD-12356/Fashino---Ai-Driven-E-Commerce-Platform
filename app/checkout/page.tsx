@@ -420,43 +420,32 @@ function CheckoutContent() {
         status: 'processing',
         paymentStatus: 'paid',
       }
-      const publicKey = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID
-
-      if (!publicKey) {
-        console.warn(
-          'Razorpay credentials are not configured. Please set NEXT_PUBLIC_RAZORPAY_KEY_ID.'
-        )
-        setPaymentAlert({
-          type: 'error',
-          text: 'Razorpay credentials are not configured',
-        })
-        setIsPlacingOrder(false)
-        return
-      }
-
       setOrderReference(order.receipt)
 
       const razorpayOptions: any = {
-        key: publicKey,
+        key: 'rzp_live_Rlq0dwpTzFQgsN',
         amount: order.amount,
-        currency: order.currency,
-        name: 'Fashino – Secure Payment',
-        description: `Payment for ${order.receipt}`,
+        currency: 'INR',
+        name: 'Fashino',
+        description: 'Payment',
+        image: '/logo.png',
         order_id: order.id,
         prefill: {
           name:
             user?.name ||
             [formData.firstName, formData.lastName].filter(Boolean).join(' ').trim() ||
-            'Fashino Customer',
-          email: user?.email || formData.email || 'support@fashino.com',
+            '',
+          email: user?.email || formData.email || '',
           contact: formData.phone || '',
         },
         theme: {
-          color: '#000000',
+          color: '#212121',
         },
-        retry: {
-          enabled: true,
-          max_count: 2,
+        method: {
+          card: true,
+          upi: true,
+          netbanking: true,
+          wallet: true,
         },
         handler: async (paymentResponse: any) => {
           try {
@@ -517,11 +506,6 @@ function CheckoutContent() {
             })
           },
         },
-      }
-
-      const methodConfig = getRazorpayDisplayConfig(paymentMethod)
-      if (methodConfig) {
-        razorpayOptions.config = methodConfig
       }
 
       const razorpayInstance = new window.Razorpay(razorpayOptions)

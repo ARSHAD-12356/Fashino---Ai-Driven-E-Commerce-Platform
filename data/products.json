@@ -28,7 +28,25 @@
         "deal"
       ],
       "inStock": true,
-      "colors": []
+      "colors": [
+        "Classic Black",
+        "Soft Beige",
+        "Slate Grey"
+      ],
+      "variantImages": [
+        {
+          "color": "Classic Black",
+          "url": "https://images.unsplash.com/photo-1622221642468-f549301a4321?q=80&w=1080&auto=format&fit=crop"
+        },
+        {
+          "color": "Soft Beige",
+          "url": "https://images.unsplash.com/photo-1593011951812-2996b9f8df17?q=80&w=1080&auto=format&fit=crop"
+        },
+        {
+          "color": "Slate Grey",
+          "url": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1080&auto=format&fit=crop"
+        }
+      ]
     },
     {
       "id": 2,
@@ -55,7 +73,25 @@
         "deal"
       ],
       "inStock": true,
-      "colors": []
+      "colors": [
+        "Classic Black",
+        "Soft Beige",
+        "Slate Grey"
+      ],
+      "variantImages": [
+        {
+          "color": "Classic Black",
+          "url": "https://images.unsplash.com/photo-1622221642468-f549301a4321?q=80&w=1080&auto=format&fit=crop"
+        },
+        {
+          "color": "Soft Beige",
+          "url": "https://images.unsplash.com/photo-1593011951812-2996b9f8df17?q=80&w=1080&auto=format&fit=crop"
+        },
+        {
+          "color": "Slate Grey",
+          "url": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1080&auto=format&fit=crop"
+        }
+      ]
     },
     {
       "id": 3,
@@ -82,7 +118,25 @@
         "deal"
       ],
       "inStock": true,
-      "colors": []
+      "colors": [
+        "Classic Black",
+        "Soft Beige",
+        "Slate Grey"
+      ],
+      "variantImages": [
+        {
+          "color": "Classic Black",
+          "url": "https://images.unsplash.com/photo-1622221642468-f549301a4321?q=80&w=1080&auto=format&fit=crop"
+        },
+        {
+          "color": "Soft Beige",
+          "url": "https://images.unsplash.com/photo-1593011951812-2996b9f8df17?q=80&w=1080&auto=format&fit=crop"
+        },
+        {
+          "color": "Slate Grey",
+          "url": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1080&auto=format&fit=crop"
+        }
+      ]
     },
     {
       "id": 4,

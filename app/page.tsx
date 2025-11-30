@@ -1,5 +1,6 @@
 import { Header } from '@/components/header'
 import { Hero } from '@/components/hero'
+import { ScrollReveal } from '@/components/ui/scroll-reveal'
 import { CategoryGrid } from '@/components/category-grid'
 import { FeaturedProducts } from '@/components/featured-products'
 import { WinterCollection } from '@/components/winter-collection'
@@ -13,12 +14,22 @@ export default function Home() {
       <Header showCategoryBar />
       <div className="space-y-0">
         <Hero />
-        <CategoryGrid />
-        <FeaturedProducts />
-        <WinterCollection />
+        <ScrollReveal width="100%">
+          <CategoryGrid />
+        </ScrollReveal>
+        <ScrollReveal width="100%">
+          <FeaturedProducts />
+        </ScrollReveal>
+        <ScrollReveal width="100%">
+          <WinterCollection />
+        </ScrollReveal>
       </div>
-      <CustomerReviews />
-      <NewsletterSection />
+      <ScrollReveal width="100%">
+        <CustomerReviews />
+      </ScrollReveal>
+      <ScrollReveal width="100%">
+        <NewsletterSection />
+      </ScrollReveal>
       <Footer />
     </main>
   )

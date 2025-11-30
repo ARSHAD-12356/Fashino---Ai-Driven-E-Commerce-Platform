@@ -1,7 +1,5 @@
 import Razorpay from 'razorpay'
 
-console.log('Loaded Razorpay Key:', process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID)
-
 export async function POST(req: Request) {
   try {
     const keyId = process.env.RAZORPAY_KEY_ID

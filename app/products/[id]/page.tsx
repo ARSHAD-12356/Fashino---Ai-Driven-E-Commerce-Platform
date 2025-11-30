@@ -35,6 +35,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
 
   const [selectedSize, setSelectedSize] = useState('')
   const [selectedColor, setSelectedColor] = useState(initialColor)
+  const [currentImage, setCurrentImage] = useState(productImage)
   const [quantity, setQuantity] = useState(1)
   const [isWishlisted, setIsWishlisted] = useState(false)
   const [activeTab, setActiveTab] = useState('description')
@@ -44,10 +45,20 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
   useEffect(() => {
     setSelectedSize('')
     setSelectedColor(initialColor)
+    setCurrentImage(productImage)
     setQuantity(1)
     setIsWishlisted(false)
     setActiveTab('description')
-  }, [productId, initialColor])
+  }, [productId, initialColor, productImage])
+
+  useEffect(() => {
+    if (product?.variantImages) {
+      const variant = product.variantImages.find((v: any) => v.color === selectedColor)
+      if (variant) {
+        setCurrentImage(variant.url)
+      }
+    }
+  }, [selectedColor, product])
 
   if (!product) {
     return (
@@ -124,15 +135,39 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
             <div className="flex flex-col gap-3 sm:gap-4">
               <div className="relative bg-muted rounded-lg overflow-hidden aspect-square fade-in">
                 <img
-                  src={productImage}
+                  src={currentImage}
                   alt={product.name}
                   onError={(e) => { e.currentTarget.src = getFallbackImage(product.name, product.category, product.subcategory) }}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-opacity duration-300"
                 />
                 <div className="absolute top-2 sm:top-4 left-2 sm:left-4 bg-primary text-primary-foreground px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs sm:text-sm font-semibold">
                   -{Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}% OFF
                 </div>
               </div>
+              {/* Variant Thumbnails */}
+              {product.variantImages && product.variantImages.length > 0 && (
+                <div className="flex gap-2 overflow-x-auto pb-2">
+                  {product.variantImages.map((variant: any, index: number) => (
+                    <button
+                      key={index}
+                      onClick={() => {
+                        setSelectedColor(variant.color)
+                        setCurrentImage(variant.url)
+                      }}
+                      className={`relative w-16 h-16 sm:w-20 sm:h-20 rounded-md overflow-hidden border-2 flex-shrink-0 smooth-transition ${selectedColor === variant.color
+                        ? 'border-primary ring-2 ring-primary/20'
+                        : 'border-transparent hover:border-primary/50'
+                        }`}
+                    >
+                      <img
+                        src={variant.url}
+                        alt={variant.color}
+                        className="w-full h-full object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Details */}

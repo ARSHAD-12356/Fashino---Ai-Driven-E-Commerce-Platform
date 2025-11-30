@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Link from 'next/link'
+import { Hero3D } from './hero-3d'
 
 const carouselSlides = [
   {
@@ -94,6 +95,7 @@ export function Hero() {
 
   return (
     <section className="relative w-full h-[70vh] sm:h-[80vh] md:h-screen overflow-hidden bg-background">
+      <Hero3D />
       {/* Carousel Container */}
       <div className="relative w-full h-full">
         {carouselSlides.map((s, index) => (
@@ -121,15 +123,15 @@ export function Hero() {
             <div className="space-y-4 sm:space-y-5 md:space-y-6 slide-up">
               <div className="inline-block">
                 <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-white">
-                  {slide.subtitle}
+                  {slide.id === 1 ? 'Season 2025-2026' : slide.subtitle}
                 </span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white leading-tight text-balance">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white leading-tight text-balance font-serif">
                 {slide.title}
               </h1>
 
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-100 max-w-2xl mx-auto leading-relaxed px-2">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-100 max-w-2xl mx-auto leading-relaxed px-2 font-light">
                 {slide.description}
               </p>
 
