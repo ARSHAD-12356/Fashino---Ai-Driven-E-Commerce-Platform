@@ -146,7 +146,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                   src={currentImage}
                   alt={product.name}
                   onError={(e) => { e.currentTarget.src = getFallbackImage(product.name, product.category, product.subcategory) }}
-                  className="w-full h-full object-cover transition-all duration-700 ease-in-out"
+                  className="w-full h-full object-cover transition-opacity duration-300"
                 />
                 <div className="absolute top-2 sm:top-4 left-2 sm:left-4 bg-primary text-primary-foreground px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs sm:text-sm font-semibold">
                   -{Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}% OFF

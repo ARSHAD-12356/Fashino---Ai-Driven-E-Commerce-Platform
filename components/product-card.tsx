@@ -101,8 +101,10 @@ export function ProductCard({
   return (
     <div
       className="group scale-in"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      <div
+      <div 
         className="relative bg-white dark:bg-slate-900 rounded-lg overflow-hidden shadow-sm hover:shadow-xl smooth-transition mb-4 md:cursor-pointer"
         onClick={handleCardClick}
       >
@@ -110,7 +112,9 @@ export function ProductCard({
           src={imageSrc}
           alt={name}
           onError={(e) => { e.currentTarget.src = getFallbackImage(name, category, subcategory) }}
-          className="w-full aspect-square object-cover smooth-transition scale-100"
+          className={`w-full aspect-square object-cover smooth-transition ${
+            isHovered ? 'scale-110' : 'scale-100'
+          }`}
         />
 
         {/* Discount Badge */}
@@ -128,16 +132,17 @@ export function ProductCard({
             className="hidden md:block absolute top-2 sm:top-4 right-2 sm:right-4 p-1.5 sm:p-2 bg-white dark:bg-slate-800 rounded-full shadow-md hover:shadow-lg smooth-transition opacity-0 group-hover:opacity-100 transform group-hover:scale-100 scale-75 z-10"
           >
             <Heart
-              className={`w-4 h-4 sm:w-5 sm:h-5 smooth-transition ${isWishlisted
-                ? 'fill-primary text-primary'
-                : 'text-foreground'
-                }`}
+              className={`w-4 h-4 sm:w-5 sm:h-5 smooth-transition ${
+                isWishlisted
+                  ? 'fill-primary text-primary'
+                  : 'text-foreground'
+              }`}
             />
           </button>
         )}
 
         {/* Desktop Hover Buttons - Hidden on mobile (≤768px) */}
-        <div className="hidden md:block absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 sm:p-6 transform translate-y-full group-hover:translate-y-0 smooth-transition flex flex-col gap-5 sm:gap-8">
+        <div className="hidden md:block absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-2 sm:p-4 transform translate-y-full group-hover:translate-y-0 smooth-transition flex flex-col gap-1.5 sm:gap-2">
           {user ? (
             <>
               <button
@@ -145,25 +150,25 @@ export function ProductCard({
                   e.stopPropagation()
                   handleAddToCart()
                 }}
-                className="w-full bg-primary text-primary-foreground py-3 sm:py-3.5 font-semibold rounded-lg hover:bg-primary/90 smooth-transition flex items-center justify-center gap-2 text-xs sm:text-sm z-10"
+                className="w-full bg-primary text-primary-foreground py-1.5 sm:py-2 font-semibold rounded-lg hover:bg-primary/90 smooth-transition flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm z-10"
               >
                 <ShoppingCart className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 Add to Cart
               </button>
-              <div className="grid grid-cols-2 gap-4 sm:gap-6">
+              <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
                 <Link href={`/products/${id}`} onClick={(e) => e.stopPropagation()}>
-                  <button className="w-full bg-white/20 text-white py-2.5 sm:py-3 font-semibold rounded-lg hover:bg-white/30 smooth-transition flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm z-10">
+                  <button className="w-full bg-white/20 text-white py-1.5 sm:py-2 font-semibold rounded-lg hover:bg-white/30 smooth-transition flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm z-10">
                     <Eye className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     Details
                   </button>
                 </Link>
                 <Link href={`/products/${id}`} onClick={(e) => e.stopPropagation()}>
-                  <button
+                  <button 
                     onClick={(e) => {
                       e.stopPropagation()
                       handleBuyNow(e)
                     }}
-                    className="w-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black py-2.5 sm:py-3 font-semibold rounded-lg hover:from-yellow-300 hover:via-yellow-400 hover:to-yellow-500 smooth-transition text-xs sm:text-sm shadow-lg shadow-yellow-500/50 hover:shadow-yellow-500/70 hover:scale-105 active:scale-95 font-bold z-10"
+                    className="w-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black py-1.5 sm:py-2 font-semibold rounded-lg hover:from-yellow-300 hover:via-yellow-400 hover:to-yellow-500 smooth-transition text-xs sm:text-sm shadow-lg shadow-yellow-500/50 hover:shadow-yellow-500/70 hover:scale-105 active:scale-95 font-bold z-10"
                   >
                     Buy Now
                   </button>
@@ -171,14 +176,14 @@ export function ProductCard({
               </div>
             </>
           ) : (
-            <div className="grid grid-cols-2 gap-4 sm:gap-6">
+            <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
               <Link href={`/products/${id}`} onClick={(e) => e.stopPropagation()}>
-                <button className="w-full bg-white/20 text-white py-2.5 sm:py-3 font-semibold rounded-lg hover:bg-white/30 smooth-transition flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm z-10">
+                <button className="w-full bg-white/20 text-white py-1.5 sm:py-2 font-semibold rounded-lg hover:bg-white/30 smooth-transition flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm z-10">
                   <Eye className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   Details
                 </button>
               </Link>
-              <button
+              <button 
                 onClick={(e) => {
                   e.stopPropagation()
                   e.preventDefault()
@@ -223,8 +228,9 @@ export function ProductCard({
           </span>
         </div>
         <p
-          className={`text-xs sm:text-sm font-medium ${isInStock ? 'text-emerald-500' : 'text-destructive'
-            }`}
+          className={`text-xs sm:text-sm font-medium ${
+            isInStock ? 'text-emerald-500' : 'text-destructive'
+          }`}
         >
           {isInStock ? `${stockCount} in stock` : 'Out of stock'}
         </p>
