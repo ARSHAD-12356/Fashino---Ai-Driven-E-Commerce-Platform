@@ -9,6 +9,7 @@ export interface CartItem {
   image: string
   quantity: number
   size?: string
+  color?: string
 }
 
 export interface BuyNowItem extends CartItem {
@@ -20,6 +21,7 @@ interface CartContextType {
   addItem: (item: Omit<CartItem, 'quantity'> & { quantity?: number }) => void
   removeItem: (id: number) => void
   updateQuantity: (id: number, quantity: number) => void
+  updateItem: (id: number, updates: Partial<CartItem>) => void
   clearCart: () => void
   checkoutSingleItem: (item: Omit<CartItem, 'quantity'> & { quantity?: number }) => void
   buyNowItem: BuyNowItem | null
@@ -64,6 +66,17 @@ export function CartProvider({ children }: { children: ReactNode }) {
     )
   }
 
+  const updateItem = (id: number, updates: Partial<CartItem>) => {
+    setItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, ...updates } : item
+      )
+    )
+    if (buyNowItem && buyNowItem.id === id) {
+      setBuyNowItem({ ...buyNowItem, ...updates })
+    }
+  }
+
   const clearCart = () => {
     setItems([])
   }
@@ -90,7 +103,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   return (
     <CartContext.Provider
-      value={{ items, addItem, removeItem, updateQuantity, clearCart, checkoutSingleItem, buyNowItem, buyNow, clearBuyNowItem, total }}
+      value={{ items, addItem, removeItem, updateQuantity, updateItem, clearCart, checkoutSingleItem, buyNowItem, buyNow, clearBuyNowItem, total }}
     >
       {children}
     </CartContext.Provider>

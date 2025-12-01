@@ -8,6 +8,7 @@ import { ChevronRight, Lock, Check } from 'lucide-react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { useAuth } from '@/context/auth-context'
+import { products } from '@/lib/products'
 
 declare global {
   interface Window {
@@ -53,18 +54,18 @@ interface StoredOrder {
 }
 
 function CheckoutContent() {
-  const { items, total, clearCart, buyNowItem, clearBuyNowItem } = useCart()
+  const { items, total, clearCart, buyNowItem, clearBuyNowItem, updateItem } = useCart()
   const { user } = useAuth()
   const searchParams = useSearchParams()
   const mode = searchParams.get('mode')
   const isBuyNow = mode === 'buy-now'
-  
+
   // Use buyNowItem if in buy-now mode, otherwise use regular cart items
   const checkoutItems = isBuyNow && buyNowItem ? [buyNowItem] : items
-  const checkoutTotal = isBuyNow && buyNowItem 
-    ? buyNowItem.price * buyNowItem.quantity 
+  const checkoutTotal = isBuyNow && buyNowItem
+    ? buyNowItem.price * buyNowItem.quantity
     : total
-  
+
   const startOnShipping = searchParams.get('start') === 'shipping' && checkoutItems.length > 0
   const [currentStep, setCurrentStep] = useState<CheckoutStep>(startOnShipping ? 'shipping' : 'cart')
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('card')
@@ -304,11 +305,11 @@ function CheckoutContent() {
   )
 
   const isShippingValid = recipientType === 'self' ? true : isShippingFormValid
-  const isPaymentValid = paymentMethod === 'card' 
+  const isPaymentValid = paymentMethod === 'card'
     ? formData.cardName && formData.cardNumber && formData.expiry && formData.cvv
     : paymentMethod === 'upi'
-    ? formData.upiId
-    : true
+      ? formData.upiId
+      : true
 
   const shippingCost = 0
   const tax = 0
@@ -554,19 +555,18 @@ function CheckoutContent() {
                 {(['cart', 'shipping', 'payment'] as const).map((step, index) => (
                   <div key={step} className="flex items-center flex-1 min-w-0">
                     <div
-                      className={`flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full font-bold smooth-transition text-xs sm:text-sm flex-shrink-0 ${
-                        step === currentStep
+                      className={`flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full font-bold smooth-transition text-xs sm:text-sm flex-shrink-0 ${step === currentStep
                           ? 'bg-primary text-primary-foreground'
-                          : currentStep === 'confirmation' || 
+                          : currentStep === 'confirmation' ||
                             (['payment', 'confirmation'].includes(currentStep) && step === 'payment') ||
                             (['shipping', 'payment', 'confirmation'].includes(currentStep) && step === 'shipping')
-                          ? 'bg-green-500 text-white'
-                          : 'bg-border text-muted-foreground'
-                      }`}
+                            ? 'bg-green-500 text-white'
+                            : 'bg-border text-muted-foreground'
+                        }`}
                     >
-                      {step === 'confirmation' || 
-                       (['payment', 'confirmation'].includes(currentStep) && step === 'payment') ||
-                       (['shipping', 'payment', 'confirmation'].includes(currentStep) && step === 'shipping') ? (
+                      {step === 'confirmation' ||
+                        (['payment', 'confirmation'].includes(currentStep) && step === 'payment') ||
+                        (['shipping', 'payment', 'confirmation'].includes(currentStep) && step === 'shipping') ? (
                         <Check className="w-4 h-4 sm:w-5 sm:h-5" />
                       ) : (
                         index + 1
@@ -591,7 +591,7 @@ function CheckoutContent() {
               {currentStep === 'cart' && (
                 <div className="space-y-4 sm:space-y-6 fade-in">
                   <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Review Your Cart</h2>
-                  
+
                   {checkoutItems.length === 0 ? (
                     <div className="bg-muted/50 p-6 sm:p-8 rounded-lg text-center">
                       <p className="text-muted-foreground mb-4 text-sm sm:text-base">Your cart is empty</p>
@@ -603,30 +603,66 @@ function CheckoutContent() {
                     </div>
                   ) : (
                     <div className="space-y-3 sm:space-y-4">
-                      {checkoutItems.map((item) => (
-                        <div
-                          key={item.id}
-                          className="flex gap-3 sm:gap-4 p-3 sm:p-4 bg-muted/30 rounded-lg scale-in"
-                        >
-                          <img
-                            src={item.image || '/placeholder.svg'}
-                            alt={item.name}
-                            className="w-20 h-20 sm:w-24 sm:h-24 object-cover rounded flex-shrink-0"
-                          />
-                          <div className="flex-1 min-w-0">
-                            <h3 className="font-semibold text-sm sm:text-base truncate">{item.name}</h3>
-                            <p className="text-xs sm:text-sm text-muted-foreground">Qty: {item.quantity}</p>
-                            {item.size && (
-                              <p className="text-xs sm:text-sm text-muted-foreground">Size: {item.size}</p>
-                            )}
+                      {checkoutItems.map((item) => {
+                        const product = products.find((p) => p.id === item.id)
+                        return (
+                          <div
+                            key={item.id}
+                            className="flex gap-3 sm:gap-4 p-3 sm:p-4 bg-muted/30 rounded-lg scale-in"
+                          >
+                            <img
+                              src={item.image || '/placeholder.svg'}
+                              alt={item.name}
+                              className="w-20 h-20 sm:w-24 sm:h-24 object-cover rounded flex-shrink-0"
+                            />
+                            <div className="flex-1 min-w-0">
+                              <h3 className="font-semibold text-sm sm:text-base truncate">{item.name}</h3>
+                              <p className="text-xs sm:text-sm text-muted-foreground">Qty: {item.quantity}</p>
+
+                              <div className="flex flex-wrap gap-2 mt-1">
+                                {product?.sizes && product.sizes.length > 0 && (
+                                  <div>
+                                    <select
+                                      value={item.size || ''}
+                                      onChange={(e) => updateItem(item.id, { size: e.target.value })}
+                                      className="text-xs sm:text-sm border rounded px-1 py-0.5 bg-background max-w-[120px]"
+                                    >
+                                      <option value="" disabled>Size</option>
+                                      {product.sizes.map((size) => (
+                                        <option key={size} value={size}>
+                                          {size}
+                                        </option>
+                                      ))}
+                                    </select>
+                                  </div>
+                                )}
+
+                                {product?.colors && product.colors.length > 0 && (
+                                  <div>
+                                    <select
+                                      value={item.color || ''}
+                                      onChange={(e) => updateItem(item.id, { color: e.target.value })}
+                                      className="text-xs sm:text-sm border rounded px-1 py-0.5 bg-background max-w-[120px]"
+                                    >
+                                      <option value="" disabled>Color</option>
+                                      {product.colors.map((color) => (
+                                        <option key={color} value={color}>
+                                          {color}
+                                        </option>
+                                      ))}
+                                    </select>
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                            <div className="text-right flex-shrink-0">
+                              <p className="font-semibold text-sm sm:text-base">
+                                ₹{(item.price * item.quantity).toLocaleString('en-IN')}
+                              </p>
+                            </div>
                           </div>
-                          <div className="text-right flex-shrink-0">
-                            <p className="font-semibold text-sm sm:text-base">
-                              ₹{(item.price * item.quantity).toLocaleString('en-IN')}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
+                        )
+                      })}
                     </div>
                   )}
                 </div>
@@ -636,7 +672,7 @@ function CheckoutContent() {
               {currentStep === 'shipping' && (
                 <div className="space-y-4 sm:space-y-6 fade-in">
                   <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Shipping Information</h2>
-                  
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                     {[
                       {
@@ -656,11 +692,10 @@ function CheckoutContent() {
                         key={option.id}
                         type="button"
                         onClick={() => setRecipientType(option.id as RecipientType)}
-                        className={`text-left p-3 sm:p-4 rounded-2xl border-2 hover:shadow-lg smooth-transition ${
-                          recipientType === option.id
+                        className={`text-left p-3 sm:p-4 rounded-2xl border-2 hover:shadow-lg smooth-transition ${recipientType === option.id
                             ? 'border-primary bg-primary/5 text-primary'
                             : 'border-border text-foreground hover:border-primary/40'
-                        }`}
+                          }`}
                       >
                         <p className="text-base sm:text-lg font-semibold mb-1">{option.title}</p>
                         <p className="text-xs sm:text-sm text-muted-foreground">{option.description}</p>
@@ -684,105 +719,105 @@ function CheckoutContent() {
                       )}
                     </div>
                   )}
-                  
+
                   {recipientType === 'someoneElse' && (
                     <>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
-                    <div>
-                      <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">First Name</label>
-                      <input
-                        type="text"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleInputChange}
-                        className="w-full px-3 sm:px-4 py-2 text-sm border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                        placeholder="John"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Last Name</label>
-                      <input
-                        type="text"
-                        name="lastName"
-                        value={formData.lastName}
-                        onChange={handleInputChange}
-                        className="w-full px-3 sm:px-4 py-2 text-sm border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                        placeholder="Doe"
-                      />
-                    </div>
-                  </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+                        <div>
+                          <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">First Name</label>
+                          <input
+                            type="text"
+                            name="firstName"
+                            value={formData.firstName}
+                            onChange={handleInputChange}
+                            className="w-full px-3 sm:px-4 py-2 text-sm border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                            placeholder="John"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Last Name</label>
+                          <input
+                            type="text"
+                            name="lastName"
+                            value={formData.lastName}
+                            onChange={handleInputChange}
+                            className="w-full px-3 sm:px-4 py-2 text-sm border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                            placeholder="Doe"
+                          />
+                        </div>
+                      </div>
 
-                  <div>
-                    <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Email</label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="w-full px-3 sm:px-4 py-2 text-sm border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                      placeholder="john@example.com"
-                    />
-                  </div>
+                      <div>
+                        <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Email</label>
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          className="w-full px-3 sm:px-4 py-2 text-sm border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                          placeholder="john@example.com"
+                        />
+                      </div>
 
-                  <div>
-                    <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Phone</label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="w-full px-3 sm:px-4 py-2 text-sm border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                      placeholder="+91 9876543210"
-                    />
-                  </div>
+                      <div>
+                        <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Phone</label>
+                        <input
+                          type="tel"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          className="w-full px-3 sm:px-4 py-2 text-sm border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                          placeholder="+91 9876543210"
+                        />
+                      </div>
 
-                  <div>
-                    <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Address</label>
-                    <input
-                      type="text"
-                      name="address"
-                      value={formData.address}
-                      onChange={handleInputChange}
-                      className="w-full px-3 sm:px-4 py-2 text-sm border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                      placeholder="123 Main Street"
-                    />
-                  </div>
+                      <div>
+                        <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Address</label>
+                        <input
+                          type="text"
+                          name="address"
+                          value={formData.address}
+                          onChange={handleInputChange}
+                          className="w-full px-3 sm:px-4 py-2 text-sm border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                          placeholder="123 Main Street"
+                        />
+                      </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
-                    <div>
-                      <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">City</label>
-                      <input
-                        type="text"
-                        name="city"
-                        value={formData.city}
-                        onChange={handleInputChange}
-                        className="w-full px-3 sm:px-4 py-2 text-sm border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                        placeholder="New Delhi"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">State</label>
-                      <input
-                        type="text"
-                        name="state"
-                        value={formData.state}
-                        onChange={handleInputChange}
-                        className="w-full px-3 sm:px-4 py-2 text-sm border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                        placeholder="Delhi"
-                      />
-                    </div>
-                    <div className="sm:col-span-2 md:col-span-1">
-                      <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">ZIP Code</label>
-                      <input
-                        type="text"
-                        name="zipCode"
-                        value={formData.zipCode}
-                        onChange={handleInputChange}
-                        className="w-full px-3 sm:px-4 py-2 text-sm border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                        placeholder="110001"
-                      />
-                    </div>
-                  </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+                        <div>
+                          <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">City</label>
+                          <input
+                            type="text"
+                            name="city"
+                            value={formData.city}
+                            onChange={handleInputChange}
+                            className="w-full px-3 sm:px-4 py-2 text-sm border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                            placeholder="New Delhi"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">State</label>
+                          <input
+                            type="text"
+                            name="state"
+                            value={formData.state}
+                            onChange={handleInputChange}
+                            className="w-full px-3 sm:px-4 py-2 text-sm border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                            placeholder="Delhi"
+                          />
+                        </div>
+                        <div className="sm:col-span-2 md:col-span-1">
+                          <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">ZIP Code</label>
+                          <input
+                            type="text"
+                            name="zipCode"
+                            value={formData.zipCode}
+                            onChange={handleInputChange}
+                            className="w-full px-3 sm:px-4 py-2 text-sm border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                            placeholder="110001"
+                          />
+                        </div>
+                      </div>
                     </>
                   )}
                 </div>
@@ -792,7 +827,7 @@ function CheckoutContent() {
               {currentStep === 'payment' && (
                 <div className="space-y-4 sm:space-y-6 fade-in">
                   <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Payment Information</h2>
-                  
+
                   <div className="bg-primary/5 border border-primary/20 p-3 sm:p-4 rounded-lg flex items-center gap-2 mb-4 sm:mb-6">
                     <Lock className="w-4 h-4 text-primary flex-shrink-0" />
                     <span className="text-xs sm:text-sm text-foreground">Your payment is secure and encrypted</span>
@@ -810,11 +845,10 @@ function CheckoutContent() {
                         <button
                           key={method.id}
                           onClick={() => setPaymentMethod(method.id as PaymentMethod)}
-                          className={`p-3 sm:p-4 rounded-lg border-2 smooth-transition text-center font-medium text-xs sm:text-sm ${
-                            paymentMethod === method.id
+                          className={`p-3 sm:p-4 rounded-lg border-2 smooth-transition text-center font-medium text-xs sm:text-sm ${paymentMethod === method.id
                               ? 'border-primary bg-primary/10 text-primary'
                               : 'border-border text-foreground hover:border-primary/50'
-                          }`}
+                            }`}
                         >
                           <div className="text-xl sm:text-2xl mb-1 sm:mb-2">{method.icon}</div>
                           {method.label}
@@ -901,7 +935,7 @@ function CheckoutContent() {
                     <div>
                       <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Select Your Bank</label>
                       <select
-                          className="w-full px-3 sm:px-4 py-2 text-sm border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                        className="w-full px-3 sm:px-4 py-2 text-sm border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                       >
                         <option>Select a bank</option>
                         <option>HDFC Bank</option>
@@ -951,9 +985,9 @@ function CheckoutContent() {
                       </button>
                     </Link>
                     <Link href="/dashboard" className="w-full sm:w-auto">
-                    <button className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-primary text-primary rounded-full font-semibold hover:bg-primary/5 smooth-transition text-sm sm:text-base">
-                      Track Order
-                    </button>
+                      <button className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-primary text-primary rounded-full font-semibold hover:bg-primary/5 smooth-transition text-sm sm:text-base">
+                        Track Order
+                      </button>
                     </Link>
                   </div>
                 </div>
@@ -999,11 +1033,10 @@ function CheckoutContent() {
                         </button>
                         {paymentAlert && (
                           <p
-                            className={`text-xs sm:text-sm text-center sm:text-left ${
-                              paymentAlert.type === 'error'
+                            className={`text-xs sm:text-sm text-center sm:text-left ${paymentAlert.type === 'error'
                                 ? 'text-red-600 dark:text-red-400'
                                 : 'text-green-600 dark:text-green-400'
-                            }`}
+                              }`}
                           >
                             {paymentAlert.text}
                           </p>
@@ -1019,7 +1052,7 @@ function CheckoutContent() {
             <div className="lg:col-span-1">
               <div className="bg-muted/50 rounded-lg p-4 sm:p-6 lg:sticky lg:top-24 scale-in">
                 <h3 className="text-base sm:text-lg font-bold mb-3 sm:mb-4">Order Summary</h3>
-                
+
                 <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6 pb-4 sm:pb-6 border-b border-border">
                   <div className="flex justify-between text-xs sm:text-sm">
                     <span className="text-muted-foreground">Subtotal</span>
