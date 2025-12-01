@@ -105,12 +105,7 @@ const allProducts = [
       { color: "Forest Green", url: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=2000&auto=format&fit=crop" }
     ]
   },
-  {
-    id: 6,
-    name: 'Striped Cotton Tee',
-    category: 'Men',
-    subcategory: 'T-Shirts',
-  },
+
   {
     id: 6,
     name: 'Striped Cotton Tee',
