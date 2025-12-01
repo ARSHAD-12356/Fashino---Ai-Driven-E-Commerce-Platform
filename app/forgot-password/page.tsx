@@ -28,9 +28,27 @@ export default function ForgotPasswordPage() {
 
     setIsLoading(true)
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500))
+      const response = await fetch('/api/auth/forgot-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send reset link')
+      }
+
+      // Store email in localStorage to use in verify-otp page
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('resetEmail', email)
+      }
+
       setIsSent(true)
+      setTimeout(() => {
+        router.push('/verify-otp')
+      }, 2000)
     } catch (err: any) {
       setError(err.message || 'Failed to send reset link. Please try again.')
     } finally {
@@ -45,7 +63,7 @@ export default function ForgotPasswordPage() {
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
       </div>
-      
+
       <div className="w-full max-w-md relative z-10">
         <div className="bg-card/95 backdrop-blur-xl border border-border/50 rounded-2xl p-8 md:p-10 space-y-6 shadow-2xl shadow-primary/5">
           {/* Header */}
@@ -63,7 +81,7 @@ export default function ForgotPasswordPage() {
             </Link>
             <h1 className="text-3xl font-bold text-foreground">Reset Password</h1>
             <p className="text-muted-foreground">
-              {isSent 
+              {isSent
                 ? 'Check your email for password reset instructions'
                 : 'Enter your email address and we\'ll send you a link to reset your password'}
             </p>

@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { useAuth } from '@/context/auth-context'
 import { Mail, Lock, User, Loader2, Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react'
+import { PasswordInput } from '@/components/ui/password-input'
 
 export default function SignupPage() {
   const router = useRouter()
@@ -13,6 +14,7 @@ export default function SignupPage() {
   const [name, setName] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
+  const [gender, setGender] = useState('male')
   const [error, setError] = useState('')
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -35,7 +37,7 @@ export default function SignupPage() {
     }
 
     try {
-      await signup(email, name, password)
+      await signup(email, name, password, gender)
       router.push('/')
     } catch (err: any) {
       setError(err.message || 'Signup failed. Please try again.')
@@ -51,16 +53,16 @@ export default function SignupPage() {
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
       </div>
-      
+
       <div className="w-full max-w-md relative z-10">
         <div className="bg-card/95 backdrop-blur-xl border border-border/50 rounded-2xl p-8 md:p-10 space-y-6 shadow-2xl shadow-primary/5">
           {/* Header */}
           <div className="text-center space-y-3">
             <Link href="/" className="auth-brand inline-flex flex-col items-center gap-1 group">
               <div className="flex items-center gap-2">
-              <Sparkles className="w-6 h-6 text-primary group-hover:rotate-12 transition-transform max-[400px]:opacity-0 max-[400px]:w-0 max-[400px]:overflow-hidden transition-all duration-300 ease-in-out" />
+                <Sparkles className="w-6 h-6 text-primary group-hover:rotate-12 transition-transform max-[400px]:opacity-0 max-[400px]:w-0 max-[400px]:overflow-hidden transition-all duration-300 ease-in-out" />
                 <span className="brand-logo-fashino tracking-tight text-[32px] md:text-[40px] lg:text-[50px]">
-              Fashino
+                  Fashino
                 </span>
               </div>
               <p className="text-sm font-normal font-sans text-primary/80 italic tracking-wide">
@@ -104,6 +106,26 @@ export default function SignupPage() {
               </div>
             </div>
 
+            {/* Gender Selection */}
+            <div className="space-y-2">
+              <label className="text-sm font-semibold text-foreground">Gender</label>
+              <div className="grid grid-cols-3 gap-3">
+                {['male', 'female', 'other'].map((g) => (
+                  <button
+                    key={g}
+                    type="button"
+                    onClick={() => setGender(g)}
+                    className={`py-2.5 px-4 rounded-xl border-2 font-medium capitalize smooth-transition flex items-center justify-center gap-2 ${gender === g
+                      ? 'border-primary bg-primary/10 text-primary'
+                      : 'border-border bg-input/50 text-muted-foreground hover:border-primary/50'
+                      }`}
+                  >
+                    {g}
+                  </button>
+                ))}
+              </div>
+            </div>
+
             {/* Email Field */}
             <div className="space-y-2">
               <label className="text-sm font-semibold text-foreground">Email Address</label>
@@ -123,13 +145,12 @@ export default function SignupPage() {
             <div className="space-y-2">
               <label className="text-sm font-semibold text-foreground">Password</label>
               <div className="relative group">
-                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
-                <input
-                  type="password"
+                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground group-focus-within:text-primary transition-colors z-10" />
+                <PasswordInput
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="w-full pl-12 pr-4 py-3 bg-input/50 border-2 border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary smooth-transition"
+                  className="w-full pl-12 pr-10 py-3 bg-input/50 border-2 border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary smooth-transition h-auto"
                 />
               </div>
               {password && (
@@ -150,13 +171,12 @@ export default function SignupPage() {
             <div className="space-y-2">
               <label className="text-sm font-semibold text-foreground">Confirm Password</label>
               <div className="relative group">
-                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
-                <input
-                  type="password"
+                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground group-focus-within:text-primary transition-colors z-10" />
+                <PasswordInput
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="w-full pl-12 pr-4 py-3 bg-input/50 border-2 border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary smooth-transition"
+                  className="w-full pl-12 pr-10 py-3 bg-input/50 border-2 border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary smooth-transition h-auto"
                 />
               </div>
               {confirmPassword && password === confirmPassword && (

@@ -9,13 +9,14 @@ export interface User {
   phone?: string
   address?: string
   profilePic?: string
+  gender?: 'male' | 'female' | 'other'
 }
 
 interface AuthContextType {
   user: User | null
   isLoading: boolean
   login: (email: string, password: string) => Promise<void>
-  signup: (email: string, name: string, password: string) => Promise<void>
+  signup: (email: string, name: string, password: string, gender: string) => Promise<void>
   logout: () => void
   updateProfile: (updates: Partial<User>) => Promise<void>
 }
@@ -28,34 +29,53 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const loadUser = async () => {
+      let currentUser: User | null = null;
+
+      // 1. Try to get user from localStorage first (fastest)
       const saved = localStorage.getItem('user')
       if (saved) {
         try {
-          const parsedUser = JSON.parse(saved)
-          setUser(parsedUser)
-          
-          // Fetch latest profile from database
-          try {
-            const response = await fetch('/api/auth/profile', {
-              headers: {
-                'x-user-id': parsedUser.id,
-              },
-            })
-            if (response.ok) {
-              const data = await response.json()
-              if (data.user) {
-                setUser(data.user)
-                localStorage.setItem('user', JSON.stringify(data.user))
-              }
-            }
-          } catch (error) {
-            console.log('Could not fetch profile from DB, using cached:', error)
-          }
+          currentUser = JSON.parse(saved)
+          setUser(currentUser)
         } catch (error) {
           console.log('[v0] Error parsing user from localStorage:', error)
           localStorage.removeItem('user')
         }
       }
+
+      // 2. Verify with server
+      try {
+        const token = localStorage.getItem('token')
+        const headers: HeadersInit = {}
+
+        if (token) {
+          headers['Authorization'] = `Bearer ${token}`
+        }
+
+        if (currentUser) {
+          headers['x-user-id'] = currentUser.id
+        }
+
+        const response = await fetch('/api/auth/me', {
+          headers,
+        })
+
+        if (response.ok) {
+          const data = await response.json()
+          if (data.user) {
+            setUser(data.user)
+            localStorage.setItem('user', JSON.stringify(data.user))
+          } else if (!currentUser) {
+            // If server says no user and we didn't have one locally, ensure we're clear
+            setUser(null)
+            localStorage.removeItem('user')
+            localStorage.removeItem('token')
+          }
+        }
+      } catch (error) {
+        console.log('Session check failed:', error)
+      }
+
       setIsLoading(false)
     }
     loadUser()
@@ -84,7 +104,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           // If response is not JSON, use status text
           errorMessage = response.statusText || errorMessage
         }
-        
+
         // If it's a database connection error (503 status), provide helpful message
         if (response.status === 503 || errorMessage.includes('Database connection') || errorMessage.includes('whitelist') || errorMessage.includes('IP') || errorMessage.includes('ECONNREFUSED') || errorMessage.includes('querySrv')) {
           errorMessage = 'Database connection failed. Your IP address may not be whitelisted in MongoDB Atlas.\n\nQuick Fix:\n1. Go to MongoDB Atlas → Security → Network Access\n2. Click "Add IP Address" → "Add Current IP Address"\n3. Wait 1-2 minutes, then try again'
@@ -92,7 +112,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             errorMessage += `\n\n${errorDetails}`
           }
         }
-        
+
         throw new Error(errorMessage)
       }
 
@@ -116,7 +136,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   }
 
-  const signup = async (email: string, name: string, password: string) => {
+  const signup = async (email: string, name: string, password: string, gender: string) => {
     setIsLoading(true)
     try {
       const response = await fetch('/api/auth/signup', {
@@ -124,7 +144,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, name, password }),
+        body: JSON.stringify({ email, name, password, gender }),
       })
 
       // Check if response is ok before parsing JSON
@@ -139,7 +159,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           // If response is not JSON, use status text
           errorMessage = response.statusText || errorMessage
         }
-        
+
         // If it's a database connection error (503 status), provide helpful message
         if (response.status === 503 || errorMessage.includes('Database connection') || errorMessage.includes('whitelist') || errorMessage.includes('IP') || errorMessage.includes('ECONNREFUSED') || errorMessage.includes('querySrv')) {
           errorMessage = 'Database connection failed. Your IP address may not be whitelisted in MongoDB Atlas.\n\nQuick Fix:\n1. Go to MongoDB Atlas → Security → Network Access\n2. Click "Add IP Address" → "Add Current IP Address"\n3. Wait 1-2 minutes, then try again'
@@ -147,7 +167,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             errorMessage += `\n\n${errorDetails}`
           }
         }
-        
+
         throw new Error(errorMessage)
       }
 
@@ -204,9 +224,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   }
 
-  const logout = () => {
+  const logout = async () => {
+    try {
+      await fetch('/api/auth/logout', { method: 'POST' })
+    } catch (error) {
+      console.error('Logout error:', error)
+    }
     setUser(null)
     localStorage.removeItem('user')
+    localStorage.removeItem('token')
   }
 
   return (

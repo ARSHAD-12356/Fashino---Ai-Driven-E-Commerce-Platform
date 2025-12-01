@@ -15,7 +15,16 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    required: true,
+    required: false, // Made optional for Google Auth users
+  },
+  provider: {
+    type: String,
+    default: 'local', // 'local' or 'google'
+  },
+  googleId: {
+    type: String,
+    unique: true,
+    sparse: true, // Allows multiple null values
   },
   phone: {
     type: String,
@@ -28,6 +37,19 @@ const userSchema = new mongoose.Schema({
   profilePic: {
     type: String,
     default: '',
+  },
+  gender: {
+    type: String,
+    enum: ['male', 'female', 'other'],
+    default: 'other',
+  },
+  otp: {
+    type: String,
+    required: false,
+  },
+  otpExpires: {
+    type: Date,
+    required: false,
   },
 }, {
   timestamps: true,

@@ -9,6 +9,7 @@ import Link from 'next/link'
 import { ShoppingBag, Heart, LogOut, Edit2, UserIcon, Phone, Mail, MapPinIcon, X, Truck, CheckCircle2, MessageCircle, XCircle, MoreVertical, Eye } from 'lucide-react'
 import { OrderAssistant } from '@/components/order-assistant'
 import { useWishlist } from '@/context/wishlist-context'
+import { UserAvatar } from '@/components/ui/user-avatar'
 import { products } from '@/lib/products'
 
 interface StoredOrderProduct {
@@ -83,22 +84,22 @@ const formatDisplayDate = (dateString: string) => {
 // Ensure order ID is in the correct format (FAS-XXXXX)
 const formatOrderId = (orderId: string | undefined, mongoId?: string): string => {
   if (!orderId && !mongoId) return 'FAS-UNKNOWN'
-  
+
   // If it's already in FAS- format, return as is
   if (orderId && orderId.startsWith('FAS-')) {
     return orderId
   }
-  
+
   // If we have a formatted ID, use it
   if (orderId) {
     return orderId
   }
-  
+
   // If only MongoDB ID exists, generate formatted ID from it
   if (mongoId) {
     return `FAS-${mongoId.toString().slice(-8).toUpperCase()}`
   }
-  
+
   return 'FAS-UNKNOWN'
 }
 
@@ -154,12 +155,20 @@ export default function DashboardPage() {
   const { user, logout, updateProfile, isLoading } = useAuth()
   const router = useRouter()
   const [isEditModalOpen, setIsEditModalOpen] = useState(false)
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<{
+    name: string
+    email: string
+    phone: string
+    address: string
+    profilePic: string
+    gender: 'male' | 'female' | 'other'
+  }>({
     name: '',
     email: '',
     phone: '',
     address: '',
     profilePic: '',
+    gender: 'male',
   })
   const [recentOrders, setRecentOrders] = useState<StoredOrder[]>([])
   const [selectedOrder, setSelectedOrder] = useState<StoredOrder | null>(null)
@@ -168,6 +177,8 @@ export default function DashboardPage() {
   const [cancelReason, setCancelReason] = useState('')
   const [otherReasonText, setOtherReasonText] = useState('')
   const [isAIChatOpen, setIsAIChatOpen] = useState(false)
+  const [aiInput, setAiInput] = useState('')
+  const [aiMessages, setAiMessages] = useState<{ text: string; sender: 'user' | 'bot' }[]>([])
   const [productMenuOpen, setProductMenuOpen] = useState<{ orderId: string; productId: number } | null>(null)
   const { items: wishlistIds } = useWishlist()
 
@@ -181,14 +192,15 @@ export default function DashboardPage() {
         phone: user.phone || '',
         address: user.address || '',
         profilePic: user.profilePic || '',
+        gender: user.gender || 'male',
       })
-      
+
       // Clean up old generic orders storage to prevent data leakage
       // New users should start with empty orders - don't migrate old data
       if (typeof window !== 'undefined') {
         const userOrdersKey = `recentOrders_${user.id}`
         const existingUserOrders = window.localStorage.getItem(userOrdersKey)
-        
+
         // Only remove old generic key if user already has their own orders
         // This ensures new users start fresh without any default/demo data
         if (existingUserOrders) {
@@ -215,6 +227,7 @@ export default function DashboardPage() {
         phone: user.phone || prev.phone,
         address: user.address || prev.address,
         profilePic: user.profilePic || prev.profilePic,
+        gender: user.gender || prev.gender,
       }))
     }
   }, [user])
@@ -226,7 +239,7 @@ export default function DashboardPage() {
         // Load orders from localStorage with user-specific key
         const userOrdersKey = `recentOrders_${user.id}`
         const stored = JSON.parse(window.localStorage.getItem(userOrdersKey) || '[]')
-        
+
         // Only show actual orders, no fallback demo data
         // Filter out orders that don't have payment completed
         const validOrders = stored.filter((order: StoredOrder) => {
@@ -284,18 +297,18 @@ export default function DashboardPage() {
 
   const wishlistItems = wishlistIds.length > 0
     ? wishlistIds
-        .map((id) => {
-          const product = products.find((p: any) => p.id === id)
-          return product
-            ? {
-                id: product.id,
-                name: product.name,
-                price: `₹${product.price.toLocaleString('en-IN')}`,
-                status: product.inStock === false ? 'Out of Stock' : 'In Stock',
-              }
-            : null
-        })
-        .filter(Boolean)
+      .map((id) => {
+        const product = products.find((p: any) => p.id === id)
+        return product
+          ? {
+            id: product.id,
+            name: product.name,
+            price: `₹${product.price.toLocaleString('en-IN')}`,
+            status: product.inStock === false ? 'Out of Stock' : 'In Stock',
+          }
+          : null
+      })
+      .filter(Boolean)
     : []
 
   const totalOrders = recentOrders.length
@@ -388,17 +401,12 @@ export default function DashboardPage() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-12 pb-8 border-b border-border">
           <div className="flex items-center gap-6">
             <div className="relative group">
-              {user?.profilePic ? (
-                <img
-                  src={user.profilePic || "/placeholder.svg"}
-                  alt={user?.name || "User"}
-                  className="w-24 h-24 rounded-full border-4 border-primary object-cover shadow-lg"
-                />
-              ) : (
-                <div className="w-24 h-24 rounded-full border-4 border-primary bg-muted flex items-center justify-center shadow-lg">
-                  <UserIcon className="w-12 h-12 text-muted-foreground" />
-                </div>
-              )}
+              <UserAvatar
+                src={user.profilePic}
+                name={user.name || 'User'}
+                className="w-24 h-24 border-4 border-primary shadow-lg text-2xl"
+                iconClassName="w-12 h-12"
+              />
             </div>
             <div>
               <h1 className="text-3xl font-bold text-foreground">{user?.name || "User"}</h1>
@@ -483,7 +491,7 @@ export default function DashboardPage() {
                       className="p-5 rounded-2xl border border-border bg-muted/20 hover:border-primary/40 hover:shadow-lg smooth-transition"
                     >
                       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                      <div>
+                        <div>
                           <p className="text-sm text-muted-foreground">
                             {formatDisplayDate(order.date)} • {order.items} items
                           </p>
@@ -496,20 +504,20 @@ export default function DashboardPage() {
                           <div className="text-right">
                             <p className="text-2xl font-bold text-foreground">{formatCurrency(order.total)}</p>
                             <p className="text-xs text-muted-foreground">
-                              {order.paymentStatus === 'Paid' 
-                                ? 'Paid online' 
+                              {order.paymentStatus === 'Paid'
+                                ? 'Paid online'
                                 : order.paymentMethod === 'cod'
-                                ? 'Cash on delivery'
-                                : 'Payment pending'}
+                                  ? 'Cash on delivery'
+                                  : 'Payment pending'}
                             </p>
                           </div>
                           <span className={`px-3 py-1 rounded-full text-sm font-semibold ${statusBadgeClasses(order.status)}`}>
                             {/* Only show "Delivered" if payment is actually paid, otherwise show Processing */}
-                            {order.paymentStatus === 'Paid' && order.status === 'Delivered' 
-                              ? 'Delivered' 
-                              : order.paymentStatus === 'Paid' 
-                              ? order.status 
-                              : 'Processing'}
+                            {order.paymentStatus === 'Paid' && order.status === 'Delivered'
+                              ? 'Delivered'
+                              : order.paymentStatus === 'Paid'
+                                ? order.status
+                                : 'Processing'}
                           </span>
                         </div>
                       </div>
@@ -625,10 +633,10 @@ export default function DashboardPage() {
               <div className="space-y-2 max-h-48 overflow-y-auto">
                 {wishlistItems.length > 0 ? (
                   wishlistItems.map(item => (
-                  <div key={item.id} className="text-sm">
-                    <p className="font-medium text-foreground">{item.name}</p>
-                    <p className="text-muted-foreground">{item.price}</p>
-                  </div>
+                    <div key={item.id} className="text-sm">
+                      <p className="font-medium text-foreground">{item.name}</p>
+                      <p className="text-muted-foreground">{item.price}</p>
+                    </div>
                   ))
                 ) : (
                   <p className="text-sm text-muted-foreground">No items in wishlist</p>
@@ -650,28 +658,40 @@ export default function DashboardPage() {
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
           <div className="bg-background border border-border rounded-lg p-8 max-w-md w-full max-h-[90vh] overflow-y-auto">
             <h2 className="text-2xl font-bold text-foreground mb-6">Edit Profile</h2>
-            
+
             <form onSubmit={handleProfileUpdate} className="space-y-6">
               {/* Profile Picture Upload */}
               <div>
                 <label className="block text-sm font-medium text-foreground mb-3">Profile Picture</label>
                 <div className="flex flex-col items-center gap-4">
                   <div className="w-24 h-24 rounded-full border-4 border-primary bg-muted flex items-center justify-center overflow-hidden">
-                    {formData.profilePic ? (
-                      <img src={formData.profilePic || "/placeholder.svg"} alt="Preview" className="w-full h-full object-cover" />
-                    ) : (
-                      <UserIcon className="w-12 h-12 text-muted-foreground" />
+                    <UserAvatar
+                      src={formData.profilePic}
+                      name={formData.name || 'User'}
+                      className="w-full h-full text-2xl"
+                      iconClassName="w-12 h-12"
+                    />
+                  </div>
+                  <div className="flex gap-2">
+                    <label className="px-4 py-2 bg-primary text-primary-foreground rounded-lg font-medium cursor-pointer hover:shadow-lg smooth-transition text-sm">
+                      Upload Photo
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleImageUpload}
+                        className="hidden"
+                      />
+                    </label>
+                    {formData.profilePic && (
+                      <button
+                        type="button"
+                        onClick={() => setFormData(prev => ({ ...prev, profilePic: '' }))}
+                        className="px-4 py-2 bg-destructive/10 text-destructive border border-destructive/20 rounded-lg font-medium hover:bg-destructive/20 smooth-transition text-sm"
+                      >
+                        Remove
+                      </button>
                     )}
                   </div>
-                  <label className="px-4 py-2 bg-primary text-primary-foreground rounded-lg font-medium cursor-pointer hover:shadow-lg smooth-transition">
-                    Upload Photo
-                    <input
-                      type="file"
-                      accept="image/*"
-                      onChange={handleImageUpload}
-                      className="hidden"
-                    />
-                  </label>
                 </div>
               </div>
 
@@ -685,6 +705,26 @@ export default function DashboardPage() {
                   className="w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                   placeholder="Your name"
                 />
+              </div>
+
+              {/* Gender */}
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2">Gender</label>
+                <div className="grid grid-cols-3 gap-3">
+                  {['male', 'female', 'other'].map((g) => (
+                    <button
+                      key={g}
+                      type="button"
+                      onClick={() => setFormData(prev => ({ ...prev, gender: g }))}
+                      className={`py-2 px-4 rounded-lg border font-medium capitalize smooth-transition flex items-center justify-center gap-2 ${formData.gender === g
+                        ? 'border-primary bg-primary/10 text-primary'
+                        : 'border-border bg-background text-muted-foreground hover:border-primary/50'
+                        }`}
+                    >
+                      {g}
+                    </button>
+                  ))}
+                </div>
               </div>
 
               {/* Email */}
@@ -847,11 +887,10 @@ export default function DashboardPage() {
                 return (
                   <div key={step.label} className="flex gap-4">
                     <div
-                      className={`w-10 h-10 rounded-full flex items-center justify-center border ${
-                        completed
-                          ? 'bg-green-500 text-white border-green-500'
-                          : 'bg-muted text-muted-foreground border-border'
-                      }`}
+                      className={`w-10 h-10 rounded-full flex items-center justify-center border ${completed
+                        ? 'bg-green-500 text-white border-green-500'
+                        : 'bg-muted text-muted-foreground border-border'
+                        }`}
                     >
                       {completed ? <CheckCircle2 className="w-5 h-5" /> : index + 1}
                     </div>
@@ -902,11 +941,10 @@ export default function DashboardPage() {
                 <button
                   key={reason}
                   onClick={() => setCancelReason(reason)}
-                  className={`w-full text-left px-4 py-3 rounded-lg border smooth-transition ${
-                    cancelReason === reason
-                      ? 'border-primary bg-primary/10 text-primary'
-                      : 'border-border text-foreground hover:border-primary/50'
-                  }`}
+                  className={`w-full text-left px-4 py-3 rounded-lg border smooth-transition ${cancelReason === reason
+                    ? 'border-primary bg-primary/10 text-primary'
+                    : 'border-border text-foreground hover:border-primary/50'
+                    }`}
                 >
                   {reason}
                 </button>
@@ -929,7 +967,7 @@ export default function DashboardPage() {
                   if (cancelReason && (cancelReason !== 'Other reason' || otherReasonText.trim())) {
                     // Find the order to get MongoDB ID if it exists
                     const orderToCancel = recentOrders.find(o => o.id === cancelOrderId)
-                    
+
                     // Delete from MongoDB if order has MongoDB ID
                     if (orderToCancel && (orderToCancel as any).mongoId) {
                       try {
@@ -949,7 +987,7 @@ export default function DashboardPage() {
                         console.error('Failed to delete order from MongoDB:', error)
                       }
                     }
-                    
+
                     // Remove from local state
                     setRecentOrders(prev => prev.filter(order => order.id !== cancelOrderId))
                     if (typeof window !== 'undefined' && user) {

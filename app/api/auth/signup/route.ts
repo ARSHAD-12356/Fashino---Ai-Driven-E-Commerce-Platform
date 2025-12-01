@@ -8,38 +8,38 @@ export async function POST(request: NextRequest) {
     // Connect to database first with retry logic
     let dbConnected = false
     let dbError: any = null
-    
+
     try {
       await connectDB()
       dbConnected = true
     } catch (error: any) {
       dbError = error
       console.error('Database connection error:', error.message)
-      
+
       // Check if it's a connection error (not authentication)
       if (error.message.includes('whitelist') || error.message.includes('IP') || error.message.includes('ECONNREFUSED') || error.message.includes('querySrv') || error.message.includes('timeout')) {
         return NextResponse.json(
-          { 
+          {
             error: error.message || 'Database connection failed. Please check MongoDB Atlas IP whitelist settings.',
             details: 'Make sure your IP address is whitelisted in MongoDB Atlas Network Access settings.'
           },
           { status: 503 }
         )
       }
-      
+
       // For other errors, still return 503 but with the error message
       return NextResponse.json(
-        { 
+        {
           error: error.message || 'Database connection failed.',
           details: 'Please check your MongoDB Atlas configuration and network settings.'
         },
         { status: 503 }
       )
     }
-    
+
     if (!dbConnected) {
       return NextResponse.json(
-        { 
+        {
           error: dbError?.message || 'Database connection failed.',
           details: 'Please check your MongoDB Atlas configuration.'
         },
@@ -47,7 +47,8 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const { email, name, password } = await request.json()
+    const requestBody = await request.json()
+    const { email, name, password } = requestBody
 
     if (!email || !name || !password) {
       return NextResponse.json(
@@ -75,11 +76,25 @@ export async function POST(request: NextRequest) {
     // Hash password
     const hashedPassword = await bcrypt.hash(password, 10)
 
+    // Determine default profile pic based on gender
+    const userGender = ['male', 'female', 'other'].includes(requestBody.gender) ? requestBody.gender : 'other';
+    let defaultProfilePic = '';
+
+    if (userGender === 'male') {
+      defaultProfilePic = 'https://avatar.iran.liara.run/public/boy';
+    } else if (userGender === 'female') {
+      defaultProfilePic = 'https://avatar.iran.liara.run/public/girl';
+    } else {
+      defaultProfilePic = 'https://avatar.iran.liara.run/public'; // Neutral/Other
+    }
+
     // Create user
     const user = await User.create({
       email: email.toLowerCase().trim(),
       name: name.trim(),
       password: hashedPassword,
+      gender: userGender,
+      profilePic: defaultProfilePic,
     })
 
     const userResponse = {
@@ -88,7 +103,9 @@ export async function POST(request: NextRequest) {
       name: user.name,
       phone: user.phone,
       address: user.address,
+      address: user.address,
       profilePic: user.profilePic,
+      gender: user.gender,
     }
 
     return NextResponse.json(

@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from 'react'
 import { MessageCircle, X, Send, Bot, User, ThumbsUp, ThumbsDown, ExternalLink, ShoppingBag, Mic, MicOff, Globe, RotateCcw } from 'lucide-react'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { useAuth } from '@/context/auth-context'
 
@@ -243,7 +243,17 @@ const languageNames: Record<Language, string> = {
 
 export function ProductChatbot() {
   const router = useRouter()
+  const pathname = usePathname()
   const { user } = useAuth()
+
+  // Hide chatbot on admin pages, auth pages, and if user is not logged in
+  const shouldHideChatbot = !user ||
+    pathname?.startsWith('/admin') ||
+    ['/login', '/signup', '/forgot-password', '/verify-otp', '/reset-password'].includes(pathname || '');
+
+  if (shouldHideChatbot) {
+    return null;
+  }
   const [isOpen, setIsOpen] = useState(false)
   const [language, setLanguage] = useState<Language>('en')
   const [isListening, setIsListening] = useState(false)
@@ -545,6 +555,15 @@ export function ProductChatbot() {
     showWelcomeMessage()
   }
 
+  // Hide chatbot on admin pages, auth pages, and if user is not logged in
+  const shouldShowChatbot = user &&
+    !pathname?.startsWith('/admin') &&
+    !['/login', '/signup', '/forgot-password', '/verify-otp', '/reset-password'].includes(pathname || '')
+
+  if (!shouldShowChatbot) {
+    return null
+  }
+
   return (
     <>
       {/* Chat Button */}
@@ -645,8 +664,8 @@ export function ProductChatbot() {
                   )}
                   <div
                     className={`max-w-[85%] sm:max-w-[80%] rounded-lg p-2.5 sm:p-3 ${message.sender === 'user'
-                        ? 'bg-primary text-primary-foreground'
-                        : 'bg-background border border-border text-foreground'
+                      ? 'bg-primary text-primary-foreground'
+                      : 'bg-background border border-border text-foreground'
                       }`}
                   >
                     <p className="text-xs sm:text-sm whitespace-pre-wrap break-words">{message.text}</p>
@@ -783,8 +802,8 @@ export function ProductChatbot() {
                 onClick={isListening ? stopListening : startListening}
                 disabled={isLoading}
                 className={`px-2 sm:px-3 py-2 rounded-lg smooth-transition flex items-center justify-center flex-shrink-0 ${isListening
-                    ? 'bg-red-500 text-white hover:bg-red-600'
-                    : 'bg-muted text-foreground hover:bg-muted/80'
+                  ? 'bg-red-500 text-white hover:bg-red-600'
+                  : 'bg-muted text-foreground hover:bg-muted/80'
                   }`}
                 title={isListening ? translations[language].listening : translations[language].speakNow}
               >

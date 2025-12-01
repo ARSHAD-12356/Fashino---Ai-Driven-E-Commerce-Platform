@@ -24,24 +24,24 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
   const [activeCategory, setActiveCategory] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
   const searchRef = useRef<HTMLDivElement>(null)
-  
+
   const { items } = useCart()
   const { items: wishlistItems } = useWishlist()
   const { user, logout } = useAuth()
   const { theme, toggleTheme } = useTheme()
-  
+
   const userMenuRef = useRef<HTMLDivElement>(null)
   const categoryRefs = useRef<Record<string, HTMLDivElement | null>>({})
 
   // Filter products based on search query
   const searchResults = useMemo(() => {
     if (!searchQuery.trim()) return []
-    
+
     const query = searchQuery.toLowerCase().trim()
-    const matched = products.filter((product) => 
+    const matched = products.filter((product) =>
       product.name.toLowerCase().includes(query)
     )
-    
+
     return matched.slice(0, 8) // Limit to 8 results for display
   }, [searchQuery])
 
@@ -117,15 +117,14 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
     <>
       {/* Top Navbar */}
       <nav
-        className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          theme === 'light'
+        className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${theme === 'light'
             ? isScrolled
               ? 'bg-white/95 backdrop-blur-xl border-b border-black/10 shadow-lg text-black'
               : 'bg-white text-black'
             : isScrolled
-            ? 'bg-black/95 backdrop-blur-xl border-b border-white/10 shadow-lg text-white'
-            : 'bg-black text-white'
-        }`}
+              ? 'bg-black/95 backdrop-blur-xl border-b border-white/10 shadow-lg text-white'
+              : 'bg-black text-white'
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <div className="flex items-center justify-between h-20 max-[400px]:gap-2">
@@ -151,15 +150,14 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
               {/* Search Bar */}
               <div ref={searchRef} className="hidden md:block relative">
                 <div
-                  className={`flex items-center gap-2 rounded-full px-4 py-2 transition-all duration-300 ${
-                    theme === 'light'
+                  className={`flex items-center gap-2 rounded-full px-4 py-2 transition-all duration-300 ${theme === 'light'
                       ? isSearchFocused
                         ? 'bg-black/20 ring-2 ring-black/30'
                         : 'bg-black/10 hover:bg-black/15'
                       : isSearchFocused
-                      ? 'bg-white/20 ring-2 ring-white/30'
-                      : 'bg-white/10 hover:bg-white/15'
-                  }`}
+                        ? 'bg-white/20 ring-2 ring-white/30'
+                        : 'bg-white/10 hover:bg-white/15'
+                    }`}
                 >
                   <Search className={`w-4 h-4 ${theme === 'light' ? 'text-black/80' : 'text-white/80'}`} />
                   <input
@@ -168,32 +166,29 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     onFocus={() => setIsSearchFocused(true)}
-                    className={`bg-transparent outline-none text-sm w-48 lg:w-64 transition-colors duration-300 ${
-                      theme === 'light'
+                    className={`bg-transparent outline-none text-sm w-48 lg:w-64 transition-colors duration-300 ${theme === 'light'
                         ? 'text-black placeholder:text-black/60'
                         : 'text-white placeholder:text-white/60'
-                    }`}
+                      }`}
                   />
                 </div>
-                
+
                 {/* Search Results Dropdown */}
                 {isSearchFocused && searchQuery.trim() && (
-                  <div className={`absolute top-full left-0 right-0 mt-2 backdrop-blur-xl border rounded-lg shadow-2xl max-h-96 overflow-y-auto z-50 transition-colors duration-300 ${
-                    theme === 'light'
+                  <div className={`absolute top-full left-0 right-0 mt-2 backdrop-blur-xl border rounded-lg shadow-2xl max-h-96 overflow-y-auto z-50 transition-colors duration-300 ${theme === 'light'
                       ? 'bg-white/95 border-black/10 text-black'
                       : 'bg-black/95 border-white/10 text-white'
-                  }`}>
+                    }`}>
                     {searchResults.length > 0 ? (
                       <div className="p-2">
                         {searchResults.map((product) => (
                           <button
                             key={product.id}
                             onClick={() => handleProductClick(product.id)}
-                            className={`w-full flex items-center gap-3 p-3 rounded-lg transition-colors text-left ${
-                              theme === 'light'
+                            className={`w-full flex items-center gap-3 p-3 rounded-lg transition-colors text-left ${theme === 'light'
                                 ? 'hover:bg-black/10'
                                 : 'hover:bg-white/10'
-                            }`}
+                              }`}
                           >
                             <img
                               src={product.image || '/placeholder.svg'}
@@ -201,62 +196,54 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
                               className="w-12 h-12 rounded object-cover"
                             />
                             <div className="flex-1 min-w-0">
-                              <p className={`text-sm font-medium truncate ${
-                                theme === 'light' ? 'text-black' : 'text-white'
-                              }`}>{product.name}</p>
-                              <p className={`text-xs ${
-                                theme === 'light' ? 'text-black/60' : 'text-white/60'
-                              }`}>₹{product.price.toLocaleString('en-IN')}</p>
+                              <p className={`text-sm font-medium truncate ${theme === 'light' ? 'text-black' : 'text-white'
+                                }`}>{product.name}</p>
+                              <p className={`text-xs ${theme === 'light' ? 'text-black/60' : 'text-white/60'
+                                }`}>₹{product.price.toLocaleString('en-IN')}</p>
                             </div>
                           </button>
                         ))}
                       </div>
                     ) : (
                       <div className="p-6 text-center">
-                        <p className={`text-sm font-medium ${
-                          theme === 'light' ? 'text-black/80' : 'text-white/80'
-                        }`}>Sorry not found</p>
-                        <p className={`text-xs mt-1 ${
-                          theme === 'light' ? 'text-black/60' : 'text-white/60'
-                        }`}>Try searching with different keywords</p>
+                        <p className={`text-sm font-medium ${theme === 'light' ? 'text-black/80' : 'text-white/80'
+                          }`}>Sorry not found</p>
+                        <p className={`text-xs mt-1 ${theme === 'light' ? 'text-black/60' : 'text-white/60'
+                          }`}>Try searching with different keywords</p>
                       </div>
                     )}
                   </div>
                 )}
               </div>
-              
+
               {/* Mobile Search - Expandable */}
               {isSearchFocused && (
-                <div className={`md:hidden absolute top-full left-0 right-0 p-4 border-t transition-colors duration-300 ${
-                  theme === 'light'
+                <div className={`md:hidden absolute top-full left-0 right-0 p-4 border-t transition-colors duration-300 ${theme === 'light'
                     ? 'bg-white border-black/10'
                     : 'bg-black border-white/10'
-                }`}>
-                  <div className={`flex items-center gap-2 rounded-full px-4 py-2 transition-colors duration-300 ${
-                    theme === 'light'
+                  }`}>
+                  <div className={`flex items-center gap-2 rounded-full px-4 py-2 transition-colors duration-300 ${theme === 'light'
                       ? 'bg-black/10'
                       : 'bg-white/10'
-                  }`}>
+                    }`}>
                     <Search className={`w-4 h-4 ${theme === 'light' ? 'text-black/80' : 'text-white/80'}`} />
                     <input
                       type="text"
                       placeholder="Search for products..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className={`bg-transparent outline-none text-sm flex-1 transition-colors duration-300 ${
-                        theme === 'light'
+                      className={`bg-transparent outline-none text-sm flex-1 transition-colors duration-300 ${theme === 'light'
                           ? 'text-black placeholder:text-black/60'
                           : 'text-white placeholder:text-white/60'
-                      }`}
+                        }`}
                       autoFocus
                     />
                     <button
                       onClick={() => setIsSearchFocused(false)}
-                      className={`p-1 rounded transition-colors duration-300 ${
-                        theme === 'light'
+                      className={`p-1 rounded transition-colors duration-300 ${theme === 'light'
                           ? 'hover:bg-black/10 text-black'
                           : 'hover:bg-white/10 text-white'
-                      }`}
+                        }`}
                     >
                       <X className="w-4 h-4" />
                     </button>
@@ -265,11 +252,10 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
               )}
               {!isSearchFocused && (
                 <button
-                  className={`md:hidden p-2 rounded-full transition-colors duration-200 ${
-                    theme === 'light'
+                  className={`md:hidden p-2 rounded-full transition-colors duration-200 ${theme === 'light'
                       ? 'hover:bg-black/10 text-black'
                       : 'hover:bg-white/10 text-white'
-                  }`}
+                    }`}
                   onClick={() => setIsSearchFocused(true)}
                 >
                   <Search className={`w-5 h-5 ${theme === 'light' ? 'text-black' : 'text-white'}`} />
@@ -279,11 +265,10 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
               {/* Theme Toggle */}
               <button
                 onClick={toggleTheme}
-                className={`p-2 rounded-full transition-all duration-200 hover:scale-110 ${
-                  theme === 'light'
+                className={`p-2 rounded-full transition-all duration-200 hover:scale-110 ${theme === 'light'
                     ? 'hover:bg-black/10 text-black'
                     : 'hover:bg-white/10 text-white'
-                }`}
+                  }`}
                 title="Toggle theme"
               >
                 {theme === 'dark' ? (
@@ -297,11 +282,10 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
               {user && (
                 <Link
                   href="/wishlist"
-                  className={`relative p-2 rounded-full transition-all duration-200 hover:scale-110 max-[404px]:hidden ${
-                    theme === 'light'
+                  className={`relative p-2 rounded-full transition-all duration-200 hover:scale-110 max-[404px]:hidden ${theme === 'light'
                       ? 'hover:bg-black/10 text-black'
                       : 'hover:bg-white/10 text-white'
-                  }`}
+                    }`}
                   title="Wishlist"
                 >
                   <Heart className="w-5 h-5" />
@@ -317,11 +301,10 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
               {user && (
                 <button
                   onClick={() => setIsCartOpen(true)}
-                  className={`relative p-2 rounded-full transition-all duration-200 hover:scale-110 ${
-                    theme === 'light'
+                  className={`relative p-2 rounded-full transition-all duration-200 hover:scale-110 ${theme === 'light'
                       ? 'hover:bg-black/10 text-black'
                       : 'hover:bg-white/10 text-white'
-                  }`}
+                    }`}
                   title="Shopping Cart"
                 >
                   <ShoppingCart className="w-5 h-5" />
@@ -344,11 +327,10 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
                         setIsMobileMenuOpen(false)
                       }
                     }}
-                    className={`flex items-center gap-2 px-3 py-2 rounded-full transition-all duration-200 ${
-                      theme === 'light'
+                    className={`flex items-center gap-2 px-3 py-2 rounded-full transition-all duration-200 ${theme === 'light'
                         ? 'hover:bg-black/10 text-black'
                         : 'hover:bg-white/10 text-white'
-                    }`}
+                      }`}
                   >
                     {user.profilePic ? (
                       <img
@@ -364,9 +346,8 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
                     <span className="hidden md:block text-sm font-semibold">
                       {user.name || 'User'}
                     </span>
-                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
-                      isUserMenuOpen ? 'rotate-180' : ''
-                    }`} />
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isUserMenuOpen ? 'rotate-180' : ''
+                      }`} />
                   </button>
 
                   {/* User Dropdown */}
@@ -410,7 +391,10 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
               ) : (
                 <Link
                   href="/login"
-                  className="px-4 py-2 bg-white text-black rounded-full font-semibold text-sm hover:bg-white/90 transition-all duration-200 hover:scale-105"
+                  className={`px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-200 hover:scale-105 shadow-lg ${theme === 'light'
+                      ? 'bg-black text-white hover:bg-black/90 shadow-black/20'
+                      : 'bg-white text-black hover:bg-white/90 shadow-white/20'
+                    }`}
                 >
                   Sign In
                 </Link>
@@ -438,17 +422,15 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
         {/* Backdrop Overlay */}
         <div
           onClick={() => setIsMobileMenuOpen(false)}
-          className={`md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40 transition-all duration-300 ease-in-out ${
-            isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
-          }`}
+          className={`md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40 transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+            }`}
         />
-        
+
         {/* Sidebar */}
-        <div 
+        <div
           data-mobile-sidebar
-          className={`md:hidden fixed left-0 top-0 h-full w-80 max-w-[85vw] bg-background/95 backdrop-blur-xl border-r border-border/50 shadow-2xl z-50 transform transition-all duration-300 ease-in-out rounded-r-2xl ${
-            isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-          }`}
+          className={`md:hidden fixed left-0 top-0 h-full w-80 max-w-[85vw] bg-background/95 backdrop-blur-xl border-r border-border/50 shadow-2xl z-50 transform transition-all duration-300 ease-in-out rounded-r-2xl ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+            }`}
         >
           <div className="h-full overflow-y-auto">
             {/* Sidebar Header */}
@@ -458,9 +440,8 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
               </span>
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`p-2 rounded-full transition-colors ${
-                  theme === 'light' ? 'hover:bg-gray-100 text-[#000000]' : 'hover:bg-muted text-white'
-                }`}
+                className={`p-2 rounded-full transition-colors ${theme === 'light' ? 'hover:bg-gray-100 text-[#000000]' : 'hover:bg-muted text-white'
+                  }`}
               >
                 <X className="w-5 h-5" />
               </button>
@@ -472,11 +453,10 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
                 <Link
                   key={category.slug}
                   href={`/${category.slug}`}
-                  className={`block px-4 py-3 rounded-lg transition-all duration-200 font-medium text-base ${
-                    theme === 'light' 
-                      ? 'text-[#000000] hover:underline hover:scale-[1.03]' 
+                  className={`block px-4 py-3 rounded-lg transition-all duration-200 font-medium text-base ${theme === 'light'
+                      ? 'text-[#000000] hover:underline hover:scale-[1.03]'
                       : 'text-white hover:underline hover:scale-[1.03]'
-                  }`}
+                    }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {category.name}
@@ -493,55 +473,54 @@ export function DualNavbar({ showCategoryBar = false }: { showCategoryBar?: bool
           className="sticky top-20 z-40 shadow-[0_12px_35px_rgba(139,15,29,0.35)] hidden md:block"
           aria-label="Category navigation"
         >
-        <div className="bg-gradient-to-r from-[#7a0d1c] via-[#8f101f] to-[#b71c27]">
-          <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between lg:justify-center h-16 gap-4 text-white">
-            {/* Desktop: All Categories */}
-            <div className="hidden lg:flex items-center gap-6 md:gap-8">
-              {bottomCategories.map((category, index) => {
-                const categoryData = getCategoryData(category.slug)
-                // Determine if this is a left-side category (first 2)
-                const isLeftSide = index < 2
-                return (
-                  <div
-                    key={category.slug}
-                    className="relative"
-                    ref={(el) => {
-                      categoryRefs.current[category.slug] = el
-                    }}
-                    onMouseEnter={() => {
-                      if (categoryData) {
-                        setActiveCategory(category.slug)
-                      }
-                    }}
-                    onMouseLeave={() => setActiveCategory(null)}
-                  >
-                    <Link
-                      href={`/${category.slug}`}
-                      className="group text-xs font-semibold uppercase tracking-wide text-white/80 hover:text-white transition-colors duration-200 relative py-2"
+          <div className="bg-gradient-to-r from-[#7a0d1c] via-[#8f101f] to-[#b71c27]">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between lg:justify-center h-16 gap-4 text-white">
+              {/* Desktop: All Categories */}
+              <div className="hidden lg:flex items-center gap-6 md:gap-8">
+                {bottomCategories.map((category, index) => {
+                  const categoryData = getCategoryData(category.slug)
+                  // Determine if this is a left-side category (first 2)
+                  const isLeftSide = index < 2
+                  return (
+                    <div
+                      key={category.slug}
+                      className="relative"
+                      ref={(el) => {
+                        categoryRefs.current[category.slug] = el
+                      }}
+                      onMouseEnter={() => {
+                        if (categoryData) {
+                          setActiveCategory(category.slug)
+                        }
+                      }}
+                      onMouseLeave={() => setActiveCategory(null)}
                     >
-                      {category.name}
-                      <span className={`absolute -bottom-1 left-0 h-0.5 bg-white transition-all duration-300 ${
-                        activeCategory === category.slug ? 'w-full' : 'w-0 group-hover:w-full'
-                      }`} />
-                    </Link>
+                      <Link
+                        href={`/${category.slug}`}
+                        className="group text-xs font-semibold uppercase tracking-wide text-white/80 hover:text-white transition-colors duration-200 relative py-2"
+                      >
+                        {category.name}
+                        <span className={`absolute -bottom-1 left-0 h-0.5 bg-white transition-all duration-300 ${activeCategory === category.slug ? 'w-full' : 'w-0 group-hover:w-full'
+                          }`} />
+                      </Link>
 
-                    {/* Small Dropdown */}
-                    {activeCategory === category.slug && categoryData && (
-                      <CategoryDropdown
-                        category={category}
-                        data={categoryData}
-                        onClose={() => setActiveCategory(null)}
-                        isLeftSide={isLeftSide}
-                      />
-                    )}
-                  </div>
-                )
-              })}
+                      {/* Small Dropdown */}
+                      {activeCategory === category.slug && categoryData && (
+                        <CategoryDropdown
+                          category={category}
+                          data={categoryData}
+                          onClose={() => setActiveCategory(null)}
+                          isLeftSide={isLeftSide}
+                        />
+                      )}
+                    </div>
+                  )
+                })}
+              </div>
+
             </div>
-
           </div>
-        </div>
-      </nav>
+        </nav>
       )}
 
       <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
