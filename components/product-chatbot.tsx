@@ -15,6 +15,7 @@ interface Message {
   redirectUrl?: string | null
   intent?: string
   feedback?: 'liked' | 'disliked' | null
+  isExactMatch?: boolean
 }
 
 type Language = 'en' | 'hi' | 'ta' | 'te' | 'mr' | 'gu' | 'bn' | 'kn' | 'ml' | 'pa' | 'or' | 'ur'
@@ -247,13 +248,9 @@ export function ProductChatbot() {
   const { user } = useAuth()
 
   // Hide chatbot on admin pages, auth pages, and if user is not logged in
-  const shouldHideChatbot = !user ||
-    pathname?.startsWith('/admin') ||
-    ['/login', '/signup', '/forgot-password', '/verify-otp', '/reset-password'].includes(pathname || '');
 
-  if (shouldHideChatbot) {
-    return null;
-  }
+
+
   const [isOpen, setIsOpen] = useState(false)
   const [language, setLanguage] = useState<Language>('en')
   const [isListening, setIsListening] = useState(false)
@@ -555,8 +552,8 @@ export function ProductChatbot() {
     showWelcomeMessage()
   }
 
-  // Hide chatbot on admin pages, auth pages, and if user is not logged in
-  const shouldShowChatbot = user &&
+  // Hide chatbot on admin pages and auth pages
+  const shouldShowChatbot =
     !pathname?.startsWith('/admin') &&
     !['/login', '/signup', '/forgot-password', '/verify-otp', '/reset-password'].includes(pathname || '')
 

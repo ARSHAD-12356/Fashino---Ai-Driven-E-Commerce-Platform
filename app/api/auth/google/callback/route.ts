@@ -105,7 +105,7 @@ export async function GET(request: NextRequest) {
         );
 
         // Redirect to success page with token
-        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL!;
         return NextResponse.redirect(`${baseUrl}/auth/google/success?token=${token}`);
 
     } catch (error: any) {
