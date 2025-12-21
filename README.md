@@ -1,3 +1,14 @@
+## 🖼️ Project Screenshots
+Here’s a preview of the live website 👇  
+
+<p align="center">
+  <img src="./assets/FL1.png" width="800" alt="Homepage Screenshot" />
+  <img src="./assets/FL2.png" width="800" alt="Product Page Screenshot" />
+  <img src="./assets/FL3.png" width="800" alt="Cart Page Screenshot" />
+  <img src="./assets/FL4.png" width="800" alt="Payment Page Screenshot" />
+  <img src="./assets/FL 5.png" width="800" alt="Payment Page Screenshot" />
+  <img src="./assets/FL6.png" width="800" alt="Payment Page Screenshot" />
+</p>
 🛍️ Fashino — Premium Full-Stack E-Commerce Platform
 
 Fashino is a production-ready, full-stack e-commerce web application built with modern technologies and real-world architecture.
@@ -195,3 +206,4 @@ If you like this project:
 This project is for educational & portfolio purposes.
 
 🔥 This is not just a project — it’s a complete product.
+
