@@ -154,21 +154,12 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-800 pt-8 text-center space-y-4">
+        <div className="border-t border-gray-800 pt-8 text-center">
           <p className="text-sm text-gray-500">
             Copyright © <span className="inline-block brand-logo-fashino">
               Fashino
             </span> 2025. All rights reserved.
           </p>
-          {/* Developer Credit */}
-          <div className="flex items-center justify-center gap-2 pt-2">
-            <p className="text-xs md:text-sm text-gray-500 flex items-center gap-2">
-              <span className="text-gray-600">Developed by</span>
-              <span className="text-primary font-bold bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">
-                ArshXCoder
-              </span>
-            </p>
-          </div>
         </div>
       </div>
     </footer>
